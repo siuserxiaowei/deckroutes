@@ -65,6 +65,7 @@ const evidenceIds = new Set(evidence.map((item) => item.id));
 const evidenceSeedIds = new Set(evidence.flatMap((item) => item.seeds || []));
 const knownOrCandidateSeedIds = new Set([...seedIds, ...evidenceSeedIds]);
 const reviewQueue = site.reviewQueue || [];
+const queuedSeedIds = new Set(reviewQueue.flatMap((item) => item.targetSeeds || []));
 
 addDuplicateErrors(seeds, "seed", "seed");
 addDuplicateErrors(evidence, "id", "evidence");
@@ -96,7 +97,9 @@ for (const item of evidence) {
   if (!hasValue(item.url)) errors.push(`evidence ${id} is missing url`);
   if (!Array.isArray(item.facts) || item.facts.length === 0) errors.push(`evidence ${id} has no facts`);
   for (const seed of item.seeds || []) {
-    if (!seedIds.has(seed)) warnings.push(`evidence ${id} mentions candidate seed not yet in seed database: ${seed}`);
+    if (!seedIds.has(seed) && !queuedSeedIds.has(seed)) {
+      warnings.push(`evidence ${id} mentions candidate seed not yet in seed database or reviewQueue: ${seed}`);
+    }
   }
 }
 

@@ -5,7 +5,7 @@
     "asOf": "2026-06-15",
     "language": "zh-CN",
     "method": "Agent Reach doctor + mcporter 显式配置调用 + Jina Reader + GitHub CLI + BalatroSeeds public pages + web search fallback + Scrapling availability check",
-    "coverageNote": "2026-06-15 五次复核：最新 Agent Reach doctor 显示 13/15 渠道接入；Exa 与微博在 /Users/siuserxiaowei/config/mcporter.json 显式配置下可调用，小红书 server 可见但 check_login_status/search_feeds 仍 EOF，抖音 server 可见但 parse/download 仍缺 DASHSCOPE_API_KEY；本轮新增 BalatroSeeds/微博可回链候选路线。"
+    "coverageNote": "2026-06-15 六次复核：默认 Agent Reach doctor 显示 9/15 渠道可用；显式 mcporter 配置可列出 xiaohongshu、douyin、weibo、exa 4 个健康 MCP server。Exa 可用，小红书 search_feeds 仍 EOF，抖音 parse/download 仍缺 DASHSCOPE_API_KEY，Reddit 直连被网络安全页拦截，YouTube yt-dlp 搜索触发 bot check；本轮新增 B站 DP4499H3 和钢K教程候选，并补 BalatroSeeds/Jina 队列抽取脚本。"
   },
   "stats": [
     {
@@ -20,7 +20,7 @@
     },
     {
       "label": "证据来源",
-      "value": "35",
+      "value": "38",
       "note": "含平台状态、中文社区、英文 seed bank 和 GitHub 工具证据"
     },
     {
@@ -35,7 +35,7 @@
     },
     {
       "label": "复盘队列",
-      "value": "10",
+      "value": "11",
       "note": "按平台列出下一轮采集、OCR 和牌局复盘任务"
     }
   ],
@@ -478,6 +478,24 @@
       "topic": "钢K爽局"
     },
     {
+      "title": "无传奇过39注钢K攻略",
+      "platform": "Bilibili",
+      "author": "ElcTest",
+      "views": 33745,
+      "favorites": 0,
+      "url": "https://www.bilibili.com/video/av115938800312293",
+      "topic": "钢K教程"
+    },
+    {
+      "title": "男爵哑剧钢K流第一次爆机记录",
+      "platform": "Bilibili",
+      "author": "柑橘风铃",
+      "views": 638,
+      "favorites": 0,
+      "url": "https://www.bilibili.com/video/av115389262466123",
+      "topic": "钢K候选种子"
+    },
+    {
       "title": "小丑牌种子前期运营思路 U8RJYV6N",
       "platform": "Bilibili",
       "author": "John--Doe",
@@ -813,6 +831,18 @@
       "label": "Bilibili: 88NZ7CZ7 钢K流种子分享",
       "url": "https://www.bilibili.com/video/BV16H5M6cEtA/"
     },
+    "bili-steel-k-39-elctest": {
+      "label": "Bilibili: 无传奇过39注钢K攻略",
+      "url": "https://www.bilibili.com/video/av115938800312293"
+    },
+    "bili-fast-steel-k-12turns": {
+      "label": "Bilibili: 最快成型红封钢K 12回合",
+      "url": "https://www.bilibili.com/video/av116354120160367"
+    },
+    "bili-dp4499h3-baron-mime": {
+      "label": "Bilibili: DP4499H3 男爵哑剧钢K流",
+      "url": "https://www.bilibili.com/video/av115389262466123"
+    },
     "taptap-x8wtk1u1": {
       "label": "TapTap: 10回合镭射钢K X8WTK1U1",
       "url": "https://www.taptap.cn/moment/685810471831342883"
@@ -857,11 +887,11 @@
   "platformStatus": [
     {
       "platform": "Agent Reach / 工具总览",
-      "status": "13/15 渠道接入可见",
+      "status": "默认 doctor 9/15；显式 mcporter 配置 4 个 MCP 健康",
       "accessMethod": "agent-reach doctor + mcporter --config /Users/siuserxiaowei/config/mcporter.json list",
       "usableNow": true,
-      "limitation": "doctor/list 显示 GitHub、YouTube、V2EX、RSS、Jina、X、Reddit、B站、微博、Exa、小红书、抖音、微信公众号等多数渠道已接入；但小红书实际 check/search 仍 EOF，抖音 parse/download 仍缺 DASHSCOPE_API_KEY；LinkedIn 未配置，小宇宙缺 Groq。",
-      "nextAction": "后续深采统一带显式 mcporter config；小红书先修登录态/服务端 EOF，抖音先补 DASHSCOPE_API_KEY，再把视频/图文转成可复盘路线。"
+      "limitation": "默认 mcporter 配置下 Exa/小红书会报 Unknown MCP server；显式配置可列出 xiaohongshu、douyin、weibo、exa，但小红书 search_feeds 仍 EOF，抖音 parse/download 仍缺 DASHSCOPE_API_KEY；Reddit 直连被网络安全页拦截，YouTube yt-dlp 搜索触发 bot check。",
+      "nextAction": "后续深采统一带显式 mcporter config；小红书先修登录态/服务端 EOF，抖音先补 DASHSCOPE_API_KEY，Reddit/YouTube 等待 cookie/代理后再补正文和字幕。"
     },
     {
       "platform": "Exa / 全网语义搜索",
@@ -900,7 +930,7 @@
       "status": "MCP 可见，登录态/读取失败",
       "accessMethod": "mcporter --config /Users/siuserxiaowei/config/mcporter.json call xiaohongshu.check_login_status",
       "usableNow": false,
-      "limitation": "mcporter list 能看到 xiaohongshu server，但 check_login_status 和 search_feeds(\"小丑牌 钢K\") 均返回 EOF；当前不能证明已登录，也不能把小红书内容当作真实采集结果。",
+      "limitation": "显式 mcporter 配置能列出 xiaohongshu server，但 search_feeds(\"小丑牌 钢K 种子\") 返回 EOF；默认配置下则直接 Unknown MCP server。当前不能证明已登录，也不能把小红书内容当作真实采集结果。",
       "nextAction": "修复 cookies/login 后运行 search_feeds(\"小丑牌 钢K\")、search_feeds(\"Balatro 钢K 种子\") 和 get_feed_detail，并保留笔记图片/正文来源。"
     },
     {
@@ -1547,6 +1577,57 @@
       ],
       "confidence": "中",
       "useInSite": "已入库为候选种子；详情页显示当前已知节点和复核警告。"
+    },
+    {
+      "id": "bili-steel-k-39-elctest",
+      "platform": "B站",
+      "title": "无传奇过39注钢K攻略",
+      "url": "https://www.bilibili.com/video/av115938800312293",
+      "retrievedAt": "2026-06-15",
+      "contentType": "B站公开搜索 API 元数据 + 简介",
+      "seeds": [],
+      "facts": [
+        "B站公开搜索 API 返回约 33745 播放，作者 ElcTest。",
+        "标题写明“最详细的钢k无传奇过39注攻略”，定位是通用钢K打法教程而非单一 seed 路线。",
+        "简介提到需搭配无尽流程讲解、跳稀有标签刷蓝图 bug、卡绯红豆子 bug 等相关视频，并给出种子查询网站 spectralpack.github.io/TheSoul/。"
+      ],
+      "confidence": "中",
+      "useInSite": "作为钢K教程复盘素材；抽到字幕/OCR 前不生成完整路线。"
+    },
+    {
+      "id": "bili-fast-steel-k-12turns",
+      "platform": "B站",
+      "title": "最快成型红封钢K只用12回合爆分",
+      "url": "https://www.bilibili.com/video/av116354120160367",
+      "retrievedAt": "2026-06-15",
+      "contentType": "B站公开搜索 API 元数据",
+      "seeds": [],
+      "facts": [
+        "B站公开搜索 API 返回约 32086 播放。",
+        "标题写明“最快成型红封钢k只用12回合爆分”，适合作为早期成型路线的复盘候选。",
+        "当前公开搜索摘要没有给出 seed 号；必须通过视频画面、简介详情或评论 OCR 再确认。"
+      ],
+      "confidence": "中",
+      "useInSite": "进入 B站视频复盘队列，先确认 seed 和早期商店顺序。"
+    },
+    {
+      "id": "bili-dp4499h3-baron-mime",
+      "platform": "B站",
+      "title": "DP4499H3 男爵哑剧钢K流",
+      "url": "https://www.bilibili.com/video/av115389262466123",
+      "retrievedAt": "2026-06-15",
+      "contentType": "B站公开搜索 API 元数据 + 简介",
+      "seeds": [
+        "DP4499H3"
+      ],
+      "facts": [
+        "B站公开搜索 API 返回标题“男爵哑剧钢K流，第一次爆机记录”。",
+        "简介明确写出 seed 为 DP4499H3。",
+        "简介写明配置是 4 男爵、2 哑剧；这是标准 Baron/Mime/Steel King 路线结构。",
+        "播放量约 638，热度不高，但 seed 和组件信息明确，适合做小样本复盘。"
+      ],
+      "confidence": "高",
+      "useInSite": "作为 DP4499H3 候选种子；需要复盘牌组、Boss、商店和卡包顺序后再入正式 seed 卡。"
     }
   ],
   "reviewQueue": [
@@ -1678,6 +1759,31 @@
       "updatedAt": "2026-06-15"
     },
     {
+      "id": "bili-dp4499h3-steel-k-review",
+      "title": "DP4499H3 男爵哑剧钢K复盘",
+      "platform": "B站",
+      "priority": "B",
+      "status": "ready-replay",
+      "blocker": "",
+      "evidenceIds": [
+        "bili-dp4499h3-baron-mime",
+        "bili-steel-k-39-elctest",
+        "bili-fast-steel-k-12turns"
+      ],
+      "sourceIds": [
+        "bili-dp4499h3-baron-mime",
+        "bili-steel-k-39-elctest",
+        "bili-fast-steel-k-12turns"
+      ],
+      "targetSeeds": [
+        "DP4499H3"
+      ],
+      "nextAction": "优先复盘 DP4499H3 视频，确认牌组、底注、Boss、Baron/Mime 出现顺序、Steel King 成型节点；ElcTest 无传奇过39注和 12 回合最快成型视频作为通用钢K教程素材抽字幕/OCR。",
+      "validation": "DP4499H3 必须能补出至少 Ante 1-8 的关键商店/卡包/Boss 节点才写成正式 seed；教程视频只抽通用打法，不写假 seed。",
+      "ownerMode": "B站公开视频 API + 字幕/OCR/人工复盘",
+      "updatedAt": "2026-06-15"
+    },
+    {
       "id": "taptap-x8wtk1u1-full-route",
       "title": "X8WTK1U1 TapTap 路线补全",
       "platform": "TapTap",
@@ -1759,7 +1865,7 @@
       "title": "BalatroSeeds 商店队列解析器样本",
       "platform": "网页/BalatroSeeds",
       "priority": "A",
-      "status": "implemented-ui-sample",
+      "status": "extractor-added",
       "blocker": "",
       "evidenceIds": [
         "balatroseeds-y3qrzz5i-parser"
@@ -1770,8 +1876,8 @@
       "targetSeeds": [
         "Y3QRZZ5I"
       ],
-      "nextAction": "把当前手工结构化样本升级为自动解析器：从 BalatroSeeds/Jina 文本直接抽 Boss、Voucher、Tags、Shop Queue 和 Packs。",
-      "validation": "详情页能按 Ante 展开/折叠，长队列不撑爆移动端；每个解析字段都能回链 BalatroSeeds 原页。",
+      "nextAction": "用 scripts/extract-balatroseed-route.mjs 批量跑 AFBWB2、8Q47WV6K、6B678B4W、Y3QRZZ5I 等页面，把输出和实机复盘对照后再写入正式 routeDetails。",
+      "validation": "抽取器测试通过；真实页面输出必须包含 flow、queueTables、Boss/Voucher/Tags/Shop Queue/Packs，并能回链 BalatroSeeds 原页。",
       "ownerMode": "Scrapling/Jina + 前端解析器",
       "updatedAt": "2026-06-15"
     },
