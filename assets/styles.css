@@ -540,6 +540,7 @@ main {
 }
 
 .route-viewer {
+  scroll-margin-top: 84px;
   margin: 18px 0 22px;
   padding: 22px;
   border: 1px solid rgba(215, 173, 84, 0.35);
