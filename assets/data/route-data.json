@@ -100,6 +100,37 @@
       ]
     },
     {
+      "seed": "90UU79",
+      "title": "等离子红封钢K无尽演示",
+      "deck": "Plasma Deck / 等离子牌组",
+      "archetype": "红封钢K无尽",
+      "difficulty": "B站分 P 待复盘",
+      "version": "B站 2024-12-12",
+      "image": "assets/images/steel-king-route.webp",
+      "summary": "B站简介给出 90UU79，定位为等离子红封钢K无尽爽种；公开视频分 6P，演示到第六张复制牌，并说明 12-14 注基本稳定。",
+      "route": [
+        "等离子红封钢K路线，前期钢K和关键小丑很早出现，目标是 12-14 注后稳定进入无尽。",
+        "Ante 2 刷 Death，配合 Temperance、Ice Cream 和利息控钱。",
+        "Ante 4 在 Baron 前先拿 Cryptid 和 Ectoplasm，并用 Invisible Joker 复制 Perkeo。",
+        "Ante 5 找 Chariot 和红封 K，Ante 6 出 Mime，Ante 9/12 分别复制 Brainstorm / Blueprint。",
+        "Ante 17/19/20 继续补 Blueprint、Brainstorm、负片资源，终局男爵数量略多于哑剧。"
+      ],
+      "warnings": [
+        "B站公开 API 显示无字幕，当前只能按标题、简介和分 P 信息整理为待复盘节点。",
+        "需要人工看 6P 视频补齐每个 Ante 的商店、牌包、Boss 和复制顺序。"
+      ],
+      "tags": [
+        "钢K",
+        "Plasma",
+        "红封",
+        "复制牌",
+        "B站待复盘"
+      ],
+      "sources": [
+        "bili-90uu79-yushen"
+      ]
+    },
+    {
       "seed": "1DOYU2",
       "title": "幽灵牌组 Ante 39 红印钢K种",
       "deck": "Ghost Deck / 幽灵牌组",
@@ -189,38 +220,59 @@
   ],
   "seedDetails": {
     "9OUU79": {
-      "completeness": "待复盘",
-      "sourceMode": "B站元数据 + 中文机制文章；公开视频无字幕",
-      "videoStatus": "Bilibili API 可读到 2P：P1 681 秒，P2 695 秒；yt-dlp 被 412 拦截，字幕接口为空。",
+      "completeness": "节点型近完整",
+      "sourceMode": "B站公开 API + 置顶评论长图 OCR + 中文机制文章；公开视频无字幕",
+      "videoStatus": "Bilibili API 可读到 2P：P1 681 秒，P2 695 秒；yt-dlp 被 412 拦截，字幕接口为空；置顶评论长图可 OCR 出 1-1 到 6-16 的关键节点。",
       "sources": [
         "bili-9ouu79",
         "indienova-steel-k"
       ],
       "flow": [
         {
-          "stage": "成型目标",
+          "stage": "Ante 1 - 负片 Perkeo、黄金小丑、DNA",
           "actions": [
-            "路线核心是红封钢K：尽量把牌库转成钢铁 K，并用红蜡封增加重触发。",
-            "终局小丑围绕男爵、哑剧、复制类小丑展开，视频标题显示 6 底注 17 回合即可爆分。"
+            "等离子白注，版本按视频简介为 1.0.1o-FULL，要求全解锁。",
+            "1-1 开超级秘术包，用 Soul 出负片 Perkeo，并用节制；小丑包拿闪箔黄金小丑。",
+            "1-2 买延迟满足并拿种子基金，先把经济底座做起来。",
+            "1-3 拿 DNA，为后续复制 K 和红封钢K做准备。"
+          ]
+        },
+        {
+          "stage": "Ante 2-3 - Blueprint / Brainstorm 复制 Perkeo",
+          "actions": [
+            "2-4 重掷后买 Blueprint，让 Blueprint 先配合 Perkeo 复制关键消耗牌。",
+            "3-6 买 Brainstorm，开始根据回合目标调整 Blueprint / Brainstorm 的复制目标。",
+            "经济回合优先复制资源，准备回合优先复制 Perkeo，爆分回合再转向 Baron / Mime。"
+          ]
+        },
+        {
+          "stage": "Ante 4-5 - 建立红封钢K样板",
+          "actions": [
+            "4 注开始把 DNA 放在最左侧复制 K，逐步提高 King 密度。",
+            "利用证书、战车、死神等资源，把目标 K 做成红封钢铁 K。",
+            "5-13 让证书在最左侧，选红封黑桃 K，再用战车做钢铁。",
+            "随后卖证书买 Baron，开始进入持牌 K 触发的主要得分结构。"
+          ]
+        },
+        {
+          "stage": "Ante 5-6 - Showman / Blueprint / Mime 与爆分",
+          "actions": [
+            "5-14 到 6-16 继续用 DNA 和 Death 复制红封钢K。",
+            "补 Showman、Blueprint、Mime 等关键组件，逐步形成 Baron / Mime / 复制类小丑的指数结构。",
+            "最后用 Perkeo 复制出的 Cryptid / 神秘生物扩张手牌数量，打到 naneinf。"
           ]
         },
         {
           "stage": "触发结构",
           "actions": [
-            "indienova 示例里出现男爵 2、哑剧 1、复制 3；触发顺序可整理为男爵/哑剧/哑剧/男爵/男爵/男爵一类结构。",
-            "出单张高牌，尽量让更多钢K留在手中，靠持牌触发叠指数倍率。"
-          ]
-        },
-        {
-          "stage": "后续待补",
-          "actions": [
-            "需要人工看视频或下载后做 OCR/转写，补齐每一底注商店购买、跳过标签、牌库改造顺序。",
-            "当前站点不把它标为完整流程，避免误导。"
+            "indienova 机制文里用 9OUU79 示例解释：终局围绕 Baron、Mime 和复制类小丑，让大量钢K留在手中反复触发。",
+            "出单张高牌，尽量让更多钢K留在手中；复制目标要随经济、复制、爆分回合切换。"
           ]
         }
       ],
       "mistakes": [
-        "不要把视频标题当成逐回合流程；没有字幕时只能做热度入口和待复盘任务。",
+        "OCR 来源存在个别误字；这条可作为节点型路线，不应标成逐字完整商店表。",
+        "不要忘记在准备回合和爆分回合切换 Blueprint / Brainstorm 的复制目标。",
         "钢K成型后仍要注意 The Plant 等人头牌克制 Boss。"
       ]
     },
@@ -330,44 +382,40 @@
       ]
     },
     "VH1A55LV": {
-      "completeness": "节点型长线",
-      "sourceMode": "BalatroSeed 搜索摘要；Jina 直读当前返回 404",
+      "completeness": "候选长线节点",
+      "sourceMode": "BalatroSeeds Ghost Deck Ante 1 可读；BalatroSeed 原长线指南当前 404；后续节点来自公开索引摘要",
       "videoStatus": "非视频来源。",
+      "sources": [
+        "balatroseed-vh1a55lv",
+        "balatroseeds-vh1a55lv-ghost"
+      ],
       "flow": [
         {
-          "stage": "Ante 1-3",
+          "stage": "Ante 1 - 可读强证据",
           "actions": [
-            "以 Plasma Deck 开局，目标是 Red Seal Steel King。",
-            "Ante 1-2 从第二个 Spectral Pack 拿 Yorick。",
-            "Ante 1-3 从第三个 Mega Spectral Pack 抽 Negative Perkeo，这是无尽路线核心。"
+            "BalatroSeeds 的 Ghost Deck 页面当前可读，能确认 Ante 1 有 Yorick、Negative Perkeo 和 Ectoplasm 等关键节点。",
+            "这只能证明早期强开局，不能单独证明完整 Ante 39 路线。"
           ]
         },
         {
-          "stage": "Ante 3-7",
+          "stage": "后续长线候选节点",
           "actions": [
-            "Ante 3-3 刷商店拿 Brainstorm。",
-            "前期用 Death / Fool / Hanged Man / Chariot / Strength 增加 King 密度和钢K质量。",
-            "Ante 7-2 从第五个 Spectral Pack 拿 Deja Vu，上红封。"
+            "公开索引摘要提到 Ante 3-3 Brainstorm、Ante 7-2 Deja Vu、Ante 9-1 Seance 等节点。",
+            "同一摘要还提到 16-2/17-1 附近补第二 Mime / Baron，18-2、23-2、26-1 附近继续补 Blueprint。",
+            "这些节点在原文恢复或实测前只能标为候选，不进入完整流程等级。"
           ]
         },
         {
-          "stage": "Ante 9-26",
+          "stage": "路线用途",
           "actions": [
-            "Ante 9-1 拿 Seance 做过渡，靠顺子同花产 Spectral Pack，找 Ectoplasm 和 Cryptid。",
-            "Ante 16-2、17-1 附近出现第二 Mime / Baron。",
-            "Ante 18-2、23-2、26-1 继续补 Blueprint，最后替换 Showman 完成阵容。"
-          ]
-        },
-        {
-          "stage": "Ante 32-39",
-          "actions": [
-            "后期大量刷 Boss 到 Serpent，靠 Cryptid 推进到 Ante 39。",
-            "这类路线需要记录金币、刷新次数和消耗牌库存，否则复现难度很高。"
+            "适合作为长线极限页的占位种子和研究任务，而不是新手可照抄的路线。",
+            "下一步需要恢复原文、找缓存或实测录屏，补金币、刷新次数、Boss reroll 和消耗牌库存。"
           ]
         }
       ],
       "mistakes": [
-        "原链接当前 Jina 直读为 404，站内标成“节点型”，不是完整逐商店流程。",
+        "原链接当前 Jina 直读为 404，站内降级为“候选长线节点”。",
+        "不要把 Exa/搜索摘要当作完整路线强证据。",
         "长线极限路线不要只看 Joker 名单，消耗牌库存和 Boss reroll 才是关键。"
       ]
     },
@@ -657,7 +705,7 @@
     },
     "X8WTK1U1": {
       "completeness": "早期 7 回合可验证",
-      "sourceMode": "TapTap 中文文字流程",
+      "sourceMode": "TapTap 中文文字流程；Jina Reader 2026-06-15 可读正文与评论",
       "videoStatus": "非视频来源；正文列出回合节点。",
       "sources": [
         "taptap-x8wtk1u1"
@@ -697,6 +745,62 @@
       "mistakes": [
         "这是早期路线，不是完整 Ante 8/Ante 39 攻略。",
         "需要实测补齐每个商店金币、刷新次数和 Boss 风险。"
+      ]
+    },
+    "90UU79": {
+      "completeness": "B站分 P 级待复盘",
+      "sourceMode": "B站公开 API 标题/简介/分 P 信息；无公开字幕",
+      "videoStatus": "Bilibili API 可读到 6P，总时长 4268 秒，分 P 包括 Part1、Part2、Part3、17注的蓝图、20注负片DNA和负片信封拿法、男爵/哑剧复制比例推导；字幕列表为空。",
+      "sources": [
+        "bili-90uu79-yushen"
+      ],
+      "flow": [
+        {
+          "stage": "种子定位",
+          "actions": [
+            "种子 90UU79，等离子牌组红封钢K流。",
+            "作者简介称这个种子前期小丑和钢K拿得很靠前，12-14 注基本可以稳定进入后续无尽。"
+          ]
+        },
+        {
+          "stage": "Ante 2-4 - 资源、通灵和 Perkeo 复制",
+          "actions": [
+            "Ante 2 刷 Death，配合 Temperance、Ice Cream 和利息控钱，为后续复制牌库做准备。",
+            "Ante 3 拿通灵相关节点；注意保留并复制通灵，后续还有蓝色小丑作为过渡。",
+            "Ante 4 在 Baron 前先拿 Cryptid 和 Ectoplasm；第一张幻灵指向 Cryptid，第四张幻灵指向 Ectoplasm。",
+            "同阶段用 Invisible Joker 复制 Perkeo，提高后续消耗牌产出。"
+          ]
+        },
+        {
+          "stage": "Ante 5-7 - 红封钢K、Mime 和经济",
+          "actions": [
+            "Ante 5 找 Chariot 等钢铁塔罗，并通过大塔罗包找红封 K，开始复制 Death 来改造牌库。",
+            "Ante 6 出 Mime，路线进入红封钢K持牌触发阶段。",
+            "Ante 7 用信封刷钱，保证后续大量刷新和复制组件购买能力。"
+          ]
+        },
+        {
+          "stage": "Ante 9-14 - 复制 Brainstorm / Blueprint",
+          "actions": [
+            "Ante 9 用 Invisible Joker 复制 Brainstorm。",
+            "Ante 12 用 Invisible Joker 复制 Blueprint。",
+            "Ante 13-14 出 Showman 和新的 Brainstorm；如果只求稳定可以卖 Showman 进入躺赢线，如果追上限则继续做负片组件。"
+          ]
+        },
+        {
+          "stage": "Ante 17-20 - 高复制层与比例",
+          "actions": [
+            "分 P 和评论线索显示，Ante 17 补 Blueprint，Ante 19 补 Brainstorm。",
+            "Ante 20 可结合负片标签拿负片信封和负片 DNA。",
+            "终局复制分配不要只堆一类组件；UP 评论推导建议 Baron 比 Mime 多一张时更优。",
+            "公开视频主线演示到拿第六张复制牌；+1 小丑栏位优惠券较靠后，约 25 注后才更适合追第七张复制牌。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "当前节点来自公开 API、分 P 标题与 UP 评论，不是逐秒字幕。",
+        "简介指出跳注奖励和优惠券质量一般，不能按“跳注爽种”来运营。",
+        "如果只堆男爵或只堆哑剧，触发比例可能不如作者提示的“男爵略多于哑剧”。"
       ]
     },
     "1DOYU2": {

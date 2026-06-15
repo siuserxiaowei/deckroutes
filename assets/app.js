@@ -307,7 +307,7 @@ function showRoute(seed, shouldScroll = false) {
 }
 
 function maybeOpenRouteFromHash() {
-  const match = decodeURIComponent(window.location.hash).match(/^#seed-(.+)$/);
+  const match = decodeURIComponent(window.location.hash).match(/^#(?:seed|route)-(.+)$/);
   if (!match) return;
   const seed = state.data.seeds.find((item) => item.seed.toLowerCase() === match[1].toLowerCase());
   if (seed) showRoute(seed, true);

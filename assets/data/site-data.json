@@ -10,17 +10,17 @@
   "stats": [
     {
       "label": "已整理种子",
-      "value": "18",
+      "value": "19",
       "note": "含可点击流程、中文来源和待复盘队列"
     },
     {
       "label": "中文视频样本播放",
-      "value": "1.55M+",
-      "note": "B站公开搜索结果合计，不含全平台"
+      "value": "2.38M+",
+      "note": "B站公开搜索/API 结果合计，不含全平台"
     },
     {
       "label": "证据来源",
-      "value": "18",
+      "value": "19",
       "note": "含平台状态、微博/抖音/XHS 证据"
     },
     {
@@ -42,20 +42,22 @@
   "seeds": [
     {
       "seed": "9OUU79",
-      "title": "中文圈高热钢K爽种",
-      "deck": "视频来源未标明",
+      "title": "6底注爆机红封钢K节点种",
+      "deck": "Plasma Deck / 等离子牌组",
       "archetype": "红封钢K",
-      "difficulty": "演示爽局",
-      "version": "需按视频版本复核",
+      "difficulty": "节点型近完整",
+      "version": "B站简介标注 1.0.1o-FULL",
       "image": "assets/images/steel-king-route.webp",
-      "summary": "B站高播放视频标题指向红封钢K路线，适合作为首屏引流种子和钢K流教学入口。",
+      "summary": "B站高播放视频与置顶评论长图提供 1-1 到 6-16 的关键节点：负片 Perkeo、DNA、Blueprint、Brainstorm、红封钢K、Baron、Showman、Mime 和 Cryptid 爆分。",
       "route": [
-        "围绕红封钢K、Baron/Mime 类持牌触发路线做爆分。",
-        "标题信息显示 6 底注、17 回合爆分，说明成型窗口很早。",
-        "实操页应补录逐商店路线、跳过标签、关键塔罗/幻灵选择。"
+        "1-1 开超级秘术包，Soul 出负片 Perkeo，并用节制；小丑包拿闪箔黄金小丑。",
+        "1-2 建经济，1-3 拿 DNA；2-4 买 Blueprint 配合 Perkeo。",
+        "3-6 买 Brainstorm，后续通过 DNA、证书、战车、死神把目标 K 做成红封钢K。",
+        "5-13 选红封黑桃 K 并做钢铁，随后卖证书换 Baron；5-14 到 6-16 补 Showman、Blueprint、Mime，靠 Cryptid/神秘生物爆分。"
       ],
       "warnings": [
-        "B站标题不是完整路线表，首版只作为高热入口，后续需要视频转录或人工复盘补全。"
+        "B站公开视频无字幕；节点来自公开 API 和置顶评论长图 OCR，存在个别 OCR 误字。",
+        "当前标成节点型近完整，不标逐字完整商店表。"
       ],
       "tags": [
         "钢K",
@@ -128,18 +130,18 @@
       "title": "39 Ante 极限钢K路线",
       "deck": "Plasma Deck",
       "archetype": "红封钢K",
-      "difficulty": "极限长线",
-      "version": "BalatroSeed guide",
+      "difficulty": "极限长线候选",
+      "version": "BalatroSeed 原文 404；BalatroSeeds Ante 1 可读",
       "image": "assets/images/joker-strategy.webp",
-      "summary": "BalatroSeed.net 中英指南提到 Negative Perkeo、Brainstorm、Deja Vu、Seance、双 Mime/Baron 与多 Blueprint 的长线结构。",
+      "summary": "BalatroSeed.net 原完整指南当前返回 404；公开索引摘要提到 Negative Perkeo、Brainstorm、Deja Vu、双 Mime/Baron 与多 Blueprint，BalatroSeeds 可确认 Ghost Deck 的 Ante 1 关键节点。",
       "route": [
         "Ante 1-3 关注 Negative Perkeo，前期决定路线天花板。",
         "Ante 3 附近拿 Brainstorm，Ante 7 通过 Deja Vu 做红封钢K基础。",
         "Ante 16-26 继续补 Mime、Baron、Blueprint，终局进入超长线爆分。"
       ],
       "warnings": [
-        "路线较长，适合做进阶文章，不适合只想快速爽局的玩家。",
-        "需要把每个关键节点做成可复盘时间线。"
+        "原完整攻略当前不可读，站内只保留为长线候选节点。",
+        "除 Ante 1 可读来源外，其余长线节点需要恢复原文或实测后再升级。"
       ],
       "tags": [
         "钢K",
@@ -149,7 +151,8 @@
         "长线"
       ],
       "sources": [
-        "balatroseed-vh1a55lv"
+        "balatroseed-vh1a55lv",
+        "balatroseeds-vh1a55lv-ghost"
       ]
     },
     {
@@ -427,7 +430,8 @@
       ],
       "sources": [
         "wiki-naneinf",
-        "naneinf-calc"
+        "naneinf-calc",
+        "taptap-endless-red-k-guide"
       ]
     }
   ],
@@ -439,6 +443,15 @@
       "views": 281344,
       "favorites": 4500,
       "url": "https://www.bilibili.com/video/av113946187006725",
+      "topic": "钢K种子"
+    },
+    {
+      "title": "90UU79 等离子红封钢K流无尽演示",
+      "platform": "Bilibili",
+      "author": "雨神の右手",
+      "views": 142134,
+      "favorites": 1695,
+      "url": "https://www.bilibili.com/video/BV1ysq8YZExk/",
       "topic": "钢K种子"
     },
     {
@@ -698,6 +711,10 @@
       "label": "BalatroSeed.net: VH1A55LV guide",
       "url": "https://balatroseed.net/guides/2"
     },
+    "balatroseeds-vh1a55lv-ghost": {
+      "label": "BalatroSeeds: VH1A55LV Ghost Deck",
+      "url": "https://balatroseeds.com/seeds/VH1A55LV/ghost-deck"
+    },
     "dualshockers-seeds-to-try": {
       "label": "DualShockers: Best Balatro Seeds To Try",
       "url": "https://www.dualshockers.com/best-balatro-seeds-to-try/"
@@ -773,6 +790,10 @@
     "taptap-x8wtk1u1": {
       "label": "TapTap: 10回合镭射钢K X8WTK1U1",
       "url": "https://www.taptap.cn/moment/685810471831342883"
+    },
+    "taptap-endless-red-k-guide": {
+      "label": "TapTap: 小丑牌无尽攻略红K路线",
+      "url": "https://www.taptap.cn/moment/625067608894343986"
     },
     "wechat-balatro-newbie": {
       "label": "微信公众号: 小丑牌Balatro新手最强攻略",
@@ -904,17 +925,18 @@
       "title": "9OUU79 红封钢K流，6底注17回合打爆游戏",
       "url": "https://www.bilibili.com/video/BV1iRPqevEt9/",
       "retrievedAt": "2026-06-15",
-      "contentType": "公开视频元数据",
+      "contentType": "公开视频 API 元数据 + 置顶评论 OCR",
       "seeds": [
         "9OUU79"
       ],
       "facts": [
         "标题和简介明确给出种子 9OUU79、等离子牌组、白注、版本 1.0.1o-FULL。",
-        "公开搜索返回约 281373 播放、4500 收藏，说明中文圈需求强。",
-        "没有可读取字幕，当前不能自动还原逐商店流程。"
+        "B站 API 返回 2 个分 P、总时长 1376 秒、约 281389 播放。",
+        "公开视频无字幕；置顶评论长图经 OCR 可提取 1-1 到 6-16 的关键路线节点。",
+        "可结构化节点包括负片 Perkeo、黄金小丑、DNA、Blueprint、Brainstorm、红封钢K、Baron、Showman、Mime 和 Cryptid 爆分。"
       ],
       "confidence": "高",
-      "useInSite": "作为中文高热钢K种子入口和待复盘任务。"
+      "useInSite": "已升级为节点型近完整 seed 详情；仍保留 OCR 误字风险提示。"
     },
     {
       "id": "bili-90uu79-yushen",
@@ -922,16 +944,18 @@
       "title": "90UU79 等离子红封钢K流无尽演示",
       "url": "https://www.bilibili.com/video/BV1ysq8YZExk/",
       "retrievedAt": "2026-06-15",
-      "contentType": "公开视频简介",
+      "contentType": "公开视频 API 元数据 + 简介",
       "seeds": [
         "90UU79"
       ],
       "facts": [
+        "B站 API 返回 6 个分 P、总时长 4268 秒、约 142134 播放、1695 收藏。",
         "简介写明种子 90UU79、等离子红封钢K流、演示到第六张复制牌。",
-        "简介指出小丑栏位和手牌上限优惠券偏靠后，但 12-14 注基本成型。"
+        "简介指出小丑栏位和手牌上限优惠券偏靠后，但 12-14 注基本成型。",
+        "分 P 标题包含“17注的蓝图”“20注负片DNA和负片信封拿法”“男爵比哑剧多一张是最优解”，可作为后续人工复盘索引。"
       ],
-      "confidence": "中",
-      "useInSite": "补充 9OUU79/90UU79 中文视频复盘队列，后续需要人工确认是否同一输入误差。"
+      "confidence": "高",
+      "useInSite": "已升级为正式可点击 seed 卡，但仍标记为 B站分 P 级待复盘。"
     },
     {
       "id": "bili-1doyu2",
@@ -1019,6 +1043,22 @@
       "useInSite": "作为中文早期钢K流程样板。"
     },
     {
+      "id": "taptap-endless-red-k-guide",
+      "platform": "TapTap",
+      "title": "小丑牌无尽攻略红K路线",
+      "url": "https://www.taptap.cn/moment/625067608894343986",
+      "retrievedAt": "2026-06-15",
+      "contentType": "中文社区机制攻略",
+      "seeds": [],
+      "facts": [
+        "正文把无尽路线拆成高牌红蜡钢K和同花五条两类，并指出高牌红K上限更高。",
+        "攻略强调 Perkeo/帕齐欧复制 Cryptid/神秘生物、红蜡 K、Baron、Mime、Blueprint、Brainstorm 是红K无尽的关键。",
+        "作者提醒种子数据固定，想复盘必须记录每层底注的发牌、商店、补充包和小丑排序。"
+      ],
+      "confidence": "高",
+      "useInSite": "用于解释钢K路线复盘方法和 Naneinf 内容入口，不作为具体种子流程。"
+    },
+    {
       "id": "gamesgg-baron-mime",
       "platform": "网页攻略",
       "title": "Baron Mime Balatro Build Guide",
@@ -1039,16 +1079,17 @@
       "title": "VH1A55LV 39 Ante Strategy",
       "url": "https://balatroseed.net/guides/2",
       "retrievedAt": "2026-06-15",
-      "contentType": "节点型英文攻略",
+      "contentType": "失效原文 + 可读早期节点 + 搜索摘要",
       "seeds": [
         "VH1A55LV"
       ],
       "facts": [
-        "攻略给出 Plasma Deck + Red Seal Steel King 路线，Ante 1-2 Yorick、Ante 1-3 Negative Perkeo、Ante 3-3 Brainstorm。",
-        "后续列出 Ante 7-2 Deja Vu、Ante 16-2/17-1 第二 Mime/Baron、Ante 18/23/26 Blueprint 等节点。"
+        "balatroseed.net/guides/2 当前 Jina 和直连均返回 404，不能作为完整路线强证据。",
+        "BalatroSeeds 的 VH1A55LV Ghost Deck 页面当前可读，能确认 Ante 1 有 Yorick、Negative Perkeo、Ectoplasm 等早期节点。",
+        "后续 Brainstorm、Deja Vu、Seance、Mime/Baron、Blueprint 节点来自公开搜索摘要，站内只作为候选长线节点。"
       ],
-      "confidence": "高",
-      "useInSite": "作为 VH1A55LV 节点型长线流程来源。"
+      "confidence": "中",
+      "useInSite": "降级为长线候选种；恢复原文或实测前不标完整流程。"
     },
     {
       "id": "xhs-probe-balatro-steel-k",
@@ -1268,10 +1309,10 @@
     },
     {
       "id": "bili-9ouu79-replay",
-      "title": "9OUU79/90UU79 钢K路线核对",
+      "title": "9OUU79/90UU79 节点路线深复盘",
       "platform": "B站",
       "priority": "S",
-      "status": "ready-replay",
+      "status": "ready-deep-review",
       "blocker": "",
       "evidenceIds": [
         "bili-9ouu79",
@@ -1285,8 +1326,8 @@
         "9OUU79",
         "90UU79"
       ],
-      "nextAction": "复核两个视频是否为同一种子大小写/字符误差，抽取 Ante 1-8 的商店、Joker、钢K复制和蓝图/头脑风暴时间点。",
-      "validation": "站内详情页从“标题级待复盘”升级为至少 Ante 1-8 节点型流程，并保留版本/牌组说明。",
+      "nextAction": "已确认 9OUU79 和 90UU79 是两条不同种子，并已抽出公开 API、评论/OCR 和分 P 节点；下一步人工复盘视频画面，补齐逐商店、Boss、金币和牌包顺序。",
+      "validation": "详情页保持节点型流程；若能补齐 Ante 1-8 逐商店证据，再升级完整度。无字幕/无画面复核前不标完整。",
       "ownerMode": "B站公开视频 + browser-use",
       "updatedAt": "2026-06-15"
     },
