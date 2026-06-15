@@ -1,0 +1,531 @@
+{
+  "meta": {
+    "asOf": "2026-06-15",
+    "method": "Agent Reach deep pass: Jina Reader for BalatroSeeds/TapTap/indienova/TheGamer, Bilibili public API for video metadata, yt-dlp subtitle attempt",
+    "coverageNote": "Only routes with readable web text are marked full or partial. Bilibili videos without public subtitles are marked as pending replay review."
+  },
+  "additionalSeeds": [
+    {
+      "seed": "IUR4CTY3",
+      "title": "TapTap 幻灵牌组钢K开局",
+      "deck": "Ghost Deck / 幻灵牌组",
+      "archetype": "红封钢K",
+      "difficulty": "中文流程",
+      "version": "TapTap 2024-11-30",
+      "image": "assets/images/steel-king-route.webp",
+      "summary": "TapTap 中文帖子给出了前期关键节点：第一回合控分、头脑风暴、象形文字、免费商店、复制第二张头脑风暴、Boss 后 DNA、底注 10 找 K 皇。",
+      "route": [
+        "白注幻灵牌组开局，第一回合通过弃牌找固定黑桃组合，目标是刚好过 300 分并节省出牌数拿赏金。",
+        "早期出现头脑风暴；幻灵牌组选象形文字优惠券，其他牌组可直接拿头脑风暴。",
+        "跳过盲注拿下一家商店免费，利用商店内幻灵小丑牌和幻灵包做第二张头脑风暴。",
+        "击败该底注 Boss 后出现 DNA，前期核心成型。",
+        "底注 10 / 第 26 回合商店刷新 K 皇，作者提示需要攒钱，大约 5-6 次刷新。"
+      ],
+      "warnings": [
+        "该来源是中文社区帖，图中商店位置没有被完整转成文本，需要后续人工复盘补齐。",
+        "要求全解锁。"
+      ],
+      "tags": ["钢K", "Ghost", "Brainstorm", "DNA", "中文流程"],
+      "sources": ["taptap-iur4cty3"]
+    },
+    {
+      "seed": "2K9K9KH",
+      "title": "Triple Perkeo 资源种",
+      "deck": "未限定 / Ghost 更顺",
+      "archetype": "Perkeo 资源复制",
+      "difficulty": "进阶",
+      "version": "TheGamer 2025-02-07",
+      "image": "assets/images/seed-vault.webp",
+      "summary": "TheGamer 记录的三 Perkeo 种子，适合做资源复制教学，不是纯钢K但能转 Chariot / Death / Cryptid 方向。",
+      "route": [
+        "第一家商店至少留 6 美元，先买 Arcana Pack 并使用 Hermit，再买 Buffoon Pack 拿 Invisible Joker。",
+        "第二回合后的商店打开第二个 Arcana Pack，Soul 召唤 Perkeo。",
+        "第三回合后卖 Invisible Joker 复制 Perkeo。",
+        "后续商店再次出现 Invisible Joker，完成三 Perkeo 架构。",
+        "成型后优先复制 Cryptid；也可以用 Chariot 做钢牌，或 Death 改造牌库。"
+      ],
+      "warnings": [
+        "早期缺少筹码/倍率小丑，运营容错不高。",
+        "这是高价值扩展种，不是钢K主推种。"
+      ],
+      "tags": ["Perkeo", "Invisible Joker", "Cryptid", "资源", "扩展"],
+      "sources": ["thegamer-million-seeds"]
+    }
+  ],
+  "seedDetails": {
+    "9OUU79": {
+      "completeness": "待复盘",
+      "sourceMode": "B站元数据 + 中文机制文章；公开视频无字幕",
+      "videoStatus": "Bilibili API 可读到 2P：P1 681 秒，P2 695 秒；yt-dlp 被 412 拦截，字幕接口为空。",
+      "sources": ["bili-9ouu79", "indienova-steel-k"],
+      "flow": [
+        {
+          "stage": "成型目标",
+          "actions": [
+            "路线核心是红封钢K：尽量把牌库转成钢铁 K，并用红蜡封增加重触发。",
+            "终局小丑围绕男爵、哑剧、复制类小丑展开，视频标题显示 6 底注 17 回合即可爆分。"
+          ]
+        },
+        {
+          "stage": "触发结构",
+          "actions": [
+            "indienova 示例里出现男爵 2、哑剧 1、复制 3；触发顺序可整理为男爵/哑剧/哑剧/男爵/男爵/男爵一类结构。",
+            "出单张高牌，尽量让更多钢K留在手中，靠持牌触发叠指数倍率。"
+          ]
+        },
+        {
+          "stage": "后续待补",
+          "actions": [
+            "需要人工看视频或下载后做 OCR/转写，补齐每一底注商店购买、跳过标签、牌库改造顺序。",
+            "当前站点不把它标为完整流程，避免误导。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "不要把视频标题当成逐回合流程；没有字幕时只能做热度入口和待复盘任务。",
+        "钢K成型后仍要注意 The Plant 等人头牌克制 Boss。"
+      ]
+    },
+    "U8RJYV6N": {
+      "completeness": "待复盘",
+      "sourceMode": "B站元数据；公开视频无字幕",
+      "videoStatus": "Bilibili API 可读到单 P，时长 2372 秒；字幕接口为空。",
+      "flow": [
+        {
+          "stage": "定位",
+          "actions": [
+            "这是“前期运营思路”视频，价值在于解释经济、过渡牌和关键节点，而不是只给终局截图。",
+            "当前没有字幕，站内先作为待复盘队列展示。"
+          ]
+        },
+        {
+          "stage": "后续待补",
+          "actions": [
+            "建议后续人工提取：每个商店买卖、跳过盲注、经济阈值、何时从过渡牌型转钢K。",
+            "补完后可做成新手最需要的逐回合路线页。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "不要只写“前期运营”，必须记录到回合级选择才算完整攻略。"
+      ]
+    },
+    "6B678B4W": {
+      "completeness": "完整到 Ante 8",
+      "sourceMode": "BalatroSeeds 逐 Ante 文字路线",
+      "videoStatus": "网页正文可读，无需视频字幕。",
+      "flow": [
+        {
+          "stage": "Ante 1 - 开局拿 Perkeo 和经济",
+          "actions": [
+            "小盲注跳过，拿 Mega Arcana Pack。",
+            "从 Soul 拿 Perkeo；High Priestess 给 Jupiter / Earth，保留 Jupiter，卖 Earth。",
+            "立刻买 Seed Money；之后每回合卖负片 Jupiter 做经济，其余尽量攒利息。"
+          ]
+        },
+        {
+          "stage": "Ante 2 - 同花过渡和 Voucher Tag",
+          "actions": [
+            "进小盲注前保持全经济，卖负片 Jupiter，目标约 20 美元。",
+            "小盲注用弃牌找梅花同花，目标单手 1600 分。",
+            "大盲注前刷新一次买 Crafty Joker；拿 Voucher Tag 跳过，然后打 Boss。",
+            "Boss 阶段按花色排序，先弃右侧 5 张，再根据已知黑桃推断继续找 5 张黑桃。"
+          ]
+        },
+        {
+          "stage": "Ante 3 - Bull / Golden Joker / Director's Cut",
+          "actions": [
+            "小盲注前买 Bull 和 Golden Joker，并买 Overstock、Director's Cut。",
+            "Director's Cut 是为后面 The Plant 这类 Boss 做保险。",
+            "大盲注前拿 Spectral Pack 中的 Immolate，继续靠负片 Jupiter 和利息滚经济。"
+          ]
+        },
+        {
+          "stage": "Ante 4 - Money Tree 和 Sixth Sense",
+          "actions": [
+            "小盲注前目标商店资金约 87 美元，买 Money Tree 后继续经济。",
+            "大盲注前拿 Spectral Pack 的 Immolate、Arcana Pack 的 Hermit，刷新 5 次不拿牌，保留资金。",
+            "Boss 前刷新 4 次拿 Sixth Sense；Boss 用同花正常过。"
+          ]
+        },
+        {
+          "stage": "Ante 5 - 转高牌 / DNA / 第一张红封钢K",
+          "actions": [
+            "小盲注前买 Blank Tag；Arcana Pack 用 Hanged Man 删除 4、5 红桃。",
+            "刷新到 Stuntman，卖 Crafty Joker 换 Stuntman。",
+            "从这里转高牌，重点找 6 并单出；小盲注用 6 梅花触发 Sixth Sense，保留 Immolate、Deja Vu、Cryptid。",
+            "大盲注前拿 Immolate，Mega Standard Pack 里拿倍数 6 和紫封倍数 5；用弃牌找紫封来产塔罗。",
+            "按路线刷新：先买/use Pluto，中段买 Death 但不要卖，最后拿 Foil DNA，卖 Golden Joker 换 DNA。",
+            "Boss 前买两个 Mega Arcana Pack，第二包用 Deja Vu 给 King 上红封，Hanged Man 删 2/3 梅花，Chariot 给红封 King 上钢铁。"
+          ]
+        },
+        {
+          "stage": "Ante 6 - Crystal Ball 和经济循环",
+          "actions": [
+            "小盲注前买 Crystal Ball，其余继续经济。",
+            "Boss 前拿 Arcana Pack 的 Hermit，刷新买 Fool，再买 Temperance；用 Fool 复制 Temperance 并使用。",
+            "Boss 仍靠红封钢K路线过，但可能需要两手。保留 Immolate。"
+          ]
+        },
+        {
+          "stage": "Ante 7 - Baron 入队",
+          "actions": [
+            "小盲注前买 Antimatter。",
+            "拿 Arcana Pack，走 Immolate -> Fool -> Temperance 资源链。",
+            "持续刷新直到 Baron，利用新增 Joker 位买下 Baron。",
+            "Boss 前补 Hermit、Temperance 等经济牌；Boss 阶段应能碰到 Cryptid。"
+          ]
+        },
+        {
+          "stage": "Ante 8 - Telescope / Brainstorm 后放开",
+          "actions": [
+            "买 Telescope。",
+            "Celestial Pack 拿 Pluto。",
+            "刷新一次拿 Brainstorm；从此进入自由运营和长线无尽阶段。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "前期不要提前卖 Death，它要积累用于牌库改造。",
+        "Director's Cut 是为了处理后续 Boss，尤其要防 The Plant。",
+        "该路线默认全 Joker 解锁；档案不完整会导致商店替换。"
+      ]
+    },
+    "VH1A55LV": {
+      "completeness": "节点型长线",
+      "sourceMode": "BalatroSeed 搜索摘要；Jina 直读当前返回 404",
+      "videoStatus": "非视频来源。",
+      "flow": [
+        {
+          "stage": "Ante 1-3",
+          "actions": [
+            "以 Plasma Deck 开局，目标是 Red Seal Steel King。",
+            "Ante 1-2 从第二个 Spectral Pack 拿 Yorick。",
+            "Ante 1-3 从第三个 Mega Spectral Pack 抽 Negative Perkeo，这是无尽路线核心。"
+          ]
+        },
+        {
+          "stage": "Ante 3-7",
+          "actions": [
+            "Ante 3-3 刷商店拿 Brainstorm。",
+            "前期用 Death / Fool / Hanged Man / Chariot / Strength 增加 King 密度和钢K质量。",
+            "Ante 7-2 从第五个 Spectral Pack 拿 Deja Vu，上红封。"
+          ]
+        },
+        {
+          "stage": "Ante 9-26",
+          "actions": [
+            "Ante 9-1 拿 Seance 做过渡，靠顺子同花产 Spectral Pack，找 Ectoplasm 和 Cryptid。",
+            "Ante 16-2、17-1 附近出现第二 Mime / Baron。",
+            "Ante 18-2、23-2、26-1 继续补 Blueprint，最后替换 Showman 完成阵容。"
+          ]
+        },
+        {
+          "stage": "Ante 32-39",
+          "actions": [
+            "后期大量刷 Boss 到 Serpent，靠 Cryptid 推进到 Ante 39。",
+            "这类路线需要记录金币、刷新次数和消耗牌库存，否则复现难度很高。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "原链接当前 Jina 直读为 404，站内标成“节点型”，不是完整逐商店流程。",
+        "长线极限路线不要只看 Joker 名单，消耗牌库存和 Boss reroll 才是关键。"
+      ]
+    },
+    "WP7KMLHM": {
+      "completeness": "概要",
+      "sourceMode": "BalatroSeeds 简短描述",
+      "flow": [
+        {
+          "stage": "路线定位",
+          "actions": [
+            "Ghost Deck 的 Baron/Mime 种子，核心组件有 Blueprint、Baron、Perkeo、Mime、Brainstorm。",
+            "没有 Observatory，不能默认走星球复制。",
+            "后续可刷 Showman，争取第二个 Brainstorm 或 Blueprint，让 Perkeo 复制 Cryptid。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "来源没有逐 Ante 表，不要标成完整流程。",
+        "没有 Observatory 时，路线更依赖 Cryptid 和复制小丑。"
+      ]
+    },
+    "6ZFZTFPQ": {
+      "completeness": "节点型",
+      "sourceMode": "BalatroSeeds 简短描述",
+      "flow": [
+        {
+          "stage": "Ante 4",
+          "actions": [
+            "Black Deck 路线，Ante 4 大盲注后商店同时出现 Triboulet 和 Perkeo。",
+            "同一商店可拿 Invisible Joker；若只保留传奇 Joker，Invisible 可复制第二个 Triboulet。"
+          ]
+        },
+        {
+          "stage": "Ante 7-11",
+          "actions": [
+            "Ante 7 Boss 后商店出现 Sixth Sense，可用 Perkeo + Death 6s 的方式刷 Spectral Cards。",
+            "Ante 9 Boss 后商店有 Sock and Buskin。",
+            "Ante 10 大盲注商店 Standard Pack 能找到红封 King。",
+            "Ante 11 Boss 后商店出现 Brainstorm。"
+          ]
+        },
+        {
+          "stage": "Ante 14+",
+          "actions": [
+            "Ante 14 之后可通过较多刷新找到 Blueprint。",
+            "Blank Voucher 前 20 个 Ante 基本不出现，因此 Black Deck 的额外 Joker 位很重要。",
+            "The Plant 前 20 个 Ante 不明显威胁，后期可用 Retcon 处理。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "Black Deck 格子压力大，不要乱占 Joker 位。",
+        "这是人头牌高上限路线，不是纯钢K路线。"
+      ]
+    },
+    "3J6FZFE4": {
+      "completeness": "节点型",
+      "sourceMode": "Gaming.net / Steam 社区摘要",
+      "flow": [
+        {
+          "stage": "早期核心",
+          "actions": [
+            "Ante 1 可以拿 Perkeo。",
+            "早期从 Wraith / 商店补 Blueprint、Mime、Baron、Burnt Joker 等核心。"
+          ]
+        },
+        {
+          "stage": "钢K转化",
+          "actions": [
+            "Standard Pack 中找红封多彩 Jack。",
+            "用 Strength 把 Jack 强化到 King，再用 Chariot 做钢铁，形成红封钢K样板。",
+            "Ante 10 可找 Negative Showman，用来继续找更多 Blueprint / Brainstorm。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "不同牌组和版本会影响商店顺序，实测时必须记录版本。"
+      ]
+    },
+    "47KQV874": {
+      "completeness": "部分完整",
+      "sourceMode": "DualShockers 逐节点说明",
+      "flow": [
+        {
+          "stage": "Ante 1",
+          "actions": [
+            "第一轮跳过拿 Rare Joker tag。",
+            "不要被 Double Tag 诱惑，第二轮正常打。"
+          ]
+        },
+        {
+          "stage": "Ante 2",
+          "actions": [
+            "之后商店有免费 DNA 和 8 美元 Baron，开始复制 King。",
+            "打 Ante 2 Big Blind，之后商店有 Invisible Joker 和 Burnt Joker。"
+          ]
+        },
+        {
+          "stage": "Ante 3",
+          "actions": [
+            "第一个 Buffoon Pack 有 Blueprint。",
+            "实战里把 Blueprint 在 DNA 和 Baron 之间移动：先复制 DNA 做牌库，再复制 Baron 打分。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "这是 King/Baron 教学种，但后续钢K细节需要玩家自己把 King 做成红封钢铁。"
+      ]
+    },
+    "E49PIJ7B": {
+      "completeness": "早期节点",
+      "sourceMode": "DualShockers 逐节点说明",
+      "flow": [
+        {
+          "stage": "第一轮后",
+          "actions": [
+            "第一轮结束后拿 Negative Brainstorm。",
+            "如果单手赢第一轮，剩余金币可拿 The Idol。"
+          ]
+        },
+        {
+          "stage": "Boss 后",
+          "actions": [
+            "Boss 后 Buffoon Pack 有 Mime 或 Swashbuckler，可作为不同构筑核心。",
+            "Brainstorm 用来练习复制最左侧 Joker 的摆位。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "这不是完整钢K路线，更适合作为复制小丑教学。"
+      ]
+    },
+    "HJYPULJ3": {
+      "completeness": "早期节点",
+      "sourceMode": "DualShockers 逐节点说明",
+      "flow": [
+        {
+          "stage": "大盲注后",
+          "actions": [
+            "商店有 Hanging Chad。",
+            "Spectral Pack 有 Ankh，可安全复制 Perkeo。"
+          ]
+        },
+        {
+          "stage": "Boss 后 / Ante 2",
+          "actions": [
+            "Boss 后可拿 10 美元 Brainstorm。",
+            "建议打完 Ante 2 小盲注后买 Arcana Pack，用 Emperor 找 Death 和 Moon，便于删改牌库。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "强度来自 Perkeo 复制消耗牌，不是天然钢K；需要后续转 Chariot / Death / Cryptid。"
+      ]
+    },
+    "4YY5NT94": {
+      "completeness": "社区摘要",
+      "sourceMode": "Steam 社区片段",
+      "flow": [
+        {
+          "stage": "已知信息",
+          "actions": [
+            "Spectral Deck 社区种，目标是多 Polychrome Baron + 红封钢K。",
+            "社区提到可推进到 Ante 18。"
+          ]
+        },
+        {
+          "stage": "后续待补",
+          "actions": [
+            "需要重新实测记录每个关键 Joker 和红封钢K出现位置。",
+            "目前只作为社区发现，不标完整路线。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "Steam 讨论信息碎片化，必须标注为低完整度。"
+      ]
+    },
+    "CYUCNZW1": {
+      "completeness": "节点型",
+      "sourceMode": "BalatroSeeds 简短描述",
+      "flow": [
+        {
+          "stage": "早中期",
+          "actions": [
+            "Checkered Deck，早期 Blueprint + Photochad + Bloodstone + Sock and Buskin + Idol。",
+            "经济压力不大；自然负片 Golden Joker 和 Mail-in Rebate 等经济组件可支撑刷新。"
+          ]
+        },
+        {
+          "stage": "Ante 7-13",
+          "actions": [
+            "Ante 7/8 左右补 Oops，全力放大 Bloodstone 输出。",
+            "中期找到红封红桃 J，用 Strength 转 King，再靠 Death 复制成红封幸运 King。",
+            "Ante 13 左右改用 DNA，Blueprint 复制 DNA，每回合做两张红封玻璃 King。"
+          ]
+        },
+        {
+          "stage": "Ante 15-18",
+          "actions": [
+            "Ante 13/14 通过 Voucher skip 避开红桃被削的 Boss。",
+            "Ante 15 拿 Dusk 续命，最终可推进到 Ante 18。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "这是 Flush Five / Lucky / Glass King 路线，不是钢K主线。",
+        "来源作者明确说 deck fixing 最花时间，不能只追 Joker。"
+      ]
+    },
+    "IUR4CTY3": {
+      "completeness": "中文早期流程",
+      "sourceMode": "TapTap 帖子 + 评论补充",
+      "sources": ["taptap-iur4cty3"],
+      "flow": [
+        {
+          "stage": "第一回合",
+          "actions": [
+            "幻灵牌组白注开局，第一回合小盲注弃掉初始红桃、梅花、方片，直到出现指定黑桃 Q/J/10/4/6 组合，目标正好 300 分。",
+            "这样可以节约出牌数并拿到更多赏金。"
+          ]
+        },
+        {
+          "stage": "头脑风暴和象形文字",
+          "actions": [
+            "早期出现头脑风暴；幻灵牌组选择左下角象形文字优惠券。",
+            "其他卡组如果能直接拿头脑风暴，可简化这一步。"
+          ]
+        },
+        {
+          "stage": "免费商店与复制",
+          "actions": [
+            "选择跳过盲注，拿下一家商店免费。",
+            "在免费商店先用幻灵小丑牌获得头脑风暴，再使用 1.5 倍率相关增益，最后用幻灵包复制第二张头脑风暴。"
+          ]
+        },
+        {
+          "stage": "Boss 后与后续核心",
+          "actions": [
+            "击败该底注 Boss 后出现 DNA，前期天胡完成。",
+            "作者评论补充：底注 4 / 第 11 回合大塔罗包有 Perkeo；底注 5 / 第 14 回合刷新商店有 Mime。",
+            "底注 10 / 第 26 回合商店刷新出现 K 皇，需要提前攒钱。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "帖子依赖图片位置，文字只能还原关键步骤，仍建议后续人工补图复盘。",
+        "要求全解锁。"
+      ]
+    },
+    "2K9K9KH": {
+      "completeness": "部分完整",
+      "sourceMode": "TheGamer 逐节点说明",
+      "sources": ["thegamer-million-seeds"],
+      "flow": [
+        {
+          "stage": "第一家商店",
+          "actions": [
+            "至少带 6 美元进第一家商店。",
+            "买 Arcana Pack，先用 Hermit。",
+            "再买 Buffoon Pack，选择 Invisible Joker。"
+          ]
+        },
+        {
+          "stage": "第二到第四回合",
+          "actions": [
+            "第二回合后的商店打开第二个 Arcana Pack，Soul 召唤 Perkeo。",
+            "第三回合后卖 Invisible Joker 复制 Perkeo。",
+            "第四回合后 Invisible Joker 再次出现，形成三 Perkeo。"
+          ]
+        },
+        {
+          "stage": "转化方向",
+          "actions": [
+            "成型后优先复制 Cryptid。",
+            "如果想转钢K，可用 Chariot 做钢牌、Death 改牌库。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "早期没有稳定筹码/倍率时容易死，先保命再贪资源。"
+      ]
+    }
+  },
+  "sourceAdditions": {
+    "taptap-iur4cty3": {
+      "label": "TapTap: 小丑牌钢K种子推荐 IUR4CTY3",
+      "url": "https://www.taptap.cn/moment/601730332038793122"
+    },
+    "indienova-steel-k": {
+      "label": "indienova: 求种子，但《小丑牌》版",
+      "url": "https://indienova.com/indie-game-review/balatro-steel-k-naneinf-tricks/"
+    },
+    "thegamer-million-seeds": {
+      "label": "TheGamer: How To Hit 1 Million Score Using Seeds In Balatro",
+      "url": "https://www.thegamer.com/balatro-1-million-score-seeds-tips-guide/"
+    }
+  }
+}

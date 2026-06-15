@@ -74,6 +74,20 @@
         </div>
         <div id="tagFilters" class="tag-row" aria-label="热门标签"></div>
         <div class="result-line"><span id="resultCount">0</span> 个结果</div>
+        <article id="routeViewer" class="route-viewer" hidden>
+          <div class="route-viewer-head">
+            <div>
+              <p class="section-kicker">Run Flow</p>
+              <h3 id="routeTitle"></h3>
+              <p id="routeSubtitle"></p>
+            </div>
+            <button id="closeRouteViewer" class="button compact" type="button">收起</button>
+          </div>
+          <div id="routeMeta" class="route-meta-row"></div>
+          <div id="routeFlow" class="flow-list"></div>
+          <div id="routeMistakes" class="mistake-box"></div>
+          <div id="routeSources" class="source-list"></div>
+        </article>
         <div id="seedGrid" class="seed-grid"></div>
       </section>
 
@@ -170,6 +184,7 @@
             <button class="copy-button" type="button">复制</button>
           </div>
           <h3></h3>
+          <span class="flow-badge"></span>
           <p class="seed-summary"></p>
           <dl class="seed-meta">
             <div><dt>牌组</dt><dd data-field="deck"></dd></div>
@@ -178,6 +193,7 @@
           </dl>
           <ul class="route-list"></ul>
           <div class="tag-list"></div>
+          <button class="detail-button" type="button">查看完整牌局流程</button>
           <div class="source-list"></div>
         </div>
       </article>

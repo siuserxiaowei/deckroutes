@@ -1,8 +1,10 @@
 const state = {
   data: null,
+  routeData: null,
   query: "",
   archetype: "all",
-  tag: "all"
+  tag: "all",
+  activeSeed: null
 };
 
 const formatNumber = new Intl.NumberFormat("zh-CN");
@@ -23,7 +25,7 @@ function getSource(id) {
 
 function sourceLinks(sourceIds) {
   const fragment = document.createDocumentFragment();
-  sourceIds.forEach((id, index) => {
+  (sourceIds || []).forEach((id, index) => {
     const source = getSource(id);
     const link = el("a", "source-link", index === 0 ? "来源" : `来源 ${index + 1}`);
     link.href = source.url;
@@ -33,6 +35,33 @@ function sourceLinks(sourceIds) {
     fragment.append(link);
   });
   return fragment;
+}
+
+function mergeRouteData() {
+  if (!state.routeData) return;
+
+  state.data.sources = {
+    ...state.data.sources,
+    ...(state.routeData.sourceAdditions || {})
+  };
+
+  const existing = new Map(state.data.seeds.map((seed) => [seed.seed, seed]));
+  (state.routeData.additionalSeeds || []).forEach((seed) => {
+    if (!existing.has(seed.seed)) {
+      state.data.seeds.push(seed);
+      existing.set(seed.seed, seed);
+    }
+  });
+
+  state.data.seeds.forEach((seed) => {
+    seed.detail = state.routeData.seedDetails?.[seed.seed] || null;
+  });
+
+  const seedStat = state.data.stats.find((item) => item.label === "已整理种子");
+  if (seedStat) {
+    seedStat.value = String(state.data.seeds.length);
+    seedStat.note = "含可点击牌局流程与待复盘队列";
+  }
 }
 
 function renderStats() {
@@ -90,7 +119,9 @@ function seedMatches(seed) {
     seed.difficulty,
     seed.summary,
     ...seed.tags,
-    ...seed.route
+    ...seed.route,
+    seed.detail?.completeness || "",
+    ...(seed.detail?.flow || []).flatMap((stage) => [stage.stage, ...(stage.actions || [])])
   ]
     .join(" ")
     .toLowerCase();
@@ -127,6 +158,9 @@ function renderSeeds() {
       $(".seed-card-image", node).alt = `${seed.title} 封面图`;
       $(".seed-code", node).textContent = seed.seed;
       $("h3", node).textContent = seed.title;
+      const badge = $(".flow-badge", node);
+      badge.textContent = seed.detail?.completeness ? `流程：${seed.detail.completeness}` : "流程：待补";
+      badge.dataset.status = seed.detail?.completeness || "待补";
       $(".seed-summary", node).textContent = seed.summary;
       $('[data-field="deck"]', node).textContent = seed.deck;
       $('[data-field="archetype"]', node).textContent = seed.archetype;
@@ -141,6 +175,15 @@ function renderSeeds() {
       const sources = $(".source-list", node);
       sources.append(sourceLinks(seed.sources));
 
+      const detailButton = $(".detail-button", node);
+      detailButton.addEventListener("click", () => showRoute(seed, true));
+
+      article.classList.toggle("has-flow", Boolean(seed.detail));
+      article.addEventListener("click", (event) => {
+        if (event.target.closest("button, a")) return;
+        showRoute(seed, true);
+      });
+
       const copy = $(".copy-button", node);
       copy.addEventListener("click", async () => {
         copy.textContent = "已复制";
@@ -153,6 +196,83 @@ function renderSeeds() {
       return article;
     })
   );
+}
+
+function showRoute(seed, shouldScroll = false) {
+  state.activeSeed = seed.seed;
+  const viewer = $("#routeViewer");
+  const detail = seed.detail || {
+    completeness: "待补",
+    sourceMode: "暂无可读流程",
+    videoStatus: "",
+    flow: [
+      {
+        stage: "待补流程",
+        actions: ["这个种子目前只有摘要，还没有抓到可复现的逐阶段路线。"]
+      }
+    ],
+    mistakes: ["不要把只有标题或热度的种子当作完整攻略。"]
+  };
+
+  $("#routeTitle").textContent = `${seed.seed} · ${seed.title}`;
+  $("#routeSubtitle").textContent = seed.summary;
+
+  const metaItems = [
+    ["完整度", detail.completeness || "待补"],
+    ["牌组", seed.deck],
+    ["流派", seed.archetype],
+    ["来源状态", detail.sourceMode || "来源待补"]
+  ];
+  if (detail.videoStatus) metaItems.push(["视频/字幕", detail.videoStatus]);
+  $("#routeMeta").replaceChildren(
+    ...metaItems.map(([label, value]) => {
+      const item = el("div", "route-meta-item");
+      item.append(el("span", "", label));
+      item.append(el("strong", "", value));
+      return item;
+    })
+  );
+
+  $("#routeFlow").replaceChildren(
+    ...(detail.flow || []).map((stage) => {
+      const node = el("section", "flow-stage");
+      const body = el("div");
+      body.append(el("h4", "", stage.stage));
+      const list = el("ul");
+      (stage.actions || []).forEach((line) => list.append(el("li", "", line)));
+      body.append(list);
+      node.append(body);
+      return node;
+    })
+  );
+
+  const mistakeBox = $("#routeMistakes");
+  mistakeBox.replaceChildren();
+  const mistakes = detail.mistakes || seed.warnings || [];
+  if (mistakes.length) {
+    mistakeBox.append(el("h4", "", "常见坑 / 复盘备注"));
+    const list = el("ul");
+    mistakes.forEach((line) => list.append(el("li", "", line)));
+    mistakeBox.append(list);
+    mistakeBox.hidden = false;
+  } else {
+    mistakeBox.hidden = true;
+  }
+
+  const sourceIds = [...new Set([...(seed.sources || []), ...(detail.sources || [])])];
+  $("#routeSources").replaceChildren(sourceLinks(sourceIds));
+  viewer.hidden = false;
+  if (shouldScroll) {
+    history.replaceState(null, "", `#seed-${seed.seed}`);
+    viewer.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
+function maybeOpenRouteFromHash() {
+  const match = decodeURIComponent(window.location.hash).match(/^#seed-(.+)$/);
+  if (!match) return;
+  const seed = state.data.seeds.find((item) => item.seed.toLowerCase() === match[1].toLowerCase());
+  if (seed) showRoute(seed, true);
 }
 
 async function copySeed(seed) {
@@ -298,12 +418,26 @@ function bindEvents() {
     $("#archetypeFilter").value = "all";
     renderSeeds();
   });
+
+  $("#closeRouteViewer").addEventListener("click", () => {
+    state.activeSeed = null;
+    $("#routeViewer").hidden = true;
+    history.replaceState(null, "", "#seeds");
+  });
+
+  window.addEventListener("hashchange", maybeOpenRouteFromHash);
 }
 
 async function boot() {
-  const response = await fetch("assets/data/site-data.json");
-  if (!response.ok) throw new Error(`Failed to load data: ${response.status}`);
-  state.data = await response.json();
+  const [siteResponse, routeResponse] = await Promise.all([
+    fetch("assets/data/site-data.json"),
+    fetch("assets/data/route-data.json")
+  ]);
+  if (!siteResponse.ok) throw new Error(`Failed to load data: ${siteResponse.status}`);
+  if (!routeResponse.ok) throw new Error(`Failed to load route data: ${routeResponse.status}`);
+  state.data = await siteResponse.json();
+  state.routeData = await routeResponse.json();
+  mergeRouteData();
 
   $("#asOf").textContent = state.data.meta.asOf;
   renderStats();
@@ -315,6 +449,7 @@ async function boot() {
   renderDomains();
   renderFutureGames();
   bindEvents();
+  maybeOpenRouteFromHash();
 }
 
 boot().catch((error) => {

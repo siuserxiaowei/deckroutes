@@ -12,7 +12,9 @@ DeckRoutes is a static GitHub Pages guide site for Balatro seeds, Steel King rou
 
 ## Data
 
-All page content is in `assets/data/site-data.json`.
+Index content is in `assets/data/site-data.json`.
+
+Seed route details and replay-review notes are in `assets/data/route-data.json`.
 
 The data was compiled on 2026-06-15 with Agent Reach, Exa search, Bilibili public search, GitHub search, RDAP, and WHOIS checks. Domain status can change and should be rechecked at the registrar before purchase.
 
