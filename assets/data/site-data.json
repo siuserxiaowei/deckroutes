@@ -1,0 +1,608 @@
+{
+  "meta": {
+    "name": "DeckRoutes",
+    "title": "DeckRoutes - Balatro Seed Atlas",
+    "asOf": "2026-06-15",
+    "language": "zh-CN",
+    "method": "Agent Reach + Exa web search + Bilibili public search + GitHub search + RDAP/WHOIS checks"
+  },
+  "stats": [
+    {
+      "label": "已整理种子",
+      "value": "12",
+      "note": "钢K、Baron/Mime、Perkeo、金注扩展"
+    },
+    {
+      "label": "中文视频样本播放",
+      "value": "1.55M+",
+      "note": "B站公开搜索结果合计，不含全平台"
+    },
+    {
+      "label": "候选域名",
+      "value": "6",
+      "note": "购买前需注册商复核"
+    },
+    {
+      "label": "首版方向",
+      "value": "Balatro",
+      "note": "后续可扩到更多小游戏攻略"
+    }
+  ],
+  "seeds": [
+    {
+      "seed": "9OUU79",
+      "title": "中文圈高热钢K爽种",
+      "deck": "视频来源未标明",
+      "archetype": "红封钢K",
+      "difficulty": "演示爽局",
+      "version": "需按视频版本复核",
+      "image": "assets/images/steel-king-route.webp",
+      "summary": "B站高播放视频标题指向红封钢K路线，适合作为首屏引流种子和钢K流教学入口。",
+      "route": [
+        "围绕红封钢K、Baron/Mime 类持牌触发路线做爆分。",
+        "标题信息显示 6 底注、17 回合爆分，说明成型窗口很早。",
+        "实操页应补录逐商店路线、跳过标签、关键塔罗/幻灵选择。"
+      ],
+      "warnings": [
+        "B站标题不是完整路线表，首版只作为高热入口，后续需要视频转录或人工复盘补全。"
+      ],
+      "tags": ["钢K", "中文视频", "爆分", "高热"],
+      "sources": ["bili-9ouu79"]
+    },
+    {
+      "seed": "U8RJYV6N",
+      "title": "前期运营思路种子",
+      "deck": "视频来源未标明",
+      "archetype": "钢K前期运营",
+      "difficulty": "学习路线",
+      "version": "需按视频版本复核",
+      "image": "assets/images/seed-vault.webp",
+      "summary": "来自 B站前期运营思路视频，适合做成中文路线复盘页，承接新手搜索需求。",
+      "route": [
+        "重点不只是终局爆分，而是从前几商店解释经济、删改牌和过渡小丑。",
+        "页面后续可拆成每回合路线表，标注购买、跳过、牌型选择。",
+        "适合作为“从零学钢K”的第二篇内容。"
+      ],
+      "warnings": [
+        "公开视频检索只拿到标题和互动数据，仍需二次复盘。"
+      ],
+      "tags": ["钢K", "运营", "中文视频", "新手"],
+      "sources": ["bili-u8rjyv6n"]
+    },
+    {
+      "seed": "6B678B4W",
+      "title": "Plasma Deck 经典 Baron/Mime 钢K路线",
+      "deck": "Plasma Deck",
+      "archetype": "Baron/Mime 钢K",
+      "difficulty": "高上限",
+      "version": "BalatroSeeds 页面版本",
+      "image": "assets/images/steel-king-route.webp",
+      "summary": "BalatroSeeds 收录的长线爆分种子，核心是 DNA、Deja Vu、Baron、Brainstorm 与 Perkeo 复制 Cryptid。",
+      "route": [
+        "前中期抓 Stuntman、Sixth Sense、DNA，先稳定过渡和复制核心牌。",
+        "通过 Deja Vu 做红封，后续找 Baron、Brainstorm，把持牌触发堆起来。",
+        "Perkeo 复制 Cryptid 后扩大钢K规模，注意 The Plant boss 对人头牌路线的压制。"
+      ],
+      "warnings": [
+        "Plasma Deck 计分结构和普通牌组不同，路线复盘时要单独解释。",
+        "遇到 The Plant 需要提前准备 reroll 或替代输出。"
+      ],
+      "tags": ["钢K", "Plasma", "Baron", "Mime", "Perkeo"],
+      "sources": ["balatroseeds-6b678b4w"]
+    },
+    {
+      "seed": "VH1A55LV",
+      "title": "39 Ante 极限钢K路线",
+      "deck": "Plasma Deck",
+      "archetype": "红封钢K",
+      "difficulty": "极限长线",
+      "version": "BalatroSeed guide",
+      "image": "assets/images/joker-strategy.webp",
+      "summary": "BalatroSeed.net 中英指南提到 Negative Perkeo、Brainstorm、Deja Vu、Seance、双 Mime/Baron 与多 Blueprint 的长线结构。",
+      "route": [
+        "Ante 1-3 关注 Negative Perkeo，前期决定路线天花板。",
+        "Ante 3 附近拿 Brainstorm，Ante 7 通过 Deja Vu 做红封钢K基础。",
+        "Ante 16-26 继续补 Mime、Baron、Blueprint，终局进入超长线爆分。"
+      ],
+      "warnings": [
+        "路线较长，适合做进阶文章，不适合只想快速爽局的玩家。",
+        "需要把每个关键节点做成可复盘时间线。"
+      ],
+      "tags": ["钢K", "Plasma", "Perkeo", "极限", "长线"],
+      "sources": ["balatroseed-vh1a55lv"]
+    },
+    {
+      "seed": "WP7KMLHM",
+      "title": "Ghost Deck Baron/Mime 备选种",
+      "deck": "Ghost Deck",
+      "archetype": "Baron/Mime 钢K",
+      "difficulty": "高上限",
+      "version": "BalatroSeeds 页面版本",
+      "image": "assets/images/joker-strategy.webp",
+      "summary": "BalatroSeeds 收录的 Ghost Deck Baron/Mime 种子，适合补齐非 Plasma 牌组的钢K路线。",
+      "route": [
+        "围绕 Baron/Mime 叠持牌触发，尽早把高牌路线和经济过渡稳定下来。",
+        "页面提示没有 Observatory，因此不要把星球复制作为默认核心。",
+        "Showman 可为额外 Blueprint/Brainstorm 提供空间，Perkeo 仍然优先考虑 Cryptid。"
+      ],
+      "warnings": [
+        "没有 Observatory 时，路线页面要更强调牌面复制和小丑摆位。"
+      ],
+      "tags": ["钢K", "Ghost", "Baron", "Mime"],
+      "sources": ["balatroseeds-wp7kmlhm"]
+    },
+    {
+      "seed": "6ZFZTFPQ",
+      "title": "Black Deck Triboulet + Perkeo 高上限",
+      "deck": "Black Deck",
+      "archetype": "人头牌高上限",
+      "difficulty": "进阶",
+      "version": "BalatroSeeds 页面版本",
+      "image": "assets/images/joker-strategy.webp",
+      "summary": "不是纯钢K，但同样围绕人头牌和持牌/复制体系，适合做“钢K相邻流派”内容。",
+      "route": [
+        "Ante 4 商店出现 Triboulet + Perkeo，路线强度来自人头牌触发和复制资源。",
+        "后续补红封 King、Brainstorm、Blueprint，形成高倍数叠加。",
+        "Black Deck 格子压力更大，路线文案要提醒删改牌和经济节奏。"
+      ],
+      "warnings": [
+        "Black Deck 运营难度高，种子好不等于无脑赢。"
+      ],
+      "tags": ["Black", "Perkeo", "Triboulet", "人头牌"],
+      "sources": ["balatroseeds-6zfztfpq"]
+    },
+    {
+      "seed": "3J6FZFE4",
+      "title": "Perkeo 早出 + Baron/Mime 组合",
+      "deck": "未限定",
+      "archetype": "Baron/Mime 钢K",
+      "difficulty": "高上限",
+      "version": "媒体/社区复核",
+      "image": "assets/images/seed-vault.webp",
+      "summary": "Gaming.net 与 Steam 社区都提到过的热门种子，前期 Perkeo，随后 Blueprint、Mime、Baron、Burnt Joker 进入爆分路线。",
+      "route": [
+        "Ante 1 关注 Perkeo，早期资源复制会显著降低成型难度。",
+        "从 Wraith 或商店补 Blueprint、Mime、Baron、Burnt Joker 等关键组件。",
+        "通过 Strength、Chariot 等牌把红封/闪色 J 转成钢K路线。"
+      ],
+      "warnings": [
+        "不同牌组和版本可能影响商店顺序，需要页面内标版本。"
+      ],
+      "tags": ["钢K", "Perkeo", "Baron", "Mime", "社区"],
+      "sources": ["gamingnet-best-seeds", "steam-awesome-seeds"]
+    },
+    {
+      "seed": "47KQV874",
+      "title": "King Stuff 教学种",
+      "deck": "未限定",
+      "archetype": "King/Baron 体系",
+      "difficulty": "进阶",
+      "version": "DualShockers 页面版本",
+      "image": "assets/images/seed-vault.webp",
+      "summary": "DualShockers 称其为 King Stuff，重点是早期 Rare Joker tag、DNA、Baron、Burnt Joker 和 Blueprint。",
+      "route": [
+        "第一轮跳过拿 Rare Joker tag，后续以 DNA 和 Baron 为核心。",
+        "Ante 2 后找 Invisible/Burnt Joker，Ante 3 附近补 Blueprint。",
+        "适合写成“为什么 King 体系能转钢K”的路线页。"
+      ],
+      "warnings": [
+        "媒体文章通常不是逐回合表，需要实测补全。"
+      ],
+      "tags": ["King", "DNA", "Baron", "Blueprint"],
+      "sources": ["dualshockers-seeds-to-try"]
+    },
+    {
+      "seed": "E49PIJ7B",
+      "title": "Negative Brainstorm 组件种",
+      "deck": "未限定",
+      "archetype": "复制组件",
+      "difficulty": "组件练习",
+      "version": "DualShockers 页面版本",
+      "image": "assets/images/joker-strategy.webp",
+      "summary": "适合练习 Brainstorm、Mime、Swashbuckler 等组件选择，不是最纯钢K，但能做复制体系教学。",
+      "route": [
+        "优先理解 Brainstorm 复制最左小丑的摆位价值。",
+        "把它放进钢K文章可作为“复制小丑基础课”的示例。",
+        "适合做成短攻略卡，不必作为主推种子。"
+      ],
+      "warnings": [
+        "和钢K最终形态相关，但并非完整钢K路线。"
+      ],
+      "tags": ["Brainstorm", "复制", "教学"],
+      "sources": ["dualshockers-seeds-to-try"]
+    },
+    {
+      "seed": "HJYPULJ3",
+      "title": "Perkeo + Death 早期资源种",
+      "deck": "未限定",
+      "archetype": "Perkeo 资源复制",
+      "difficulty": "进阶",
+      "version": "DualShockers 页面版本",
+      "image": "assets/images/gold-stake-roadmap.webp",
+      "summary": "DualShockers 提到 Perkeo、Death、Ankh、Brainstorm 的早期组合，适合做 Perkeo 资源体系文章。",
+      "route": [
+        "利用 Perkeo 复制关键消耗牌，Death 负责牌面改造。",
+        "Ankh 和 Brainstorm 提供额外复制/倍数结构。",
+        "可作为钢K之外的高上限路线补充。"
+      ],
+      "warnings": [
+        "路线依赖资源牌使用顺序，后续要补实际回合截图或表格。"
+      ],
+      "tags": ["Perkeo", "Death", "Brainstorm", "资源"],
+      "sources": ["dualshockers-seeds-to-try"]
+    },
+    {
+      "seed": "4YY5NT94",
+      "title": "Spectral Deck 社区红封钢K长线",
+      "deck": "Spectral Deck",
+      "archetype": "红封钢K",
+      "difficulty": "社区长线",
+      "version": "Steam 社区帖",
+      "image": "assets/images/steel-king-route.webp",
+      "summary": "Steam 社区 Awesome Seeds 讨论中提到 5 Poly Barons、红封钢K和 Ante 18，适合做社区复盘型内容。",
+      "route": [
+        "Spectral Deck 更容易围绕幻灵资源做爆发和改造。",
+        "社区信息强调多 Baron 和红封钢K，路线价值在终局上限。",
+        "适合标注为社区发现，等待实测补完。"
+      ],
+      "warnings": [
+        "社区帖信息碎片化，需要人工验证每个关键节点。"
+      ],
+      "tags": ["Spectral", "钢K", "社区", "长线"],
+      "sources": ["steam-awesome-seeds"]
+    },
+    {
+      "seed": "CYUCNZW1",
+      "title": "Checkered Deck 玻璃/幸运牌扩展",
+      "deck": "Checkered Deck",
+      "archetype": "非钢K扩展",
+      "difficulty": "扩展题材",
+      "version": "BalatroSeeds 页面版本",
+      "image": "assets/images/gold-stake-roadmap.webp",
+      "summary": "不是钢K主线，但适合展示 DeckRoutes 后续不只做钢K，可以扩展到 Checkered、Flush 和照片流派。",
+      "route": [
+        "围绕 Checkered Deck、Photochad、Bloodstone、Idol 等组合做 Flush/人头牌扩展。",
+        "可作为“非钢K高分流派”分类页入口。",
+        "有助于让站点从单一爱好扩成多流派攻略库。"
+      ],
+      "warnings": [
+        "不是钢K流，页面标签必须分开，避免用户误点。"
+      ],
+      "tags": ["Checkered", "扩展", "非钢K", "Flush"],
+      "sources": ["balatroseeds-cyucnzw1"]
+    }
+  ],
+  "strategies": [
+    {
+      "title": "钢K流核心判断",
+      "image": "assets/images/steel-king-route.webp",
+      "body": "钢K流不是单张钢牌强，而是把“King + Steel + Red Seal + Baron + Mime + Blueprint/Brainstorm”变成多次持牌触发。站点内容应该先教玩家判断是否能转：有无 DNA/Death/Chariot/Deja Vu，有无 Baron/Mime，有无复制小丑和足够经济。",
+      "checklist": [
+        "优先找 Baron，再找 Mime，最后补复制组件。",
+        "红封钢K越早建立，后续 Death/DNA 复制收益越大。",
+        "普通高牌过渡时先保证 +Mult 和经济，不要过早卖掉保命组件。"
+      ],
+      "sources": ["gamesgg-baron-mime", "gamesgg-steel-cards", "wiki-baron", "wiki-red-seal"]
+    },
+    {
+      "title": "Blueprint / Brainstorm 摆位",
+      "image": "assets/images/joker-strategy.webp",
+      "body": "Brainstorm 复制最左侧小丑，Blueprint 复制右侧小丑。钢K路线的一个核心内容点，是用可视化图解释 Baron/Mime/Blueprint/Brainstorm 的摆位变化。",
+      "checklist": [
+        "爆分回合把复制目标换到 Baron/Mime 等持牌触发组件。",
+        "经济回合可临时复制 Mime 的经济触发或其他现金小丑。",
+        "页面可以做成交互式摆位计算器，后续比普通攻略更容易留住用户。"
+      ],
+      "sources": ["gamesgg-blueprint-brainstorm", "wiki-baron"]
+    },
+    {
+      "title": "金注通关内容入口",
+      "image": "assets/images/gold-stake-roadmap.webp",
+      "body": "B站金注教学播放量明显高，说明中文用户不只搜爽种，也搜稳定通关。首版应该同时放“钢K爽种”和“金注通关公式”，覆盖两类搜索意图。",
+      "checklist": [
+        "早期优先稳定 +Mult、经济和删改牌，不执着终局幻想。",
+        "按牌组拆金注难度，黑牌组、涂漆牌组、方格牌组需要不同策略。",
+        "保留每个 boss 的应对卡片，适合后续做 SEO 长尾页。"
+      ],
+      "sources": ["mancunion-gold-stake", "bili-gold-master", "bili-newbie-guide"]
+    },
+    {
+      "title": "Naneinf 极限路线",
+      "image": "assets/images/seed-vault.webp",
+      "body": "Naneinf 是小丑牌极限分数内容的高阶入口，适合做成“终局为什么需要几十张红封钢K”的解释页。",
+      "checklist": [
+        "核心不是单次运气，而是持续复制红封钢K并管理消耗牌。",
+        "要用公式和示例解释 Red Seal、Steel、Baron、Mime 的乘法叠加。",
+        "可以把外部计算器作为导流工具，后续再做站内版本。"
+      ],
+      "sources": ["wiki-naneinf", "naneinf-calc"]
+    }
+  ],
+  "videos": [
+    {
+      "title": "逆天爽种9OUU79，红封钢K流，6底注17回合打爆游戏",
+      "platform": "Bilibili",
+      "author": "我不是真汉子",
+      "views": 281344,
+      "favorites": 4500,
+      "url": "https://www.bilibili.com/video/av113946187006725",
+      "topic": "钢K种子"
+    },
+    {
+      "title": "小白也能看懂的钢K流",
+      "platform": "Bilibili",
+      "author": "泽梦牢师傅",
+      "views": 271389,
+      "favorites": 2122,
+      "url": "https://www.bilibili.com/video/av114512032172624",
+      "topic": "钢K科普"
+    },
+    {
+      "title": "全网第一逆天种子，最快成型红封钢K",
+      "platform": "Bilibili",
+      "author": "公开搜索结果",
+      "views": 32032,
+      "favorites": 656,
+      "url": "https://www.bilibili.com/video/av116354120160367",
+      "topic": "钢K爽局"
+    },
+    {
+      "title": "小丑牌种子前期运营思路 U8RJYV6N",
+      "platform": "Bilibili",
+      "author": "John--Doe",
+      "views": 7210,
+      "favorites": 155,
+      "url": "https://www.bilibili.com/video/av114751258500230",
+      "topic": "运营复盘"
+    },
+    {
+      "title": "全金注玩家教你快速上手的新手全面攻略",
+      "platform": "Bilibili",
+      "author": "公开搜索结果",
+      "views": 571826,
+      "favorites": 0,
+      "url": "https://www.bilibili.com/video/av1701934673",
+      "topic": "新手攻略"
+    },
+    {
+      "title": "金注6连顶尖高手教你连胜",
+      "platform": "Bilibili",
+      "author": "晓夫九",
+      "views": 439376,
+      "favorites": 4208,
+      "url": "https://www.bilibili.com/video/av1101565637",
+      "topic": "金注"
+    },
+    {
+      "title": "20分钟带你入门小丑牌",
+      "platform": "Bilibili",
+      "author": "公开搜索结果",
+      "views": 391827,
+      "favorites": 4938,
+      "url": "https://www.bilibili.com/video/av114668479711395",
+      "topic": "入门"
+    },
+    {
+      "title": "全小丑评级 + 一句话卡评",
+      "platform": "Bilibili",
+      "author": "公开搜索结果",
+      "views": 240334,
+      "favorites": 3142,
+      "url": "https://www.bilibili.com/video/av114784057954870",
+      "topic": "小丑评级"
+    }
+  ],
+  "sites": [
+    {
+      "name": "BalatroSeeds",
+      "type": "种子数据库",
+      "url": "https://balatroseeds.com/",
+      "signal": "有独立种子页、牌组页和路线说明，是最接近 DeckRoutes 第一版的竞品。",
+      "opportunity": "中文复盘、B站视频转路线、可复制路线表。"
+    },
+    {
+      "name": "BalatroSeed.net",
+      "type": "多语种种子指南",
+      "url": "https://balatroseed.net/",
+      "signal": "收录中英指南和长线极限种子，说明“单种子深度页”有价值。",
+      "opportunity": "做更强的中文信息架构和图片/时间线。"
+    },
+    {
+      "name": "Balatro Wiki",
+      "type": "机制与公式",
+      "url": "https://balatrowiki.org/",
+      "signal": "机制解释完整，适合引用 Baron、Red Seal、Naneinf 等数学和规则。",
+      "opportunity": "把公式转成中文可视化攻略和交互计算器。"
+    },
+    {
+      "name": "GAMES.GG",
+      "type": "媒体攻略",
+      "url": "https://games.gg/balatro/guides/",
+      "signal": "2026 年仍有 Baron/Mime、Steel Cards 等新攻略更新，说明搜索需求持续。",
+      "opportunity": "中文内容可以更贴近实际路线表和视频复盘。"
+    },
+    {
+      "name": "EFHIII Balatro Calculator",
+      "type": "玩家工具",
+      "url": "https://efhiii.github.io/balatro-calculator/",
+      "signal": "GitHub 项目有较高收藏，计算器类工具能带来高停留。",
+      "opportunity": "后续做钢K触发计算器、摆位模拟器、种子路线生成器。"
+    },
+    {
+      "name": "Bilibili 中文视频生态",
+      "type": "中文需求入口",
+      "url": "https://search.bilibili.com/",
+      "signal": "钢K、金注、新手攻略单视频可达数十万播放。",
+      "opportunity": "把视频内容结构化成文字路线和可搜索种子库。"
+    }
+  ],
+  "domains": [
+    {
+      "domain": "deckroutes.com",
+      "fit": "首选。含义宽，适合从 Balatro 扩到更多卡牌/肉鸽/小游戏路线。",
+      "status": "Verisign RDAP 返回 404，初步显示未注册",
+      "priority": "优先购买"
+    },
+    {
+      "domain": "deckroutes.gg",
+      "fit": "游戏感更强，适合攻略站品牌，但 .gg 价格通常高于 .com。",
+      "status": "whois.gg 返回 NOT FOUND，需注册商复核",
+      "priority": "次优先"
+    },
+    {
+      "domain": "deckroutes.net",
+      "fit": "作为防御域名或 .com 备选。",
+      "status": "Verisign RDAP 返回 404，初步显示未注册",
+      "priority": "备选"
+    },
+    {
+      "domain": "deckroutes.io",
+      "fit": "工具站气质强，适合未来做计算器和 AI 路线生成。",
+      "status": "whois.nic.io 返回 Domain not found",
+      "priority": "备选"
+    },
+    {
+      "domain": "seedroutes.gg",
+      "fit": "偏种子库，适合 Balatro/肉鸽方向，但不如 DeckRoutes 宽。",
+      "status": "whois.gg 返回 NOT FOUND，需注册商复核",
+      "priority": "备选"
+    },
+    {
+      "domain": "rogueroutes.gg",
+      "fit": "更聚焦 roguelike/roguelite，利于垂直定位。",
+      "status": "whois.gg 返回 NOT FOUND，需注册商复核",
+      "priority": "备选"
+    }
+  ],
+  "futureGames": [
+    {
+      "name": "Slay the Spire 2",
+      "priority": "S",
+      "why": "2026 年 Early Access 首日并发非常高，Deckbuilder 用户和 Balatro 用户重合度高。",
+      "contentAngles": ["角色/卡牌评级", "遗物组合", "爬塔路线", "每日种子/挑战"],
+      "sources": ["gamespot-sts2"]
+    },
+    {
+      "name": "Monster Train 2",
+      "priority": "A",
+      "why": "Roguelike deckbuilder 受众明确，适合做派系组合和路线库。",
+      "contentAngles": ["派系组合", "房间升级", "Boss 对策", "流派攻略"],
+      "sources": ["rogueliker-deckbuilders"]
+    },
+    {
+      "name": "Cobalt Core",
+      "priority": "A",
+      "why": "机制深、船体和卡组组合多，适合中文长尾攻略。",
+      "contentAngles": ["船员组合", "舰船配置", "循环路线", "卡组删改"],
+      "sources": ["rogueliker-deckbuilders"]
+    },
+    {
+      "name": "Cursemark",
+      "priority": "B",
+      "why": "2026 年新近 Early Access 动作肉鸽，buildcrafting 强，适合抢早期搜索。",
+      "contentAngles": ["符文组合", "短局构筑", "职业/法术解锁", "新版本更新"],
+      "sources": ["pcgamer-cursemark"]
+    },
+    {
+      "name": "Balatro",
+      "priority": "S",
+      "why": "已有中文视频热度、种子库生态和高复玩需求，最适合作为 DeckRoutes 第一入口。",
+      "contentAngles": ["钢K种子", "金注攻略", "小丑评级", "Boss 对策", "计算器"],
+      "sources": ["bili-9ouu79", "balatroseeds-6b678b4w"]
+    }
+  ],
+  "sources": {
+    "bili-9ouu79": {
+      "label": "Bilibili: 9OUU79 红封钢K流视频",
+      "url": "https://www.bilibili.com/video/av113946187006725"
+    },
+    "bili-u8rjyv6n": {
+      "label": "Bilibili: U8RJYV6N 前期运营思路",
+      "url": "https://www.bilibili.com/video/av114751258500230"
+    },
+    "bili-gold-master": {
+      "label": "Bilibili: 金注6连顶尖高手教你连胜",
+      "url": "https://www.bilibili.com/video/av1101565637"
+    },
+    "bili-newbie-guide": {
+      "label": "Bilibili: 全金注玩家新手全面攻略",
+      "url": "https://www.bilibili.com/video/av1701934673"
+    },
+    "balatroseeds-6b678b4w": {
+      "label": "BalatroSeeds: 6B678B4W Plasma Deck",
+      "url": "https://balatroseeds.com/seeds/6B678B4W/plasma-deck"
+    },
+    "balatroseeds-wp7kmlhm": {
+      "label": "BalatroSeeds: WP7KMLHM Ghost Deck",
+      "url": "https://balatroseeds.com/seeds/WP7KMLHM/ghost-deck"
+    },
+    "balatroseeds-6zfztfpq": {
+      "label": "BalatroSeeds: 6ZFZTFPQ",
+      "url": "https://balatroseeds.com/seeds/6ZFZTFPQ"
+    },
+    "balatroseeds-cyucnzw1": {
+      "label": "BalatroSeeds: CYUCNZW1",
+      "url": "https://balatroseeds.com/seeds/CYUCNZW1"
+    },
+    "balatroseed-vh1a55lv": {
+      "label": "BalatroSeed.net: VH1A55LV guide",
+      "url": "https://balatroseed.net/guides/2"
+    },
+    "dualshockers-seeds-to-try": {
+      "label": "DualShockers: Best Balatro Seeds To Try",
+      "url": "https://www.dualshockers.com/best-balatro-seeds-to-try/"
+    },
+    "gamingnet-best-seeds": {
+      "label": "Gaming.net: 10 Best Seeds in Balatro",
+      "url": "https://www.gaming.net/best-seeds-in-balatro/"
+    },
+    "steam-awesome-seeds": {
+      "label": "Steam Community: Awesome Seeds discussion",
+      "url": "https://steamcommunity.com/app/2379780/discussions/0/3879347633298771940/?ctp=2"
+    },
+    "gamesgg-baron-mime": {
+      "label": "GAMES.GG: Baron Mime Balatro build",
+      "url": "https://games.gg/balatro/guides/baron-mime-balatro-build/"
+    },
+    "gamesgg-steel-cards": {
+      "label": "GAMES.GG: Balatro Steel Cards guide",
+      "url": "https://games.gg/balatro/guides/balatro-steel-cards-guide/"
+    },
+    "gamesgg-blueprint-brainstorm": {
+      "label": "GAMES.GG: Blueprint & Brainstorm combo",
+      "url": "https://games.gg/balatro/guides/blueprint-brainstorm-combo-balatro/"
+    },
+    "wiki-baron": {
+      "label": "Balatro Wiki: Baron",
+      "url": "https://balatrowiki.org/w/Baron"
+    },
+    "wiki-red-seal": {
+      "label": "Balatro Wiki: Red Seal",
+      "url": "https://balatrowiki.org/w/Red_Seal"
+    },
+    "wiki-naneinf": {
+      "label": "Balatro Wiki: Guide naneinf",
+      "url": "https://balatrowiki.org/w/Guide:_naneinf"
+    },
+    "naneinf-calc": {
+      "label": "Naneinf Calculator",
+      "url": "https://nickgcioffi.github.io/naneinf-calc/"
+    },
+    "mancunion-gold-stake": {
+      "label": "The Mancunion: Gold Stake guide",
+      "url": "https://mancunion.com/2025/09/01/a-guide-to-gold-stake-balatro/"
+    },
+    "gamespot-sts2": {
+      "label": "GameSpot: Slay the Spire 2 player count record",
+      "url": "https://www.gamespot.com/articles/slay-the-spire-2-just-smashed-this-huge-player-count-record/1100-6538622/"
+    },
+    "rogueliker-deckbuilders": {
+      "label": "Rogueliker: best roguelike deckbuilders",
+      "url": "https://rogueliker.com/roguelike-deckbuilders/"
+    },
+    "pcgamer-cursemark": {
+      "label": "PC Gamer: Cursemark early access roguelike action RPG",
+      "url": "https://www.pcgamer.com/games/roguelike/15-minutes-is-all-you-need-in-this-roguelike-action-rpg-to-feel-like-a-maxed-out-diablo-god-laying-waste-to-an-entire-screen-of-monsters/"
+    }
+  }
+}

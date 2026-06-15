@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DeckRoutes - Balatro Seed Atlas</title>
+    <meta
+      name="description"
+      content="DeckRoutes 是中文优先的 Balatro 小丑牌种子与攻略路线站，首版聚焦钢K流、Baron/Mime、金注攻略、中文视频来源和后续小游戏攻略方向。"
+    />
+    <meta name="theme-color" content="#111513" />
+    <meta property="og:title" content="DeckRoutes - Balatro Seed Atlas" />
+    <meta property="og:description" content="钢K流种子、路线复盘、中文来源和未来多游戏攻略站方向。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/images/steel-king-route.webp" />
+    <link rel="canonical" href="https://siuserxiaowei.github.io/deckroutes/" />
+    <link rel="preload" as="image" href="assets/images/steel-king-route.webp" />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="DeckRoutes home">
+        <span class="brand-mark" aria-hidden="true">♠</span>
+        <span>DeckRoutes</span>
+      </a>
+      <nav class="nav-links" aria-label="主导航">
+        <a href="#seeds">钢K种子</a>
+        <a href="#strategies">攻略路线</a>
+        <a href="#sources">来源验证</a>
+        <a href="#domains">域名候选</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <h1>小丑牌钢K流种子与攻略路线库</h1>
+          <p>
+            首版把全网检索到的 Balatro 种子、钢K路线、中文视频样本和站点机会集中成一个可搜索的攻略页。
+            后续可以扩成更多小体量游戏的攻略与导流入口。
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#seeds">查看种子库</a>
+            <a class="button" href="#domains">看域名建议</a>
+          </div>
+        </div>
+        <figure class="hero-media">
+          <img src="assets/images/steel-king-route.webp" alt="钢K流路线原创封面图" />
+        </figure>
+      </section>
+
+      <section class="stats-band" aria-label="站点数据概览">
+        <div id="statsGrid" class="stats-grid"></div>
+      </section>
+
+      <section id="seeds" class="section-shell">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Seed Database</p>
+            <h2>精选 Balatro 种子</h2>
+          </div>
+          <p>优先覆盖钢K流，再补 Perkeo、金注和非钢K扩展题材。</p>
+        </div>
+
+        <div class="control-strip" aria-label="种子筛选">
+          <label class="search-box">
+            <span aria-hidden="true">⌕</span>
+            <input id="seedSearch" type="search" placeholder="搜索种子代码 / Joker / 标签，例如 钢K、Perkeo、High Card" />
+          </label>
+          <select id="archetypeFilter" aria-label="按流派筛选">
+            <option value="all">所有流派</option>
+          </select>
+          <button id="resetFilters" class="button compact" type="button">重置</button>
+        </div>
+        <div id="tagFilters" class="tag-row" aria-label="热门标签"></div>
+        <div class="result-line"><span id="resultCount">0</span> 个结果</div>
+        <div id="seedGrid" class="seed-grid"></div>
+      </section>
+
+      <section id="strategies" class="section-shell split-section">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Routes</p>
+            <h2>攻略路线模块</h2>
+          </div>
+          <p>这些模块适合后续拆成长尾 SEO 页面和交互工具。</p>
+        </div>
+        <div id="strategyGrid" class="strategy-grid"></div>
+      </section>
+
+      <section id="videos" class="section-shell">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Chinese Sources</p>
+            <h2>中文视频热度样本</h2>
+          </div>
+          <p>播放和收藏来自 2026-06-15 的 B站公开搜索结果，主要用于判断选题优先级。</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>主题</th>
+                <th>标题</th>
+                <th>播放</th>
+                <th>收藏</th>
+                <th>来源</th>
+              </tr>
+            </thead>
+            <tbody id="videoRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="sources" class="section-shell source-section">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Market Signals</p>
+            <h2>竞品与工具站机会</h2>
+          </div>
+          <p>当前生态已经有种子库、Wiki、媒体攻略和计算器，中文站的机会在结构化路线和视频复盘。</p>
+        </div>
+        <div id="siteSignals" class="signal-grid"></div>
+      </section>
+
+      <section id="domains" class="section-shell domains-section">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Domain Shortlist</p>
+            <h2>域名候选</h2>
+          </div>
+          <p>建议先买 <strong>deckroutes.com</strong>，再按预算防御 .gg 或 .net。</p>
+        </div>
+        <div id="domainGrid" class="domain-grid"></div>
+      </section>
+
+      <section id="future" class="section-shell future-section">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Next Games</p>
+            <h2>后续可扩展小游戏攻略</h2>
+          </div>
+          <p>优先选构筑深、搜索长尾多、中文结构化内容不足的游戏。</p>
+        </div>
+        <div id="futureGrid" class="future-grid"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <span class="brand-mark" aria-hidden="true">♠</span>
+        <strong>DeckRoutes</strong>
+      </div>
+      <p>
+        非官方攻略站。内容为来源摘要、路线整理和原创图片资产，不复制原站正文或视频画面。
+        数据日期：<span id="asOf">2026-06-15</span>。
+      </p>
+      <div class="footer-links">
+        <a href="https://github.com/siuserxiaowei/deckroutes">GitHub 仓库</a>
+        <a href="assets/data/site-data.json">数据文件</a>
+      </div>
+    </footer>
+
+    <template id="seedCardTemplate">
+      <article class="seed-card">
+        <img class="seed-card-image" alt="" />
+        <div class="seed-card-body">
+          <div class="seed-topline">
+            <span class="seed-code"></span>
+            <button class="copy-button" type="button">复制</button>
+          </div>
+          <h3></h3>
+          <p class="seed-summary"></p>
+          <dl class="seed-meta">
+            <div><dt>牌组</dt><dd data-field="deck"></dd></div>
+            <div><dt>流派</dt><dd data-field="archetype"></dd></div>
+            <div><dt>难度</dt><dd data-field="difficulty"></dd></div>
+          </dl>
+          <ul class="route-list"></ul>
+          <div class="tag-list"></div>
+          <div class="source-list"></div>
+        </div>
+      </article>
+    </template>
+
+    <script type="module" src="assets/app.js"></script>
+  </body>
+</html>
