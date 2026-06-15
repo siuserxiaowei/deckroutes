@@ -4,8 +4,8 @@
     "title": "DeckRoutes - Balatro Seed Atlas",
     "asOf": "2026-06-15",
     "language": "zh-CN",
-    "method": "Agent Reach doctor + Jina Reader + GitHub CLI + BalatroSeeds public pages + web search fallback + Scrapling availability check",
-    "coverageNote": "2026-06-15 三次复核：最新 Agent Reach doctor 显示 8/15 渠道可用，Exa/微博/小红书/抖音当前未配置；Reddit 直连/Jina 403，YouTube 搜索被 bot check；本轮优先入库可公开读取的 BalatroSeeds 和 GitHub 工具证据。"
+    "method": "Agent Reach doctor + mcporter 显式配置调用 + Jina Reader + GitHub CLI + BalatroSeeds public pages + web search fallback + Scrapling availability check",
+    "coverageNote": "2026-06-15 四次复核：最新 Agent Reach doctor 显示 13/15 渠道可用；Exa 与微博在 /Users/siuserxiaowei/config/mcporter.json 显式配置下可调用，小红书服务可见但 check_login_status 仍 EOF，抖音 MCP 可见但 parse_douyin_video_info 仍缺 DASHSCOPE_API_KEY；本轮优先把 BalatroSeeds 完整队列落到可点击详情。"
   },
   "stats": [
     {
@@ -857,19 +857,19 @@
   "platformStatus": [
     {
       "platform": "Agent Reach / 工具总览",
-      "status": "8/15 渠道可用",
-      "accessMethod": "agent-reach doctor + mcporter list",
+      "status": "13/15 渠道可用",
+      "accessMethod": "agent-reach doctor + mcporter --config /Users/siuserxiaowei/config/mcporter.json list",
       "usableNow": true,
-      "limitation": "本轮最新 doctor 显示 GitHub/YouTube/V2EX/RSS/Jina/X/Reddit 读取/微信公众号可用；Exa、微博、小红书、抖音、LinkedIn、小宇宙未配置或缺 key/cookie。",
-      "nextAction": "短期用 Jina、GitHub CLI、网页搜索和公开视频补证据；恢复 Exa/微博/小红书/抖音配置后再跑深采。"
+      "limitation": "doctor 显示 GitHub、YouTube、V2EX、RSS、Jina、X、Reddit 读取/搜索、B站、微博、Exa、小红书、抖音、微信公众号等多数渠道已接入；LinkedIn 未配置，小宇宙缺 Groq；小红书和抖音仍需要登录态/API key 才能稳定抽正文。",
+      "nextAction": "后续深采统一带显式 mcporter config；小红书先修登录态，抖音先补 DASHSCOPE_API_KEY，再把视频/图文转成可复盘路线。"
     },
     {
       "platform": "Exa / 全网语义搜索",
-      "status": "当前未配置",
-      "accessMethod": "mcporter call exa.web_search_exa",
-      "usableNow": false,
-      "limitation": "mcporter call exa.web_search_exa 返回 Unknown MCP server 'exa'；agent-reach doctor 提示需要 mcporter config add exa https://mcp.exa.ai/mcp。",
-      "nextAction": "重新配置 Exa 后再做 Reddit/全网 seed bank 深搜；未恢复前只保留普通网页搜索与 Jina 可读来源。"
+      "status": "可用",
+      "accessMethod": "mcporter --config /Users/siuserxiaowei/config/mcporter.json call exa.web_search_exa",
+      "usableNow": true,
+      "limitation": "在项目 worktree 里不带 --config 会落到空配置并报 Unknown MCP server；显式指定用户配置后可搜索网页和社区线索。",
+      "nextAction": "用 Exa 做 Reddit/全网 seed bank 深搜，并把只能作为索引摘要的结果留在证据池，不直接写成完整攻略。"
     },
     {
       "platform": "任意网页 / Jina Reader",
@@ -897,27 +897,27 @@
     },
     {
       "platform": "小红书",
-      "status": "当前未配置/未登录",
-      "accessMethod": "xiaohongshu-mcp cookie 模式",
+      "status": "MCP 可见，登录态/读取失败",
+      "accessMethod": "mcporter --config /Users/siuserxiaowei/config/mcporter.json call xiaohongshu.check_login_status",
       "usableNow": false,
-      "limitation": "本轮最新 doctor 提示小红书 MCP 未配置；上一轮即使容器连上也因缺 cookies.json 导致 check_login_status/search_feeds EOF。不能在未登录状态下真实读取笔记。",
-      "nextAction": "启动 xiaohongshu-mcp 并导入 cookies.json 后，再运行 search_feeds(\"小丑牌 钢K\") 和 get_feed_detail。"
+      "limitation": "mcporter list 能看到 xiaohongshu server，但 check_login_status 返回 EOF；当前不能证明已登录，也不能把小红书内容当作真实采集结果。",
+      "nextAction": "修复 cookies/login 后运行 search_feeds(\"小丑牌 钢K\")、search_feeds(\"Balatro 钢K 种子\") 和 get_feed_detail，并保留笔记图片/正文来源。"
     },
     {
       "platform": "抖音",
-      "status": "当前未配置，解析仍需 API key",
-      "accessMethod": "douyin-mcp-server + DASHSCOPE_API_KEY",
+      "status": "MCP 可见，视频解析仍需 API key",
+      "accessMethod": "mcporter --config /Users/siuserxiaowei/config/mcporter.json call douyin.parse_douyin_video_info + DASHSCOPE_API_KEY",
       "usableNow": false,
-      "limitation": "本轮最新 doctor 提示抖音 MCP 未配置；上一轮 parse_douyin_video_info 对测试链接返回“未设置 DASHSCOPE_API_KEY”。",
-      "nextAction": "先配置 douyin MCP，再配置 DASHSCOPE_API_KEY；未完成前只保留已发现的公开页面线索，不写成完整攻略。"
+      "limitation": "douyin server 可调用，但 parse_douyin_video_info 对公开视频返回“未设置 DASHSCOPE_API_KEY”；未拿到标题/作者/字幕前不能写完整攻略。",
+      "nextAction": "配置 DASHSCOPE_API_KEY 后优先解析已发现的钢K视频，再筛出有种子号或逐局流程的视频。"
     },
     {
       "platform": "微博",
-      "status": "当前未配置",
-      "accessMethod": "uv tool install mcp-server-weibo --with socksio + mcporter stdio",
-      "usableNow": false,
-      "limitation": "本轮最新 doctor 提示微博 MCP 未配置；已有微博证据保留为历史采集结果，但当前不能继续增量搜索。",
-      "nextAction": "重新安装并 mcporter config add weibo 后，再追踪 #小丑牌# 话题、钢K流讨论和种子图片。"
+      "status": "可用",
+      "accessMethod": "mcporter --config /Users/siuserxiaowei/config/mcporter.json call weibo.search_content",
+      "usableNow": true,
+      "limitation": "本轮 search_content(\"小丑牌 钢K\") 能返回微博视频/图片/动态，但大多是结果展示或讨论，缺完整牌局路线；图片种子仍需 OCR。",
+      "nextAction": "追踪 #小丑牌# 和钢K流帖子，优先下载含种子号/牌组截图的图片并做 OCR，再决定是否入库。"
     },
     {
       "platform": "Reddit / X / YouTube / GitHub / V2EX / RSS",
@@ -1246,8 +1246,8 @@
       "contentType": "工具运行状态",
       "seeds": [],
       "facts": [
-        "Docker 容器 xiaohongshu-mcp 已启动，mcporter list xiaohongshu 能看到 13 个工具。",
-        "容器日志显示缺 cookies.json；check_login_status 与 search_feeds(\"小丑牌 钢K\") 返回 EOF。",
+        "mcporter 显式配置能看到 xiaohongshu server，说明服务已接入当前工具链。",
+        "check_login_status 仍返回 EOF；当前不能证明已登录，也不能真实读取笔记正文。",
         "当前不能把小红书标为已采集内容。"
       ],
       "confidence": "高",
@@ -1283,12 +1283,13 @@
         "Y3QRZZ5I"
       ],
       "facts": [
-        "页面 Deck 为 Yellow Deck，正文包含 Ante 1-8 的 Boss、Voucher、Tags、Shop Queue 和 Packs。",
+        "页面 Deck 为 Yellow Deck，正文包含 Ante 1-8 的 Boss、Voucher、Tags、Shop Queue 和 Packs；Jina Reader 可读 /yellow-deck 详情页。",
+        "站内已把每个 Ante 拆成可展开队列：Ante 2-8 每个 Shop Queue 为 50 项，Ante 1 为 15 项。",
         "Ante 2 队列早期出现 Brainstorm，后段出现 Blueprint，适合做复制类小丑检索样本。",
         "页面更像结构化队列 dump，不是玩家决策攻略。"
       ],
       "confidence": "高",
-      "useInSite": "已入库为解析样本；不标完整打法，用于后续商店队列 parser 和 UI 折叠展示。"
+      "useInSite": "已入库为完整队列样本；不标完整打法，用于后续商店队列 parser 和 UI 折叠展示。"
     },
     {
       "id": "balatroseeds-hnitc7el-steel-k",
@@ -1622,7 +1623,7 @@
       "platform": "网页/Reddit/Steam",
       "priority": "B",
       "status": "ready-search",
-      "blocker": "本轮 Reddit 直连和 Jina 读取具体帖返回 403；Exa 当前未配置。",
+      "blocker": "Reddit 直连和 Jina 读取具体帖返回 403；Exa 现在可用，但只能作为搜索索引，仍需回链验证具体帖或视频。",
       "evidenceIds": [
         "balatroseed-vh1a55lv",
         "gamesgg-baron-mime",
@@ -1658,7 +1659,7 @@
         "UEWC6ZQF",
         "KW1IS19G"
       ],
-      "nextAction": "恢复 Exa 或 Reddit 登录后，重点复核 2K9H9/2K9H9HN 混杂关系，并继续筛选能落到中文路线页的红封钢K、Perkeo、Blueprint、金注种子。",
+      "nextAction": "用 Exa 继续筛选 seed bank 和 Reddit 线索；遇到 Reddit 403 时先记录索引摘要，再等登录/代理或可读镜像补正文。",
       "validation": "新增种子必须有可回链来源；只有列表但无流程的种子标为“候选”。",
       "ownerMode": "Agent Reach Exa + Scrapling",
       "updatedAt": "2026-06-15"
@@ -1668,7 +1669,7 @@
       "title": "BalatroSeeds 商店队列解析器样本",
       "platform": "网页/BalatroSeeds",
       "priority": "A",
-      "status": "ready-parser-design",
+      "status": "implemented-ui-sample",
       "blocker": "",
       "evidenceIds": [
         "balatroseeds-y3qrzz5i-parser"
@@ -1679,8 +1680,8 @@
       "targetSeeds": [
         "Y3QRZZ5I"
       ],
-      "nextAction": "把 Y3QRZZ5I 的 Ante 1-8 队列拆成可折叠表格：Boss、Voucher、Tags、关键小丑、关键牌包、建议购买与待验证节点分层展示。",
-      "validation": "页面能按 Ante 展开/折叠，长队列不撑爆移动端；每个解析字段都能回链 BalatroSeeds 原页。",
+      "nextAction": "把当前手工结构化样本升级为自动解析器：从 BalatroSeeds/Jina 文本直接抽 Boss、Voucher、Tags、Shop Queue 和 Packs。",
+      "validation": "详情页能按 Ante 展开/折叠，长队列不撑爆移动端；每个解析字段都能回链 BalatroSeeds 原页。",
       "ownerMode": "Scrapling/Jina + 前端解析器",
       "updatedAt": "2026-06-15"
     },

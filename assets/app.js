@@ -75,6 +75,90 @@ function renderRouteSources(sourceIds) {
   box.append(grid);
 }
 
+function flattenQueueTables(queueTables = []) {
+  return queueTables.flatMap((table) => [
+    table.title || "",
+    table.boss || "",
+    table.voucher || "",
+    table.routeUse || "",
+    ...(table.tags || []),
+    ...(table.shopQueue || []),
+    ...(table.packs || [])
+  ]);
+}
+
+function appendQueueField(root, label, value, type = "list") {
+  if (!value || (Array.isArray(value) && value.length === 0)) return;
+
+  const isWide = Array.isArray(value) && type !== "tags";
+  const item = el("div", isWide ? "route-queue-field route-queue-field-wide" : "route-queue-field");
+  item.append(el("span", "route-queue-label", label));
+
+  if (Array.isArray(value)) {
+    if (type === "tags") {
+      const tags = el("div", "route-queue-tags");
+      value.forEach((line) => tags.append(el("span", "route-queue-tag", line)));
+      item.append(tags);
+    } else {
+      const list = document.createElement(type === "ordered" ? "ol" : "ul");
+      list.className = "route-queue-lines";
+      value.forEach((line) => list.append(el("li", "", line)));
+      item.append(list);
+    }
+  } else {
+    item.append(el("p", "route-queue-copy", value));
+  }
+
+  root.append(item);
+}
+
+function renderRouteQueueTables(queueTables = []) {
+  const box = $("#routeQueue");
+  const tables = queueTables.filter((table) => table && (table.shopQueue?.length || table.packs?.length));
+  box.replaceChildren();
+
+  if (!tables.length) {
+    box.hidden = true;
+    return;
+  }
+
+  box.hidden = false;
+  box.append(el("h4", "", "Ante 商店队列"));
+  box.append(
+    el(
+      "p",
+      "route-queue-note",
+      "这里展示的是可复核的原始队列，不等同于最优购买路线；优先看 Boss、Tags、前排关键小丑和 Packs，再决定是否实机复盘。"
+    )
+  );
+
+  const list = el("div", "route-queue-list");
+  tables.forEach((table, index) => {
+    const details = el("details", "route-queue-stage");
+    if (index === 0) details.open = true;
+
+    const summary = el("summary", "route-queue-summary");
+    const title = el("span", "route-queue-summary-main");
+    title.append(el("span", "route-queue-ante", `Ante ${table.ante || index + 1}`));
+    title.append(el("strong", "", table.title || `Ante ${table.ante || index + 1}`));
+    summary.append(title);
+    summary.append(el("span", "route-queue-summary-meta", [table.boss, table.voucher].filter(Boolean).join(" · ")));
+    details.append(summary);
+
+    const body = el("div", "route-queue-body");
+    appendQueueField(body, "Boss", table.boss);
+    appendQueueField(body, "Voucher", table.voucher);
+    appendQueueField(body, "Tags", table.tags, "tags");
+    appendQueueField(body, "路线用途", table.routeUse);
+    appendQueueField(body, "Shop Queue", table.shopQueue, "ordered");
+    appendQueueField(body, "Packs", table.packs);
+    details.append(body);
+    list.append(details);
+  });
+
+  box.append(list);
+}
+
 function mergeRouteData() {
   if (!state.routeData) return;
 
@@ -159,7 +243,8 @@ function seedMatches(seed) {
     ...seed.tags,
     ...seed.route,
     seed.detail?.completeness || "",
-    ...(seed.detail?.flow || []).flatMap((stage) => [stage.stage, ...(stage.actions || [])])
+    ...(seed.detail?.flow || []).flatMap((stage) => [stage.stage, ...(stage.actions || [])]),
+    ...flattenQueueTables(seed.detail?.queueTables || [])
   ]
     .join(" ")
     .toLowerCase();
@@ -284,6 +369,8 @@ function showRoute(seed, shouldScroll = false) {
     })
   );
 
+  renderRouteQueueTables(detail.queueTables || []);
+
   const mistakeBox = $("#routeMistakes");
   mistakeBox.replaceChildren();
   const mistakes = detail.mistakes || seed.warnings || [];
@@ -297,7 +384,8 @@ function showRoute(seed, shouldScroll = false) {
     mistakeBox.hidden = true;
   }
 
-  const sourceIds = [...new Set([...(seed.sources || []), ...(detail.sources || [])])];
+  const queueSourceIds = (detail.queueTables || []).flatMap((table) => table.sourceIds || []);
+  const sourceIds = [...new Set([...(seed.sources || []), ...(detail.sources || []), ...queueSourceIds])];
   renderRouteSources(sourceIds);
   viewer.hidden = false;
   if (shouldScroll) {
