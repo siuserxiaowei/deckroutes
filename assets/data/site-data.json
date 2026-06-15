@@ -5,7 +5,7 @@
     "asOf": "2026-06-15",
     "language": "zh-CN",
     "method": "Agent Reach doctor + mcporter 显式配置调用 + Jina Reader + GitHub CLI + BalatroSeeds public pages + web search fallback + Scrapling availability check",
-    "coverageNote": "2026-06-15 六次复核：默认 Agent Reach doctor 显示 9/15 渠道可用；显式 mcporter 配置可列出 xiaohongshu、douyin、weibo、exa 4 个健康 MCP server。Exa 可用，小红书 search_feeds 仍 EOF，抖音 parse/download 仍缺 DASHSCOPE_API_KEY，Reddit 直连被网络安全页拦截，YouTube yt-dlp 搜索触发 bot check；本轮新增 B站 DP4499H3 和钢K教程候选，并补 BalatroSeeds/Jina 队列抽取脚本。"
+    "coverageNote": "2026-06-15 七次复核：Agent Reach doctor 显示 13/15 渠道可用；显式 mcporter 配置可列出 xiaohongshu、douyin、weibo、exa 4 个健康 MCP server。Exa 可用，小红书 search_feeds 仍 EOF，抖音 parse/download 仍缺 DASHSCOPE_API_KEY，Reddit 直连被网络安全页拦截，YouTube yt-dlp 搜索触发 bot check；本轮补 GitHub Actions 数据质量门和中文 BalatroSeed 可读来源。"
   },
   "stats": [
     {
@@ -20,7 +20,7 @@
     },
     {
       "label": "证据来源",
-      "value": "38",
+      "value": "40",
       "note": "含平台状态、中文社区、英文 seed bank 和 GitHub 工具证据"
     },
     {
@@ -239,6 +239,7 @@
         "社区"
       ],
       "sources": [
+        "balatroseed-3j6fzfe4-zh",
         "gamingnet-best-seeds",
         "steam-awesome-seeds"
       ]
@@ -347,6 +348,7 @@
         "长线"
       ],
       "sources": [
+        "balatroseed-4yy5nt94-zh",
         "steam-awesome-seeds"
       ]
     },
@@ -755,6 +757,14 @@
       "label": "BalatroSeed.net: VH1A55LV guide",
       "url": "https://balatroseed.net/guides/2"
     },
+    "balatroseed-3j6fzfe4-zh": {
+      "label": "BalatroSeed.net 中文: 3J6FZFE4 早期万能复制",
+      "url": "https://balatroseed.net/zh/seeds/63"
+    },
+    "balatroseed-4yy5nt94-zh": {
+      "label": "BalatroSeed.net 中文: 4YY5NT94 五男爵钢印流",
+      "url": "https://balatroseed.net/zh/seeds/59"
+    },
     "balatroseeds-vh1a55lv-ghost": {
       "label": "BalatroSeeds: VH1A55LV Ghost Deck",
       "url": "https://balatroseeds.com/seeds/VH1A55LV/ghost-deck"
@@ -887,10 +897,10 @@
   "platformStatus": [
     {
       "platform": "Agent Reach / 工具总览",
-      "status": "默认 doctor 9/15；显式 mcporter 配置 4 个 MCP 健康",
+      "status": "doctor 13/15；显式 mcporter 配置 4 个 MCP 健康",
       "accessMethod": "agent-reach doctor + mcporter --config /Users/siuserxiaowei/config/mcporter.json list",
       "usableNow": true,
-      "limitation": "默认 mcporter 配置下 Exa/小红书会报 Unknown MCP server；显式配置可列出 xiaohongshu、douyin、weibo、exa，但小红书 search_feeds 仍 EOF，抖音 parse/download 仍缺 DASHSCOPE_API_KEY；Reddit 直连被网络安全页拦截，YouTube yt-dlp 搜索触发 bot check。",
+      "limitation": "doctor 显示小红书、抖音、Exa、微博等通道已连接；显式配置可列出 xiaohongshu、douyin、weibo、exa，但小红书 search_feeds 仍 EOF，抖音 parse/download 仍缺 DASHSCOPE_API_KEY；Reddit 直连被网络安全页拦截，YouTube yt-dlp 搜索触发 bot check。",
       "nextAction": "后续深采统一带显式 mcporter config；小红书先修登录态/服务端 EOF，抖音先补 DASHSCOPE_API_KEY，Reddit/YouTube 等待 cookie/代理后再补正文和字幕。"
     },
     {
@@ -930,7 +940,7 @@
       "status": "MCP 可见，登录态/读取失败",
       "accessMethod": "mcporter --config /Users/siuserxiaowei/config/mcporter.json call xiaohongshu.check_login_status",
       "usableNow": false,
-      "limitation": "显式 mcporter 配置能列出 xiaohongshu server，但 search_feeds(\"小丑牌 钢K 种子\") 返回 EOF；默认配置下则直接 Unknown MCP server。当前不能证明已登录，也不能把小红书内容当作真实采集结果。",
+      "limitation": "Agent Reach doctor 和显式 mcporter 配置都显示 xiaohongshu server 已连接，但 search_feeds(\"小丑牌 钢K 种子\") 仍返回 EOF；当前不能证明可读取真实笔记，也不能把小红书内容当作真实采集结果。",
       "nextAction": "修复 cookies/login 后运行 search_feeds(\"小丑牌 钢K\")、search_feeds(\"Balatro 钢K 种子\") 和 get_feed_detail，并保留笔记图片/正文来源。"
     },
     {
@@ -1628,6 +1638,44 @@
       ],
       "confidence": "高",
       "useInSite": "作为 DP4499H3 候选种子；需要复盘牌组、Boss、商店和卡包顺序后再入正式 seed 卡。"
+    },
+    {
+      "id": "balatroseed-3j6fzfe4-zh",
+      "platform": "BalatroSeed",
+      "title": "3J6FZFE4 早期万能复制",
+      "url": "https://balatroseed.net/zh/seeds/63",
+      "retrievedAt": "2026-06-15",
+      "contentType": "Jina Reader 可读中文 seed 页面",
+      "seeds": [
+        "3J6FZFE4"
+      ],
+      "facts": [
+        "页面标题为“早期万能复制”，种子代码是 3J6FZFE4。",
+        "页面详细介绍写明开局 Perkeo，早期蓝图、哑剧、男爵等小丑齐聚。",
+        "页面描述提到红印钢K可复制、底注 39 极限冲分，适合高分玩家。",
+        "Jina Reader 可读完整中文页面，适合替换此前只依赖英文媒体/Steam 摘要的来源。"
+      ],
+      "confidence": "高",
+      "useInSite": "已补入 3J6FZFE4 种子来源和详情页来源模式；仍需实机补商店顺序。"
+    },
+    {
+      "id": "balatroseed-4yy5nt94-zh",
+      "platform": "BalatroSeed",
+      "title": "4YY5NT94 五男爵钢印流",
+      "url": "https://balatroseed.net/zh/seeds/59",
+      "retrievedAt": "2026-06-15",
+      "contentType": "Jina Reader 可读中文 seed 页面",
+      "seeds": [
+        "4YY5NT94"
+      ],
+      "facts": [
+        "页面标题为“五男爵钢印流”，种子代码是 4YY5NT94。",
+        "页面详细介绍写明光谱牌组，最多可集齐 5 个 Poly Baron。",
+        "页面描述明确钢铁 + 红印国王组合，高手等级 50+，突破 Ante 18。",
+        "该中文页面为 4YY5NT94 提供比 Steam 摘要更直接的可回链来源。"
+      ],
+      "confidence": "高",
+      "useInSite": "已补入 4YY5NT94 种子来源和详情页来源模式；仍需实机补完整流程。"
     }
   ],
   "reviewQueue": [

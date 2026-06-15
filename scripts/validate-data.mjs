@@ -66,6 +66,7 @@ const evidenceSeedIds = new Set(evidence.flatMap((item) => item.seeds || []));
 const knownOrCandidateSeedIds = new Set([...seedIds, ...evidenceSeedIds]);
 const reviewQueue = site.reviewQueue || [];
 const queuedSeedIds = new Set(reviewQueue.flatMap((item) => item.targetSeeds || []));
+const statsByLabel = new Map((site.stats || []).map((item) => [item.label, item]));
 
 addDuplicateErrors(seeds, "seed", "seed");
 addDuplicateErrors(evidence, "id", "evidence");
@@ -111,6 +112,23 @@ for (const item of reviewQueue) {
   assertRefs(item.evidenceIds || [], evidenceIds, "reviewQueue evidenceIds", id, true);
   assertRefs(item.sourceIds || [], sourceIds, "reviewQueue sourceIds", id, true);
   assertRefs(item.targetSeeds || [], knownOrCandidateSeedIds, "reviewQueue targetSeeds", id, true);
+}
+
+const expectedStats = [
+  ["已整理种子", seeds.length],
+  ["证据来源", evidence.length],
+  ["复盘队列", reviewQueue.length]
+];
+
+for (const [label, expectedValue] of expectedStats) {
+  const stat = statsByLabel.get(label);
+  if (!stat) {
+    errors.push(`stats is missing label: ${label}`);
+    continue;
+  }
+  if (String(stat.value) !== String(expectedValue)) {
+    errors.push(`stats ${label} value ${stat.value} does not match actual ${expectedValue}`);
+  }
 }
 
 const summary = {

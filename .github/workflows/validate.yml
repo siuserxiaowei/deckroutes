@@ -1,0 +1,35 @@
+name: Validate data
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  data-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: Syntax check data scripts
+        run: |
+          node --check assets/app.js
+          node --check scripts/validate-data.mjs
+          node --check scripts/extract-balatroseed-route.mjs
+          node --check scripts/test-extract-balatroseed-route.mjs
+
+      - name: Validate site data
+        run: node scripts/validate-data.mjs
+
+      - name: Test BalatroSeeds extractor
+        run: node scripts/test-extract-balatroseed-route.mjs

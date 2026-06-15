@@ -800,13 +800,13 @@
     },
     "3J6FZFE4": {
       "completeness": "节点型",
-      "sourceMode": "Gaming.net / Steam 社区摘要",
+      "sourceMode": "BalatroSeed 中文页 + Gaming.net / Steam 社区摘要",
       "flow": [
         {
           "stage": "早期核心",
           "actions": [
-            "Ante 1 可以拿 Perkeo。",
-            "早期从 Wraith / 商店补 Blueprint、Mime、Baron、Burnt Joker 等核心。"
+            "BalatroSeed 中文页概述为“开局 Perkeo，早期蓝图、哑剧、男爵等小丑齐聚”。",
+            "英文媒体/社区摘要还提到 Wraith / 商店补 Blueprint、Mime、Baron、Burnt Joker 等核心。"
           ]
         },
         {
@@ -900,13 +900,14 @@
     },
     "4YY5NT94": {
       "completeness": "社区摘要",
-      "sourceMode": "Steam 社区片段",
+      "sourceMode": "BalatroSeed 中文页 + Steam 社区片段",
       "flow": [
         {
           "stage": "已知信息",
           "actions": [
-            "Spectral Deck 社区种，目标是多 Polychrome Baron + 红封钢K。",
-            "社区提到可推进到 Ante 18。"
+            "BalatroSeed 中文页写明光谱牌组，最多可集齐 5 个 Poly Baron。",
+            "核心方向是钢铁 + 红印国王组合，中文页标注可突破 Ante 18。",
+            "Steam 社区摘要同样指向多 Baron 和红封钢K长线。"
           ]
         },
         {
