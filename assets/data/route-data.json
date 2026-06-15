@@ -216,6 +216,221 @@
       "sources": [
         "bili-88nz7cz7"
       ]
+    },
+    {
+      "seed": "2K9H9",
+      "title": "Plasma Perkeo/Triboulet 负片长线",
+      "deck": "Plasma Deck",
+      "archetype": "Perkeo / Triboulet / 负片标签",
+      "difficulty": "英文节点型路线",
+      "version": "BalatroSeeds 2025-01 页面",
+      "image": "assets/images/seed-vault.webp",
+      "summary": "BalatroSeeds 页面给出从前三个商店到 Ante 18+ 的长线节点：早期 Perkeo + Triboulet，Ante 5 双 Diet Soda/Chaos/负片组件，Ante 6 Blueprint，Ante 7 Mime，Ante 8 第二 Blueprint，后续靠 Ectoplasm、Sock and Buskin 与负片 Eris 拉长线。",
+      "route": [
+        "前三个商店先处理 Buffoon Pack、Voucher、Gift Card、Soul Perkeo、Triboulet 和经济星球牌。",
+        "Ante 5 后买 Chaos，围绕双 Diet Soda、双 Chaos、Cavendish、Negative Castle、Turtle Bean 建立经济和标签资源。",
+        "Ante 6 找 Showman 和 Blueprint，Ante 7 只买一个 Mime，Ante 8 补第二个 Blueprint。",
+        "Ante 9-14 反复处理 Showman、Diet Soda 和 Rebate，Ante 15 拿 Ectoplasm，Ante 17 找 Sock and Buskin。",
+        "进入 Ante 18+ 后继续找复制类小丑和负片资源，页面作者提到后续可拿到 Antimatter 和大量 Negative Eris。"
+      ],
+      "warnings": [
+        "这条不是纯钢K流，而是 Plasma/Perkeo/Triboulet/负片标签长线；适合作为高质量英文路线样本。",
+        "原文提到作者本想补到 2K9H9HN，站内按页面标题与 URL 收录为 2K9H9，后续需要实机复盘确认。"
+      ],
+      "tags": [
+        "Plasma",
+        "Perkeo",
+        "Triboulet",
+        "Blueprint",
+        "长线"
+      ],
+      "sources": [
+        "balatroseeds-2k9h9"
+      ]
+    },
+    {
+      "seed": "Y3QRZZ5I",
+      "title": "Yellow Deck 商店队列解析样本",
+      "deck": "Yellow Deck",
+      "archetype": "商店队列 / 路线解析",
+      "difficulty": "结构化队列样本",
+      "version": "BalatroSeeds 页面版本",
+      "image": "assets/images/gold-stake-roadmap.webp",
+      "summary": "BalatroSeeds 页面给出 Ante 1-8 的 Boss、Voucher、Tags、Shop Queue 和 Packs，适合用来训练 DeckRoutes 的商店队列解析，不应直接包装成玩家推荐路线。",
+      "route": [
+        "Ante 1 先按简短路线拿 Certificate、Rare Tag/Burnt、Smiley Face、Baseball Card，并记录 The Pillar、Seed Money、D6/Rare Tag。",
+        "Ante 2 队列里早期可见 Brainstorm，后段第 50 项出现 Blueprint；页面同时列出多个 Standard/Celestial/Arcana Pack。",
+        "Ante 3 出 Bootstraps、Holographic Burnt Joker、Gift Card 等经济/过渡组件，适合做队列筛选示例。",
+        "Ante 4 记录 Hieroglyph、Rare Tag、Sock and Buskin、Oops! All 6s 和多个标准包牌面。",
+        "Ante 5-8 持续列出 Boss、Voucher、Tags 和 50 项商店队列，可作为未来“逐商店路线表”解析器的 fixture。"
+      ],
+      "warnings": [
+        "这是队列 dump，不是自然语言攻略；当前作为解析样本和候选路线，不标完整打法。",
+        "若要变成玩家攻略，需要实机复盘每个盲注的购买/跳过/出牌选择。"
+      ],
+      "tags": [
+        "Yellow Deck",
+        "队列",
+        "解析样本",
+        "Blueprint",
+        "Brainstorm"
+      ],
+      "sources": [
+        "balatroseeds-y3qrzz5i"
+      ]
+    },
+    {
+      "seed": "HNITC7EL",
+      "title": "Yellow Deck 双闪箔 Blueprint + 负片 Baron 候选",
+      "deck": "Yellow Deck",
+      "archetype": "Baron / DNA / Blueprint",
+      "difficulty": "短节点候选",
+      "version": "BalatroSeeds 2025-06-30",
+      "image": "assets/images/joker-strategy.webp",
+      "summary": "BalatroSeeds 页面描述 Yellow Deck 可走 double foil Blueprint、negative Baron、DNA，并给出 Ante 1/2/4/5 的关键节点，适合后续复盘成钢K候选路线。",
+      "route": [
+        "第一家商店买 Blueprint，Buffoon Pack 有 Vagabond，Arcana Pack 有 Temperance，并买 Paint Brush。",
+        "Ante 1 小盲出 two pair，拿 Wheel tarot 并用在 Blueprint 上。",
+        "Ante 2 用 Spectral Pack 的 Ankh 复制 Blueprint，形成双 Blueprint 基础。",
+        "Ante 4 大盲前商店重掷两次找 DNA。",
+        "Ante 5 大盲前 Buffoon Pack 找 Hanging Chad，重掷商店找 Photograph；大盲后买 Spectral Pack 给玻璃 K 加红封。"
+      ],
+      "warnings": [
+        "页面描述较短，未提供逐商店完整队列。",
+        "需要确认负片 Baron 的具体出现位置和红封玻璃 K 后续是否稳定转钢K。"
+      ],
+      "tags": [
+        "钢K候选",
+        "Yellow Deck",
+        "Blueprint",
+        "Baron",
+        "DNA"
+      ],
+      "sources": [
+        "balatroseeds-hnitc7el"
+      ]
+    },
+    {
+      "seed": "RCP8BZ3F",
+      "title": "Blue Deck 红封多彩钢K候选",
+      "deck": "Blue Deck",
+      "archetype": "Baron / Mime / Red Seal Steel King",
+      "difficulty": "短描述候选",
+      "version": "BalatroSeeds 2025-02-20",
+      "image": "assets/images/steel-king-route.webp",
+      "summary": "BalatroSeeds 页面提到 Blue Deck 可见 Rocket、Baron、Mime、Red Seal Polychrome Steel King、Burnt Joker，并且 Blueprint 和 Brainstorm 在 Ante 5 深处可用。",
+      "route": [
+        "前期信号包含 Rocket、Baron、Mime、Burnt Joker，可作为钢K长线候选。",
+        "页面明确出现 Red Seal Polychrome Steel King，是红封钢K内容池的高价值线索。",
+        "若想走星球路线，也有早期 Astronomer + Constellation 的替代方向。",
+        "Blueprint 和 Brainstorm 位于 Ante 5 深处，复盘时要确认经济能否支撑刷新。",
+        "页面提示负片主要来自 Arcana Pack 且会缩小手牌，路线风险需要单独标注。"
+      ],
+      "warnings": [
+        "当前只有短描述，不是完整流程。",
+        "负片缩手牌会影响 Baron/Mime 持牌触发，实战前必须确认手牌上限和 Boss。"
+      ],
+      "tags": [
+        "钢K候选",
+        "Blue Deck",
+        "Baron",
+        "Mime",
+        "Blueprint"
+      ],
+      "sources": [
+        "balatroseeds-rcp8bz3f"
+      ]
+    },
+    {
+      "seed": "494A1WSI",
+      "title": "Painted Deck 首 Ante Mime / Baron / Blueprint",
+      "deck": "Painted Deck",
+      "archetype": "早期 Baron-Mime-Blueprint",
+      "difficulty": "Ante 1 可读节点",
+      "version": "BalatroSeeds 1.0.1n-FULL",
+      "image": "assets/images/steel-king-route.webp",
+      "summary": "BalatroSeeds 的 Painted Deck 页面给出 Ante 1 具体路线：第一店 Buffoon Pack 拿 Mime，跳大盲拿 Rare tag，Boss 商店 Spectral Pack 用 Wraith 出 Blueprint，并拿免费 Baron。",
+      "route": [
+        "Small Blind 打 Kings + 8s 的 Full House 过关。",
+        "第一店从 Buffoon Pack 拿 Mime。",
+        "跳过 Big Blind 拿 Rare tag，让下一商店出现 Baron。",
+        "Boss Blind 先打 Club Flush，再打 Heart Flush。",
+        "Boss 商店从 Spectral Pack 拿 Wraith 出 Blueprint，并拿免费 Baron。"
+      ],
+      "warnings": [
+        "当前只覆盖 Ante 1，不是完整通关路线。",
+        "版本标注为 1.0.1n-FULL，后续复盘需要确认当前版本是否稳定。"
+      ],
+      "tags": [
+        "Baron",
+        "Mime",
+        "Blueprint",
+        "Painted Deck",
+        "早期节点"
+      ],
+      "sources": [
+        "balatroseeds-494a1wsi-painted"
+      ]
+    },
+    {
+      "seed": "UEWC6ZQF",
+      "title": "Reddit Perkeo / Blueprint / Brainstorm / Mime 候选",
+      "deck": "Reddit 原帖待登录复核",
+      "archetype": "Perkeo 复制组件",
+      "difficulty": "Reddit 候选",
+      "version": "Reddit 2025-04-02 线索",
+      "image": "assets/images/joker-strategy.webp",
+      "summary": "Reddit 线索给出 seed UEWC6ZQF，并描述基础 walkthrough：Soul 出 Perkeo，后续买 Blueprint、Death、Brainstorm、Mime。当前 Reddit 直连/Jina 403，因此先作为候选路线。",
+      "route": [
+        "开局目标是通过 Soul 找 Perkeo。",
+        "后续路线节点依次围绕 Blueprint、Death、Brainstorm、Mime 展开。",
+        "这类路线的价值在于 Perkeo 复制关键消耗牌，再通过复制小丑和 Mime 提高上限。",
+        "登录 Reddit 或取得可读缓存后，应补齐每个 Ante 的商店顺序和 Boss。"
+      ],
+      "warnings": [
+        "Reddit 原帖当前未能直读，站内只标候选。",
+        "没有逐商店文本前，不应当作为主推爽种。"
+      ],
+      "tags": [
+        "Reddit",
+        "Perkeo",
+        "Blueprint",
+        "Brainstorm",
+        "候选"
+      ],
+      "sources": [
+        "reddit-uewc6zqf-perkeo-route"
+      ]
+    },
+    {
+      "seed": "KW1IS19G",
+      "title": "Ante 2 Perkeo + 早期 Baron/Mime 候选",
+      "deck": "Reddit 原帖待登录复核",
+      "archetype": "Perkeo / Baron-Mime",
+      "difficulty": "Reddit 候选，含种子纠错",
+      "version": "Reddit 2025-03-24 线索",
+      "image": "assets/images/seed-vault.webp",
+      "summary": "Reddit 线索显示该帖原 seed 写作 KW1I519G，评论纠正为 KW1IS19G；路线信号包括 Ante 2 Arcana Pack 出 Perkeo，Baron/Blueprint/DNA 很快出现，Brainstorm/Mime 稍后补齐。",
+      "route": [
+        "按评论纠错使用 KW1IS19G，不使用容易混淆的 KW1I519G。",
+        "Ante 2 Arcana Pack 是 Perkeo 的关键节点。",
+        "早期继续找 Baron、Blueprint、DNA，开始具备人头牌/钢K长线基础。",
+        "Brainstorm 和 Mime 稍后出现，适合复盘成早期 Baron-Mime 候选路线。"
+      ],
+      "warnings": [
+        "seed 中的 I/1/S/5 容易混淆，必须在详情页保留纠错提示。",
+        "Reddit 原帖当前未能直读，仍需登录或缓存复核。"
+      ],
+      "tags": [
+        "Reddit",
+        "Perkeo",
+        "Baron",
+        "Mime",
+        "纠错"
+      ],
+      "sources": [
+        "reddit-kw1is19g-early-baron-mime"
+      ]
     }
   ],
   "seedDetails": {
@@ -277,26 +492,43 @@
       ]
     },
     "U8RJYV6N": {
-      "completeness": "待复盘",
-      "sourceMode": "B站元数据；公开视频无字幕",
-      "videoStatus": "Bilibili API 可读到单 P，时长 2372 秒；字幕接口为空。",
+      "completeness": "跨平台候选路线，待登录/视频复盘",
+      "sourceMode": "B站元数据 + BalatroSeeds 多牌组记录 + Reddit 搜索线索；Reddit/YouTube 直读受限",
+      "videoStatus": "Bilibili API 可读到单 P，时长 2372 秒；字幕接口为空。YouTube 具体视频 yt-dlp 返回 bot check，不能抽字幕。",
+      "sources": [
+        "bili-u8rjyv6n",
+        "balatroseeds-u8rjyv6n",
+        "reddit-u8rjyv6n-balatroeagle"
+      ],
       "flow": [
         {
-          "stage": "定位",
+          "stage": "公开 seed bank 信号",
           "actions": [
-            "这是“前期运营思路”视频，价值在于解释经济、过渡牌和关键节点，而不是只给终局截图。",
-            "当前没有字幕，站内先作为待复盘队列展示。"
+            "BalatroSeeds 主 seed 页显示 U8RJYV6N 已有 Plasma、Blue、Ghost、Yellow、Checkered、Red、Anaglyph、Magic 等多个牌组记录。",
+            "Checkered Deck 摘要明确写到 Ante 1 tarot pack 可出 negative Perkeo，Ante 2 通过 negative tag 拿 negative Blueprint + Brainstorm。",
+            "这说明 U8RJYV6N 不是单一 B站视频线索，而是有多平台传播和多牌组复盘价值的强候选。"
           ]
         },
         {
-          "stage": "后续待补",
+          "stage": "Reddit / YouTube 线索",
           "actions": [
-            "建议后续人工提取：每个商店买卖、跳过盲注、经济阈值、何时从过渡牌型转钢K。",
-            "补完后可做成新手最需要的逐回合路线页。"
+            "Reddit 研究线索称：Round 1 有 negative Blueprint，Round 2 有 negative Perkeo，Ante 2 有 negative Brainstorm + Baron。",
+            "同一线索还提到 Ante 4 可见 Chicot/Mime，Ante 8 附近有 Red Seal Jack。",
+            "YouTube 上有 U8RJYV6N 的非无尽高分和 Ante 39 路线视频，但本地 yt-dlp 需要登录确认不是 bot，无法抽字幕。"
+          ]
+        },
+        {
+          "stage": "中文内容落地方式",
+          "actions": [
+            "B站已有中文前期运营视频，价值在于解释经济、过渡牌和关键节点，而不是只给终局截图。",
+            "下一步应把 BalatroSeeds 的多牌组节点、Reddit 的早期负片组件、B站的中文运营思路合并成逐 Ante 路线。",
+            "复盘重点：每个商店买卖、跳过盲注、经济阈值、何时从过渡牌型转 Baron/Mime 或钢K。"
           ]
         }
       ],
       "mistakes": [
+        "Reddit 具体帖当前 403，不能把研究线索直接升级为完整攻略。",
+        "YouTube 无字幕且 bot-gated，只能做视频佐证和复盘队列。",
         "不要只写“前期运营”，必须记录到回合级选择才算完整攻略。"
       ]
     },
@@ -886,6 +1118,258 @@
         "成型偏晚，不能作为新手爽种主推。",
         "简介信息足够做候选入口，不足以做完整路线。"
       ]
+    },
+    "2K9H9": {
+      "completeness": "英文节点型路线，待实机复盘",
+      "sourceMode": "BalatroSeeds 可读长文本；Reddit 相关帖直连/Jina 均 403",
+      "videoStatus": "无视频证据；当前以 BalatroSeeds 页面文本为准。",
+      "sources": [
+        "balatroseeds-2k9h9"
+      ],
+      "flow": [
+        {
+          "stage": "Shop 1-3 - Perkeo / Triboulet 与经济起步",
+          "actions": [
+            "Shop 1 买 Buffoon Pack，并卖 Baseball Card。",
+            "Shop 2 买 Voucher 和 Buffoon Pack，保留 Gift Card。",
+            "Shop 3 买牌包找 Soul Perkeo、Triboulet，并买 Planet 补钱；作者提醒 Perkeo 的选择会受买牌影响，可通过再买 Planet 改变选择。",
+            "前期优先做 Lucky Cards 赚钱，等 Soul cards 价值到 22 美元左右再卖 Gift Card，并买 Mail-In Rebate 类经济资源。"
+          ]
+        },
+        {
+          "stage": "Ante 5 - 双 Diet Soda / Chaos / 负片资源",
+          "actions": [
+            "打完 Ante 4 Boss 后进入 Ante 5 商店，重掷到 Chaos 并买下。",
+            "小盲后重掷找 Business Card、Mars、Uranus 等资源。",
+            "大盲后继续重掷，目标包含 Negative Castle、Negative Turtle Bean、双 Diet Soda Double Tags、双 Chaos、Cavendish 和 Invisible Joker。",
+            "这段路线的重点是堆标签、经济和负片资源，不是直接成型钢K。"
+          ]
+        },
+        {
+          "stage": "Ante 6-8 - Blueprint / Mime / 第二 Blueprint",
+          "actions": [
+            "Ante 6 找 Showman 和 Blueprint，并卖掉一个 Chaos 与 Cavendish。",
+            "Ante 7 卖 Card 换 Trading Card，并且只买一个 Mime。",
+            "Ante 8 补第二个 Blueprint，开始有足够复制层支撑长线。"
+          ]
+        },
+        {
+          "stage": "Ante 9-17 - Showman 换版、Ectoplasm、Sock and Buskin",
+          "actions": [
+            "Ante 9-14 通过 Showman、Wheel 和重掷寻找 Foil/Polychrome 版本，同时继续找 Diet Soda 和 Rebate。",
+            "Ante 15 找 Ectoplasm。",
+            "Ante 16 正常推进；Ante 17 around round 51 找 Sock and Buskin。",
+            "Round 51 之后标签数量会快速堆高；遇到 Club、Plant、Leaf 这类 Boss 时要准备重掷或卖无用负片牌规避。"
+          ]
+        },
+        {
+          "stage": "Ante 18+ - 长线复制与负片 Eris",
+          "actions": [
+            "后续继续找 Copier type cards，包括新的 Showman 和 Blueprint。",
+            "若前面拿到 Diet Cola/Voucher tags，后续可接近拿满优惠券，Antimatter 用来放最终复制牌或 Showman。",
+            "作者记录到 Ante 28 附近有额外负片组件和大量 Negative Eris，可把这条作为负片长线专题样本。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "不要把它和 2K9H9HN 混为同一条已验证路线；页面标题和 URL 是 2K9H9，但正文提到作者原本想补 2K9H9HN。",
+        "这不是标准红封钢K教学，站内应标成 Perkeo/Triboulet/负片标签长线。",
+        "若要面向玩家推荐，需要实机补齐 Boss、金币、重掷次数和失败分支。"
+      ]
+    },
+    "Y3QRZZ5I": {
+      "completeness": "结构化队列样本，非完整打法",
+      "sourceMode": "BalatroSeeds Ante 1-8 队列 dump",
+      "videoStatus": "无视频证据；当前作为 parser fixture 和候选路线。",
+      "sources": [
+        "balatroseeds-y3qrzz5i"
+      ],
+      "flow": [
+        {
+          "stage": "Ante 1 - 开局购买和队列",
+          "actions": [
+            "简短路线提示：先拿第一个 tag，买 Certificate，跳 Rare Tag 找 Burnt，不买 Voucher，买 Smiley Face，再重掷找 Baseball Card。",
+            "结构化字段显示 Boss 为 The Pillar，Voucher 是 Seed Money，Tags 是 D6 Tag 与 Rare Tag。",
+            "Shop Queue 前段包含 Certificate、Smiley Face、Eris、Cavendish、Cartomancer 等，Packs 里有 Buffoon、Arcana、Spectral。"
+          ]
+        },
+        {
+          "stage": "Ante 2 - Brainstorm / Blueprint 信号",
+          "actions": [
+            "Boss 是 The Arm，Voucher 是 Wasteful，Tags 是 Buffoon Tag 与 Economy Tag。",
+            "Shop Queue 第 2 项出现 Brainstorm，后段第 50 项出现 Blueprint。",
+            "这说明它适合做“复制类小丑检索”样本，但不代表玩家应该一路买到第 50 项。"
+          ]
+        },
+        {
+          "stage": "Ante 3-4 - 过渡、Burnt、Sock and Buskin",
+          "actions": [
+            "Ante 3 简短路线写明重掷两次找 Bootstraps；完整队列还包含 Holographic Burnt Joker、Mail-In Rebate、Gift Card。",
+            "Ante 4 Boss 是 The Hook，Voucher 是 Hieroglyph，Tags 包含 Handy Tag 与 Rare Tag。",
+            "Ante 4 队列中出现 Sock and Buskin、The Family、Joker Stencil、Oops! All 6s 等路线分叉信号。"
+          ]
+        },
+        {
+          "stage": "Ante 5-8 - 可解析但需复盘的队列",
+          "actions": [
+            "Ante 5-8 每个 Ante 都列出 Boss、Voucher、Tags、50 项商店队列和多个 Packs。",
+            "Ante 8 队列里出现 DNA、Death、Justice、Gold Seal King of Hearts 等可转路线线索。",
+            "站内下一步应把这类 dump 自动拆成“购买建议 / 只作信息 / 风险节点”三层。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "队列信息很完整，但没有玩家决策，不能直接写成“照抄可通关”。",
+        "列表很长，前端展示必须折叠或分 Ante 展示，避免用户看不懂。"
+      ]
+    },
+    "HNITC7EL": {
+      "completeness": "短节点候选，待补完整路线",
+      "sourceMode": "BalatroSeeds Yellow Deck 短描述",
+      "videoStatus": "无视频证据。",
+      "sources": [
+        "balatroseeds-hnitc7el"
+      ],
+      "flow": [
+        {
+          "stage": "Ante 1-2 - 双 Blueprint 起步",
+          "actions": [
+            "第一家商店买 Blueprint，Buffoon Pack 有 Vagabond，Arcana Pack 有 Temperance，并买 Paint Brush。",
+            "Ante 1 小盲打 two pair，拿 Wheel tarot 用在 Blueprint 上。",
+            "Ante 2 Spectral Pack 用 Ankh 复制 Blueprint。"
+          ]
+        },
+        {
+          "stage": "Ante 4-5 - DNA / Photograph / 红封玻璃 K",
+          "actions": [
+            "Ante 4 大盲前商店重掷两次找 DNA。",
+            "Ante 5 大盲前 Buffoon Pack 找 Hanging Chad，重掷找 Photograph。",
+            "Ante 5 大盲后买 Spectral Pack，把红封加到玻璃 King 上。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "负片 Baron 的具体位置尚未从页面文本中拆出。",
+        "玻璃 K 和钢K不是同一条最终路线，后续要复盘能否稳定转钢。"
+      ]
+    },
+    "RCP8BZ3F": {
+      "completeness": "短描述候选，待补完整路线",
+      "sourceMode": "BalatroSeeds Blue Deck 短描述",
+      "videoStatus": "无视频证据。",
+      "sources": [
+        "balatroseeds-rcp8bz3f"
+      ],
+      "flow": [
+        {
+          "stage": "核心信号",
+          "actions": [
+            "页面描述直接列出 Rocket、Baron、Mime、Red Seal Polychrome Steel King 和 Burnt Joker。",
+            "这条最贴近红封钢K候选池，但缺商店顺序。"
+          ]
+        },
+        {
+          "stage": "Ante 5 深处 - Blueprint / Brainstorm",
+          "actions": [
+            "页面说明 Blueprint 和 Brainstorm 在 Ante 5 深处可用。",
+            "早期也有 Astronomer + Constellation 的替代路线信号。",
+            "负片主要来自 Arcana Pack，会缩小手牌；对 Baron/Mime 持牌触发是明显风险。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "没有逐 Ante 购买路线，不应当标完整。",
+        "需要实机确认 Ante 5 深处刷新成本和缩手牌负片是否影响成型。"
+      ]
+    },
+    "494A1WSI": {
+      "completeness": "Ante 1 节点清晰，后续待补",
+      "sourceMode": "BalatroSeeds Painted Deck 可读路线",
+      "videoStatus": "无视频证据。",
+      "sources": [
+        "balatroseeds-494a1wsi-painted"
+      ],
+      "flow": [
+        {
+          "stage": "Small Blind / 第一店 - Mime",
+          "actions": [
+            "版本标注 1.0.1n-FULL，牌组为 Painted Deck。",
+            "Small Blind 用 Kings + 8s 的 Full House 过关。",
+            "第一店打开 Buffoon Pack，拿 Mime。"
+          ]
+        },
+        {
+          "stage": "Big Blind / Boss Shop - Baron + Blueprint",
+          "actions": [
+            "跳过 Big Blind 拿 Rare tag，让下一家商店出现 Baron。",
+            "Boss Blind 先打 Club Flush，再打 Heart Flush。",
+            "Boss 商店从 Spectral Pack 拿 Wraith，获得 Blueprint，并拿免费 Baron。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "只有 Ante 1，不能包装成完整通关。",
+        "Painted Deck 与常见 Plasma/Ghost 钢K路线不同，后续要确认如何做红封钢K或人头牌长线。"
+      ]
+    },
+    "UEWC6ZQF": {
+      "completeness": "Reddit 候选路线，待登录复核",
+      "sourceMode": "Reddit 搜索线索；直连/Jina 当前 403",
+      "videoStatus": "无视频证据。",
+      "sources": [
+        "reddit-uewc6zqf-perkeo-route"
+      ],
+      "flow": [
+        {
+          "stage": "早期核心",
+          "actions": [
+            "Reddit 线索给出 seed UEWC6ZQF。",
+            "基础 walkthrough 的第一目标是通过 Soul 找 Perkeo。",
+            "后续买 Blueprint，让 Perkeo 的资源复制开始进入可规划状态。"
+          ]
+        },
+        {
+          "stage": "复制组件成型",
+          "actions": [
+            "路线节点还包括 Death、Brainstorm 和 Mime。",
+            "可作为 Perkeo + 复制组件 + Mime 的候选，而不是当前主推钢K完整路线。",
+            "下一步必须补齐每个商店/牌包位置。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "Reddit 原帖当前不可直读，任何 Ante 顺序都要等登录复核。",
+        "没有 Baron/钢K完整节点前，不应当归入纯钢K。"
+      ]
+    },
+    "KW1IS19G": {
+      "completeness": "Reddit 候选路线，含 seed 纠错",
+      "sourceMode": "Reddit 搜索线索；直连/Jina 当前 403",
+      "videoStatus": "无视频证据。",
+      "sources": [
+        "reddit-kw1is19g-early-baron-mime"
+      ],
+      "flow": [
+        {
+          "stage": "Seed 纠错",
+          "actions": [
+            "Reddit 线索显示原帖写 KW1I519G，评论纠正为 KW1IS19G。",
+            "站内统一使用 KW1IS19G，并在警告中保留 I/1/S/5 混淆风险。"
+          ]
+        },
+        {
+          "stage": "Ante 2 与早期组件",
+          "actions": [
+            "Ante 2 Arcana Pack 是 Perkeo 的关键节点。",
+            "Baron、Blueprint、DNA 很快出现，Brainstorm 和 Mime 稍后补齐。",
+            "适合复盘成早期 Baron-Mime 候选，但当前缺逐商店购买表。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "seed 字符易混，必须实机验证后再推广。",
+        "Reddit 直读受限，当前不标完整。"
+      ]
     }
   },
   "sourceAdditions": {
@@ -920,6 +1404,74 @@
     "taptap-x8wtk1u1": {
       "label": "TapTap: 10回合镭射钢K X8WTK1U1",
       "url": "https://www.taptap.cn/moment/685810471831342883"
+    },
+    "balatroseeds-2k9h9": {
+      "label": "BalatroSeeds: 2K9H9 Plasma Deck route",
+      "url": "https://balatroseeds.com/seeds/2K9H9"
+    },
+    "balatroseeds-y3qrzz5i": {
+      "label": "BalatroSeeds: Y3QRZZ5I Yellow Deck queue",
+      "url": "https://balatroseeds.com/seeds/Y3QRZZ5I"
+    },
+    "balatroseeds-hnitc7el": {
+      "label": "BalatroSeeds: HNITC7EL Yellow Deck",
+      "url": "https://balatroseeds.com/seeds/HNITC7EL"
+    },
+    "balatroseeds-rcp8bz3f": {
+      "label": "BalatroSeeds: RCP8BZ3F Blue Deck",
+      "url": "https://balatroseeds.com/seeds/RCP8BZ3F"
+    },
+    "balatroseeds-u8rjyv6n": {
+      "label": "BalatroSeeds: U8RJYV6N multi-deck records",
+      "url": "https://balatroseeds.com/seeds/U8RJYV6N"
+    },
+    "reddit-u8rjyv6n-balatroeagle": {
+      "label": "Reddit: U8RJYV6N Negative Blueprint/Perkeo/Brainstorm",
+      "url": "https://www.reddit.com/r/balatro/comments/1lxxa25/ante_4_negative_blueprint_negative_brainstorm/"
+    },
+    "youtube-u8rjyv6n-rimereason-record": {
+      "label": "YouTube: U8RJYV6N non-endless high score record",
+      "url": "https://www.youtube.com/watch?v=O88WUy94yog"
+    },
+    "youtube-u8rjyv6n-ante39": {
+      "label": "YouTube: U8RJYV6N Ante 39 route video",
+      "url": "https://www.youtube.com/watch?v=AjWt1o6Dnj4"
+    },
+    "balatroseeds-494a1wsi-painted": {
+      "label": "BalatroSeeds: 494A1WSI Painted Deck",
+      "url": "https://balatroseeds.com/seeds/494A1WSI/painted-deck"
+    },
+    "reddit-uewc6zqf-perkeo-route": {
+      "label": "Reddit: UEWC6ZQF Perkeo Blueprint Brainstorm Mime walkthrough",
+      "url": "https://www.reddit.com/r/balatro/comments/1jppwwm/my_new_best_seed_perkeo_blueprint_brainstorm_mime/"
+    },
+    "reddit-kw1is19g-early-baron-mime": {
+      "label": "Reddit: KW1IS19G Ante 2 Perkeo with early Baron Mime",
+      "url": "https://www.reddit.com/r/balatro/comments/1jj5vvf/ante_2_perkeo_with_very_early_baronmime/"
+    },
+    "github-blueprint-seed-tools": {
+      "label": "GitHub: miaklwalker/Blueprint seed analyzer",
+      "url": "https://github.com/miaklwalker/Blueprint"
+    },
+    "blueprint-seed-analyzer-app": {
+      "label": "Blueprint web app: Balatro seed analyzer",
+      "url": "https://miaklwalker.github.io/Blueprint/"
+    },
+    "github-balatro-seed-oracle": {
+      "label": "GitHub: OptimusPi/BalatroSeedOracle",
+      "url": "https://github.com/OptimusPi/BalatroSeedOracle"
+    },
+    "github-greeneedle": {
+      "label": "GitHub: lafiosca/GreenNeedle",
+      "url": "https://github.com/lafiosca/GreenNeedle"
+    },
+    "github-immolate": {
+      "label": "GitHub: SpectralPack/Immolate",
+      "url": "https://github.com/SpectralPack/Immolate"
+    },
+    "github-balatro-calculator": {
+      "label": "GitHub: EFHIII/balatro-calculator",
+      "url": "https://github.com/EFHIII/balatro-calculator"
     },
     "wechat-balatro-newbie": {
       "label": "微信公众号: 小丑牌Balatro新手最强攻略",

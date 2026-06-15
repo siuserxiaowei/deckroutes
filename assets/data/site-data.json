@@ -4,13 +4,13 @@
     "title": "DeckRoutes - Balatro Seed Atlas",
     "asOf": "2026-06-15",
     "language": "zh-CN",
-    "method": "Agent Reach doctor + mcporter exa/douyin/weibo/xiaohongshu + Exa web search + Bilibili public search + WeChat search probe + GitHub CLI + Jina Reader + Scrapling availability check",
-    "coverageNote": "2026-06-15 二次复核：Agent Reach 提升到 13/15；微博 MCP 可用，小红书 MCP 已连接但无 cookies.json 且 check/search EOF，抖音 MCP 已连接但公开视频解析实测缺 DASHSCOPE_API_KEY。"
+    "method": "Agent Reach doctor + Jina Reader + GitHub CLI + BalatroSeeds public pages + web search fallback + Scrapling availability check",
+    "coverageNote": "2026-06-15 三次复核：最新 Agent Reach doctor 显示 8/15 渠道可用，Exa/微博/小红书/抖音当前未配置；Reddit 直连/Jina 403，YouTube 搜索被 bot check；本轮优先入库可公开读取的 BalatroSeeds 和 GitHub 工具证据。"
   },
   "stats": [
     {
       "label": "已整理种子",
-      "value": "19",
+      "value": "26",
       "note": "含可点击流程、中文来源和待复盘队列"
     },
     {
@@ -20,8 +20,8 @@
     },
     {
       "label": "证据来源",
-      "value": "19",
-      "note": "含平台状态、微博/抖音/XHS 证据"
+      "value": "31",
+      "note": "含平台状态、中文社区、英文 seed bank 和 GitHub 工具证据"
     },
     {
       "label": "候选域名",
@@ -35,7 +35,7 @@
     },
     {
       "label": "复盘队列",
-      "value": "9",
+      "value": "10",
       "note": "按平台列出下一轮采集、OCR 和牌局复盘任务"
     }
   ],
@@ -71,29 +71,34 @@
     },
     {
       "seed": "U8RJYV6N",
-      "title": "前期运营思路种子",
-      "deck": "视频来源未标明",
-      "archetype": "钢K前期运营",
-      "difficulty": "学习路线",
-      "version": "需按视频版本复核",
+      "title": "跨平台负片 Blueprint / Perkeo / Brainstorm 种",
+      "deck": "多牌组记录 / Checkered Deck 信号最明确",
+      "archetype": "负片复制组件 / Baron-Mime 候选",
+      "difficulty": "跨平台候选路线",
+      "version": "BalatroSeeds 2025-2026 记录 + Reddit/视频待复核",
       "image": "assets/images/seed-vault.webp",
-      "summary": "来自 B站前期运营思路视频，适合做成中文路线复盘页，承接新手搜索需求。",
+      "summary": "U8RJYV6N 不只是 B站前期运营思路种；BalatroSeeds 记录多个牌组，Checkered Deck 明确有 Ante 1 负片 Perkeo、Ante 2 负片 Blueprint + Brainstorm，Reddit/YouTube 也有高分和 Ante 39 路线线索。",
       "route": [
-        "重点不只是终局爆分，而是从前几商店解释经济、删改牌和过渡小丑。",
-        "页面后续可拆成每回合路线表，标注购买、跳过、牌型选择。",
-        "适合作为“从零学钢K”的第二篇内容。"
+        "BalatroSeeds 显示该 seed 有 Plasma、Blue、Ghost、Yellow、Checkered、Red、Anaglyph、Magic 等多个牌组记录。",
+        "Checkered Deck 摘要明确：Ante 1 tarot pack 可出 negative Perkeo，Ante 2 通过 negative tag 拿 negative Blueprint + Brainstorm。",
+        "Reddit 线索称早期还可接 Baron/Mime/Chicot，并在 Ante 8 附近出现红封 Jack，适合作为跨平台深复盘对象。",
+        "B站已有中文前期运营视频，适合把英文节点和中文运营解释合并成“怎么从早期负片组件转钢K/人头牌”的路线页。"
       ],
       "warnings": [
-        "公开视频检索只拿到标题和互动数据，仍需二次复盘。"
+        "Reddit 具体帖直连/Jina 当前 403；YouTube yt-dlp 具体视频被 bot check，不能把视频当逐回合文本来源。",
+        "站内暂标跨平台候选路线，完整商店表需要人工复盘或登录后抓取。"
       ],
       "tags": [
-        "钢K",
-        "运营",
-        "中文视频",
-        "新手"
+        "Perkeo",
+        "Blueprint",
+        "Brainstorm",
+        "Baron",
+        "跨平台"
       ],
       "sources": [
-        "bili-u8rjyv6n"
+        "bili-u8rjyv6n",
+        "balatroseeds-u8rjyv6n",
+        "reddit-u8rjyv6n-balatroeagle"
       ]
     },
     {
@@ -527,6 +532,27 @@
       "opportunity": "中文复盘、B站视频转路线、可复制路线表。"
     },
     {
+      "name": "Blueprint Seed Analyzer",
+      "type": "开源 seed analyzer / 路线工具",
+      "url": "https://miaklwalker.github.io/Blueprint/",
+      "signal": "GitHub 仓库 miaklwalker/Blueprint 有 23 stars，网页工具支持输入 seed、牌组、底注、版本，并展示商店/牌包/购买记录等路线信息。",
+      "opportunity": "DeckRoutes 后续可以做中文 seed viewer、购买清单和路线规划器，而不是只做静态攻略。"
+    },
+    {
+      "name": "Balatro Seed Oracle",
+      "type": "开源 seed 搜索器",
+      "url": "https://github.com/OptimusPi/BalatroSeedOracle",
+      "signal": "GitHub 仓库 18 stars，2026-06-07 更新；README 写明可按 Blueprint + Brainstorm、Negative Perkeo、voucher chain、boss/tag 等条件搜 seed。",
+      "opportunity": "适合作为未来“按组件找种子”的产品参考，例如搜索 Baron + Mime + Red Seal Steel King。"
+    },
+    {
+      "name": "GreenNeedle / Immolate",
+      "type": "seed 搜索工具链",
+      "url": "https://github.com/lafiosca/GreenNeedle",
+      "signal": "GreenNeedle 是 Balatro seed search mod；SpectralPack/Immolate 有 161 stars，是 OpenCL seed searcher，说明高性能 seed 检索已有玩家需求。",
+      "opportunity": "后续如果做 AI 攻略站，可以把“玩家攻略”与“机器筛 seed”结合，形成自动候选路线池。"
+    },
+    {
       "name": "BalatroSeed.net",
       "type": "多语种种子指南",
       "url": "https://balatroseed.net/",
@@ -831,19 +857,19 @@
   "platformStatus": [
     {
       "platform": "Agent Reach / 工具总览",
-      "status": "13/15 渠道可用",
+      "status": "8/15 渠道可用",
       "accessMethod": "agent-reach doctor + mcporter list",
       "usableNow": true,
-      "limitation": "小宇宙需要 Groq key，LinkedIn 未配置；小红书虽然 MCP 连接成功，但未登录时搜索会 EOF；抖音解析实测需要 DASHSCOPE_API_KEY。",
-      "nextAction": "继续用可用渠道扩证据池；小红书需导入 cookie，抖音转写/解析需配置 DASHSCOPE_API_KEY。"
+      "limitation": "本轮最新 doctor 显示 GitHub/YouTube/V2EX/RSS/Jina/X/Reddit 读取/微信公众号可用；Exa、微博、小红书、抖音、LinkedIn、小宇宙未配置或缺 key/cookie。",
+      "nextAction": "短期用 Jina、GitHub CLI、网页搜索和公开视频补证据；恢复 Exa/微博/小红书/抖音配置后再跑深采。"
     },
     {
       "platform": "Exa / 全网语义搜索",
-      "status": "可用",
+      "status": "当前未配置",
       "accessMethod": "mcporter call exa.web_search_exa",
-      "usableNow": true,
-      "limitation": "返回的是网页索引和摘要，仍需交叉验证原始来源。",
-      "nextAction": "用于发现 BalatroSeeds、TapTap、B站、媒体攻略和竞品页面。"
+      "usableNow": false,
+      "limitation": "mcporter call exa.web_search_exa 返回 Unknown MCP server 'exa'；agent-reach doctor 提示需要 mcporter config add exa https://mcp.exa.ai/mcp。",
+      "nextAction": "重新配置 Exa 后再做 Reddit/全网 seed bank 深搜；未恢复前只保留普通网页搜索与 Jina 可读来源。"
     },
     {
       "platform": "任意网页 / Jina Reader",
@@ -871,35 +897,35 @@
     },
     {
       "platform": "小红书",
-      "status": "MCP 已连接，未登录不可采集",
-      "accessMethod": "Docker xpzouying/xiaohongshu-mcp on localhost:18060 + mcporter HTTP",
+      "status": "当前未配置/未登录",
+      "accessMethod": "xiaohongshu-mcp cookie 模式",
       "usableNow": false,
-      "limitation": "工具列表可用，但容器日志显示缺 cookies.json；check_login_status 和 search_feeds 均返回 EOF。不能在未登录状态下真实读取笔记。",
-      "nextAction": "通过登录二维码或 cookie 导入完成登录，再运行 search_feeds(\"小丑牌 钢K\") 和 get_feed_detail。"
+      "limitation": "本轮最新 doctor 提示小红书 MCP 未配置；上一轮即使容器连上也因缺 cookies.json 导致 check_login_status/search_feeds EOF。不能在未登录状态下真实读取笔记。",
+      "nextAction": "启动 xiaohongshu-mcp 并导入 cookies.json 后，再运行 search_feeds(\"小丑牌 钢K\") 和 get_feed_detail。"
     },
     {
       "platform": "抖音",
-      "status": "MCP 已配置，实测解析需 API key",
-      "accessMethod": "douyin-mcp-server stdio + Exa 发现公开抖音页面",
+      "status": "当前未配置，解析仍需 API key",
+      "accessMethod": "douyin-mcp-server + DASHSCOPE_API_KEY",
       "usableNow": false,
-      "limitation": "mcporter 工具注册成功，但 parse_douyin_video_info 对测试链接返回“未设置 DASHSCOPE_API_KEY”；当前只能用 Exa 索引摘要作为公开信号。",
-      "nextAction": "配置 DASHSCOPE_API_KEY 后再解析视频元数据/转写；未配置前只保留 Exa 发现的抖音页面证据。"
+      "limitation": "本轮最新 doctor 提示抖音 MCP 未配置；上一轮 parse_douyin_video_info 对测试链接返回“未设置 DASHSCOPE_API_KEY”。",
+      "nextAction": "先配置 douyin MCP，再配置 DASHSCOPE_API_KEY；未完成前只保留已发现的公开页面线索，不写成完整攻略。"
     },
     {
       "platform": "微博",
-      "status": "MCP 可用",
+      "status": "当前未配置",
       "accessMethod": "uv tool install mcp-server-weibo --with socksio + mcporter stdio",
-      "usableNow": true,
-      "limitation": "搜索结果以公开微博和话题为主，很多是用户感想，不等同于完整攻略；需筛掉无关/弱证据。",
-      "nextAction": "用于追踪 #小丑牌# 话题、钢K流讨论、种子记录和社交热度。"
+      "usableNow": false,
+      "limitation": "本轮最新 doctor 提示微博 MCP 未配置；已有微博证据保留为历史采集结果，但当前不能继续增量搜索。",
+      "nextAction": "重新安装并 mcporter config add weibo 后，再追踪 #小丑牌# 话题、钢K流讨论和种子图片。"
     },
     {
       "platform": "Reddit / X / YouTube / GitHub / V2EX / RSS",
       "status": "可用或可经 Agent Reach 访问",
       "accessMethod": "xreach、curl/Exa、yt-dlp、gh、V2EX API、feedparser",
       "usableNow": true,
-      "limitation": "Reddit 直连可能 403，YouTube/B站字幕不一定存在；GitHub 搜索结果需判定与攻略站是否相关。",
-      "nextAction": "用于扩展英文路线、竞品、开源工具和 SEO 内容机会。"
+      "limitation": "Reddit 直连和 Jina 读取具体帖均返回 403；YouTube yt-dlp 搜索触发 bot check；GitHub CLI 查询可用。",
+      "nextAction": "Reddit/YouTube 暂作为待登录或待代理复核队列；GitHub 用于工具和 seed analyzer 竞品证据。"
     },
     {
       "platform": "Scrapling",
@@ -1226,6 +1252,223 @@
       ],
       "confidence": "高",
       "useInSite": "作为渠道接入缺口说明；登录后再采集笔记。"
+    },
+    {
+      "id": "balatroseeds-2k9h9-route",
+      "platform": "BalatroSeeds",
+      "title": "2K9H9 Plasma Deck Perkeo/Triboulet 长线",
+      "url": "https://balatroseeds.com/seeds/2K9H9",
+      "retrievedAt": "2026-06-15",
+      "contentType": "Jina Reader 可读网页正文",
+      "seeds": [
+        "2K9H9"
+      ],
+      "facts": [
+        "页面标题和 URL 指向 seed 2K9H9，Deck 为 Plasma Deck。",
+        "正文给出前三个商店、Ante 5、Ante 6、Ante 7、Ante 8、Ante 9-14、Ante 15、Ante 17 和 Ante 18+ 的关键节点。",
+        "核心不是纯钢K，而是 Soul Perkeo、Triboulet、Chaos、Diet Soda、Blueprint、Mime、Ectoplasm、Sock and Buskin、负片 Eris 的长线资源路线。",
+        "正文提到作者本想补到 2K9H9HN，因此站内保留 seed 混杂风险提示。"
+      ],
+      "confidence": "中高",
+      "useInSite": "已入库为英文节点型路线；后续用实机复盘确认 Boss、金币和重掷次数。"
+    },
+    {
+      "id": "balatroseeds-y3qrzz5i-parser",
+      "platform": "BalatroSeeds",
+      "title": "Y3QRZZ5I Yellow Deck Ante 1-8 队列 dump",
+      "url": "https://balatroseeds.com/seeds/Y3QRZZ5I",
+      "retrievedAt": "2026-06-15",
+      "contentType": "Jina Reader 可读网页正文",
+      "seeds": [
+        "Y3QRZZ5I"
+      ],
+      "facts": [
+        "页面 Deck 为 Yellow Deck，正文包含 Ante 1-8 的 Boss、Voucher、Tags、Shop Queue 和 Packs。",
+        "Ante 2 队列早期出现 Brainstorm，后段出现 Blueprint，适合做复制类小丑检索样本。",
+        "页面更像结构化队列 dump，不是玩家决策攻略。"
+      ],
+      "confidence": "高",
+      "useInSite": "已入库为解析样本；不标完整打法，用于后续商店队列 parser 和 UI 折叠展示。"
+    },
+    {
+      "id": "balatroseeds-hnitc7el-steel-k",
+      "platform": "BalatroSeeds",
+      "title": "HNITC7EL Yellow Deck 双 Blueprint / 负片 Baron 候选",
+      "url": "https://balatroseeds.com/seeds/HNITC7EL",
+      "retrievedAt": "2026-06-15",
+      "contentType": "Jina Reader 可读网页正文",
+      "seeds": [
+        "HNITC7EL"
+      ],
+      "facts": [
+        "页面描述 Yellow Deck 有 double foil Blueprint、negative Baron、DNA。",
+        "可提取节点包括第一家商店 Blueprint、Ante 1 Wheel tarot、Ante 2 Ankh 复制 Blueprint、Ante 4 找 DNA、Ante 5 找 Hanging Chad/Photograph/红封玻璃 King。",
+        "页面未给出完整商店队列，负片 Baron 的具体位置还需复盘。"
+      ],
+      "confidence": "中",
+      "useInSite": "已入库为短节点候选；适合后续人工复盘补成钢K/人头牌路线。"
+    },
+    {
+      "id": "balatroseeds-rcp8bz3f-steel-k",
+      "platform": "BalatroSeeds",
+      "title": "RCP8BZ3F Blue Deck 红封多彩钢K候选",
+      "url": "https://balatroseeds.com/seeds/RCP8BZ3F",
+      "retrievedAt": "2026-06-15",
+      "contentType": "Jina Reader 可读网页正文",
+      "seeds": [
+        "RCP8BZ3F"
+      ],
+      "facts": [
+        "页面描述 Blue Deck 包含 Rocket、Baron、Mime、Red Seal Polychrome Steel King 和 Burnt Joker。",
+        "Blueprint 与 Brainstorm 在 Ante 5 深处可用。",
+        "页面提示负片主要来自 Arcana Pack 且会缩小手牌，对 Baron/Mime 持牌触发有风险。"
+      ],
+      "confidence": "中",
+      "useInSite": "已入库为钢K候选；不能标完整流程，需确认 Ante 5 刷新成本和手牌上限。"
+    },
+    {
+      "id": "github-blueprint-seed-tools",
+      "platform": "GitHub / Web App",
+      "title": "Blueprint Balatro Seed Analyzer",
+      "url": "https://github.com/miaklwalker/Blueprint",
+      "retrievedAt": "2026-06-15",
+      "contentType": "GitHub CLI + Jina Reader 页面",
+      "seeds": [],
+      "facts": [
+        "GitHub CLI 返回 miaklwalker/Blueprint：23 stars，updatedAt 2026-04-08，描述为 Balatro seed analyzer。",
+        "项目主页可读到输入 seed、牌组、底注、版本、每 Ante 卡牌数量、购买记录和 seed summary 等 UI。",
+        "README/页面说明它用于 seed routing and analysis，并提到购买卡牌/优惠券生成 shopping list 的方向。",
+        "页面热门种子列表包含 2K9H9HN，和本轮 BalatroSeeds 2K9H9 文本互相构成线索。"
+      ],
+      "confidence": "高",
+      "useInSite": "作为 DeckRoutes 后续 seed viewer、购物清单、路线规划器的产品参考，不作为具体 seed 流程来源。"
+    },
+    {
+      "id": "github-balatro-seed-oracle",
+      "platform": "GitHub",
+      "title": "Balatro Seed Oracle 搜索器",
+      "url": "https://github.com/OptimusPi/BalatroSeedOracle",
+      "retrievedAt": "2026-06-15",
+      "contentType": "GitHub CLI + Jina Reader README",
+      "seeds": [],
+      "facts": [
+        "GitHub CLI 返回 OptimusPi/BalatroSeedOracle：18 stars，updatedAt 2026-06-07，描述为 Balatro seed searching and filtering tools。",
+        "README 说明可按 exact joker combinations、voucher chains、soul jokers、boss、tags、spectral cards 等条件找 seed。",
+        "README 示例包含 Negative Perkeo、Blueprint、Telescope/Observatory 等过滤条件。",
+        "项目说明典型搜索速度可达每秒千万级 seed，适合做未来自动候选池参考。"
+      ],
+      "confidence": "高",
+      "useInSite": "作为“按组件找种子”的工具路线参考；不把 GitHub 工具仓库当玩家攻略。"
+    },
+    {
+      "id": "github-seed-searcher-stack",
+      "platform": "GitHub",
+      "title": "GreenNeedle / Immolate seed searcher 工具信号",
+      "url": "https://github.com/lafiosca/GreenNeedle",
+      "retrievedAt": "2026-06-15",
+      "contentType": "GitHub CLI 搜索与仓库查询",
+      "seeds": [],
+      "facts": [
+        "GitHub 搜索确认 lafiosca/GreenNeedle 是 Balatro seed search mod with native C search engine，updatedAt 2026-03-19。",
+        "SpectralPack/Immolate 是 OpenCL seed searcher for Balatro，GitHub CLI 返回 161 stars，updatedAt 2026-05-06。",
+        "这类工具说明玩家有按条件批量筛 seed 的需求，但它们不是现成攻略内容。"
+      ],
+      "confidence": "中高",
+      "useInSite": "作为后续自动化 seed 发现和筛选器能力参考；路线内容仍需网页/视频/实机复盘。"
+    },
+    {
+      "id": "balatroseeds-u8rjyv6n-multideck",
+      "platform": "BalatroSeeds",
+      "title": "U8RJYV6N 多牌组记录与 Checkered Deck 负片节点",
+      "url": "https://balatroseeds.com/seeds/U8RJYV6N",
+      "retrievedAt": "2026-06-15",
+      "contentType": "Jina Reader 可读网页正文",
+      "seeds": [
+        "U8RJYV6N"
+      ],
+      "facts": [
+        "BalatroSeeds 主 seed 页显示 U8RJYV6N 已有 Plasma、Blue、Ghost、Yellow、Checkered、Red、Anaglyph、Magic 等多个牌组记录。",
+        "Checkered Deck 摘要写到 Ante 1 tarot pack 有 negative Perkeo。",
+        "同一摘要还写到 Ante 2 可通过 negative tag 拿 negative Blueprint + Brainstorm。",
+        "该页说明 U8RJYV6N 具备多平台、多牌组复盘价值。"
+      ],
+      "confidence": "高",
+      "useInSite": "已用于升级 U8RJYV6N 详情页；后续按牌组拆分路线。"
+    },
+    {
+      "id": "reddit-u8rjyv6n-balatroeagle",
+      "platform": "Reddit",
+      "title": "U8RJYV6N 早期负片 Blueprint / Perkeo / Brainstorm 线索",
+      "url": "https://www.reddit.com/r/balatro/comments/1lxxa25/ante_4_negative_blueprint_negative_brainstorm/",
+      "retrievedAt": "2026-06-15",
+      "contentType": "子任务搜索线索；本地 Reddit/Jina 直读 403",
+      "seeds": [
+        "U8RJYV6N"
+      ],
+      "facts": [
+        "研究线索称该帖标题指向 Ante 4 negative Blueprint、negative Brainstorm、negative Perkeo、Baron 和 Mime。",
+        "线索摘要包含 Round 1 negative Blueprint、Round 2 negative Perkeo、Ante 2 negative Brainstorm + Baron、Ante 4 Chicot/Mime、Ante 8 Red Seal Jack。",
+        "本地直接请求 Reddit 和 Jina Reader 均返回 403，需要 Reddit 登录或可用代理后复核正文。"
+      ],
+      "confidence": "中",
+      "useInSite": "作为 U8RJYV6N 跨平台候选节点；不作为完整路线证据。"
+    },
+    {
+      "id": "youtube-u8rjyv6n-bot-gated",
+      "platform": "YouTube",
+      "title": "U8RJYV6N 英文高分视频待登录复盘",
+      "url": "https://www.youtube.com/watch?v=O88WUy94yog",
+      "retrievedAt": "2026-06-15",
+      "contentType": "视频链接线索 + yt-dlp bot check",
+      "seeds": [
+        "U8RJYV6N"
+      ],
+      "facts": [
+        "研究线索列出 U8RJYV6N 的非无尽高分视频和 Ante 39 路线视频。",
+        "本地 yt-dlp 对 O88WUy94yog、AjWt1o6Dnj4、nV2SywBK8ro 均返回需要登录确认不是 bot。",
+        "当前不能抽字幕或逐回合节点，只能作为待人工/登录复盘的视频队列。"
+      ],
+      "confidence": "中",
+      "useInSite": "作为视频复盘队列，不生成逐回合攻略。"
+    },
+    {
+      "id": "balatroseeds-494a1wsi-painted",
+      "platform": "BalatroSeeds",
+      "title": "494A1WSI Painted Deck Ante 1 Mime / Baron / Blueprint",
+      "url": "https://balatroseeds.com/seeds/494A1WSI/painted-deck",
+      "retrievedAt": "2026-06-15",
+      "contentType": "Jina Reader 可读网页正文",
+      "seeds": [
+        "494A1WSI"
+      ],
+      "facts": [
+        "页面版本标注 1.0.1n-FULL，牌组是 Painted Deck。",
+        "Ante 1 Small Blind 打 Kings + 8s 的 Full House。",
+        "第一店 Buffoon Pack 拿 Mime；跳 Big Blind 拿 Rare tag，使下一商店出现 Baron。",
+        "Boss 商店从 Spectral Pack 拿 Wraith 得到 Blueprint，并拿免费 Baron。"
+      ],
+      "confidence": "高",
+      "useInSite": "已入库为 Ante 1 清晰节点路线；后续补 Ante 2+。"
+    },
+    {
+      "id": "reddit-perkeo-route-candidates",
+      "platform": "Reddit",
+      "title": "UEWC6ZQF / KW1IS19G Perkeo-Baron-Mime 候选",
+      "url": "https://www.reddit.com/r/balatro/comments/1jppwwm/my_new_best_seed_perkeo_blueprint_brainstorm_mime/",
+      "retrievedAt": "2026-06-15",
+      "contentType": "子任务搜索线索；本地 Reddit/Jina 直读 403",
+      "seeds": [
+        "UEWC6ZQF",
+        "KW1IS19G"
+      ],
+      "facts": [
+        "UEWC6ZQF 线索给出 Perkeo、Blueprint、Brainstorm、Mime 的基础 walkthrough。",
+        "KW1IS19G 线索提示原帖 seed 写作 KW1I519G，评论纠正为 KW1IS19G。",
+        "KW1IS19G 的摘要节点包括 Ante 2 Arcana Pack 出 Perkeo，Baron/Blueprint/DNA 很快出现，Brainstorm/Mime 稍后。",
+        "两条 Reddit 原帖都需要登录或代理复核后才能升级为完整路线。"
+      ],
+      "confidence": "中",
+      "useInSite": "已入库为候选种子；详情页显示当前已知节点和复核警告。"
     }
   ],
   "reviewQueue": [
@@ -1379,23 +1622,66 @@
       "platform": "网页/Reddit/Steam",
       "priority": "B",
       "status": "ready-search",
-      "blocker": "",
+      "blocker": "本轮 Reddit 直连和 Jina 读取具体帖返回 403；Exa 当前未配置。",
       "evidenceIds": [
         "balatroseed-vh1a55lv",
-        "gamesgg-baron-mime"
+        "gamesgg-baron-mime",
+        "balatroseeds-2k9h9-route",
+        "balatroseeds-hnitc7el-steel-k",
+        "balatroseeds-rcp8bz3f-steel-k",
+        "balatroseeds-u8rjyv6n-multideck",
+        "reddit-u8rjyv6n-balatroeagle",
+        "balatroseeds-494a1wsi-painted",
+        "reddit-perkeo-route-candidates"
       ],
       "sourceIds": [
         "steam-awesome-seeds",
         "dualshockers-seeds-to-try",
         "gamingnet-best-seeds",
-        "balatroseed-vh1a55lv"
+        "balatroseed-vh1a55lv",
+        "balatroseeds-2k9h9",
+        "balatroseeds-hnitc7el",
+        "balatroseeds-rcp8bz3f",
+        "balatroseeds-u8rjyv6n",
+        "reddit-u8rjyv6n-balatroeagle",
+        "balatroseeds-494a1wsi-painted",
+        "reddit-uewc6zqf-perkeo-route",
+        "reddit-kw1is19g-early-baron-mime"
       ],
       "targetSeeds": [
-        "VH1A55LV"
+        "VH1A55LV",
+        "2K9H9",
+        "HNITC7EL",
+        "RCP8BZ3F",
+        "U8RJYV6N",
+        "494A1WSI",
+        "UEWC6ZQF",
+        "KW1IS19G"
       ],
-      "nextAction": "用 Exa/RSS/网页搜索更新 2026 年仍有人讨论的 seed bank，筛选能落到中文路线页的红封钢K、Perkeo、Blueprint、金注种子。",
+      "nextAction": "恢复 Exa 或 Reddit 登录后，重点复核 2K9H9/2K9H9HN 混杂关系，并继续筛选能落到中文路线页的红封钢K、Perkeo、Blueprint、金注种子。",
       "validation": "新增种子必须有可回链来源；只有列表但无流程的种子标为“候选”。",
       "ownerMode": "Agent Reach Exa + Scrapling",
+      "updatedAt": "2026-06-15"
+    },
+    {
+      "id": "balatroseeds-queue-parser",
+      "title": "BalatroSeeds 商店队列解析器样本",
+      "platform": "网页/BalatroSeeds",
+      "priority": "A",
+      "status": "ready-parser-design",
+      "blocker": "",
+      "evidenceIds": [
+        "balatroseeds-y3qrzz5i-parser"
+      ],
+      "sourceIds": [
+        "balatroseeds-y3qrzz5i"
+      ],
+      "targetSeeds": [
+        "Y3QRZZ5I"
+      ],
+      "nextAction": "把 Y3QRZZ5I 的 Ante 1-8 队列拆成可折叠表格：Boss、Voucher、Tags、关键小丑、关键牌包、建议购买与待验证节点分层展示。",
+      "validation": "页面能按 Ante 展开/折叠，长队列不撑爆移动端；每个解析字段都能回链 BalatroSeeds 原页。",
+      "ownerMode": "Scrapling/Jina + 前端解析器",
       "updatedAt": "2026-06-15"
     },
     {
