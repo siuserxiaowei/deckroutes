@@ -801,7 +801,8 @@ tbody tr:hover {
 .domain-grid,
 .future-grid,
 .platform-status-grid,
-.evidence-grid {
+.evidence-grid,
+.queue-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
@@ -811,7 +812,8 @@ tbody tr:hover {
 .domain-card,
 .future-card,
 .platform-card,
-.evidence-card {
+.evidence-card,
+.queue-card {
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -829,7 +831,11 @@ tbody tr:hover {
 
 .platform-card-top,
 .evidence-meta,
-.evidence-foot {
+.evidence-foot,
+.queue-card-top,
+.queue-pills,
+.queue-meta,
+.queue-evidence-links {
   display: flex;
   gap: 10px;
   align-items: center;
@@ -837,7 +843,8 @@ tbody tr:hover {
 }
 
 .platform-card h3,
-.evidence-card h3 {
+.evidence-card h3,
+.queue-card h3 {
   margin: 0;
   overflow-wrap: anywhere;
   color: var(--ink);
@@ -911,6 +918,153 @@ tbody tr:hover {
   line-height: 1.6;
 }
 
+.queue-card-top {
+  align-items: flex-start;
+}
+
+.queue-platform {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--gold);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.queue-pills {
+  flex: 0 0 auto;
+  justify-content: flex-end;
+}
+
+.queue-priority,
+.queue-status {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 9px;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.queue-priority {
+  background: rgba(215, 173, 84, 0.16);
+  color: var(--gold);
+}
+
+.queue-priority[data-priority="S"] {
+  background: rgba(184, 72, 56, 0.22);
+  color: #ffcec5;
+}
+
+.queue-priority[data-priority="A"] {
+  background: rgba(47, 107, 79, 0.42);
+  color: #c9f1dc;
+}
+
+.queue-status {
+  border: 1px solid rgba(244, 240, 230, 0.14);
+  color: var(--ink-soft);
+}
+
+.queue-status[data-status^="blocked"] {
+  border-color: rgba(184, 72, 56, 0.38);
+  background: rgba(184, 72, 56, 0.13);
+  color: #ffcec5;
+}
+
+.queue-status[data-status^="ready"] {
+  border-color: rgba(47, 107, 79, 0.55);
+  background: rgba(47, 107, 79, 0.18);
+  color: #c9f1dc;
+}
+
+.queue-meta {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.queue-meta span:not(:last-child)::after {
+  margin-left: 10px;
+  color: rgba(244, 240, 230, 0.24);
+  content: "/";
+}
+
+.queue-seeds {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.queue-blocker,
+.queue-action,
+.queue-validation {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+
+.queue-blocker {
+  padding: 10px 12px;
+  border-left: 3px solid var(--red);
+  background: rgba(184, 72, 56, 0.1);
+}
+
+.queue-action {
+  padding: 10px 12px;
+  border-left: 3px solid rgba(47, 107, 79, 0.8);
+  background: rgba(47, 107, 79, 0.13);
+}
+
+.queue-card strong {
+  color: var(--ink);
+}
+
+.queue-evidence {
+  display: grid;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(244, 240, 230, 0.12);
+}
+
+.queue-evidence-label {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.queue-evidence-links,
+.queue-source-list {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.queue-evidence-link {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  min-height: 30px;
+  padding: 0 10px;
+  border: 1px solid rgba(215, 173, 84, 0.28);
+  border-radius: 999px;
+  color: var(--gold);
+  font-size: 0.82rem;
+  text-decoration: none;
+}
+
+.queue-evidence-link:hover {
+  border-color: rgba(215, 173, 84, 0.72);
+  background: rgba(215, 173, 84, 0.08);
+}
+
+.queue-source-list {
+  display: flex;
+  gap: 8px;
+}
+
 .domain-status {
   padding: 10px 12px;
   border-left: 3px solid var(--gold);
@@ -938,7 +1092,8 @@ tbody tr:hover {
 .source-section,
 .future-section,
 .platform-section,
-.evidence-section {
+.evidence-section,
+.queue-section {
   background: linear-gradient(180deg, rgba(244, 240, 230, 0.02), transparent);
 }
 
@@ -983,7 +1138,8 @@ tbody tr:hover {
   .domain-grid,
   .future-grid,
   .platform-status-grid,
-  .evidence-grid {
+  .evidence-grid,
+  .queue-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1045,6 +1201,7 @@ tbody tr:hover {
   .future-grid,
   .platform-status-grid,
   .evidence-grid,
+  .queue-grid,
   .route-source-grid {
     grid-template-columns: 1fr;
   }

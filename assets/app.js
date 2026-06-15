@@ -23,6 +23,10 @@ function getSource(id) {
   return state.data.sources[id] || { label: id, url: "#" };
 }
 
+function getEvidence(id) {
+  return (state.data.evidenceSources || []).find((item) => item.id === id) || null;
+}
+
 function sourceLinks(sourceIds) {
   const fragment = document.createDocumentFragment();
   (sourceIds || []).forEach((id, index) => {
@@ -476,6 +480,97 @@ function renderEvidenceSources() {
   );
 }
 
+function renderReviewQueue() {
+  const grid = $("#reviewQueue");
+  if (!grid) return;
+  const queue = state.data.reviewQueue || [];
+
+  if (!queue.length) {
+    const empty = el("div", "signal-card");
+    empty.append(el("h3", "", "复盘队列待补"));
+    empty.append(el("p", "", "当前数据文件还没有 reviewQueue 字段。"));
+    grid.replaceChildren(empty);
+    return;
+  }
+
+  grid.replaceChildren(
+    ...queue.map((item) => {
+      const card = el("article", "queue-card");
+      card.dataset.priority = item.priority || "";
+      card.dataset.status = item.status || "";
+
+      const top = el("div", "queue-card-top");
+      const titleBox = el("div");
+      titleBox.append(el("span", "queue-platform", item.platform || "未分平台"));
+      titleBox.append(el("h3", "", item.title || item.id));
+      top.append(titleBox);
+
+      const pills = el("div", "queue-pills");
+      const priority = el("span", "queue-priority", item.priority || "P");
+      priority.dataset.priority = item.priority || "";
+      pills.append(priority);
+      const status = el("span", "queue-status", item.status || "待定");
+      status.dataset.status = item.status || "";
+      pills.append(status);
+      top.append(pills);
+      card.append(top);
+
+      const meta = el("div", "queue-meta");
+      meta.append(el("span", "", item.ownerMode || "待分派"));
+      meta.append(el("span", "", item.updatedAt || state.data.meta.asOf));
+      card.append(meta);
+
+      if ((item.targetSeeds || []).length) {
+        const seeds = el("div", "queue-seeds");
+        item.targetSeeds.forEach((seed) => seeds.append(el("span", "seed-tag", seed)));
+        card.append(seeds);
+      }
+
+      if (item.blocker) {
+        const blocker = el("p", "queue-blocker");
+        blocker.append(el("strong", "", "阻塞："));
+        blocker.append(document.createTextNode(item.blocker));
+        card.append(blocker);
+      }
+
+      const next = el("p", "queue-action");
+      next.append(el("strong", "", "下一步："));
+      next.append(document.createTextNode(item.nextAction || "待补"));
+      card.append(next);
+
+      const validation = el("p", "queue-validation");
+      validation.append(el("strong", "", "验收："));
+      validation.append(document.createTextNode(item.validation || "待补"));
+      card.append(validation);
+
+      if ((item.evidenceIds || []).length) {
+        const evidenceBox = el("div", "queue-evidence");
+        evidenceBox.append(el("span", "queue-evidence-label", "证据"));
+        const links = el("div", "queue-evidence-links");
+        item.evidenceIds.forEach((id) => {
+          const evidence = getEvidence(id);
+          const link = el("a", "queue-evidence-link", evidence?.title || id);
+          link.href = evidence?.url || "#";
+          link.target = "_blank";
+          link.rel = "noreferrer";
+          link.title = evidence?.platform || id;
+          links.append(link);
+        });
+        evidenceBox.append(links);
+        card.append(evidenceBox);
+      }
+
+      if ((item.sourceIds || []).length) {
+        const sourceBox = el("div", "queue-source-list");
+        sourceBox.append(sourceLinks(item.sourceIds));
+        card.append(sourceBox);
+      }
+
+      return card;
+    })
+  );
+}
+
 function renderSignals() {
   const grid = $("#siteSignals");
   grid.replaceChildren(
@@ -579,6 +674,7 @@ async function boot() {
   renderVideos();
   renderPlatformStatus();
   renderEvidenceSources();
+  renderReviewQueue();
   renderSignals();
   renderDomains();
   renderFutureGames();

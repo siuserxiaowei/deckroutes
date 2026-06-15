@@ -32,6 +32,11 @@
       "label": "首版方向",
       "value": "Balatro",
       "note": "后续可扩到更多小游戏攻略"
+    },
+    {
+      "label": "复盘队列",
+      "value": "9",
+      "note": "按平台列出下一轮采集、OCR 和牌局复盘任务"
     }
   ],
   "seeds": [
@@ -1054,8 +1059,8 @@
       "contentType": "接入状态记录",
       "seeds": [],
       "facts": [
-        "当前未配置 xiaohongshu-mcp 和登录 cookie。",
-        "通过 Exa 索引搜索 site:xiaohongshu.com 小丑牌 钢K Balatro 种子，命中多为无关用户主页或其他卡牌/桌游账号。"
+        "xiaohongshu-mcp 已接入 mcporter，Docker 容器可达，但缺 cookies.json 登录态。",
+        "通过 Exa 索引搜索 site:xiaohongshu.com 小丑牌 钢K Balatro 种子，命中多为无关用户主页或其他卡牌/桌游账号；MCP 登录后需要重新采集站内笔记。"
       ],
       "confidence": "高",
       "useInSite": "作为平台缺口说明，不作为攻略来源。"
@@ -1180,6 +1185,192 @@
       ],
       "confidence": "高",
       "useInSite": "作为渠道接入缺口说明；登录后再采集笔记。"
+    }
+  ],
+  "reviewQueue": [
+    {
+      "id": "xhs-login-balatro-steel-k",
+      "title": "小红书钢K/种子笔记登录后重采",
+      "platform": "小红书",
+      "priority": "S",
+      "status": "blocked-login",
+      "blocker": "xiaohongshu-mcp 容器已启动，但缺 cookies.json；check_login_status 与 search_feeds(\"小丑牌 钢K\") 返回 EOF。",
+      "evidenceIds": [
+        "xhs-mcp-login-status",
+        "xhs-probe-balatro-steel-k"
+      ],
+      "targetSeeds": [],
+      "nextAction": "补小红书登录 cookie 后，用 Agent Reach/xiaohongshu-mcp 搜索“小丑牌 钢K”“Balatro 钢K 种子”“小丑牌 红封钢K”，抓取笔记标题、作者、图片和正文摘要。",
+      "validation": "search_feeds 返回 feed id/xsec token；每条入库笔记至少保留原始 URL、标题、发布时间、正文摘要和截图/OCR 状态。",
+      "ownerMode": "Agent Reach MCP + 浏览器人工登录",
+      "updatedAt": "2026-06-15"
+    },
+    {
+      "id": "douyin-dashscope-steel-k",
+      "title": "抖音钢K公开视频解析",
+      "platform": "抖音",
+      "priority": "A",
+      "status": "blocked-key",
+      "blocker": "douyin MCP 已接入，但 parse_douyin_video_info 对公开视频返回“未设置 DASHSCOPE_API_KEY”。",
+      "evidenceIds": [
+        "douyin-steel-k-exa",
+        "douyin-steel-k-shipin-7356509910445672500"
+      ],
+      "sourceIds": [
+        "douyin-steel-k-7638085148558902912",
+        "douyin-steel-k-7356509910445672500"
+      ],
+      "targetSeeds": [],
+      "nextAction": "配置 DASHSCOPE_API_KEY 后解析视频标题、作者、摘要、封面和相关视频列表；优先筛出有种子号或完整对局流程的视频。",
+      "validation": "至少一条抖音链接返回标题/作者/视频元数据；无种子号的视频只进入证据池，不写成完整攻略。",
+      "ownerMode": "Agent Reach Douyin MCP",
+      "updatedAt": "2026-06-15"
+    },
+    {
+      "id": "weibo-ocr-seed-post",
+      "title": "微博种子图片 OCR",
+      "platform": "微博",
+      "priority": "A",
+      "status": "ready-ocr",
+      "blocker": "",
+      "evidenceIds": [
+        "weibo-seed-post-5125063542310722"
+      ],
+      "sourceIds": [
+        "weibo-seed-post-5125063542310722"
+      ],
+      "targetSeeds": [],
+      "nextAction": "下载微博配图或用浏览器截图，OCR 提取种子号、牌组、关键 Joker，再决定是否新增 seed detail。",
+      "validation": "OCR 结果出现 8 位左右 Balatro 种子模式，并能回链到微博原帖；无法确认时标为“图片线索”。",
+      "ownerMode": "Weibo MCP + OCR",
+      "updatedAt": "2026-06-15"
+    },
+    {
+      "id": "weibo-steel-k-video-review",
+      "title": "微博钢K视频复盘",
+      "platform": "微博",
+      "priority": "B",
+      "status": "ready-review",
+      "blocker": "",
+      "evidenceIds": [
+        "weibo-steel-k-video-5165053842033999",
+        "weibo-steel-k-post-5309441364723925"
+      ],
+      "sourceIds": [
+        "weibo-steel-k-video-5165053842033999",
+        "weibo-steel-k-post-5309441364723925"
+      ],
+      "targetSeeds": [],
+      "nextAction": "复盘微博视频和图片，确认是否有可复现种子、关键 Joker 顺序、底注节点和分数结构。",
+      "validation": "能复原 Ante 节点才进入路线库；只有成就展示时保留为社交热度证据。",
+      "ownerMode": "Weibo MCP + browser-use",
+      "updatedAt": "2026-06-15"
+    },
+    {
+      "id": "bili-9ouu79-replay",
+      "title": "9OUU79/90UU79 钢K路线核对",
+      "platform": "B站",
+      "priority": "S",
+      "status": "ready-replay",
+      "blocker": "",
+      "evidenceIds": [
+        "bili-9ouu79",
+        "bili-90uu79-yushen"
+      ],
+      "sourceIds": [
+        "bili-9ouu79",
+        "bili-90uu79-yushen"
+      ],
+      "targetSeeds": [
+        "9OUU79",
+        "90UU79"
+      ],
+      "nextAction": "复核两个视频是否为同一种子大小写/字符误差，抽取 Ante 1-8 的商店、Joker、钢K复制和蓝图/头脑风暴时间点。",
+      "validation": "站内详情页从“标题级待复盘”升级为至少 Ante 1-8 节点型流程，并保留版本/牌组说明。",
+      "ownerMode": "B站公开视频 + browser-use",
+      "updatedAt": "2026-06-15"
+    },
+    {
+      "id": "bili-1doyu2-version-review",
+      "title": "1DOYU2 版本敏感路线复盘",
+      "platform": "B站",
+      "priority": "A",
+      "status": "ready-replay",
+      "blocker": "公开视频说明版本为 1.0.1f；需要确认当前版本是否还能复现。",
+      "evidenceIds": [
+        "bili-1doyu2"
+      ],
+      "sourceIds": [
+        "bili-1doyu2"
+      ],
+      "targetSeeds": [
+        "1DOYU2"
+      ],
+      "nextAction": "抽取视频里幽灵牌组、红印钢K、naneinf 节点和 Ante 39 长线关键节点；补版本警告。",
+      "validation": "详情页明确版本依赖，至少记录 Ante 1-8 核心节点；不能复现时降级为历史版本资料。",
+      "ownerMode": "B站公开视频 + 手动复盘",
+      "updatedAt": "2026-06-15"
+    },
+    {
+      "id": "taptap-x8wtk1u1-full-route",
+      "title": "X8WTK1U1 TapTap 路线补全",
+      "platform": "TapTap",
+      "priority": "A",
+      "status": "ready-replay",
+      "blocker": "",
+      "evidenceIds": [
+        "taptap-x8wtk1u1"
+      ],
+      "sourceIds": [
+        "taptap-x8wtk1u1"
+      ],
+      "targetSeeds": [
+        "X8WTK1U1"
+      ],
+      "nextAction": "把 TapTap 帖子的早期 7 回合线索继续扩展到 Ante 8，补镭射/钢K成型后的操作和可失败点。",
+      "validation": "若能复盘到通关，标为完整流程；否则保留“早期路线完整，后段待补”。",
+      "ownerMode": "TapTap 网页 + Scrapling",
+      "updatedAt": "2026-06-15"
+    },
+    {
+      "id": "english-seed-bank-refresh",
+      "title": "英文 seed bank 二次筛选",
+      "platform": "网页/Reddit/Steam",
+      "priority": "B",
+      "status": "ready-search",
+      "blocker": "",
+      "evidenceIds": [
+        "balatroseed-vh1a55lv",
+        "gamesgg-baron-mime"
+      ],
+      "sourceIds": [
+        "steam-awesome-seeds",
+        "dualshockers-seeds-to-try",
+        "gamingnet-best-seeds",
+        "balatroseed-vh1a55lv"
+      ],
+      "targetSeeds": [
+        "VH1A55LV"
+      ],
+      "nextAction": "用 Exa/RSS/网页搜索更新 2026 年仍有人讨论的 seed bank，筛选能落到中文路线页的红封钢K、Perkeo、Blueprint、金注种子。",
+      "validation": "新增种子必须有可回链来源；只有列表但无流程的种子标为“候选”。",
+      "ownerMode": "Agent Reach Exa + Scrapling",
+      "updatedAt": "2026-06-15"
+    },
+    {
+      "id": "site-schema-validation",
+      "title": "站点数据结构校验",
+      "platform": "GitHub Pages",
+      "priority": "S",
+      "status": "ready-automation",
+      "blocker": "",
+      "evidenceIds": [],
+      "sourceIds": [],
+      "targetSeeds": [],
+      "nextAction": "每次新增来源、证据或队列项后运行 node scripts/validate-data.mjs，检查 seed/source/evidence/queue 引用是否断裂。",
+      "validation": "校验脚本退出码为 0；再用浏览器验证本地和 GitHub Pages 页面无控制台错误。",
+      "ownerMode": "本地脚本 + GitHub Pages QA",
+      "updatedAt": "2026-06-15"
     }
   ]
 }

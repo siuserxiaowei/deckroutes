@@ -8,6 +8,7 @@ DeckRoutes is a static GitHub Pages guide site for Balatro seeds, Steel King rou
 - Steel King / Baron / Mime route modules with attributed sources.
 - Cross-platform platform-status board for Agent Reach, Bilibili, WeChat, XiaoHongShu, Douyin, Weibo, Scrapling, and browser automation availability.
 - Evidence pool that separates source-backed facts, route inference, and pending replay-review items.
+- Review queue for XiaoHongShu login capture, Douyin metadata parsing, Weibo OCR, Bilibili replay review, and seed-bank refresh tasks.
 - Chinese Bilibili video demand board.
 - Competitor/tool site signals and domain shortlist.
 - Original generated WebP guide imagery stored under `assets/images/`.
@@ -18,7 +19,13 @@ Index content is in `assets/data/site-data.json`.
 
 Seed route details and replay-review notes are in `assets/data/route-data.json`.
 
-`site-data.json` also contains the current `platformStatus` and `evidenceSources` records. Sources marked as pending replay review should not be treated as complete route guides.
+`site-data.json` also contains the current `platformStatus`, `evidenceSources`, and `reviewQueue` records. Sources marked as pending replay review should not be treated as complete route guides.
+
+Run the local data guard before publishing a new evidence or route update:
+
+```sh
+node scripts/validate-data.mjs
+```
 
 As of the second 2026-06-15 pass, Agent Reach reports 13/15 channels available. Weibo is connected through `mcp-server-weibo`; XiaoHongShu MCP is reachable but still needs cookies/login before content can be collected; Douyin MCP is reachable but tested video parsing requires `DASHSCOPE_API_KEY`.
 
