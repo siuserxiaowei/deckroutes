@@ -4,8 +4,8 @@
     "title": "DeckRoutes - Balatro Seed Atlas",
     "asOf": "2026-06-15",
     "language": "zh-CN",
-    "method": "Agent Reach doctor + Exa web search + Bilibili public search + WeChat search probe + GitHub CLI + Jina Reader + Scrapling availability check",
-    "coverageNote": "2026-06-15 复核：小红书/抖音/微博 MCP 尚未配置；小红书只通过 Exa 索引探测且命中不相关，不标为已采集。"
+    "method": "Agent Reach doctor + mcporter exa/douyin/weibo/xiaohongshu + Exa web search + Bilibili public search + WeChat search probe + GitHub CLI + Jina Reader + Scrapling availability check",
+    "coverageNote": "2026-06-15 二次复核：Agent Reach 提升到 13/15；微博 MCP 可用，小红书 MCP 已连接但无 cookies.json 且 check/search EOF，抖音 MCP 已连接但公开视频解析实测缺 DASHSCOPE_API_KEY。"
   },
   "stats": [
     {
@@ -17,6 +17,11 @@
       "label": "中文视频样本播放",
       "value": "1.55M+",
       "note": "B站公开搜索结果合计，不含全平台"
+    },
+    {
+      "label": "证据来源",
+      "value": "18",
+      "note": "含平台状态、微博/抖音/XHS 证据"
     },
     {
       "label": "候选域名",
@@ -767,16 +772,44 @@
     "wechat-balatro-newbie": {
       "label": "微信公众号: 小丑牌Balatro新手最强攻略",
       "url": "https://mp.weixin.qq.com/s?src=11&timestamp=1781526411&ver=6784&signature=aib84CMYTzbZynDk*0l-ZLAA8B3V5Tbe6EC2MmFVwjbMdP2J*kwRJV*BKeuRDaMsAVU1EpCCH9zq8mgp0uejJAnVhsoCtTlnwjGCaj*IAkz6CYJtcbbVmJK6aXaVakk8&new=1"
+    },
+    "weibo-topic-xiaochoupai": {
+      "label": "Weibo topic: #小丑牌#",
+      "url": "https://m.weibo.cn/search?containerid=231522type%3D1%26t%3D10%26q%3D%23%E5%B0%8F%E4%B8%91%E7%89%8C%23&extparam=%23%E5%B0%8F%E4%B8%91%E7%89%8C%23&launchid=10000360-page_H5"
+    },
+    "weibo-steel-k-video-5165053842033999": {
+      "label": "Weibo: 小丑牌钢K流究极模式视频",
+      "url": "https://m.weibo.cn/status/5165053842033999"
+    },
+    "weibo-steel-k-post-5309441364723925": {
+      "label": "Weibo: 完美钢K流 17 底注记录帖",
+      "url": "https://m.weibo.cn/status/5309441364723925"
+    },
+    "weibo-seed-post-5125063542310722": {
+      "label": "Weibo: 小丑牌种子记录帖",
+      "url": "https://m.weibo.cn/status/5125063542310722"
+    },
+    "douyin-steel-k-7638085148558902912": {
+      "label": "Douyin: 小丑牌钢K流视频页",
+      "url": "https://www.douyin.com/video/7638085148558902912"
+    },
+    "douyin-steel-k-7356509910445672500": {
+      "label": "Douyin: 红蜡封钢铁K流视频集合",
+      "url": "https://www.douyin.com/shipin/7356509910445672500"
+    },
+    "xhs-mcp-runtime-status": {
+      "label": "XiaoHongShu MCP runtime status",
+      "url": "http://localhost:18060/mcp"
     }
   },
   "platformStatus": [
     {
       "platform": "Agent Reach / 工具总览",
-      "status": "10/15 渠道可用",
-      "accessMethod": "agent-reach doctor",
+      "status": "13/15 渠道可用",
+      "accessMethod": "agent-reach doctor + mcporter list",
       "usableNow": true,
-      "limitation": "小红书、抖音、微博等需要额外 MCP 或 cookie；B站后续请求可能触发 412。",
-      "nextAction": "先用可用渠道更新证据池；需要小红书时再配置 xiaohongshu-mcp 和 cookie。"
+      "limitation": "小宇宙需要 Groq key，LinkedIn 未配置；小红书虽然 MCP 连接成功，但未登录时搜索会 EOF；抖音解析实测需要 DASHSCOPE_API_KEY。",
+      "nextAction": "继续用可用渠道扩证据池；小红书需导入 cookie，抖音转写/解析需配置 DASHSCOPE_API_KEY。"
     },
     {
       "platform": "Exa / 全网语义搜索",
@@ -812,27 +845,27 @@
     },
     {
       "platform": "小红书",
-      "status": "MCP 未配置",
-      "accessMethod": "计划使用 xiaohongshu-mcp + mcporter",
+      "status": "MCP 已连接，未登录不可采集",
+      "accessMethod": "Docker xpzouying/xiaohongshu-mcp on localhost:18060 + mcporter HTTP",
       "usableNow": false,
-      "limitation": "需要 Docker 服务和登录 cookie；Exa 索引探测未找到可靠的 Balatro 钢K攻略笔记。",
-      "nextAction": "配置 xpzouying/xiaohongshu-mcp，并由用户提供 cookie 后再采集笔记详情。"
+      "limitation": "工具列表可用，但容器日志显示缺 cookies.json；check_login_status 和 search_feeds 均返回 EOF。不能在未登录状态下真实读取笔记。",
+      "nextAction": "通过登录二维码或 cookie 导入完成登录，再运行 search_feeds(\"小丑牌 钢K\") 和 get_feed_detail。"
     },
     {
       "platform": "抖音",
-      "status": "MCP 未配置",
-      "accessMethod": "计划使用 douyin-mcp-server",
+      "status": "MCP 已配置，实测解析需 API key",
+      "accessMethod": "douyin-mcp-server stdio + Exa 发现公开抖音页面",
       "usableNow": false,
-      "limitation": "当前 mcporter 没有 douyin server。",
-      "nextAction": "安装并启动 douyin-mcp-server 后采集分享链接和视频信息。"
+      "limitation": "mcporter 工具注册成功，但 parse_douyin_video_info 对测试链接返回“未设置 DASHSCOPE_API_KEY”；当前只能用 Exa 索引摘要作为公开信号。",
+      "nextAction": "配置 DASHSCOPE_API_KEY 后再解析视频元数据/转写；未配置前只保留 Exa 发现的抖音页面证据。"
     },
     {
       "platform": "微博",
-      "status": "MCP 未配置",
-      "accessMethod": "计划使用 mcp-server-weibo",
-      "usableNow": false,
-      "limitation": "当前 mcporter 没有 weibo server。",
-      "nextAction": "安装 weibo MCP 后再采集讨论热度。"
+      "status": "MCP 可用",
+      "accessMethod": "uv tool install mcp-server-weibo --with socksio + mcporter stdio",
+      "usableNow": true,
+      "limitation": "搜索结果以公开微博和话题为主，很多是用户感想，不等同于完整攻略；需筛掉无关/弱证据。",
+      "nextAction": "用于追踪 #小丑牌# 话题、钢K流讨论、种子记录和社交热度。"
     },
     {
       "platform": "Reddit / X / YouTube / GitHub / V2EX / RSS",
@@ -1041,6 +1074,112 @@
       ],
       "confidence": "低",
       "useInSite": "仅用于平台状态，不作为种子流程依据。"
+    },
+    {
+      "id": "weibo-topic-xiaochoupai",
+      "platform": "微博",
+      "title": "#小丑牌# 话题池",
+      "url": "https://m.weibo.cn/search?containerid=231522type%3D1%26t%3D10%26q%3D%23%E5%B0%8F%E4%B8%91%E7%89%8C%23&extparam=%23%E5%B0%8F%E4%B8%91%E7%89%8C%23&launchid=10000360-page_H5",
+      "retrievedAt": "2026-06-15",
+      "contentType": "微博话题搜索",
+      "seeds": [],
+      "facts": [
+        "weibo.search_topics 返回 #小丑牌# 话题，约 5699 讨论、779.6 万阅读。",
+        "同组结果还包括 #ns版小丑牌追加中文支持#、#小丑牌获tga最佳手游#、#小丑牌手机版#、#小丑牌销量突破百万# 等话题。"
+      ],
+      "confidence": "高",
+      "useInSite": "作为中文社交平台热度和选题池，不作为具体种子流程。"
+    },
+    {
+      "id": "weibo-steel-k-video-5165053842033999",
+      "platform": "微博",
+      "title": "小丑牌钢K流究极模式视频帖",
+      "url": "https://m.weibo.cn/status/5165053842033999",
+      "retrievedAt": "2026-06-15",
+      "contentType": "微博公开动态/视频",
+      "seeds": [],
+      "facts": [
+        "weibo.search_content(\"小丑牌 钢K\") 返回任天啃 2025-05-11 视频帖，正文写“小丑牌钢K流的究极模式，打出了无限”。",
+        "该结果包含 #小丑牌#、#balatro# 标签和微博视频链接，互动数据为 8 赞、7 转发、0 评论。"
+      ],
+      "confidence": "中",
+      "useInSite": "作为钢K流社交平台视频线索，需二次复盘后才能转成路线。"
+    },
+    {
+      "id": "weibo-steel-k-post-5309441364723925",
+      "platform": "微博",
+      "title": "微博用户钢K流 17 底注记录",
+      "url": "https://m.weibo.cn/status/5309441364723925",
+      "retrievedAt": "2026-06-15",
+      "contentType": "微博公开动态/图片",
+      "seeds": [],
+      "facts": [
+        "weibo.search_content(\"小丑牌 钢K\") 返回 2026-06-13 用户帖，正文称组成“完美的钢k流”，推进到 17 底注，高牌等级 57。",
+        "该帖带多张图片，但未给出可复现种子或逐回合流程。"
+      ],
+      "confidence": "中",
+      "useInSite": "作为玩家痛点/成就展示信号，不作为攻略来源。"
+    },
+    {
+      "id": "weibo-seed-post-5125063542310722",
+      "platform": "微博",
+      "title": "微博小丑牌种子记录帖",
+      "url": "https://m.weibo.cn/status/5125063542310722",
+      "retrievedAt": "2026-06-15",
+      "contentType": "微博公开动态/图片",
+      "seeds": [],
+      "facts": [
+        "weibo.search_content(\"小丑牌 种子\") 返回永雏塔菲 2025-01-21 动态，正文写“记录一下种子”，并附顺子局、红桃同花局图片。",
+        "该帖互动数据较高，但种子号在图片中，当前未做 OCR，因此不能直接入库为 seed。"
+      ],
+      "confidence": "中",
+      "useInSite": "作为后续 OCR/图片复盘任务候选。"
+    },
+    {
+      "id": "douyin-steel-k-exa",
+      "platform": "抖音",
+      "title": "抖音小丑牌钢K流公开页面",
+      "url": "https://www.douyin.com/video/7638085148558902912",
+      "retrievedAt": "2026-06-15",
+      "contentType": "Exa 索引摘要 + Douyin MCP 解析尝试",
+      "seeds": [],
+      "facts": [
+        "Exa 搜索 site:douyin.com 小丑牌 钢K Balatro 种子，命中标题“#小丑牌 接下来我的出牌会很疯狂#钢K流”。",
+        "同次 MCP parse_douyin_video_info 对该链接返回“未设置 DASHSCOPE_API_KEY”，说明当前不能直接抽取抖音元数据。"
+      ],
+      "confidence": "中",
+      "useInSite": "作为抖音渠道存在钢K内容的信号，等待 API key 后再深采。"
+    },
+    {
+      "id": "douyin-steel-k-shipin-7356509910445672500",
+      "platform": "抖音",
+      "title": "抖音红蜡封钢铁K流视频集合",
+      "url": "https://www.douyin.com/shipin/7356509910445672500",
+      "retrievedAt": "2026-06-15",
+      "contentType": "Exa 索引摘要",
+      "seeds": [],
+      "facts": [
+        "Exa 命中“小丑牌红蜡封钢铁K流，没来传奇小丑23注”等摘要，标签包括小丑牌、balatro、独立游戏、策略游戏。",
+        "页面摘要列出相关视频：红封钢K流第一次体验指数爆炸、3 分钟入坑小丑牌、新手教学等。"
+      ],
+      "confidence": "中",
+      "useInSite": "作为抖音攻略/视频选题池，需 API key 或人工复盘后再转成路线。"
+    },
+    {
+      "id": "xhs-mcp-login-status",
+      "platform": "小红书",
+      "title": "小红书 MCP 连接与登录状态",
+      "url": "http://localhost:18060/mcp",
+      "retrievedAt": "2026-06-15",
+      "contentType": "工具运行状态",
+      "seeds": [],
+      "facts": [
+        "Docker 容器 xiaohongshu-mcp 已启动，mcporter list xiaohongshu 能看到 13 个工具。",
+        "容器日志显示缺 cookies.json；check_login_status 与 search_feeds(\"小丑牌 钢K\") 返回 EOF。",
+        "当前不能把小红书标为已采集内容。"
+      ],
+      "confidence": "高",
+      "useInSite": "作为渠道接入缺口说明；登录后再采集笔记。"
     }
   ]
 }

@@ -20,6 +20,8 @@ Seed route details and replay-review notes are in `assets/data/route-data.json`.
 
 `site-data.json` also contains the current `platformStatus` and `evidenceSources` records. Sources marked as pending replay review should not be treated as complete route guides.
 
+As of the second 2026-06-15 pass, Agent Reach reports 13/15 channels available. Weibo is connected through `mcp-server-weibo`; XiaoHongShu MCP is reachable but still needs cookies/login before content can be collected; Douyin MCP is reachable but tested video parsing requires `DASHSCOPE_API_KEY`.
+
 The data was compiled on 2026-06-15 with Agent Reach, Exa search, Bilibili public search, GitHub search, RDAP, and WHOIS checks. Domain status can change and should be rechecked at the registrar before purchase.
 
 ## Deploy
