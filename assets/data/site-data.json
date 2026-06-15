@@ -4,13 +4,14 @@
     "title": "DeckRoutes - Balatro Seed Atlas",
     "asOf": "2026-06-15",
     "language": "zh-CN",
-    "method": "Agent Reach + Exa web search + Bilibili public search + GitHub search + RDAP/WHOIS checks"
+    "method": "Agent Reach doctor + Exa web search + Bilibili public search + WeChat search probe + GitHub CLI + Jina Reader + Scrapling availability check",
+    "coverageNote": "2026-06-15 复核：小红书/抖音/微博 MCP 尚未配置；小红书只通过 Exa 索引探测且命中不相关，不标为已采集。"
   },
   "stats": [
     {
       "label": "已整理种子",
-      "value": "12",
-      "note": "钢K、Baron/Mime、Perkeo、金注扩展"
+      "value": "18",
+      "note": "含可点击流程、中文来源和待复盘队列"
     },
     {
       "label": "中文视频样本播放",
@@ -46,8 +47,15 @@
       "warnings": [
         "B站标题不是完整路线表，首版只作为高热入口，后续需要视频转录或人工复盘补全。"
       ],
-      "tags": ["钢K", "中文视频", "爆分", "高热"],
-      "sources": ["bili-9ouu79"]
+      "tags": [
+        "钢K",
+        "中文视频",
+        "爆分",
+        "高热"
+      ],
+      "sources": [
+        "bili-9ouu79"
+      ]
     },
     {
       "seed": "U8RJYV6N",
@@ -66,8 +74,15 @@
       "warnings": [
         "公开视频检索只拿到标题和互动数据，仍需二次复盘。"
       ],
-      "tags": ["钢K", "运营", "中文视频", "新手"],
-      "sources": ["bili-u8rjyv6n"]
+      "tags": [
+        "钢K",
+        "运营",
+        "中文视频",
+        "新手"
+      ],
+      "sources": [
+        "bili-u8rjyv6n"
+      ]
     },
     {
       "seed": "6B678B4W",
@@ -87,8 +102,16 @@
         "Plasma Deck 计分结构和普通牌组不同，路线复盘时要单独解释。",
         "遇到 The Plant 需要提前准备 reroll 或替代输出。"
       ],
-      "tags": ["钢K", "Plasma", "Baron", "Mime", "Perkeo"],
-      "sources": ["balatroseeds-6b678b4w"]
+      "tags": [
+        "钢K",
+        "Plasma",
+        "Baron",
+        "Mime",
+        "Perkeo"
+      ],
+      "sources": [
+        "balatroseeds-6b678b4w"
+      ]
     },
     {
       "seed": "VH1A55LV",
@@ -108,8 +131,16 @@
         "路线较长，适合做进阶文章，不适合只想快速爽局的玩家。",
         "需要把每个关键节点做成可复盘时间线。"
       ],
-      "tags": ["钢K", "Plasma", "Perkeo", "极限", "长线"],
-      "sources": ["balatroseed-vh1a55lv"]
+      "tags": [
+        "钢K",
+        "Plasma",
+        "Perkeo",
+        "极限",
+        "长线"
+      ],
+      "sources": [
+        "balatroseed-vh1a55lv"
+      ]
     },
     {
       "seed": "WP7KMLHM",
@@ -128,8 +159,15 @@
       "warnings": [
         "没有 Observatory 时，路线页面要更强调牌面复制和小丑摆位。"
       ],
-      "tags": ["钢K", "Ghost", "Baron", "Mime"],
-      "sources": ["balatroseeds-wp7kmlhm"]
+      "tags": [
+        "钢K",
+        "Ghost",
+        "Baron",
+        "Mime"
+      ],
+      "sources": [
+        "balatroseeds-wp7kmlhm"
+      ]
     },
     {
       "seed": "6ZFZTFPQ",
@@ -148,8 +186,15 @@
       "warnings": [
         "Black Deck 运营难度高，种子好不等于无脑赢。"
       ],
-      "tags": ["Black", "Perkeo", "Triboulet", "人头牌"],
-      "sources": ["balatroseeds-6zfztfpq"]
+      "tags": [
+        "Black",
+        "Perkeo",
+        "Triboulet",
+        "人头牌"
+      ],
+      "sources": [
+        "balatroseeds-6zfztfpq"
+      ]
     },
     {
       "seed": "3J6FZFE4",
@@ -168,8 +213,17 @@
       "warnings": [
         "不同牌组和版本可能影响商店顺序，需要页面内标版本。"
       ],
-      "tags": ["钢K", "Perkeo", "Baron", "Mime", "社区"],
-      "sources": ["gamingnet-best-seeds", "steam-awesome-seeds"]
+      "tags": [
+        "钢K",
+        "Perkeo",
+        "Baron",
+        "Mime",
+        "社区"
+      ],
+      "sources": [
+        "gamingnet-best-seeds",
+        "steam-awesome-seeds"
+      ]
     },
     {
       "seed": "47KQV874",
@@ -188,8 +242,15 @@
       "warnings": [
         "媒体文章通常不是逐回合表，需要实测补全。"
       ],
-      "tags": ["King", "DNA", "Baron", "Blueprint"],
-      "sources": ["dualshockers-seeds-to-try"]
+      "tags": [
+        "King",
+        "DNA",
+        "Baron",
+        "Blueprint"
+      ],
+      "sources": [
+        "dualshockers-seeds-to-try"
+      ]
     },
     {
       "seed": "E49PIJ7B",
@@ -208,8 +269,14 @@
       "warnings": [
         "和钢K最终形态相关，但并非完整钢K路线。"
       ],
-      "tags": ["Brainstorm", "复制", "教学"],
-      "sources": ["dualshockers-seeds-to-try"]
+      "tags": [
+        "Brainstorm",
+        "复制",
+        "教学"
+      ],
+      "sources": [
+        "dualshockers-seeds-to-try"
+      ]
     },
     {
       "seed": "HJYPULJ3",
@@ -228,8 +295,15 @@
       "warnings": [
         "路线依赖资源牌使用顺序，后续要补实际回合截图或表格。"
       ],
-      "tags": ["Perkeo", "Death", "Brainstorm", "资源"],
-      "sources": ["dualshockers-seeds-to-try"]
+      "tags": [
+        "Perkeo",
+        "Death",
+        "Brainstorm",
+        "资源"
+      ],
+      "sources": [
+        "dualshockers-seeds-to-try"
+      ]
     },
     {
       "seed": "4YY5NT94",
@@ -248,8 +322,15 @@
       "warnings": [
         "社区帖信息碎片化，需要人工验证每个关键节点。"
       ],
-      "tags": ["Spectral", "钢K", "社区", "长线"],
-      "sources": ["steam-awesome-seeds"]
+      "tags": [
+        "Spectral",
+        "钢K",
+        "社区",
+        "长线"
+      ],
+      "sources": [
+        "steam-awesome-seeds"
+      ]
     },
     {
       "seed": "CYUCNZW1",
@@ -268,8 +349,15 @@
       "warnings": [
         "不是钢K流，页面标签必须分开，避免用户误点。"
       ],
-      "tags": ["Checkered", "扩展", "非钢K", "Flush"],
-      "sources": ["balatroseeds-cyucnzw1"]
+      "tags": [
+        "Checkered",
+        "扩展",
+        "非钢K",
+        "Flush"
+      ],
+      "sources": [
+        "balatroseeds-cyucnzw1"
+      ]
     }
   ],
   "strategies": [
@@ -282,7 +370,12 @@
         "红封钢K越早建立，后续 Death/DNA 复制收益越大。",
         "普通高牌过渡时先保证 +Mult 和经济，不要过早卖掉保命组件。"
       ],
-      "sources": ["gamesgg-baron-mime", "gamesgg-steel-cards", "wiki-baron", "wiki-red-seal"]
+      "sources": [
+        "gamesgg-baron-mime",
+        "gamesgg-steel-cards",
+        "wiki-baron",
+        "wiki-red-seal"
+      ]
     },
     {
       "title": "Blueprint / Brainstorm 摆位",
@@ -293,7 +386,10 @@
         "经济回合可临时复制 Mime 的经济触发或其他现金小丑。",
         "页面可以做成交互式摆位计算器，后续比普通攻略更容易留住用户。"
       ],
-      "sources": ["gamesgg-blueprint-brainstorm", "wiki-baron"]
+      "sources": [
+        "gamesgg-blueprint-brainstorm",
+        "wiki-baron"
+      ]
     },
     {
       "title": "金注通关内容入口",
@@ -304,7 +400,11 @@
         "按牌组拆金注难度，黑牌组、涂漆牌组、方格牌组需要不同策略。",
         "保留每个 boss 的应对卡片，适合后续做 SEO 长尾页。"
       ],
-      "sources": ["mancunion-gold-stake", "bili-gold-master", "bili-newbie-guide"]
+      "sources": [
+        "mancunion-gold-stake",
+        "bili-gold-master",
+        "bili-newbie-guide"
+      ]
     },
     {
       "title": "Naneinf 极限路线",
@@ -315,7 +415,10 @@
         "要用公式和示例解释 Red Seal、Steel、Baron、Mime 的乘法叠加。",
         "可以把外部计算器作为导流工具，后续再做站内版本。"
       ],
-      "sources": ["wiki-naneinf", "naneinf-calc"]
+      "sources": [
+        "wiki-naneinf",
+        "naneinf-calc"
+      ]
     }
   ],
   "videos": [
@@ -479,36 +582,73 @@
       "name": "Slay the Spire 2",
       "priority": "S",
       "why": "2026 年 Early Access 首日并发非常高，Deckbuilder 用户和 Balatro 用户重合度高。",
-      "contentAngles": ["角色/卡牌评级", "遗物组合", "爬塔路线", "每日种子/挑战"],
-      "sources": ["gamespot-sts2"]
+      "contentAngles": [
+        "角色/卡牌评级",
+        "遗物组合",
+        "爬塔路线",
+        "每日种子/挑战"
+      ],
+      "sources": [
+        "gamespot-sts2"
+      ]
     },
     {
       "name": "Monster Train 2",
       "priority": "A",
       "why": "Roguelike deckbuilder 受众明确，适合做派系组合和路线库。",
-      "contentAngles": ["派系组合", "房间升级", "Boss 对策", "流派攻略"],
-      "sources": ["rogueliker-deckbuilders"]
+      "contentAngles": [
+        "派系组合",
+        "房间升级",
+        "Boss 对策",
+        "流派攻略"
+      ],
+      "sources": [
+        "rogueliker-deckbuilders"
+      ]
     },
     {
       "name": "Cobalt Core",
       "priority": "A",
       "why": "机制深、船体和卡组组合多，适合中文长尾攻略。",
-      "contentAngles": ["船员组合", "舰船配置", "循环路线", "卡组删改"],
-      "sources": ["rogueliker-deckbuilders"]
+      "contentAngles": [
+        "船员组合",
+        "舰船配置",
+        "循环路线",
+        "卡组删改"
+      ],
+      "sources": [
+        "rogueliker-deckbuilders"
+      ]
     },
     {
       "name": "Cursemark",
       "priority": "B",
       "why": "2026 年新近 Early Access 动作肉鸽，buildcrafting 强，适合抢早期搜索。",
-      "contentAngles": ["符文组合", "短局构筑", "职业/法术解锁", "新版本更新"],
-      "sources": ["pcgamer-cursemark"]
+      "contentAngles": [
+        "符文组合",
+        "短局构筑",
+        "职业/法术解锁",
+        "新版本更新"
+      ],
+      "sources": [
+        "pcgamer-cursemark"
+      ]
     },
     {
       "name": "Balatro",
       "priority": "S",
       "why": "已有中文视频热度、种子库生态和高复玩需求，最适合作为 DeckRoutes 第一入口。",
-      "contentAngles": ["钢K种子", "金注攻略", "小丑评级", "Boss 对策", "计算器"],
-      "sources": ["bili-9ouu79", "balatroseeds-6b678b4w"]
+      "contentAngles": [
+        "钢K种子",
+        "金注攻略",
+        "小丑评级",
+        "Boss 对策",
+        "计算器"
+      ],
+      "sources": [
+        "bili-9ouu79",
+        "balatroseeds-6b678b4w"
+      ]
     }
   ],
   "sources": {
@@ -603,6 +743,304 @@
     "pcgamer-cursemark": {
       "label": "PC Gamer: Cursemark early access roguelike action RPG",
       "url": "https://www.pcgamer.com/games/roguelike/15-minutes-is-all-you-need-in-this-roguelike-action-rpg-to-feel-like-a-maxed-out-diablo-god-laying-waste-to-an-entire-screen-of-monsters/"
+    },
+    "bili-90uu79-yushen": {
+      "label": "Bilibili: 90UU79 红封钢K无尽演示",
+      "url": "https://www.bilibili.com/video/BV1ysq8YZExk/"
+    },
+    "bili-1doyu2": {
+      "label": "Bilibili: 1DOYU2 幽灵牌组 naneinf 教程",
+      "url": "https://www.bilibili.com/video/BV1Ar421E7dv/"
+    },
+    "bili-2q5q3xel": {
+      "label": "Bilibili: 2Q5Q3XEL 钢K无尽教学第三期",
+      "url": "https://www.bilibili.com/video/BV18Co1Y8EhL/"
+    },
+    "bili-88nz7cz7": {
+      "label": "Bilibili: 88NZ7CZ7 钢K流种子分享",
+      "url": "https://www.bilibili.com/video/BV16H5M6cEtA/"
+    },
+    "taptap-x8wtk1u1": {
+      "label": "TapTap: 10回合镭射钢K X8WTK1U1",
+      "url": "https://www.taptap.cn/moment/685810471831342883"
+    },
+    "wechat-balatro-newbie": {
+      "label": "微信公众号: 小丑牌Balatro新手最强攻略",
+      "url": "https://mp.weixin.qq.com/s?src=11&timestamp=1781526411&ver=6784&signature=aib84CMYTzbZynDk*0l-ZLAA8B3V5Tbe6EC2MmFVwjbMdP2J*kwRJV*BKeuRDaMsAVU1EpCCH9zq8mgp0uejJAnVhsoCtTlnwjGCaj*IAkz6CYJtcbbVmJK6aXaVakk8&new=1"
     }
-  }
+  },
+  "platformStatus": [
+    {
+      "platform": "Agent Reach / 工具总览",
+      "status": "10/15 渠道可用",
+      "accessMethod": "agent-reach doctor",
+      "usableNow": true,
+      "limitation": "小红书、抖音、微博等需要额外 MCP 或 cookie；B站后续请求可能触发 412。",
+      "nextAction": "先用可用渠道更新证据池；需要小红书时再配置 xiaohongshu-mcp 和 cookie。"
+    },
+    {
+      "platform": "Exa / 全网语义搜索",
+      "status": "可用",
+      "accessMethod": "mcporter call exa.web_search_exa",
+      "usableNow": true,
+      "limitation": "返回的是网页索引和摘要，仍需交叉验证原始来源。",
+      "nextAction": "用于发现 BalatroSeeds、TapTap、B站、媒体攻略和竞品页面。"
+    },
+    {
+      "platform": "任意网页 / Jina Reader",
+      "status": "可用",
+      "accessMethod": "curl https://r.jina.ai/<url>",
+      "usableNow": true,
+      "limitation": "部分动态站点或失效页面会 404/空正文。",
+      "nextAction": "用于读取可公开访问的攻略正文，无法读取时标注来源限制。"
+    },
+    {
+      "platform": "B站",
+      "status": "部分可用",
+      "accessMethod": "B站公开搜索 API + yt-dlp 尝试字幕",
+      "usableNow": true,
+      "limitation": "一次搜索成功拿到热视频数据，后续同类请求触发 412；公开视频常无字幕。",
+      "nextAction": "把标题、简介、播放/收藏和 BV 号作为证据；完整流程需人工复盘或字幕/OCR。"
+    },
+    {
+      "platform": "微信公众号",
+      "status": "搜索可用但质量不稳定",
+      "accessMethod": "miku_ai 搜索 + Agent Reach Camoufox 阅读工具",
+      "usableNow": true,
+      "limitation": "Balatro 钢K query 命中少，部分结果无关；微信文章阅读依赖反爬浏览器。",
+      "nextAction": "仅收录明确相关的新手/机制文章，不把弱命中作为攻略证据。"
+    },
+    {
+      "platform": "小红书",
+      "status": "MCP 未配置",
+      "accessMethod": "计划使用 xiaohongshu-mcp + mcporter",
+      "usableNow": false,
+      "limitation": "需要 Docker 服务和登录 cookie；Exa 索引探测未找到可靠的 Balatro 钢K攻略笔记。",
+      "nextAction": "配置 xpzouying/xiaohongshu-mcp，并由用户提供 cookie 后再采集笔记详情。"
+    },
+    {
+      "platform": "抖音",
+      "status": "MCP 未配置",
+      "accessMethod": "计划使用 douyin-mcp-server",
+      "usableNow": false,
+      "limitation": "当前 mcporter 没有 douyin server。",
+      "nextAction": "安装并启动 douyin-mcp-server 后采集分享链接和视频信息。"
+    },
+    {
+      "platform": "微博",
+      "status": "MCP 未配置",
+      "accessMethod": "计划使用 mcp-server-weibo",
+      "usableNow": false,
+      "limitation": "当前 mcporter 没有 weibo server。",
+      "nextAction": "安装 weibo MCP 后再采集讨论热度。"
+    },
+    {
+      "platform": "Reddit / X / YouTube / GitHub / V2EX / RSS",
+      "status": "可用或可经 Agent Reach 访问",
+      "accessMethod": "xreach、curl/Exa、yt-dlp、gh、V2EX API、feedparser",
+      "usableNow": true,
+      "limitation": "Reddit 直连可能 403，YouTube/B站字幕不一定存在；GitHub 搜索结果需判定与攻略站是否相关。",
+      "nextAction": "用于扩展英文路线、竞品、开源工具和 SEO 内容机会。"
+    },
+    {
+      "platform": "Scrapling",
+      "status": "已安装",
+      "accessMethod": "python package scrapling 0.2.99",
+      "usableNow": true,
+      "limitation": "当前站点主要通过 Exa/Jina/B站 API 取证，Scrapling 作为页面抓取兜底。",
+      "nextAction": "遇到 Jina 读取失败但页面公开时，用 Scrapling 做结构化抽取。"
+    },
+    {
+      "platform": "browser-use / Claude for Chrome",
+      "status": "未接入当前 Python 环境",
+      "accessMethod": "browser-use package not installed；Claude for Chrome 需浏览器扩展环境",
+      "usableNow": false,
+      "limitation": "不能把它当作当前可执行采集器。",
+      "nextAction": "需要浏览器自动化时优先用 Playwright/现有 Browser 插件，后续再评估 browser-use。"
+    }
+  ],
+  "evidenceSources": [
+    {
+      "id": "bili-9ouu79",
+      "platform": "B站",
+      "title": "9OUU79 红封钢K流，6底注17回合打爆游戏",
+      "url": "https://www.bilibili.com/video/BV1iRPqevEt9/",
+      "retrievedAt": "2026-06-15",
+      "contentType": "公开视频元数据",
+      "seeds": [
+        "9OUU79"
+      ],
+      "facts": [
+        "标题和简介明确给出种子 9OUU79、等离子牌组、白注、版本 1.0.1o-FULL。",
+        "公开搜索返回约 281373 播放、4500 收藏，说明中文圈需求强。",
+        "没有可读取字幕，当前不能自动还原逐商店流程。"
+      ],
+      "confidence": "高",
+      "useInSite": "作为中文高热钢K种子入口和待复盘任务。"
+    },
+    {
+      "id": "bili-90uu79-yushen",
+      "platform": "B站",
+      "title": "90UU79 等离子红封钢K流无尽演示",
+      "url": "https://www.bilibili.com/video/BV1ysq8YZExk/",
+      "retrievedAt": "2026-06-15",
+      "contentType": "公开视频简介",
+      "seeds": [
+        "90UU79"
+      ],
+      "facts": [
+        "简介写明种子 90UU79、等离子红封钢K流、演示到第六张复制牌。",
+        "简介指出小丑栏位和手牌上限优惠券偏靠后，但 12-14 注基本成型。"
+      ],
+      "confidence": "中",
+      "useInSite": "补充 9OUU79/90UU79 中文视频复盘队列，后续需要人工确认是否同一输入误差。"
+    },
+    {
+      "id": "bili-1doyu2",
+      "platform": "B站",
+      "title": "1DOYU2 幽灵牌组神仙种子红印钢K流",
+      "url": "https://www.bilibili.com/video/BV1Ar421E7dv/",
+      "retrievedAt": "2026-06-15",
+      "contentType": "公开视频简介",
+      "seeds": [
+        "1DOYU2"
+      ],
+      "facts": [
+        "简介给出种子 1DOYU2，称按攻略可到 Ante 39。",
+        "简介强调版本必须是 1.0.1f。"
+      ],
+      "confidence": "中",
+      "useInSite": "作为版本敏感的长线钢K待复盘种。"
+    },
+    {
+      "id": "bili-2q5q3xel",
+      "platform": "B站",
+      "title": "2Q5Q3XEL 钢K无尽教学第三期",
+      "url": "https://www.bilibili.com/video/BV18Co1Y8EhL/",
+      "retrievedAt": "2026-06-15",
+      "contentType": "公开视频简介",
+      "seeds": [
+        "2Q5Q3XEL"
+      ],
+      "facts": [
+        "简介直接给出种子 2Q5Q3XEL。",
+        "标题说明 6 蓝图 + Perkeo 可打穿 39 注。"
+      ],
+      "confidence": "中",
+      "useInSite": "作为高复制组件路线的待复盘种。"
+    },
+    {
+      "id": "bili-88nz7cz7",
+      "platform": "B站",
+      "title": "88NZ7CZ7 钢K流种子分享",
+      "url": "https://www.bilibili.com/video/BV16H5M6cEtA/",
+      "retrievedAt": "2026-06-15",
+      "contentType": "公开视频简介",
+      "seeds": [
+        "88NZ7CZ7"
+      ],
+      "facts": [
+        "简介给出种子 88NZ7CZ7。",
+        "简介列出 DNA、哑剧演员、男爵、钢铁小丑、头脑风暴等组件，并说明成型偏晚。"
+      ],
+      "confidence": "中",
+      "useInSite": "作为普通钢K路线练习和待复盘种。"
+    },
+    {
+      "id": "taptap-x8wtk1u1",
+      "platform": "TapTap",
+      "title": "10回合镭射钢K",
+      "url": "https://www.taptap.cn/moment/685810471831342883",
+      "retrievedAt": "2026-06-15",
+      "contentType": "中文社区文字流程",
+      "seeds": [
+        "X8WTK1U1"
+      ],
+      "facts": [
+        "帖子给出种子 X8WTK1U1。",
+        "正文写明回合 1-7 的通灵、同花保留、黑桃 K 钢铁、红戳、复制和三张红戳钢K节点。"
+      ],
+      "confidence": "高",
+      "useInSite": "可做早期 7 回合可验证路线。"
+    },
+    {
+      "id": "taptap-iur4cty3",
+      "platform": "TapTap",
+      "title": "小丑牌钢K种子推荐 IUR4CTY3",
+      "url": "https://www.taptap.cn/moment/601730332038793122",
+      "retrievedAt": "2026-06-15",
+      "contentType": "中文社区文字流程",
+      "seeds": [
+        "IUR4CTY3"
+      ],
+      "facts": [
+        "帖子给出种子 IUR4CTY3 并要求全解锁。",
+        "正文列出第一回合控分、头脑风暴、象形文字、免费商店、复制第二张头脑风暴、Boss 后 DNA、底注 10 找 K 皇。"
+      ],
+      "confidence": "高",
+      "useInSite": "作为中文早期钢K流程样板。"
+    },
+    {
+      "id": "gamesgg-baron-mime",
+      "platform": "网页攻略",
+      "title": "Baron Mime Balatro Build Guide",
+      "url": "https://games.gg/balatro/guides/baron-mime-balatro-build/",
+      "retrievedAt": "2026-06-15",
+      "contentType": "机制攻略",
+      "seeds": [],
+      "facts": [
+        "文章解释 Baron、Mime、红封、钢铁 K 和 DNA/Steel Joker 的叠乘关系。",
+        "文章把红封钢K + Baron/Mime/Blueprint/Brainstorm 作为核心爆分结构。"
+      ],
+      "confidence": "中",
+      "useInSite": "用于解释钢K流机制，不作为具体种子流程。"
+    },
+    {
+      "id": "balatroseed-vh1a55lv",
+      "platform": "网页攻略",
+      "title": "VH1A55LV 39 Ante Strategy",
+      "url": "https://balatroseed.net/guides/2",
+      "retrievedAt": "2026-06-15",
+      "contentType": "节点型英文攻略",
+      "seeds": [
+        "VH1A55LV"
+      ],
+      "facts": [
+        "攻略给出 Plasma Deck + Red Seal Steel King 路线，Ante 1-2 Yorick、Ante 1-3 Negative Perkeo、Ante 3-3 Brainstorm。",
+        "后续列出 Ante 7-2 Deja Vu、Ante 16-2/17-1 第二 Mime/Baron、Ante 18/23/26 Blueprint 等节点。"
+      ],
+      "confidence": "高",
+      "useInSite": "作为 VH1A55LV 节点型长线流程来源。"
+    },
+    {
+      "id": "xhs-probe-balatro-steel-k",
+      "platform": "小红书",
+      "title": "小红书 Balatro 钢K检索探测",
+      "url": "https://www.xiaohongshu.com/",
+      "retrievedAt": "2026-06-15",
+      "contentType": "接入状态记录",
+      "seeds": [],
+      "facts": [
+        "当前未配置 xiaohongshu-mcp 和登录 cookie。",
+        "通过 Exa 索引搜索 site:xiaohongshu.com 小丑牌 钢K Balatro 种子，命中多为无关用户主页或其他卡牌/桌游账号。"
+      ],
+      "confidence": "高",
+      "useInSite": "作为平台缺口说明，不作为攻略来源。"
+    },
+    {
+      "id": "wechat-balatro-newbie",
+      "platform": "微信公众号",
+      "title": "小丑牌Balatro新手攻略搜索命中",
+      "url": "https://mp.weixin.qq.com/s?src=11&timestamp=1781526411&ver=6784&signature=aib84CMYTzbZynDk*0l-ZLAA8B3V5Tbe6EC2MmFVwjbMdP2J*kwRJV*BKeuRDaMsAVU1EpCCH9zq8mgp0uejJAnVhsoCtTlnwjGCaj*IAkz6CYJtcbbVmJK6aXaVakk8&new=1",
+      "retrievedAt": "2026-06-15",
+      "contentType": "搜索命中",
+      "seeds": [],
+      "facts": [
+        "微信搜索工具对 Balatro 小丑牌种子攻略返回一篇新手攻略标题。",
+        "钢K query 命中质量不稳定，出现无关书目结果。"
+      ],
+      "confidence": "低",
+      "useInSite": "仅用于平台状态，不作为种子流程依据。"
+    }
+  ]
 }

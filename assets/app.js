@@ -37,6 +37,40 @@ function sourceLinks(sourceIds) {
   return fragment;
 }
 
+function sourceHost(url) {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return "external source";
+  }
+}
+
+function renderRouteSources(sourceIds) {
+  const box = $("#routeSources");
+  const ids = [...new Set(sourceIds || [])];
+  box.replaceChildren();
+
+  if (!ids.length) {
+    box.hidden = true;
+    return;
+  }
+
+  box.hidden = false;
+  box.append(el("h4", "", "来源证据"));
+  const grid = el("div", "route-source-grid");
+  ids.forEach((id) => {
+    const source = getSource(id);
+    const link = el("a", "route-source-card");
+    link.href = source.url;
+    link.target = "_blank";
+    link.rel = "noreferrer";
+    link.append(el("span", "route-source-label", source.label || id));
+    link.append(el("span", "route-source-host", sourceHost(source.url)));
+    grid.append(link);
+  });
+  box.append(grid);
+}
+
 function mergeRouteData() {
   if (!state.routeData) return;
 
@@ -260,7 +294,7 @@ function showRoute(seed, shouldScroll = false) {
   }
 
   const sourceIds = [...new Set([...(seed.sources || []), ...(detail.sources || [])])];
-  $("#routeSources").replaceChildren(sourceLinks(sourceIds));
+  renderRouteSources(sourceIds);
   viewer.hidden = false;
   if (shouldScroll) {
     history.replaceState(null, "", `#seed-${seed.seed}`);
@@ -340,6 +374,104 @@ function renderVideos() {
       tr.append(el("td", "metric", video.favorites ? formatNumber.format(video.favorites) : "未取到"));
       tr.append(el("td", "", video.platform));
       return tr;
+    })
+  );
+}
+
+function renderPlatformStatus() {
+  const grid = $("#platformStatus");
+  if (!grid) return;
+  const platforms = state.data.platformStatus || [];
+
+  if (!platforms.length) {
+    const empty = el("div", "signal-card");
+    empty.append(el("h3", "", "平台状态待补"));
+    empty.append(el("p", "", "当前数据文件还没有 platformStatus 字段。"));
+    grid.replaceChildren(empty);
+    return;
+  }
+
+  grid.replaceChildren(
+    ...platforms.map((item) => {
+      const card = el("article", "platform-card");
+      const top = el("div", "platform-card-top");
+      top.append(el("h3", "", item.platform));
+      const status = el("span", "status-pill", item.status);
+      status.dataset.usable = item.usableNow ? "true" : "false";
+      top.append(status);
+      card.append(top);
+
+      const access = el("p", "platform-line");
+      access.append(el("strong", "", "接入："));
+      access.append(document.createTextNode(item.accessMethod || "待补"));
+      card.append(access);
+
+      const limit = el("p", "platform-line");
+      limit.append(el("strong", "", "限制："));
+      limit.append(document.createTextNode(item.limitation || "暂无"));
+      card.append(limit);
+
+      const next = el("p", "platform-next", item.nextAction || "等待后续接入。");
+      card.append(next);
+      return card;
+    })
+  );
+}
+
+function renderEvidenceSources() {
+  const grid = $("#evidenceSources");
+  if (!grid) return;
+  const evidence = state.data.evidenceSources || [];
+
+  if (!evidence.length) {
+    const empty = el("div", "signal-card");
+    empty.append(el("h3", "", "证据池待补"));
+    empty.append(el("p", "", "当前数据文件还没有 evidenceSources 字段。"));
+    grid.replaceChildren(empty);
+    return;
+  }
+
+  grid.replaceChildren(
+    ...evidence.map((item) => {
+      const card = el("article", "evidence-card");
+      const meta = el("div", "evidence-meta");
+      meta.append(el("span", "", item.platform || "未知平台"));
+      const confidence = el("span", "confidence-pill", item.confidence || "待定");
+      confidence.dataset.confidence = item.confidence || "待定";
+      meta.append(confidence);
+      card.append(meta);
+
+      const title = el("h3");
+      const link = el("a", "", item.title || item.id);
+      link.href = item.url || "#";
+      link.target = "_blank";
+      link.rel = "noreferrer";
+      title.append(link);
+      card.append(title);
+
+      const seeds = item.seeds || [];
+      if (seeds.length) {
+        const seedRow = el("div", "evidence-seeds");
+        seeds.forEach((seed) => seedRow.append(el("span", "seed-tag", seed)));
+        card.append(seedRow);
+      }
+
+      const facts = el("ul", "evidence-facts");
+      (item.facts || []).forEach((fact) => facts.append(el("li", "", fact)));
+      card.append(facts);
+
+      if (item.useInSite) {
+        const use = el("p", "evidence-use");
+        use.append(el("strong", "", "站内用途："));
+        use.append(document.createTextNode(item.useInSite));
+        card.append(use);
+      }
+
+      const footer = el("div", "evidence-foot");
+      footer.append(el("span", "", item.contentType || "来源"));
+      footer.append(el("span", "", item.retrievedAt || state.data.meta.asOf));
+      card.append(footer);
+      return card;
     })
   );
 }
@@ -445,6 +577,8 @@ async function boot() {
   renderSeeds();
   renderStrategies();
   renderVideos();
+  renderPlatformStatus();
+  renderEvidenceSources();
   renderSignals();
   renderDomains();
   renderFutureGames();

@@ -25,8 +25,16 @@
         "该来源是中文社区帖，图中商店位置没有被完整转成文本，需要后续人工复盘补齐。",
         "要求全解锁。"
       ],
-      "tags": ["钢K", "Ghost", "Brainstorm", "DNA", "中文流程"],
-      "sources": ["taptap-iur4cty3"]
+      "tags": [
+        "钢K",
+        "Ghost",
+        "Brainstorm",
+        "DNA",
+        "中文流程"
+      ],
+      "sources": [
+        "taptap-iur4cty3"
+      ]
     },
     {
       "seed": "2K9K9KH",
@@ -48,8 +56,135 @@
         "早期缺少筹码/倍率小丑，运营容错不高。",
         "这是高价值扩展种，不是钢K主推种。"
       ],
-      "tags": ["Perkeo", "Invisible Joker", "Cryptid", "资源", "扩展"],
-      "sources": ["thegamer-million-seeds"]
+      "tags": [
+        "Perkeo",
+        "Invisible Joker",
+        "Cryptid",
+        "资源",
+        "扩展"
+      ],
+      "sources": [
+        "thegamer-million-seeds"
+      ]
+    },
+    {
+      "seed": "X8WTK1U1",
+      "title": "TapTap 10回合镭射钢K",
+      "deck": "未限定 / 需按帖子手牌复盘",
+      "archetype": "早期红戳钢K",
+      "difficulty": "中文早期流程",
+      "version": "TapTap 2025-06-22",
+      "image": "assets/images/steel-king-route.webp",
+      "summary": "TapTap 帖子给出 1-7 回合的早期路线：通灵、保留同花、黑桃 K 上钢铁、红戳、复制，最终形成三张红戳钢K和额外钢铁 K。",
+      "route": [
+        "回合 1 过关后包里拿通灵。",
+        "回合 2-3 通过弃牌保留红桃 8/9/10/J/Q 同花；回合 3 结束买包，把黑桃 K 做成钢铁。",
+        "回合 4 保留红桃 2/3/4/5/6 同花并给红戳，这是核心节点。",
+        "回合 5 保留红桃 3/4/5/6/7，拿一张复制并保留。",
+        "回合 6 开局把红戳给黑桃 K，然后复制，形成三张红戳钢K。",
+        "回合 7 卡包还有一张钢铁 K，早期钢K质量继续提高。"
+      ],
+      "warnings": [
+        "该帖只覆盖早期 7 回合，不代表完整 Ante 8 或无尽流程。",
+        "需要实际复盘确认不同版本/牌组下的商店和包顺序。"
+      ],
+      "tags": [
+        "钢K",
+        "TapTap",
+        "红戳",
+        "早期流程",
+        "中文流程"
+      ],
+      "sources": [
+        "taptap-x8wtk1u1"
+      ]
+    },
+    {
+      "seed": "1DOYU2",
+      "title": "幽灵牌组 Ante 39 红印钢K种",
+      "deck": "Ghost Deck / 幽灵牌组",
+      "archetype": "红封钢K长线",
+      "difficulty": "版本敏感",
+      "version": "B站简介要求 1.0.1f",
+      "image": "assets/images/gold-stake-roadmap.webp",
+      "summary": "B站简介称该种子来自 Discord 玩家社区，按攻略可推进到 Ante 39 并进入 naneinf；但当前只有公开视频简介，缺逐商店文本。",
+      "route": [
+        "视频简介给出种子 1DOYU2，并强调必须使用 1.0.1f。",
+        "目标路线是幽灵牌组红印钢K，按攻略可推进到 Ante 39。",
+        "当前只收录为待复盘长线种，后续需要字幕/OCR 或人工看视频补齐每个 Ante。"
+      ],
+      "warnings": [
+        "版本要求强，非 1.0.1f 可能无法复现。",
+        "当前证据来自视频标题/简介，不标完整流程。"
+      ],
+      "tags": [
+        "钢K",
+        "Ghost",
+        "naneinf",
+        "Ante39",
+        "待复盘"
+      ],
+      "sources": [
+        "bili-1doyu2"
+      ]
+    },
+    {
+      "seed": "2Q5Q3XEL",
+      "title": "6 蓝图 + Perkeo 钢K无尽教学种",
+      "deck": "未限定 / 视频待复盘",
+      "archetype": "高复制钢K",
+      "difficulty": "待复盘",
+      "version": "B站 2025-03-25",
+      "image": "assets/images/joker-strategy.webp",
+      "summary": "B站视频标题写明钢K无尽教学第三期，核心卖点是 6 蓝图 + Perkeo 打穿 39 注，简介给出种子 2Q5Q3XEL。",
+      "route": [
+        "简介直接给出种子 2Q5Q3XEL。",
+        "标题说明路线依赖 Perkeo 和多蓝图复制层。",
+        "当前没有可读字幕，暂时只作为高复制组件待复盘种。"
+      ],
+      "warnings": [
+        "不要把标题中的“打穿 39 注”当作已结构化流程。",
+        "需要记录蓝图/头脑风暴/Perkeo 的出现 Ante 和复制顺序。"
+      ],
+      "tags": [
+        "钢K",
+        "Perkeo",
+        "Blueprint",
+        "Ante39",
+        "待复盘"
+      ],
+      "sources": [
+        "bili-2q5q3xel"
+      ]
+    },
+    {
+      "seed": "88NZ7CZ7",
+      "title": "成型偏晚的钢K练习种",
+      "deck": "未限定 / 视频待复盘",
+      "archetype": "常规钢K",
+      "difficulty": "待复盘",
+      "version": "B站 2026-05-15",
+      "image": "assets/images/seed-vault.webp",
+      "summary": "B站简介给出种子 88NZ7CZ7，组件包括 DNA、哑剧演员、男爵、钢铁小丑和头脑风暴；作者说明成型偏晚。",
+      "route": [
+        "简介给出种子 88NZ7CZ7。",
+        "核心组件：DNA 用于成型，哑剧演员 + 男爵 + 钢铁小丑 + 头脑风暴提高上限。",
+        "作者提示高牌等级没有充分升级，且缺少另一张复制小丑，适合作为练习/挖掘种。"
+      ],
+      "warnings": [
+        "成型偏晚，不适合标为爽种。",
+        "目前只有简介级证据，缺完整回合记录。"
+      ],
+      "tags": [
+        "钢K",
+        "DNA",
+        "Mime",
+        "Baron",
+        "待复盘"
+      ],
+      "sources": [
+        "bili-88nz7cz7"
+      ]
     }
   ],
   "seedDetails": {
@@ -57,7 +192,10 @@
       "completeness": "待复盘",
       "sourceMode": "B站元数据 + 中文机制文章；公开视频无字幕",
       "videoStatus": "Bilibili API 可读到 2P：P1 681 秒，P2 695 秒；yt-dlp 被 412 拦截，字幕接口为空。",
-      "sources": ["bili-9ouu79", "indienova-steel-k"],
+      "sources": [
+        "bili-9ouu79",
+        "indienova-steel-k"
+      ],
       "flow": [
         {
           "stage": "成型目标",
@@ -443,7 +581,9 @@
     "IUR4CTY3": {
       "completeness": "中文早期流程",
       "sourceMode": "TapTap 帖子 + 评论补充",
-      "sources": ["taptap-iur4cty3"],
+      "sources": [
+        "taptap-iur4cty3"
+      ],
       "flow": [
         {
           "stage": "第一回合",
@@ -483,7 +623,9 @@
     "2K9K9KH": {
       "completeness": "部分完整",
       "sourceMode": "TheGamer 逐节点说明",
-      "sources": ["thegamer-million-seeds"],
+      "sources": [
+        "thegamer-million-seeds"
+      ],
       "flow": [
         {
           "stage": "第一家商店",
@@ -512,6 +654,134 @@
       "mistakes": [
         "早期没有稳定筹码/倍率时容易死，先保命再贪资源。"
       ]
+    },
+    "X8WTK1U1": {
+      "completeness": "早期 7 回合可验证",
+      "sourceMode": "TapTap 中文文字流程",
+      "videoStatus": "非视频来源；正文列出回合节点。",
+      "sources": [
+        "taptap-x8wtk1u1"
+      ],
+      "flow": [
+        {
+          "stage": "回合 1 - 通灵开局",
+          "actions": [
+            "正常过第一回合，结束后在包里拿通灵。",
+            "这个节点只记录了关键消耗牌选择，仍需实测确认牌组和金币。"
+          ]
+        },
+        {
+          "stage": "回合 2-3 - 找同花与第一张钢 K",
+          "actions": [
+            "回合 2 弃牌，保留红桃 8/9/10/J/Q 同花。",
+            "回合 3 继续保留红桃 8/9/10/J/Q 同花，结束后买包，把黑桃 K 给钢铁效果。"
+          ]
+        },
+        {
+          "stage": "回合 4 - 红戳核心",
+          "actions": [
+            "弃牌保留红桃 2/3/4/5/6 同花。",
+            "给红戳并保留，这是后续复制红戳钢K的核心。",
+            "结束后不买包，避免打乱后续节点。"
+          ]
+        },
+        {
+          "stage": "回合 5-7 - 复制成三张红戳钢K",
+          "actions": [
+            "回合 5 保留红桃 3/4/5/6/7，拿一张复制并保留。",
+            "回合 6 开局用红戳给黑桃 K，然后复制，形成三张红戳钢K。",
+            "回合 7 卡包还有一张钢铁 K，早期牌库质量继续提升。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "这是早期路线，不是完整 Ante 8/Ante 39 攻略。",
+        "需要实测补齐每个商店金币、刷新次数和 Boss 风险。"
+      ]
+    },
+    "1DOYU2": {
+      "completeness": "B站描述级待复盘",
+      "sourceMode": "B站标题/简介；无结构化字幕",
+      "videoStatus": "公开视频简介可读，完整流程需人工看视频或 OCR。",
+      "sources": [
+        "bili-1doyu2"
+      ],
+      "flow": [
+        {
+          "stage": "定位",
+          "actions": [
+            "幽灵牌组红印钢K长线种，简介称按攻略可到 Ante 39。",
+            "明确版本要求：1.0.1f。"
+          ]
+        },
+        {
+          "stage": "后续待补",
+          "actions": [
+            "需要抽取每个 Ante 的关键 Joker、Spectral/Tarot 选择、复制时机和 Boss reroll。",
+            "站内暂不把它标为完整流程。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "版本不一致可能导致路线失效。",
+        "只有视频简介时不能写成逐回合攻略。"
+      ]
+    },
+    "2Q5Q3XEL": {
+      "completeness": "B站描述级待复盘",
+      "sourceMode": "B站标题/简介；无结构化字幕",
+      "videoStatus": "标题和简介可读，完整流程待复盘。",
+      "sources": [
+        "bili-2q5q3xel"
+      ],
+      "flow": [
+        {
+          "stage": "定位",
+          "actions": [
+            "种子 2Q5Q3XEL，视频定位是钢K无尽教学第三期。",
+            "标题强调 6 蓝图 + Perkeo，说明核心是高复制层叠。"
+          ]
+        },
+        {
+          "stage": "后续待补",
+          "actions": [
+            "需要确认 6 个 Blueprint/Brainstorm 层的获取 Ante、负片方式和 Perkeo 复制目标。",
+            "补齐后适合做高复制钢K专题页。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "标题不是完整流程证据。",
+        "高复制路线对 Joker 位、负片和经济要求高，需要单独记录。"
+      ]
+    },
+    "88NZ7CZ7": {
+      "completeness": "B站描述级待复盘",
+      "sourceMode": "B站简介；无结构化字幕",
+      "videoStatus": "公开视频简介可读，完整流程待复盘。",
+      "sources": [
+        "bili-88nz7cz7"
+      ],
+      "flow": [
+        {
+          "stage": "组件结构",
+          "actions": [
+            "简介列出 DNA、哑剧演员、男爵、钢铁小丑、头脑风暴。",
+            "作者说明成型偏晚，并且高牌牌型升级不足、少一张复制小丑。"
+          ]
+        },
+        {
+          "stage": "后续待补",
+          "actions": [
+            "复盘时优先记录 DNA 开始复制钢K的时间点。",
+            "需要确认男爵/哑剧/头脑风暴出现顺序和经济是否足够稳定。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "成型偏晚，不能作为新手爽种主推。",
+        "简介信息足够做候选入口，不足以做完整路线。"
+      ]
     }
   },
   "sourceAdditions": {
@@ -526,6 +796,30 @@
     "thegamer-million-seeds": {
       "label": "TheGamer: How To Hit 1 Million Score Using Seeds In Balatro",
       "url": "https://www.thegamer.com/balatro-1-million-score-seeds-tips-guide/"
+    },
+    "bili-90uu79-yushen": {
+      "label": "Bilibili: 90UU79 红封钢K无尽演示",
+      "url": "https://www.bilibili.com/video/BV1ysq8YZExk/"
+    },
+    "bili-1doyu2": {
+      "label": "Bilibili: 1DOYU2 幽灵牌组 naneinf 教程",
+      "url": "https://www.bilibili.com/video/BV1Ar421E7dv/"
+    },
+    "bili-2q5q3xel": {
+      "label": "Bilibili: 2Q5Q3XEL 钢K无尽教学第三期",
+      "url": "https://www.bilibili.com/video/BV18Co1Y8EhL/"
+    },
+    "bili-88nz7cz7": {
+      "label": "Bilibili: 88NZ7CZ7 钢K流种子分享",
+      "url": "https://www.bilibili.com/video/BV16H5M6cEtA/"
+    },
+    "taptap-x8wtk1u1": {
+      "label": "TapTap: 10回合镭射钢K X8WTK1U1",
+      "url": "https://www.taptap.cn/moment/685810471831342883"
+    },
+    "wechat-balatro-newbie": {
+      "label": "微信公众号: 小丑牌Balatro新手最强攻略",
+      "url": "https://mp.weixin.qq.com/s?src=11&timestamp=1781526411&ver=6784&signature=aib84CMYTzbZynDk*0l-ZLAA8B3V5Tbe6EC2MmFVwjbMdP2J*kwRJV*BKeuRDaMsAVU1EpCCH9zq8mgp0uejJAnVhsoCtTlnwjGCaj*IAkz6CYJtcbbVmJK6aXaVakk8&new=1"
     }
   }
 }
