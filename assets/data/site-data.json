@@ -5,12 +5,12 @@
     "asOf": "2026-06-15",
     "language": "zh-CN",
     "method": "Agent Reach doctor + mcporter 显式配置调用 + Jina Reader + GitHub CLI + BalatroSeeds public pages + web search fallback + Scrapling availability check",
-    "coverageNote": "2026-06-15 四次复核：最新 Agent Reach doctor 显示 13/15 渠道可用；Exa 与微博在 /Users/siuserxiaowei/config/mcporter.json 显式配置下可调用，小红书服务可见但 check_login_status 仍 EOF，抖音 MCP 可见但 parse_douyin_video_info 仍缺 DASHSCOPE_API_KEY；本轮优先把 BalatroSeeds 完整队列落到可点击详情。"
+    "coverageNote": "2026-06-15 五次复核：最新 Agent Reach doctor 显示 13/15 渠道接入；Exa 与微博在 /Users/siuserxiaowei/config/mcporter.json 显式配置下可调用，小红书 server 可见但 check_login_status/search_feeds 仍 EOF，抖音 server 可见但 parse/download 仍缺 DASHSCOPE_API_KEY；本轮新增 BalatroSeeds/微博可回链候选路线。"
   },
   "stats": [
     {
       "label": "已整理种子",
-      "value": "26",
+      "value": "29",
       "note": "含可点击流程、中文来源和待复盘队列"
     },
     {
@@ -20,7 +20,7 @@
     },
     {
       "label": "证据来源",
-      "value": "31",
+      "value": "35",
       "note": "含平台状态、中文社区、英文 seed bank 和 GitHub 工具证据"
     },
     {
@@ -857,11 +857,11 @@
   "platformStatus": [
     {
       "platform": "Agent Reach / 工具总览",
-      "status": "13/15 渠道可用",
+      "status": "13/15 渠道接入可见",
       "accessMethod": "agent-reach doctor + mcporter --config /Users/siuserxiaowei/config/mcporter.json list",
       "usableNow": true,
-      "limitation": "doctor 显示 GitHub、YouTube、V2EX、RSS、Jina、X、Reddit 读取/搜索、B站、微博、Exa、小红书、抖音、微信公众号等多数渠道已接入；LinkedIn 未配置，小宇宙缺 Groq；小红书和抖音仍需要登录态/API key 才能稳定抽正文。",
-      "nextAction": "后续深采统一带显式 mcporter config；小红书先修登录态，抖音先补 DASHSCOPE_API_KEY，再把视频/图文转成可复盘路线。"
+      "limitation": "doctor/list 显示 GitHub、YouTube、V2EX、RSS、Jina、X、Reddit、B站、微博、Exa、小红书、抖音、微信公众号等多数渠道已接入；但小红书实际 check/search 仍 EOF，抖音 parse/download 仍缺 DASHSCOPE_API_KEY；LinkedIn 未配置，小宇宙缺 Groq。",
+      "nextAction": "后续深采统一带显式 mcporter config；小红书先修登录态/服务端 EOF，抖音先补 DASHSCOPE_API_KEY，再把视频/图文转成可复盘路线。"
     },
     {
       "platform": "Exa / 全网语义搜索",
@@ -900,15 +900,15 @@
       "status": "MCP 可见，登录态/读取失败",
       "accessMethod": "mcporter --config /Users/siuserxiaowei/config/mcporter.json call xiaohongshu.check_login_status",
       "usableNow": false,
-      "limitation": "mcporter list 能看到 xiaohongshu server，但 check_login_status 返回 EOF；当前不能证明已登录，也不能把小红书内容当作真实采集结果。",
+      "limitation": "mcporter list 能看到 xiaohongshu server，但 check_login_status 和 search_feeds(\"小丑牌 钢K\") 均返回 EOF；当前不能证明已登录，也不能把小红书内容当作真实采集结果。",
       "nextAction": "修复 cookies/login 后运行 search_feeds(\"小丑牌 钢K\")、search_feeds(\"Balatro 钢K 种子\") 和 get_feed_detail，并保留笔记图片/正文来源。"
     },
     {
       "platform": "抖音",
-      "status": "MCP 可见，视频解析仍需 API key",
+      "status": "MCP 可见，解析/下载仍需 API key",
       "accessMethod": "mcporter --config /Users/siuserxiaowei/config/mcporter.json call douyin.parse_douyin_video_info + DASHSCOPE_API_KEY",
       "usableNow": false,
-      "limitation": "douyin server 可调用，但 parse_douyin_video_info 对公开视频返回“未设置 DASHSCOPE_API_KEY”；未拿到标题/作者/字幕前不能写完整攻略。",
+      "limitation": "douyin server 可调用，但 parse_douyin_video_info 和 get_douyin_download_link 对公开视频均返回“未设置 DASHSCOPE_API_KEY”；未拿到标题/作者/字幕前不能写完整攻略。",
       "nextAction": "配置 DASHSCOPE_API_KEY 后优先解析已发现的钢K视频，再筛出有种子号或逐局流程的视频。"
     },
     {
@@ -916,8 +916,8 @@
       "status": "可用",
       "accessMethod": "mcporter --config /Users/siuserxiaowei/config/mcporter.json call weibo.search_content",
       "usableNow": true,
-      "limitation": "本轮 search_content(\"小丑牌 钢K\") 能返回微博视频/图片/动态，但大多是结果展示或讨论，缺完整牌局路线；图片种子仍需 OCR。",
-      "nextAction": "追踪 #小丑牌# 和钢K流帖子，优先下载含种子号/牌组截图的图片并做 OCR，再决定是否入库。"
+      "limitation": "本轮 search_content(\"小丑牌 种子 钢K\") 能返回 IRW4G69D 这类带 seed 的图文动态，但大多仍缺完整牌局路线；图片和商店顺序需 OCR/复盘。",
+      "nextAction": "追踪 #小丑牌# 和钢K流帖子，优先下载含种子号/牌组截图的图片并做 OCR，再决定是否升级为完整路线。"
     },
     {
       "platform": "Reddit / X / YouTube / GitHub / V2EX / RSS",
@@ -1118,6 +1118,82 @@
       "useInSite": "降级为长线候选种；恢复原文或实测前不标完整流程。"
     },
     {
+      "id": "balatroseeds-6b678b4w-route",
+      "platform": "BalatroSeeds",
+      "title": "6B678B4W Plasma Deck Ante 1-8 路线",
+      "url": "https://balatroseeds.com/seeds/6B678B4W",
+      "retrievedAt": "2026-06-15",
+      "contentType": "Jina Reader 可读网页正文",
+      "seeds": [
+        "6B678B4W"
+      ],
+      "facts": [
+        "页面正文说明该 seed 可用于 naneinf 和 Ante 39，路线写到 Ante 8 起点。",
+        "Ante 1 跳小盲拿 Mega Arcana Pack，通过 Soul 拿 Perkeo，并用负片 Jupiter 做经济。",
+        "Ante 5 转高牌并拿 Foil DNA，随后用 Deja Vu 和 Chariot 做红封钢 K。",
+        "Ante 7 刷到 Baron，Ante 8 买 Telescope 并刷新一次拿 Brainstorm，后续进入 Baron/Mime + Perkeo/Cryptid 长线。"
+      ],
+      "confidence": "高",
+      "useInSite": "已用于升级 6B678B4W 详情页的 Ante 1-8 流程；后续可继续补 Ante 9+。"
+    },
+    {
+      "id": "balatroseeds-afbwb2-ghost",
+      "platform": "BalatroSeeds",
+      "title": "AFBWB2 Ghost Deck 早期 Blueprint / Brainstorm 候选",
+      "url": "https://balatroseeds.com/seeds/AFBWB2/ghost-deck",
+      "retrievedAt": "2026-06-15",
+      "contentType": "Jina Reader 可读网页正文",
+      "seeds": [
+        "AFBWB2"
+      ],
+      "facts": [
+        "页面 Joker highlights 包括 Blueprint、Brainstorm、DNA、Baron、Mime。",
+        "正文写明第一店买 Blueprint，Spectral Pack 拿 Ankh 和 Ectoplasm，然后买 Brainstorm。",
+        "后续可较早找到 Deja Vu 和 Chariot，并用中期 DNA 朝 perfect kings 发展。",
+        "作者标注尚未探到很远，因此当前只能作为早期复制组件候选。"
+      ],
+      "confidence": "中高",
+      "useInSite": "新增为 Ghost Deck 早期复制组件候选；完整路线待复盘。"
+    },
+    {
+      "id": "balatroseeds-8q47wv6k-ghost",
+      "platform": "BalatroSeeds",
+      "title": "8Q47WV6K Ghost Deck naneinf 红封钢K候选",
+      "url": "https://balatroseeds.com/seeds/8476/ghost-deck",
+      "retrievedAt": "2026-06-15",
+      "contentType": "Jina Reader 可读网页正文",
+      "seeds": [
+        "8Q47WV6K"
+      ],
+      "facts": [
+        "页面 URL slug 为 8476，但正文 SEED 明确写作 8Q47WV6K。",
+        "正文称该 seed 让作者首次打出 naneinf holographic red seal steel kings。",
+        "节点包括 Ante 1 Hex-Triboulet/Perkeo，Ante 4 Wraith/Blueprint，Ante 5 Deja Vu/Cryptid，Ante 8 Mime，Ante 9 Brainstorm，Ante 11-13 Baron。",
+        "该来源缺逐商店表，因此当前标为多 Ante 节点候选。"
+      ],
+      "confidence": "中高",
+      "useInSite": "新增为红封钢K/naneinf 候选，并在详情页保留 seed 纠错。"
+    },
+    {
+      "id": "weibo-irw4g69d-steel-k",
+      "platform": "微博",
+      "title": "IRW4G69D 微博钢K解锁种子线索",
+      "url": "https://m.weibo.cn/status/5247187984581762",
+      "retrievedAt": "2026-06-15",
+      "contentType": "Weibo MCP search_content 公开动态",
+      "seeds": [
+        "IRW4G69D"
+      ],
+      "facts": [
+        "weibo.search_content(\"小丑牌 种子 钢K\") 返回 2025-12-24 用户 Strong_JIA 公开帖。",
+        "正文直接分享种子 IRW4G69D，并写明 1-1 出 Blueprint、4-2 出 Chicot、8 底注出 Baron。",
+        "作者还说明复制 Blueprint 在 Chicot 之前出现，DNA 在 Baron 之前出现。",
+        "该帖附两张图片，当前尚未 OCR，因此不能标完整路线。"
+      ],
+      "confidence": "中高",
+      "useInSite": "新增为中文微博钢K候选；下一步做配图 OCR 和实机复盘。"
+    },
+    {
       "id": "xhs-probe-balatro-steel-k",
       "platform": "小红书",
       "title": "小红书 Balatro 钢K检索探测",
@@ -1127,7 +1203,8 @@
       "seeds": [],
       "facts": [
         "xiaohongshu-mcp 已接入 mcporter，Docker 容器可达，但缺 cookies.json 登录态。",
-        "通过 Exa 索引搜索 site:xiaohongshu.com 小丑牌 钢K Balatro 种子，命中多为无关用户主页或其他卡牌/桌游账号；MCP 登录后需要重新采集站内笔记。"
+        "2026-06-15 复测：check_login_status 与 search_feeds(\"小丑牌 钢K\") 均返回 EOF；当前仍不能读取真实笔记。",
+        "通过 Exa 索引搜索 site:xiaohongshu.com 小丑牌 钢K Balatro 种子，命中多为无关用户主页或其他卡牌/桌游账号；MCP 登录/EOF 修复后需要重新采集站内笔记。"
       ],
       "confidence": "高",
       "useInSite": "作为平台缺口说明，不作为攻略来源。"
@@ -1217,7 +1294,7 @@
       "seeds": [],
       "facts": [
         "Exa 搜索 site:douyin.com 小丑牌 钢K Balatro 种子，命中标题“#小丑牌 接下来我的出牌会很疯狂#钢K流”。",
-        "同次 MCP parse_douyin_video_info 对该链接返回“未设置 DASHSCOPE_API_KEY”，说明当前不能直接抽取抖音元数据。"
+        "2026-06-15 复测：parse_douyin_video_info 与 get_douyin_download_link 对该链接均返回“未设置 DASHSCOPE_API_KEY”，说明当前不能直接抽取抖音元数据。"
       ],
       "confidence": "中",
       "useInSite": "作为抖音渠道存在钢K内容的信号，等待 API key 后再深采。"
@@ -1247,7 +1324,7 @@
       "seeds": [],
       "facts": [
         "mcporter 显式配置能看到 xiaohongshu server，说明服务已接入当前工具链。",
-        "check_login_status 仍返回 EOF；当前不能证明已登录，也不能真实读取笔记正文。",
+        "check_login_status 与 search_feeds(\"小丑牌 钢K\") 仍返回 EOF；当前不能证明已登录，也不能真实读取笔记正文。",
         "当前不能把小红书标为已采集内容。"
       ],
       "confidence": "高",
@@ -1479,7 +1556,7 @@
       "platform": "小红书",
       "priority": "S",
       "status": "blocked-login",
-      "blocker": "xiaohongshu-mcp 容器已启动，但缺 cookies.json；check_login_status 与 search_feeds(\"小丑牌 钢K\") 返回 EOF。",
+      "blocker": "xiaohongshu server 已接入 mcporter，但 check_login_status 与 search_feeds(\"小丑牌 钢K\") 返回 EOF；当前不能证明登录态可用。",
       "evidenceIds": [
         "xhs-mcp-login-status",
         "xhs-probe-balatro-steel-k"
@@ -1496,7 +1573,7 @@
       "platform": "抖音",
       "priority": "A",
       "status": "blocked-key",
-      "blocker": "douyin MCP 已接入，但 parse_douyin_video_info 对公开视频返回“未设置 DASHSCOPE_API_KEY”。",
+      "blocker": "douyin MCP 已接入，但 parse_douyin_video_info 与 get_douyin_download_link 对公开视频均返回“未设置 DASHSCOPE_API_KEY”。",
       "evidenceIds": [
         "douyin-steel-k-exa",
         "douyin-steel-k-shipin-7356509910445672500"
@@ -1519,14 +1596,18 @@
       "status": "ready-ocr",
       "blocker": "",
       "evidenceIds": [
-        "weibo-seed-post-5125063542310722"
+        "weibo-seed-post-5125063542310722",
+        "weibo-irw4g69d-steel-k"
       ],
       "sourceIds": [
-        "weibo-seed-post-5125063542310722"
+        "weibo-seed-post-5125063542310722",
+        "weibo-irw4g69d-steel-k"
       ],
-      "targetSeeds": [],
-      "nextAction": "下载微博配图或用浏览器截图，OCR 提取种子号、牌组、关键 Joker，再决定是否新增 seed detail。",
-      "validation": "OCR 结果出现 8 位左右 Balatro 种子模式，并能回链到微博原帖；无法确认时标为“图片线索”。",
+      "targetSeeds": [
+        "IRW4G69D"
+      ],
+      "nextAction": "下载微博配图或用浏览器截图，OCR 提取种子号、牌组、关键 Joker、商店顺序；IRW4G69D 优先确认 1-1 Blueprint、4-2 Chicot、8 底注 Baron 和 DNA 节点。",
+      "validation": "OCR 结果能回链到微博原帖，并能确认牌组/商店/节点；无法确认时保留为“图片线索”。",
       "ownerMode": "Weibo MCP + OCR",
       "updatedAt": "2026-06-15"
     },
@@ -1548,7 +1629,7 @@
       "targetSeeds": [],
       "nextAction": "复盘微博视频和图片，确认是否有可复现种子、关键 Joker 顺序、底注节点和分数结构。",
       "validation": "能复原 Ante 节点才进入路线库；只有成就展示时保留为社交热度证据。",
-      "ownerMode": "Weibo MCP + browser-use",
+      "ownerMode": "Weibo MCP + Playwright/Browser 复盘",
       "updatedAt": "2026-06-15"
     },
     {
@@ -1572,7 +1653,7 @@
       ],
       "nextAction": "已确认 9OUU79 和 90UU79 是两条不同种子，并已抽出公开 API、评论/OCR 和分 P 节点；下一步人工复盘视频画面，补齐逐商店、Boss、金币和牌包顺序。",
       "validation": "详情页保持节点型流程；若能补齐 Ante 1-8 逐商店证据，再升级完整度。无字幕/无画面复核前不标完整。",
-      "ownerMode": "B站公开视频 + browser-use",
+      "ownerMode": "B站公开视频 + Playwright/Browser 复盘",
       "updatedAt": "2026-06-15"
     },
     {
@@ -1625,6 +1706,7 @@
       "status": "ready-search",
       "blocker": "Reddit 直连和 Jina 读取具体帖返回 403；Exa 现在可用，但只能作为搜索索引，仍需回链验证具体帖或视频。",
       "evidenceIds": [
+        "balatroseeds-6b678b4w-route",
         "balatroseed-vh1a55lv",
         "gamesgg-baron-mime",
         "balatroseeds-2k9h9-route",
@@ -1633,9 +1715,12 @@
         "balatroseeds-u8rjyv6n-multideck",
         "reddit-u8rjyv6n-balatroeagle",
         "balatroseeds-494a1wsi-painted",
-        "reddit-perkeo-route-candidates"
+        "reddit-perkeo-route-candidates",
+        "balatroseeds-afbwb2-ghost",
+        "balatroseeds-8q47wv6k-ghost"
       ],
       "sourceIds": [
+        "balatroseeds-6b678b4w",
         "steam-awesome-seeds",
         "dualshockers-seeds-to-try",
         "gamingnet-best-seeds",
@@ -1646,10 +1731,13 @@
         "balatroseeds-u8rjyv6n",
         "reddit-u8rjyv6n-balatroeagle",
         "balatroseeds-494a1wsi-painted",
+        "balatroseeds-afbwb2-ghost",
+        "balatroseeds-8q47wv6k-ghost",
         "reddit-uewc6zqf-perkeo-route",
         "reddit-kw1is19g-early-baron-mime"
       ],
       "targetSeeds": [
+        "6B678B4W",
         "VH1A55LV",
         "2K9H9",
         "HNITC7EL",
@@ -1657,9 +1745,11 @@
         "U8RJYV6N",
         "494A1WSI",
         "UEWC6ZQF",
-        "KW1IS19G"
+        "KW1IS19G",
+        "AFBWB2",
+        "8Q47WV6K"
       ],
-      "nextAction": "用 Exa 继续筛选 seed bank 和 Reddit 线索；遇到 Reddit 403 时先记录索引摘要，再等登录/代理或可读镜像补正文。",
+      "nextAction": "用 Exa/Jina 继续筛选 seed bank 和 Reddit 线索；优先复盘 AFBWB2、8Q47WV6K、6B678B4W 这类可读 BalatroSeeds 页面，遇到 Reddit 403 时先记录索引摘要，再等登录/代理或可读镜像补正文。",
       "validation": "新增种子必须有可回链来源；只有列表但无流程的种子标为“候选”。",
       "ownerMode": "Agent Reach Exa + Scrapling",
       "updatedAt": "2026-06-15"

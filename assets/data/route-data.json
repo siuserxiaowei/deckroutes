@@ -431,6 +431,101 @@
       "sources": [
         "reddit-kw1is19g-early-baron-mime"
       ]
+    },
+    {
+      "seed": "AFBWB2",
+      "title": "Ghost Deck 早期 Blueprint / Brainstorm 复制种",
+      "deck": "Ghost Deck",
+      "archetype": "Baron-Mime / 完美 K 候选",
+      "difficulty": "早期节点候选",
+      "version": "BalatroSeeds 1.0.1n-FULL",
+      "image": "assets/images/joker-strategy.webp",
+      "summary": "BalatroSeeds 页面显示 Ghost Deck 早期可买 Blueprint、开 Spectral Pack 拿 Ankh/Ectoplasm，再买 Brainstorm；中期有 DNA、Deja Vu、Chariot，可朝完美 K / Baron-Mime 方向发展。",
+      "route": [
+        "开局按页面提示拿 coupon，盲注阶段卖 Hex 做利息，并用红桃同花或 K-high 顺子过渡。",
+        "第一店买 Blueprint，Spectral Pack 拿 Ankh 和 Ectoplasm。",
+        "随后买 Brainstorm，并从 Buffoon Pack 拿 Swashbuckler 过渡。",
+        "中期找 Deja Vu、Chariot 和 DNA，把核心 K 做成红封/钢铁并复制。",
+        "后续有多个 Invisible Joker 和 Ectoplasm，可继续堆 Blueprint，但不建议把手牌降到 5。"
+      ],
+      "warnings": [
+        "原文作者写明“haven't scouted far enough”，当前不是完整 Ante 8 路线。",
+        "Ectoplasm 扩 Joker 位会缩手牌，Baron/Mime 路线要单独评估手牌上限风险。"
+      ],
+      "tags": [
+        "Ghost",
+        "Blueprint",
+        "Brainstorm",
+        "DNA",
+        "Baron-Mime"
+      ],
+      "sources": [
+        "balatroseeds-afbwb2-ghost"
+      ]
+    },
+    {
+      "seed": "8Q47WV6K",
+      "title": "Ghost Deck 红封钢K naneinf 候选",
+      "deck": "Ghost Deck",
+      "archetype": "红封钢K / naneinf",
+      "difficulty": "多 Ante 节点候选",
+      "version": "BalatroSeeds 1.0.1n-FULL",
+      "image": "assets/images/steel-king-route.webp",
+      "summary": "BalatroSeeds 页面 URL 为 8476/ghost-deck，但正文明确列出 SEED 为 8Q47WV6K；路线节点包括 Ante 1 Triboulet/Perkeo、Ante 4 Blueprint、Ante 8 Mime、Ante 9 Brainstorm、Ante 11-13 Baron 和 Showman。",
+      "route": [
+        "页面正文 seed 明确为 8Q47WV6K，录入时不能误用 URL slug 8476。",
+        "Ante 1 跳过 Small Blind 和 Big Blind，拿 Hex-Triboulet 与 Perkeo，并建议用 Emperor 找 Death。",
+        "Ante 3 可见 Ectoplasm / Aura，提供负片和牌面改造线索。",
+        "Ante 4 Wraith Spectral Card 包含 Blueprint。",
+        "Ante 5 有 Deja Vu / Cryptid，适合开始红封和复制资源链。",
+        "Ante 8 出 Mime，Ante 9 出 Brainstorm，Ante 11-13 出 Baron。",
+        "Ante 13 出 Showman，之后再跳盲可拿第二个负片 Showman。"
+      ],
+      "warnings": [
+        "页面是节点描述，不含逐商店购买表，暂不标完整流程。",
+        "URL slug 与正文 seed 不一致，后续复盘必须优先核对正文 seed 8Q47WV6K。"
+      ],
+      "tags": [
+        "Ghost",
+        "红封钢K",
+        "Perkeo",
+        "Mime",
+        "naneinf"
+      ],
+      "sources": [
+        "balatroseeds-8q47wv6k-ghost"
+      ]
+    },
+    {
+      "seed": "IRW4G69D",
+      "title": "微博中文 1-1 蓝图 / 8 底注男爵候选",
+      "deck": "未限定 / 微博图片待复盘",
+      "archetype": "钢K解锁 / Baron-Mime 候选",
+      "difficulty": "中文社交线索",
+      "version": "微博 2025-12-24",
+      "image": "assets/images/seed-vault.webp",
+      "summary": "微博搜索“小丑牌 种子 钢K”返回用户 Strong_JIA 的公开帖，正文直接给出种子 IRW4G69D，并记录 1-1 蓝图、4-2 希科、8 底注男爵、DNA 在男爵之前出现等节点。",
+      "route": [
+        "公开帖正文写明第一次解锁钢K，并分享种子 IRW4G69D。",
+        "1-1 出 Blueprint，是早期复制组件信号。",
+        "4-2 出 Chicot（希科），可用于 Boss 风险控制。",
+        "8 底注出 Baron；作者还说明复制 Blueprint 在 Chicot 之前出现，DNA 在 Baron 之前出现。",
+        "该帖带两张图片，后续需要 OCR 或人工复盘来确认牌组、商店、Boss 和钢K成型过程。"
+      ],
+      "warnings": [
+        "微博文本给出关键节点，但不是完整逐回合攻略。",
+        "牌组和图片内详细流程尚未 OCR，不能直接标为完整钢K路线。"
+      ],
+      "tags": [
+        "微博",
+        "钢K",
+        "Blueprint",
+        "Chicot",
+        "Baron"
+      ],
+      "sources": [
+        "weibo-irw4g69d-steel-k"
+      ]
     }
   ],
   "seedDetails": {
@@ -1927,6 +2022,116 @@
         "seed 字符易混，必须实机验证后再推广。",
         "Reddit 直读受限，当前不标完整。"
       ]
+    },
+    "AFBWB2": {
+      "completeness": "早期复制组件候选，待补完整路线",
+      "sourceMode": "BalatroSeeds Ghost Deck 可读短路线",
+      "videoStatus": "无视频证据。",
+      "sources": [
+        "balatroseeds-afbwb2-ghost"
+      ],
+      "flow": [
+        {
+          "stage": "开局 - Coupon / Hex / 过渡牌型",
+          "actions": [
+            "页面提示先 Take the coupon。",
+            "Blind 阶段卖 Hex 做利息，用红桃同花和 K-high 顺子过渡。",
+            "这一步只说明早期操作方向，缺具体手牌和 Boss。"
+          ]
+        },
+        {
+          "stage": "第一店 - Blueprint / Ankh / Ecto / Brainstorm",
+          "actions": [
+            "Shop 阶段买 Blueprint。",
+            "打开 Spectral Pack，拿 Ankh 和 Ectoplasm。",
+            "继续买 Brainstorm，并从 Buffoon Pack 拿 Swashbuckler。"
+          ]
+        },
+        {
+          "stage": "后续 - 完美 K / Baron-Mime 候选",
+          "actions": [
+            "页面说明后续能较早找到 Deja Vu 和 Chariot，用来朝 perfect kings 改造。",
+            "DNA 在中期出现，可复制目标 K。",
+            "Invisible Joker 和 Ectoplasm 较多，能继续堆 Blueprint，但缩手牌风险需要复盘。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "原文作者明确写没探到很远，不能标完整路线。",
+        "Ectoplasm 缩手牌会影响 Baron/Mime，后续必须确认最终手牌上限。"
+      ]
+    },
+    "8Q47WV6K": {
+      "completeness": "多 Ante 节点候选，待补完整路线",
+      "sourceMode": "BalatroSeeds 8476/ghost-deck 页面正文 seed 复核",
+      "videoStatus": "无视频证据。",
+      "sources": [
+        "balatroseeds-8q47wv6k-ghost"
+      ],
+      "flow": [
+        {
+          "stage": "Seed 纠错",
+          "actions": [
+            "来源 URL slug 是 8476，但页面正文 SEED 明确写作 8Q47WV6K。",
+            "站内以正文 seed 8Q47WV6K 为准，保留 URL/正文不一致警告。"
+          ]
+        },
+        {
+          "stage": "Ante 1-5 - 传奇与复制资源",
+          "actions": [
+            "Ante 1 跳过 Small Blind 和 Big Blind，拿 Hex-Triboulet 与 Perkeo。",
+            "作者建议用 Emperor 找 Death tarot。",
+            "Ante 3 可见 Ectoplasm / Aura。",
+            "Ante 4 Wraith spectral card 包含 Blueprint。",
+            "Ante 5 有 Deja Vu / Cryptid。"
+          ]
+        },
+        {
+          "stage": "Ante 8-13 - Mime / Brainstorm / Baron / Showman",
+          "actions": [
+            "Ante 8 出 Mime。",
+            "Ante 9 出 Brainstorm。",
+            "Ante 11-13 出 Baron。",
+            "Ante 13 出 Showman，之后再跳一次可拿第二个负片 Showman。",
+            "页面作者称该种让其首次打出 naneinf holographic red seal steel kings。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "页面缺逐商店购买表，不应标为完整。",
+        "URL slug 与正文 seed 不一致，复制种子时必须核对 8Q47WV6K。"
+      ]
+    },
+    "IRW4G69D": {
+      "completeness": "中文社交节点候选，待图片 OCR",
+      "sourceMode": "Weibo MCP search_content 可读公开动态",
+      "videoStatus": "微博图文证据；无视频字幕。",
+      "sources": [
+        "weibo-irw4g69d-steel-k"
+      ],
+      "flow": [
+        {
+          "stage": "公开文本节点",
+          "actions": [
+            "微博正文直接给出种子 IRW4G69D。",
+            "作者称第一次解锁钢K，并写明 1-1 出 Blueprint。",
+            "4-2 出 Chicot，8 底注出 Baron。",
+            "复制 Blueprint 在 Chicot 前出现，DNA 在 Baron 前出现。"
+          ]
+        },
+        {
+          "stage": "待复盘内容",
+          "actions": [
+            "该帖附两张图片，当前尚未 OCR。",
+            "需要从图片中确认牌组、商店顺序、Boss、钢K改造方式和最终分数结构。",
+            "如果图片能确认红封/钢铁 K 细节，可升级为中文钢K候选路线。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "微博文本只有关键节点，不是逐回合攻略。",
+        "图片未 OCR 前，不要把它写成完整钢K教程。"
+      ]
     }
   },
   "sourceAdditions": {
@@ -1997,6 +2202,18 @@
     "balatroseeds-494a1wsi-painted": {
       "label": "BalatroSeeds: 494A1WSI Painted Deck",
       "url": "https://balatroseeds.com/seeds/494A1WSI/painted-deck"
+    },
+    "balatroseeds-afbwb2-ghost": {
+      "label": "BalatroSeeds: AFBWB2 Ghost Deck",
+      "url": "https://balatroseeds.com/seeds/AFBWB2/ghost-deck"
+    },
+    "balatroseeds-8q47wv6k-ghost": {
+      "label": "BalatroSeeds: 8476 page / 8Q47WV6K Ghost Deck",
+      "url": "https://balatroseeds.com/seeds/8476/ghost-deck"
+    },
+    "weibo-irw4g69d-steel-k": {
+      "label": "Weibo: IRW4G69D 1-1 Blueprint steel K candidate",
+      "url": "https://m.weibo.cn/status/5247187984581762"
     },
     "reddit-uewc6zqf-perkeo-route": {
       "label": "Reddit: UEWC6ZQF Perkeo Blueprint Brainstorm Mime walkthrough",
