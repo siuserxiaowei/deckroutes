@@ -528,4 +528,46 @@ const chineseSteelKReplayItem = (siteData.reviewQueue || []).find((item) => item
 assert.ok(chineseSteelKReplayItem, "9ZPU1V32 should stay in the replay queue for exact shop/reroll validation");
 assert.ok(chineseSteelKReplayItem.targetSeeds?.includes("9ZPU1V32"));
 
+const weiboImageSeed = seedById.get("IRW4G69D");
+assert.ok(weiboImageSeed, "IRW4G69D should remain in the seed database");
+assert.ok(weiboImageSeed.sources?.includes("weibo-irw4g69d-steel-k"));
+assert.match(weiboImageSeed.summary || "", /微博|1-1|Blueprint|4-2|Chicot|8\s*底注|Baron|红封\s*K|底注\s*18/i);
+
+const weiboImageDetail = routeData.seedDetails?.IRW4G69D;
+assert.ok(weiboImageDetail, "IRW4G69D should have a route detail");
+assert.match(weiboImageDetail.completeness || "", /微博|图片|截图|OCR|待复盘/i);
+assert.ok((weiboImageDetail.flow || []).length >= 4, "IRW4G69D should split text and image evidence into staged nodes");
+assert.ok((weiboImageDetail.evidenceImages || []).length >= 2, "IRW4G69D should expose original Weibo images as evidence links");
+const weiboImageText = [
+  ...(weiboImageDetail.flow || []).flatMap((stage) => [stage.stage, ...(stage.actions || [])]),
+  ...(weiboImageDetail.mistakes || []),
+  ...(weiboImageDetail.evidenceImages || []).flatMap((image) => [image.label, image.note, image.url])
+].join("\n");
+for (const requiredText of [
+  "灵媒",
+  "红封K",
+  "底注 18/8",
+  "回合 54",
+  "175/198",
+  "9/9",
+  "12/10",
+  "13/10",
+  "OCR",
+  "商店顺序"
+]) {
+  assert.match(weiboImageText, new RegExp(requiredText, "i"), `IRW4G69D image evidence should include ${requiredText}`);
+}
+
+const weiboImageEvidence = (siteData.evidenceSources || []).find((item) => item.id === "weibo-irw4g69d-steel-k");
+assert.ok(weiboImageEvidence, "IRW4G69D should have a Weibo evidence card");
+assert.ok(weiboImageEvidence.seeds?.includes("IRW4G69D"));
+assert.ok((weiboImageEvidence.facts || []).length >= 7, "IRW4G69D evidence should preserve text facts and image verification facts");
+assert.match((weiboImageEvidence.facts || []).join("\n"), /配图|灵媒|红封K|底注\s*18\/8|回合\s*54|OCR|商店顺序/i);
+
+const weiboImageQueue = (siteData.reviewQueue || []).find((item) => item.id === "weibo-ocr-seed-post");
+assert.ok(weiboImageQueue, "IRW4G69D should stay in the Weibo OCR/replay queue");
+assert.ok(weiboImageQueue.targetSeeds?.includes("IRW4G69D"));
+assert.match(weiboImageQueue.status || "", /ready-replay|ready-ocr/);
+assert.match(weiboImageQueue.nextAction || "", /截图|红封K|底注 18\/8|商店顺序|实机复盘/);
+
 console.log("Route harvest contracts passed");

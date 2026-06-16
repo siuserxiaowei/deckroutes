@@ -834,6 +834,68 @@ main {
   margin: 0 0 6px;
 }
 
+.route-evidence-images {
+  margin-top: 16px;
+}
+
+.route-evidence-images[hidden] {
+  display: none;
+}
+
+.route-evidence-images h4 {
+  margin: 0 0 10px;
+}
+
+.route-evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.route-evidence-card {
+  display: grid;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(215, 173, 84, 0.28);
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.14);
+}
+
+.route-evidence-card:hover {
+  border-color: rgba(215, 173, 84, 0.68);
+}
+
+.route-evidence-card-unloaded {
+  border-style: dashed;
+}
+
+.route-evidence-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: rgba(0, 0, 0, 0.18);
+  object-fit: cover;
+}
+
+.route-evidence-body {
+  display: grid;
+  gap: 5px;
+  padding: 11px 12px 12px;
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+.route-evidence-body strong {
+  overflow-wrap: anywhere;
+  color: var(--ink);
+  font-size: 0.92rem;
+}
+
+.route-evidence-open {
+  color: var(--gold);
+  font-weight: 800;
+}
+
 .mistake-box {
   margin-top: 14px;
   padding: 14px 16px;
@@ -1390,7 +1452,8 @@ tbody tr:hover {
   .platform-status-grid,
   .evidence-grid,
   .queue-grid,
-  .route-source-grid {
+  .route-source-grid,
+  .route-evidence-grid {
     grid-template-columns: 1fr;
   }
 

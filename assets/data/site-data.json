@@ -1255,8 +1255,8 @@
       "platform": "微博",
       "title": "IRW4G69D 微博钢K解锁种子线索",
       "url": "https://m.weibo.cn/status/5247187984581762",
-      "retrievedAt": "2026-06-15",
-      "contentType": "Weibo MCP search_content 公开动态",
+      "retrievedAt": "2026-06-16",
+      "contentType": "Weibo MCP search_content 公开动态 + 微博公开配图人工核验 + Tesseract OCR 低置信尝试",
       "seeds": [
         "IRW4G69D"
       ],
@@ -1264,10 +1264,14 @@
         "weibo.search_content(\"小丑牌 种子 钢K\") 返回 2025-12-24 用户 Strong_JIA 公开帖。",
         "正文直接分享种子 IRW4G69D，并写明 1-1 出 Blueprint、4-2 出 Chicot、8 底注出 Baron。",
         "作者还说明复制 Blueprint 在 Chicot 之前出现，DNA 在 Baron 之前出现。",
-        "该帖附两张图片，当前尚未 OCR，因此不能标完整路线。"
+        "该帖附两张公开配图，详情页已保留 wx1/wx4 sinaimg.cn 原图链接作为图片证据。",
+        "配图可见牌组标签为“灵媒”，左侧 UI 显示底注 18/8、回合 54、现金 $119、牌库 175/198。",
+        "配图持牌区可见多张红封K，手牌容量分别显示 13/10 与 12/10，小丑栏显示 9/9。",
+        "Tesseract chi_sim+eng 只识别到零散“高牌、比赛、选项、底注、回合”等碎片，不能可靠确认商店顺序、Boss 或完整 Joker 名称。",
+        "两张配图是高底注/结果状态截图，不是商店流程长图，因此不能标完整路线。"
       ],
       "confidence": "中高",
-      "useInSite": "新增为中文微博钢K候选；下一步做配图 OCR 和实机复盘。"
+      "useInSite": "升级为中文微博钢K截图候选；详情页展示原图证据，但仍需实机复盘商店顺序和钢K成型路径。"
     },
     {
       "id": "xhs-probe-balatro-steel-k",
@@ -2063,7 +2067,7 @@
       "title": "微博种子图片 OCR",
       "platform": "微博",
       "priority": "A",
-      "status": "ready-ocr",
+      "status": "ready-replay",
       "blocker": "",
       "evidenceIds": [
         "weibo-seed-post-5125063542310722",
@@ -2076,10 +2080,10 @@
       "targetSeeds": [
         "IRW4G69D"
       ],
-      "nextAction": "下载微博配图或用浏览器截图，OCR 提取种子号、牌组、关键 Joker、商店顺序；IRW4G69D 优先确认 1-1 Blueprint、4-2 Chicot、8 底注 Baron 和 DNA 节点。",
-      "validation": "OCR 结果能回链到微博原帖，并能确认牌组/商店/节点；无法确认时保留为“图片线索”。",
-      "ownerMode": "Weibo MCP + OCR",
-      "updatedAt": "2026-06-15"
+      "nextAction": "配图已下载并确认是灵媒底注 18/8、回合 54、红封K状态截图；下一步实机复盘 IRW4G69D，确认 1-1 Blueprint、4-2 Chicot、8 底注 Baron、DNA、红封K成型路径、Boss 和商店顺序。",
+      "validation": "截图事实必须回链微博原帖和原图；完整路线只有在实机复盘确认商店顺序、Boss、现金/roll 成本和红封K制作路径后才能升级。",
+      "ownerMode": "Weibo MCP + OCR + manual image review + replay",
+      "updatedAt": "2026-06-16"
     },
     {
       "id": "weibo-steel-k-video-review",

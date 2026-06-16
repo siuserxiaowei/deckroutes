@@ -52,5 +52,16 @@ assert.match(
   "Review queue target seed chips must open the matching route detail"
 );
 assert.match(styleSource, /\.seed-tag-button\b/, "Clickable seed chips must have a dedicated button style");
+assert.match(appSource, /function renderRouteEvidenceImages\(/, "assets/app.js must render route evidence images");
+assert.match(appSource, /renderRouteEvidenceImages\(detail\.evidenceImages \|\| \[\]\)/, "Route viewer must render detail evidenceImages");
+assert.match(appSource, /route-evidence-card-unloaded/, "Evidence image cards must handle blocked or failed hotlinked images");
+assert.match(appSource, /addEventListener\("error"/, "Evidence images must install an error fallback");
+assert.match(
+  fs.readFileSync("index.html", "utf8"),
+  /id="routeEvidenceImages"/,
+  "Route viewer must include an evidence image container"
+);
+assert.match(styleSource, /\.route-evidence-images\b/, "Evidence images must have a dedicated responsive style");
+assert.match(styleSource, /\.route-evidence-card\b/, "Evidence image cards must have a stable style");
 
 console.log("Route link contracts passed");

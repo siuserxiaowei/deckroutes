@@ -182,6 +182,46 @@ function renderRouteQueueTables(queueTables = []) {
   box.append(list);
 }
 
+function renderRouteEvidenceImages(images = []) {
+  const box = $("#routeEvidenceImages");
+  const items = images.filter((image) => image?.url);
+  box.replaceChildren();
+
+  if (!items.length) {
+    box.hidden = true;
+    return;
+  }
+
+  box.hidden = false;
+  box.append(el("h4", "", "图片证据"));
+  const grid = el("div", "route-evidence-grid");
+  items.forEach((image, index) => {
+    const card = el("a", "route-evidence-card");
+    card.href = image.url;
+    card.target = "_blank";
+    card.rel = "noreferrer";
+
+    const img = document.createElement("img");
+    img.src = image.url;
+    img.alt = image.alt || `${image.label || "路线图片证据"} ${index + 1}`;
+    img.loading = "lazy";
+    img.referrerPolicy = "no-referrer";
+    img.addEventListener("error", () => {
+      card.classList.add("route-evidence-card-unloaded");
+      img.hidden = true;
+    });
+    card.append(img);
+
+    const body = el("span", "route-evidence-body");
+    body.append(el("strong", "", image.label || `图片 ${index + 1}`));
+    if (image.note) body.append(el("span", "", image.note));
+    body.append(el("span", "route-evidence-open", "打开原图查看"));
+    card.append(body);
+    grid.append(card);
+  });
+  box.append(grid);
+}
+
 function mergeRouteData() {
   if (!state.routeData) return;
 
@@ -267,6 +307,7 @@ function seedMatches(seed) {
     ...seed.route,
     seed.detail?.completeness || "",
     ...(seed.detail?.flow || []).flatMap((stage) => [stage.stage, ...(stage.actions || [])]),
+    ...(seed.detail?.evidenceImages || []).flatMap((image) => [image.label, image.note, image.url]),
     ...flattenQueueTables(seed.detail?.queueTables || [])
   ]
     .join(" ")
@@ -411,6 +452,7 @@ function showRoute(seed, shouldScroll = false) {
   );
 
   renderRouteQueueTables(detail.queueTables || []);
+  renderRouteEvidenceImages(detail.evidenceImages || []);
 
   const mistakeBox = $("#routeMistakes");
   mistakeBox.replaceChildren();
