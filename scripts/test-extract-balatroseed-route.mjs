@@ -2,7 +2,7 @@
 import assert from "node:assert/strict";
 import fs from "node:fs/promises";
 
-import { htmlToMarkdownSnapshot, parseBalatroSeedMarkdown, toJinaReaderUrl } from "./extract-balatroseed-route.mjs";
+import { htmlToMarkdownSnapshot, parseBalatroSeedMarkdown, resolveSourceUrl, toJinaReaderUrl } from "./extract-balatroseed-route.mjs";
 
 async function readFixture(name) {
   return fs.readFile(new URL(`./fixtures/${name}`, import.meta.url), "utf8");
@@ -57,5 +57,35 @@ assert.equal(sectionProseParsed.deck, "Ghost Deck");
 assert.deepEqual(sectionProseParsed.detail.flow.map((stage) => stage.stage), ["Blind", "Shop", "Continuation"]);
 assert.match(sectionProseParsed.detail.flow[1].actions.join(" "), /blueprint/i);
 assert.match(sectionProseParsed.detail.flow[2].actions.join(" "), /perfect kings/);
+
+assert.equal(
+  resolveSourceUrl("route-source", {
+    sources: {
+      "site-source": {
+        url: "https://example.com/site"
+      }
+    }
+  }, {
+    sourceAdditions: {
+      "route-source": {
+        url: "https://example.com/route"
+      }
+    }
+  }),
+  "https://example.com/route"
+);
+assert.equal(
+  resolveSourceUrl("site-source", {
+    sources: {
+      "site-source": {
+        url: "https://example.com/site"
+      }
+    }
+  }, {
+    sourceAdditions: {}
+  }),
+  "https://example.com/site"
+);
+assert.throws(() => resolveSourceUrl("missing-source", { sources: {} }, { sourceAdditions: {} }), /Unknown source id/);
 
 console.log("BalatroSeeds extractor tests passed");

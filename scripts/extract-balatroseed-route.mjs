@@ -67,6 +67,29 @@ function uniqueValues(values) {
   return [...new Set(values.filter(Boolean))];
 }
 
+export function resolveSourceUrl(sourceId, siteData = {}, routeData = {}) {
+  const sourceMap = {
+    ...(siteData.sources || {}),
+    ...(routeData.sourceAdditions || {})
+  };
+  const url = sourceMap[sourceId]?.url;
+  if (!url) throw new Error(`Unknown source id or missing URL: ${sourceId}`);
+  return url;
+}
+
+async function readJson(filePath) {
+  return JSON.parse(await fs.readFile(filePath, "utf8"));
+}
+
+async function resolveSourceUrlFromDataRoot(sourceId, dataRoot) {
+  const root = String(dataRoot || ".").replace(/\/+$/, "") || ".";
+  const [siteData, routeData] = await Promise.all([
+    readJson(`${root}/assets/data/site-data.json`),
+    readJson(`${root}/assets/data/route-data.json`)
+  ]);
+  return resolveSourceUrl(sourceId, siteData, routeData);
+}
+
 export function toJinaReaderUrl(inputUrl) {
   const url = String(inputUrl || "").trim();
   if (!url) throw new Error("Missing URL");
@@ -441,6 +464,7 @@ function parseArgs(argv) {
     fixture: "",
     url: "",
     sourceId: "",
+    dataRoot: "",
     timeoutMs: 30000,
     compact: false
   };
@@ -450,6 +474,7 @@ function parseArgs(argv) {
     if (arg === "--fixture") args.fixture = argv[++index] || "";
     else if (arg === "--url") args.url = argv[++index] || "";
     else if (arg === "--source-id") args.sourceId = argv[++index] || "";
+    else if (arg === "--data-root") args.dataRoot = argv[++index] || ".";
     else if (arg === "--timeout-ms") args.timeoutMs = Number(argv[++index] || 0);
     else if (arg === "--compact") args.compact = true;
     else if (arg === "--help" || arg === "-h") args.help = true;
@@ -466,6 +491,7 @@ function parseArgs(argv) {
 function printHelp() {
   console.log(`Usage:
   node scripts/extract-balatroseed-route.mjs --url https://balatroseeds.com/seeds/Y3QRZZ5I/yellow-deck --source-id balatroseeds-y3qrzz5i
+  node scripts/extract-balatroseed-route.mjs --source-id balatroseeds-y3qrzz5i --data-root .
   node scripts/extract-balatroseed-route.mjs --url https://balatroseeds.com/seeds/Y3QRZZ5I/yellow-deck --timeout-ms 60000
   node scripts/extract-balatroseed-route.mjs --fixture scripts/fixtures/balatroseed-queue-sample.md
   cat page.md | node scripts/extract-balatroseed-route.mjs`);
@@ -483,6 +509,10 @@ async function readMarkdown(args) {
       markdown: await fs.readFile(args.fixture, "utf8"),
       sourceUrl: args.url
     };
+  }
+
+  if (!args.url && args.sourceId && args.dataRoot) {
+    args.url = await resolveSourceUrlFromDataRoot(args.sourceId, args.dataRoot);
   }
 
   if (args.url) {
