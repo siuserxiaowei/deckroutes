@@ -10,7 +10,7 @@
   "stats": [
     {
       "label": "已整理种子",
-      "value": "33",
+      "value": "34",
       "note": "含可点击流程、中文来源和待复盘队列"
     },
     {
@@ -20,7 +20,7 @@
     },
     {
       "label": "证据来源",
-      "value": "43",
+      "value": "44",
       "note": "含平台状态、中文社区、英文 seed bank 和 GitHub 工具证据"
     },
     {
@@ -35,7 +35,7 @@
     },
     {
       "label": "复盘队列",
-      "value": "12",
+      "value": "13",
       "note": "按平台列出下一轮采集、OCR 和牌局复盘任务"
     }
   ],
@@ -1738,6 +1738,27 @@
       ],
       "confidence": "高",
       "useInSite": "已入库为早期步骤可读路线；后续 Baron/Mime 的精确 Ante 和刷新成本需复盘。"
+    },
+    {
+      "id": "balatroseeds-12qm45yd-plasma",
+      "platform": "BalatroSeeds",
+      "title": "12QM45YD Plasma Deck Ante 1-6 队列",
+      "url": "https://balatroseeds.com/seeds/12QM45YD/plasma-deck",
+      "retrievedAt": "2026-06-16",
+      "contentType": "Jina Reader 可读网页队列 dump",
+      "seeds": [
+        "12QM45YD"
+      ],
+      "facts": [
+        "页面标题与 URL 均指向 Balatro Seed 12QM45YD 的 Plasma Deck。",
+        "Jina Reader 读取到 Ante 1-6 的 Boss、Voucher、Tags、Shop Queue 和 Packs。",
+        "Ante 1 Shop Queue 前四项为 Jupiter、Castle、The World、Baron。",
+        "Ante 2 Arcana Pack 含 The Soul，标准包含 King、Steel/Gold/Glass 牌。",
+        "Ante 5 Spectral Pack 含 Deja Vu 与 Cryptid。",
+        "Ante 6 Voucher 为 Antimatter，Shop Queue 含 Hanging Chad 和 Sock and Buskin。"
+      ],
+      "confidence": "高",
+      "useInSite": "作为 12QM45YD 的 Ante 1-6 队列表格和复盘底稿；不标成完整玩家攻略。"
     }
   ],
   "reviewQueue": [
@@ -2026,6 +2047,27 @@
       "validation": "校验脚本退出码为 0；再用浏览器验证本地和 GitHub Pages 页面无控制台错误。",
       "ownerMode": "本地脚本 + GitHub Pages QA",
       "updatedAt": "2026-06-15"
+    },
+    {
+      "id": "balatroseeds-12qm45yd-plasma-replay",
+      "title": "12QM45YD 等离子队列实机复盘",
+      "platform": "BalatroSeeds",
+      "priority": "A",
+      "status": "ready-replay",
+      "blocker": "",
+      "evidenceIds": [
+        "balatroseeds-12qm45yd-plasma"
+      ],
+      "sourceIds": [
+        "balatroseeds-12qm45yd-plasma"
+      ],
+      "targetSeeds": [
+        "12QM45YD"
+      ],
+      "nextAction": "按 Ante 1-6 队列表实机复盘：确认 Baron、The Soul、Deja Vu/Cryptid、Antimatter、Hanging Chad、Sock and Buskin 的最优购买/跳过顺序，并判断是否能接钢K或 Baron/Mime 长线。",
+      "validation": "完成后应补购买决策、每个盲注的经济阈值、Boss 风险和 Ante 7+ 后续路线；当前只能作为队列样本展示。",
+      "ownerMode": "Agent Reach Jina + 实机/浏览器复盘",
+      "updatedAt": "2026-06-16"
     }
   ]
 }

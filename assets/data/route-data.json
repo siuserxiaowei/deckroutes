@@ -651,6 +651,39 @@
       "sources": [
         "balatroseeds-dcw6z8vb-ghost"
       ]
+    },
+    {
+      "seed": "12QM45YD",
+      "title": "Plasma Deck 六底注队列样本",
+      "deck": "Plasma Deck",
+      "archetype": "Baron / Sock and Buskin / Antimatter 队列",
+      "difficulty": "BalatroSeeds 队列候选",
+      "version": "BalatroSeeds 页面版本 1.0.1n-FULL",
+      "image": "assets/images/seed-vault.webp",
+      "summary": "BalatroSeeds/Jina Reader 可读到 12QM45YD 等离子牌组 Ante 1-6 的 Boss、Voucher、Tags、Shop Queue 和 Packs；早期包含 Baron、Soul、Blank、Director's Cut、Clearance Sale、Antimatter、Hanging Chad、Sock and Buskin 等关键节点。",
+      "route": [
+        "Ante 1 Boss 是 The Window，Voucher 为 Crystal Ball，Tags 为 Polychrome/Foil；Shop Queue 前四项是 Jupiter、Castle、The World、Baron。",
+        "Ante 2 Boss 是 The Needle，Voucher 为 Reroll Surplus，Tags 为 Voucher/Charm；Packs 中包含 The Soul，并出现多张 Steel/Gold/Glass 牌。",
+        "Ante 3 Boss 是 The Club，Voucher 为 Blank；Shop Queue 有 Business Card、Smiley Face、The Magician，Packs 有 Grim/Medium 和红封 J。",
+        "Ante 4 Boss 是 The Fish，Voucher 为 Director's Cut；Shop Queue 有 Stone Joker、Runner、The Hermit、Pluto、Drunkard、The Fool。",
+        "Ante 5 Boss 是 The Eye，Voucher 为 Clearance Sale；Packs 里有 Death、Judgement、Temperance、Deja Vu 和 Cryptid。",
+        "Ante 6 Boss 是 The Goad，Voucher 为 Antimatter；Shop Queue 有 Death、Venus、Hanging Chad、Sock and Buskin，Packs 有 Hex、Aura、Immolate、Wraith 和紫封 K。"
+      ],
+      "warnings": [
+        "这是 BalatroSeeds 原始队列 dump，不是实机逐步购买攻略；应作为可复盘路线底稿展示。",
+        "页面只到 Ante 6，后续是否成型 Baron/Mime 或钢K需要继续实机复盘。"
+      ],
+      "tags": [
+        "Plasma Deck",
+        "队列",
+        "Baron",
+        "Soul",
+        "Antimatter",
+        "Sock and Buskin"
+      ],
+      "sources": [
+        "balatroseeds-12qm45yd-plasma"
+      ]
     }
   ],
   "seedDetails": {
@@ -2433,6 +2466,232 @@
         "Perkeo 之前的步骤较清楚，但后续 Mime/Baron 没有精确 Ante。",
         "缺 Boss、金币和刷新次数，不能标完整到 Ante 8。"
       ]
+    },
+    "12QM45YD": {
+      "completeness": "Ante 1-6 完整队列样本，决策待验证",
+      "sourceMode": "BalatroSeeds 原始队列 dump + Jina Reader 复核",
+      "videoStatus": "无视频证据；当前作为队列样本和候选路线。",
+      "sources": [
+        "balatroseeds-12qm45yd-plasma"
+      ],
+      "queueTables": [
+        {
+          "ante": 1,
+          "title": "Ante 1",
+          "boss": "The Window",
+          "voucher": "Crystal Ball",
+          "tags": [
+            "Polychrome Tag",
+            "Foil Tag"
+          ],
+          "routeUse": "开局队列前四项出现 Jupiter、Castle、The World、Baron；适合复盘 Baron 早期入队路线。",
+          "shopQueue": [
+            "Jupiter",
+            "Castle",
+            "The World",
+            "Baron"
+          ],
+          "packs": [
+            "Buffoon Pack - Lucky Cat, Egg",
+            "Standard Pack - Red Seal Queen of Diamonds, Blue Seal 9 of Clubs, 10 of Spades",
+            "Mega Arcana Pack - Strength, The Moon, The Tower, The Devil, The Hermit",
+            "Jumbo Buffoon Pack - Red Card, Egg, Space Joker, Gift Card"
+          ],
+          "sourceIds": [
+            "balatroseeds-12qm45yd-plasma"
+          ]
+        },
+        {
+          "ante": 2,
+          "title": "Ante 2",
+          "boss": "The Needle",
+          "voucher": "Reroll Surplus",
+          "tags": [
+            "Voucher Tag",
+            "Charm Tag"
+          ],
+          "routeUse": "Charm/Arcana 线索里有 The Soul；标准包给 King、Steel/Gold/Glass 牌，适合复盘早期资源和牌库改造。",
+          "shopQueue": [],
+          "packs": [
+            "Celestial Pack - Jupiter, Planet X, Earth",
+            "Standard Pack - King of Diamonds, Bonus 7 of Spades, Glass 8 of Hearts",
+            "Arcana Pack - The Devil, The Soul, The Star",
+            "Celestial Pack - Ceres, Neptune, Mars",
+            "Standard Pack - Bonus Ace of Spades, Gold 4 of Spades, Steel 4 of Spades",
+            "Standard Pack - Steel 3 of Hearts, 5 of Diamonds, 6 of Diamonds"
+          ],
+          "sourceIds": [
+            "balatroseeds-12qm45yd-plasma"
+          ]
+        },
+        {
+          "ante": 3,
+          "title": "Ante 3",
+          "boss": "The Club",
+          "voucher": "Blank",
+          "tags": [
+            "Charm Tag",
+            "Meteor Tag"
+          ],
+          "routeUse": "Blank 早期可见；队列前段偏经济/过渡，包内有 Grim、Medium 和 Red Seal Jack。",
+          "shopQueue": [
+            "Business Card",
+            "Smiley Face",
+            "The Magician"
+          ],
+          "packs": [
+            "Jumbo Celestial Pack - Uranus, Jupiter, Earth, Mars, Eris",
+            "Jumbo Celestial Pack - Planet X, Eris, Mars, Venus, Saturn",
+            "Mega Buffoon Pack - Droll Joker, Fortune Teller, Crafty Joker, Bootstraps",
+            "Arcana Pack - The Hierophant, The Hanged Man, The Devil",
+            "Spectral Pack - Grim, Medium",
+            "Standard Pack - Red Seal Jack of Hearts, 6 of Clubs, Holographic Steel 6 of Diamonds"
+          ],
+          "sourceIds": [
+            "balatroseeds-12qm45yd-plasma"
+          ]
+        },
+        {
+          "ante": 4,
+          "title": "Ante 4",
+          "boss": "The Fish",
+          "voucher": "Director's Cut",
+          "tags": [
+            "Holographic Tag",
+            "Standard Tag"
+          ],
+          "routeUse": "Director's Cut 可用于后续 Boss 控制；队列含 Hermit、Pluto、The Fool，偏经济和高牌升级准备。",
+          "shopQueue": [
+            "Stone Joker",
+            "Runner",
+            "The Hermit",
+            "Pluto",
+            "Drunkard",
+            "The Fool"
+          ],
+          "packs": [
+            "Mega Standard Pack - Wild Jack of Clubs, Lucky 2 of Diamonds, 8 of Spades, Red Seal Holographic 5 of Clubs, 3 of Hearts",
+            "Celestial Pack - Mercury, Eris, Planet X",
+            "Celestial Pack - Earth, Mars, Ceres",
+            "Jumbo Standard Pack - Stone 9 of Clubs, 4 of Diamonds, 10 of Diamonds, Ace of Spades, Gold Seal Queen of Clubs",
+            "Jumbo Arcana Pack - The Hanged Man, The Moon, The Tower, Justice, Judgement",
+            "Arcana Pack - The Tower, The Hierophant, Justice"
+          ],
+          "sourceIds": [
+            "balatroseeds-12qm45yd-plasma"
+          ]
+        },
+        {
+          "ante": 5,
+          "title": "Ante 5",
+          "boss": "The Eye",
+          "voucher": "Clearance Sale",
+          "tags": [
+            "Rare Tag",
+            "Foil Tag"
+          ],
+          "routeUse": "Clearance Sale 降低后续重掷/购买成本；Spectral Pack 同时给 Deja Vu 与 Cryptid，是后续复制和封印路线重点。",
+          "shopQueue": [
+            "Wrathful Joker",
+            "Reserved Parking",
+            "Gros Michel"
+          ],
+          "packs": [
+            "Arcana Pack - Death, The High Priestess, Judgement",
+            "Arcana Pack - The World, Judgement, Temperance",
+            "Standard Pack - Lucky Ace of Hearts, Gold Seal 6 of Spades, Lucky Ace of Clubs",
+            "Spectral Pack - Deja Vu, Cryptid",
+            "Jumbo Buffoon Pack - Rough Gem, Polychrome Superposition, Gluttonous Joker, Egg",
+            "Buffoon Pack - 8 Ball, Crafty Joker"
+          ],
+          "sourceIds": [
+            "balatroseeds-12qm45yd-plasma"
+          ]
+        },
+        {
+          "ante": 6,
+          "title": "Ante 6",
+          "boss": "The Goad",
+          "voucher": "Antimatter",
+          "tags": [
+            "Coupon Tag",
+            "Double Tag"
+          ],
+          "routeUse": "Antimatter 增加 Joker 位；Shop Queue 有 Hanging Chad 和 Sock and Buskin，适合接人头牌触发或 Baron 早期线。",
+          "shopQueue": [
+            "Death",
+            "Venus",
+            "Hanging Chad",
+            "Sock and Buskin"
+          ],
+          "packs": [
+            "Arcana Pack - The Fool, The Moon, The Emperor",
+            "Jumbo Spectral Pack - Hex, Aura, Immolate, Wraith",
+            "Celestial Pack - Jupiter, Planet X, Mercury",
+            "Jumbo Standard Pack - Purple Seal King of Hearts, 2 of Clubs, 8 of Hearts, Blue Seal Mult 5 of Clubs, Gold Seal Lucky 7 of Hearts",
+            "Mega Celestial Pack - Mercury, Mars, Neptune, Ceres, Planet X",
+            "Mega Standard Pack - 9 of Hearts, 6 of Diamonds, Red Seal Bonus Ace of Diamonds, 2 of Hearts, 3 of Spades"
+          ],
+          "sourceIds": [
+            "balatroseeds-12qm45yd-plasma"
+          ]
+        }
+      ],
+      "flow": [
+        {
+          "stage": "Ante 1 - Baron 早期信号",
+          "actions": [
+            "Boss 为 The Window，Voucher 是 Crystal Ball，Tags 是 Polychrome Tag 与 Foil Tag。",
+            "Shop Queue 前四项依次为 Jupiter、Castle、The World、Baron；Baron 很早可见。",
+            "Packs 包含红封 Q、蓝封 9、Mega Arcana 与 Jumbo Buffoon，适合做起手资源复盘。"
+          ]
+        },
+        {
+          "stage": "Ante 2 - Soul 与钢牌资源",
+          "actions": [
+            "Boss 为 The Needle，Voucher 是 Reroll Surplus，Tags 是 Voucher Tag 与 Charm Tag。",
+            "Arcana Pack 中有 The Soul；Standard Pack 中出现 King of Diamonds、Steel 4、Steel 3 等牌库改造材料。",
+            "这里需要实机确认 Soul 出的传奇和是否值得围绕 Baron 继续。"
+          ]
+        },
+        {
+          "stage": "Ante 3 - Blank 和过渡组件",
+          "actions": [
+            "Boss 为 The Club，Voucher 是 Blank，Tags 是 Charm Tag 与 Meteor Tag。",
+            "Shop Queue 前段为 Business Card、Smiley Face、The Magician。",
+            "Packs 里有 Mega Buffoon、Spectral Grim/Medium、Red Seal Jack 和 Holographic Steel 6。"
+          ]
+        },
+        {
+          "stage": "Ante 4 - Director's Cut 和经济牌",
+          "actions": [
+            "Boss 为 The Fish，Voucher 是 Director's Cut，Tags 是 Holographic Tag 与 Standard Tag。",
+            "Shop Queue 含 Stone Joker、Runner、The Hermit、Pluto、Drunkard、The Fool。",
+            "多个标准包和奥术包给 Hanged Man、Justice、Judgement 等删牌/改牌选项。"
+          ]
+        },
+        {
+          "stage": "Ante 5 - Clearance Sale、Deja Vu、Cryptid",
+          "actions": [
+            "Boss 为 The Eye，Voucher 是 Clearance Sale，Tags 是 Rare Tag 与 Foil Tag。",
+            "Shop Queue 有 Wrathful Joker、Reserved Parking、Gros Michel。",
+            "Spectral Pack 同时出现 Deja Vu 和 Cryptid，是后续封印复制路线的核心复盘点。"
+          ]
+        },
+        {
+          "stage": "Ante 6 - Antimatter / Hanging Chad / Sock and Buskin",
+          "actions": [
+            "Boss 为 The Goad，Voucher 是 Antimatter，Tags 是 Coupon Tag 与 Double Tag。",
+            "Shop Queue 有 Death、Venus、Hanging Chad、Sock and Buskin。",
+            "Jumbo Spectral Pack 有 Hex、Aura、Immolate、Wraith，Standard Pack 有紫封 K 和蓝封倍数 5。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "这是源页面队列，不是完整购买决策；不要把每个队列项都当成必买。",
+        "Ante 2 的 The Soul、Ante 5 的 Deja Vu/Cryptid 和 Ante 6 的 Antimatter 是否能稳定串起来，需要实机复盘。",
+        "页面仅覆盖 Ante 1-6，不能宣称完整 naneinf 或完整钢K流程。"
+      ]
     }
   },
   "sourceAdditions": {
@@ -2563,6 +2822,10 @@
     "wechat-balatro-newbie": {
       "label": "微信公众号: 小丑牌Balatro新手最强攻略",
       "url": "https://mp.weixin.qq.com/s?src=11&timestamp=1781526411&ver=6784&signature=aib84CMYTzbZynDk*0l-ZLAA8B3V5Tbe6EC2MmFVwjbMdP2J*kwRJV*BKeuRDaMsAVU1EpCCH9zq8mgp0uejJAnVhsoCtTlnwjGCaj*IAkz6CYJtcbbVmJK6aXaVakk8&new=1"
+    },
+    "balatroseeds-12qm45yd-plasma": {
+      "label": "BalatroSeeds: 12QM45YD Plasma Deck queue",
+      "url": "https://balatroseeds.com/seeds/12QM45YD/plasma-deck"
     }
   }
 }
