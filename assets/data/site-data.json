@@ -20,7 +20,7 @@
     },
     {
       "label": "证据来源",
-      "value": "51",
+      "value": "52",
       "note": "含平台状态、中文社区、英文 seed bank 和 GitHub 工具证据"
     },
     {
@@ -35,7 +35,7 @@
     },
     {
       "label": "复盘队列",
-      "value": "18",
+      "value": "19",
       "note": "按平台列出下一轮采集、OCR 和牌局复盘任务"
     }
   ],
@@ -1219,6 +1219,30 @@
       "useInSite": "新增为红封钢K/naneinf 候选，并在详情页保留 seed 纠错。"
     },
     {
+      "id": "reddit-8q47wv6k-insane-seed",
+      "platform": "Reddit",
+      "title": "8Q47WV6K Ghost Deck insane seed discussion",
+      "url": "https://www.reddit.com/r/balatro/comments/1clvbv1/stumbled_across_an_insane_seed/",
+      "retrievedAt": "2026-06-16",
+      "contentType": "old.reddit HTML 正文与评论可读；Reddit canonical/Jina 本轮被 403 拦截",
+      "seeds": [
+        "8Q47WV6K"
+      ],
+      "facts": [
+        "old.reddit 页面标题为 Stumbled across an INSANE seed，正文直接给出 seed 8Q47WV6K。",
+        "正文写 first blind gives a double tag，second gives a mega arcana pack，并建议两盲都跳过。",
+        "正文写两个奖励包都给 legendary joker：第一张是 Triboulet，第二张是 Perkeo。",
+        "第二包还包含 Temperance，作者说明可把当时 Joker 售价转成约 20 美元现金。",
+        "作者使用 Ghost Deck，把 Polychrome 放到 Triboulet 上，作为早期主要倍率来源。",
+        "正文写第一包还可生成两张随机塔罗，其中一张是 Death；作者用 Perkeo 复制 Death，把低牌改成 Kings。",
+        "作者终局列出 Triboulet、Perkeo、Sock and Buskin、Blueprint、Brainstorm、Dusk，并说明 Blueprint 复制 Sock and Buskin、Brainstorm 复制 Triboulet。",
+        "评论区有玩家反馈用 DNA、Cryptid 和 Perkeo 制作 red seal steel King of Hearts，并接 Mime、Baron、Triboulet、Sock and Buskin、Brainstorm。",
+        "评论区也有玩家反馈负片 Joker 位、Showman 或 Invisible Joker 不足导致停住，因此该路线仍需实机复盘。"
+      ],
+      "confidence": "中高",
+      "useInSite": "作为 8Q47WV6K 的 Reddit 社区实战路线与风险反馈；配合 BalatroSeeds 节点，不单独标完整逐店攻略。"
+    },
+    {
       "id": "weibo-irw4g69d-steel-k",
       "platform": "微博",
       "title": "IRW4G69D 微博钢K解锁种子线索",
@@ -2332,6 +2356,29 @@
       "nextAction": "实机复盘 Plasma Deck TR6AH4P3：确认 Ante 1 Judgement/To-Do List 目标分叉、Ante 3 Midas Mask、Ante 4 Blueprint/Mime、Ante 4 深层 Baron/Brainstorm、Ante 5 Negative DNA、Sixth Sense/Ectoplasm、Ante 19 Burglar、Reserved Parking 印钱与 The Serpent reroll 路线。",
       "validation": "复盘完成后应补逐商店/包/Boss 表，记录每个关键节点的重掷次数、金币阈值、Joker 位取舍、To-Do List 目标变化，以及 44 red steel kings 终局是否能稳定达成。",
       "ownerMode": "Agent Reach old.reddit + The Soul analyzer + browser-use/实机复盘",
+      "updatedAt": "2026-06-16"
+    },
+    {
+      "id": "reddit-8q47wv6k-replay",
+      "title": "8Q47WV6K Ghost Deck 双传奇路线复盘",
+      "platform": "BalatroSeeds + Reddit",
+      "priority": "A",
+      "status": "ready-replay",
+      "blocker": "BalatroSeeds 是节点描述，Reddit 是社区经验帖；当前仍缺逐商店购买、现金阈值、Boss 与失败分支表。",
+      "evidenceIds": [
+        "balatroseeds-8q47wv6k-ghost",
+        "reddit-8q47wv6k-insane-seed"
+      ],
+      "sourceIds": [
+        "balatroseeds-8q47wv6k-ghost",
+        "reddit-8q47wv6k-insane-seed"
+      ],
+      "targetSeeds": [
+        "8Q47WV6K"
+      ],
+      "nextAction": "实机复盘 Ghost Deck：确认 double tag 与 mega arcana pack 的跳盲顺序、Triboulet/Perkeo/Temperance 开局、Death 改 Kings、Ectoplasm/Aura、Wraith/Blueprint、Deja Vu/Cryptid、Mime、Brainstorm、Baron、Showman，以及 DNA + red seal steel kings 评论分支是否稳定。",
+      "validation": "复盘完成后应补 Ante/shop/pack 表，区分 Triboulet/Sock and Buskin 主线与 Baron/Mime 钢K分支，并记录 Showman、Invisible Joker、负片 Joker 位和手牌上限风险。",
+      "ownerMode": "Agent Reach BalatroSeeds/Jina + old.reddit + browser-use/实机复盘",
       "updatedAt": "2026-06-16"
     }
   ]

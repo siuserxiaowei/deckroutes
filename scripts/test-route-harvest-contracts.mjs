@@ -308,4 +308,53 @@ const communityNaneinfQueueItem = (siteData.reviewQueue || []).find((item) => it
 assert.ok(communityNaneinfQueueItem, "TR6AH4P3 should stay in the replay queue for exact reroll and boss validation");
 assert.ok(communityNaneinfQueueItem.targetSeeds?.includes("TR6AH4P3"));
 
+const ghostNaneinfSeed = seedById.get("8Q47WV6K");
+assert.ok(ghostNaneinfSeed, "8Q47WV6K should remain in the seed database");
+assert.ok(ghostNaneinfSeed.sources?.includes("balatroseeds-8q47wv6k-ghost"));
+assert.ok(ghostNaneinfSeed.sources?.includes("reddit-8q47wv6k-insane-seed"));
+assert.match(ghostNaneinfSeed.summary || "", /Ghost Deck|Triboulet|Perkeo|Blueprint|Brainstorm|Baron|Mime|naneinf/i);
+
+const ghostNaneinfDetail = routeData.seedDetails?.["8Q47WV6K"];
+assert.ok(ghostNaneinfDetail, "8Q47WV6K should have an upgraded route detail");
+assert.match(ghostNaneinfDetail.completeness || "", /双来源|BalatroSeeds|Reddit|candidate|待复盘/i);
+assert.ok((ghostNaneinfDetail.flow || []).length >= 8, "8Q47WV6K should expose dual-source route stages and risk notes");
+const ghostNaneinfText = (ghostNaneinfDetail.flow || [])
+  .flatMap((stage) => [stage.stage, ...(stage.actions || [])])
+  .join("\n");
+for (const requiredText of [
+  "Ghost Deck",
+  "double tag",
+  "mega arcana pack",
+  "Triboulet",
+  "Perkeo",
+  "Temperance",
+  "Death",
+  "Ectoplasm",
+  "Deja Vu",
+  "Cryptid",
+  "Mime",
+  "Brainstorm",
+  "Baron",
+  "Showman",
+  "Sock and Buskin",
+  "DNA",
+  "red seal steel kings"
+]) {
+  assert.match(ghostNaneinfText, new RegExp(requiredText, "i"), `8Q47WV6K route should include ${requiredText}`);
+}
+
+assert.equal(
+  sourceMap["reddit-8q47wv6k-insane-seed"]?.url,
+  "https://www.reddit.com/r/balatro/comments/1clvbv1/stumbled_across_an_insane_seed/"
+);
+
+const ghostRedditEvidence = (siteData.evidenceSources || []).find((item) => item.id === "reddit-8q47wv6k-insane-seed");
+assert.ok(ghostRedditEvidence, "8Q47WV6K should have a Reddit evidence card");
+assert.ok(ghostRedditEvidence.seeds?.includes("8Q47WV6K"));
+assert.ok((ghostRedditEvidence.facts || []).length >= 7, "8Q47WV6K Reddit evidence should preserve source-backed route and comment facts");
+
+const ghostReplayItem = (siteData.reviewQueue || []).find((item) => item.id === "reddit-8q47wv6k-replay");
+assert.ok(ghostReplayItem, "8Q47WV6K should have a dedicated replay queue item");
+assert.ok(ghostReplayItem.targetSeeds?.includes("8Q47WV6K"));
+
 console.log("Route harvest contracts passed");

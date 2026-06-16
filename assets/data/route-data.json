@@ -533,19 +533,22 @@
       "difficulty": "多 Ante 节点候选",
       "version": "BalatroSeeds 1.0.1n-FULL",
       "image": "assets/images/steel-king-route.webp",
-      "summary": "BalatroSeeds 页面 URL 为 8476/ghost-deck，但正文明确列出 SEED 为 8Q47WV6K；路线节点包括 Ante 1 Triboulet/Perkeo、Ante 4 Blueprint、Ante 8 Mime、Ante 9 Brainstorm、Ante 11-13 Baron 和 Showman。",
+      "summary": "BalatroSeeds 与 old.reddit 均指向 8Q47WV6K 的 Ghost Deck 高潜力路线：开局跳双盲拿 Triboulet 与 Perkeo，Temperance 起经济，Death 把低牌改成 Kings；后续有 Ectoplasm、Deja Vu/Cryptid、Mime、Brainstorm、Baron、Showman，以及评论里的 DNA + red seal steel kings 分支。",
       "route": [
         "页面正文 seed 明确为 8Q47WV6K，录入时不能误用 URL slug 8476。",
-        "Ante 1 跳过 Small Blind 和 Big Blind，拿 Hex-Triboulet 与 Perkeo，并建议用 Emperor 找 Death。",
-        "Ante 3 可见 Ectoplasm / Aura，提供负片和牌面改造线索。",
-        "Ante 4 Wraith Spectral Card 包含 Blueprint。",
-        "Ante 5 有 Deja Vu / Cryptid，适合开始红封和复制资源链。",
-        "Ante 8 出 Mime，Ante 9 出 Brainstorm，Ante 11-13 出 Baron。",
-        "Ante 13 出 Showman，之后再跳盲可拿第二个负片 Showman。"
+        "old.reddit 主帖写明 first blind 给 double tag、second blind 给 mega arcana pack；跳过两盲后两个包都能出传奇。",
+        "第一张传奇是 Triboulet，第二张是 Perkeo；第二包还带 Temperance，可把早期 Joker 售价转成现金。",
+        "Ghost Deck 能把 Hex/Polychrome 放到 Triboulet 上，作为早期爆倍率核心。",
+        "早期 Emperor/Death 资源可把低牌逐步改成 Kings，作者主线偏 flush five Kings。",
+        "BalatroSeeds 节点补充 Ante 3 Ectoplasm/Aura，Ante 4 Wraith 里有 Blueprint，Ante 5 有 Deja Vu/Cryptid。",
+        "后续节点包含 Ante 8 Mime、Ante 9 Brainstorm、Ante 11-13 Baron、Ante 13 Showman 与第二个 negative Showman。",
+        "评论区有玩家用 DNA、Cryptid、Perkeo 把 King of Hearts 扩成 red seal steel kings，并接 Mime / Baron / Triboulet / Sock and Buskin / Brainstorm。"
       ],
       "warnings": [
-        "页面是节点描述，不含逐商店购买表，暂不标完整流程。",
-        "URL slug 与正文 seed 不一致，后续复盘必须优先核对正文 seed 8Q47WV6K。"
+        "BalatroSeeds 页面是节点描述，Reddit 是社区经验帖，二者都不是完整逐商店购买表。",
+        "URL slug 与正文 seed 不一致，后续复盘必须优先核对正文 seed 8Q47WV6K。",
+        "Reddit 主帖原作者没打到分数上限，评论里也有人因为负片 Joker 位、Showman/Invisible Joker 不足而停住。",
+        "Baron/Mime 钢K分支来自评论反馈，不应覆盖 Triboulet / Sock and Buskin 主线。"
       ],
       "tags": [
         "Ghost",
@@ -555,7 +558,8 @@
         "naneinf"
       ],
       "sources": [
-        "balatroseeds-8q47wv6k-ghost"
+        "balatroseeds-8q47wv6k-ghost",
+        "reddit-8q47wv6k-insane-seed"
       ]
     },
     {
@@ -2519,44 +2523,100 @@
       ]
     },
     "8Q47WV6K": {
-      "completeness": "多 Ante 节点候选，待补完整路线",
-      "sourceMode": "BalatroSeeds 8476/ghost-deck 页面正文 seed 复核",
-      "videoStatus": "无视频证据。",
+      "completeness": "BalatroSeeds + Reddit 双来源 candidate，待补完整逐店路线",
+      "sourceMode": "BalatroSeeds 8476/ghost-deck 页面正文 seed 复核 + old.reddit 正文/评论抽取",
+      "videoStatus": "无视频证据；当前为 seed bank 节点与 Reddit 社区帖。",
       "sources": [
-        "balatroseeds-8q47wv6k-ghost"
+        "balatroseeds-8q47wv6k-ghost",
+        "reddit-8q47wv6k-insane-seed"
       ],
       "flow": [
         {
-          "stage": "Seed 纠错",
+          "stage": "Seed 纠错与来源边界",
           "actions": [
             "来源 URL slug 是 8476，但页面正文 SEED 明确写作 8Q47WV6K。",
             "站内以正文 seed 8Q47WV6K 为准，保留 URL/正文不一致警告。"
           ]
         },
         {
-          "stage": "Ante 1-5 - 传奇与复制资源",
+          "stage": "开局跳盲 - double tag / mega arcana pack",
           "actions": [
-            "Ante 1 跳过 Small Blind 和 Big Blind，拿 Hex-Triboulet 与 Perkeo。",
-            "作者建议用 Emperor 找 Death tarot。",
-            "Ante 3 可见 Ectoplasm / Aura。",
-            "Ante 4 Wraith spectral card 包含 Blueprint。",
-            "Ante 5 有 Deja Vu / Cryptid。"
+            "old.reddit 主帖写明 seed 是 8Q47WV6K，并且使用 Ghost Deck。",
+            "第一盲给 double tag，第二盲给 mega arcana pack；作者建议跳过两盲。",
+            "两份奖励包都会出传奇 Joker，这是该 seed 的核心起点。"
           ]
         },
         {
-          "stage": "Ante 8-13 - Mime / Brainstorm / Baron / Showman",
+          "stage": "两张传奇 - Triboulet / Perkeo / Temperance",
           "actions": [
-            "Ante 8 出 Mime。",
+            "第一张传奇是 Triboulet，第二张是 Perkeo。",
+            "第二个 mega arcana pack 还包含 Temperance，作者说明当时可转出约 20 美元现金。",
+            "Ghost Deck 可把 Hex/Polychrome 放到 Triboulet 上，使 Triboulet 成为早期主倍率核心。"
+          ]
+        },
+        {
+          "stage": "前期牌库改造 - Emperor / Death / Kings",
+          "actions": [
+            "Reddit 主帖写到第一包还包含能生成两张随机塔罗的牌，其中一张结果是 Death。",
+            "作者用 Perkeo 复制这类消耗牌，把低点数牌持续改成 Kings，主要转成 Diamonds。",
+            "改牌后多数手牌变成 flush five Kings，服务于 Triboulet 对 King/Queen 的翻倍触发。"
+          ]
+        },
+        {
+          "stage": "消耗牌复制 - spectral cards / negative consumables",
+          "actions": [
+            "作者说该 seed 很容易拿 spectral cards，并用 Perkeo 复制很多消耗牌。",
+            "主要复制目标包括 red seal、把一张牌变成另一张、复制两次以及加 Polychrome/Foil/Holographic 的牌。",
+            "BalatroSeeds 同步记录早期可见 Ectoplasm/Aura，说明负片与牌面改造资源都在路线内。"
+          ]
+        },
+        {
+          "stage": "BalatroSeeds 节点 - Ectoplasm / Blueprint / Deja Vu / Cryptid",
+          "actions": [
+            "BalatroSeeds 页面写 Ante 3 有 Ectoplasm / Aura。",
+            "Ante 4 的 Wraith spectral card 包含 Blueprint。",
+            "Ante 5 有 Deja Vu / Cryptid，可接红封与复制资源链。"
+          ]
+        },
+        {
+          "stage": "中后期 Joker 组件 - Mime / Brainstorm / Baron / Showman",
+          "actions": [
+            "BalatroSeeds 页面写 Ante 8 出 Mime。",
             "Ante 9 出 Brainstorm。",
             "Ante 11-13 出 Baron。",
-            "Ante 13 出 Showman，之后再跳一次可拿第二个负片 Showman。",
-            "页面作者称该种让其首次打出 naneinf holographic red seal steel kings。"
+            "Ante 13 出 Showman，之后再跳一次可拿第二个 negative Showman。"
+          ]
+        },
+        {
+          "stage": "Reddit 主帖终局结构 - Sock and Buskin / Blueprint / Brainstorm / Dusk",
+          "actions": [
+            "主帖作者列出关键终局 Joker：Triboulet、Perkeo、Sock and Buskin、Blueprint、Brainstorm、Dusk。",
+            "Blueprint 复制 Sock and Buskin，Brainstorm 复制最左侧 Triboulet。",
+            "Dusk 用于 final round 额外 retrigger，配合大量 Kings 和部分 red seals 放大倍率。"
+          ]
+        },
+        {
+          "stage": "评论分支 - DNA / Cryptid / red seal steel kings",
+          "actions": [
+            "评论区有玩家反馈用 DNA、Cryptid 和 Perkeo 制作大量 King of Hearts。",
+            "该玩家把目标 K 转成 red seal steel kings，并接 Mime、Baron、Triboulet、Sock and Buskin、Brainstorm。",
+            "这条分支更接近站内钢K读者需求，但它来自评论经验，需要独立复盘。"
+          ]
+        },
+        {
+          "stage": "路线边界 - naneinf 候选但非完整表",
+          "actions": [
+            "BalatroSeeds 作者称该 seed 让其首次打出 naneinf holographic red seal steel kings。",
+            "Reddit 主帖作者则停在约 10^17，并询问如何打到分数上限。",
+            "另一条评论提到因负片 Joker 位、Showman 或 Invisible Joker 不足而停住，说明终局稳定性仍要实测。"
           ]
         }
       ],
       "mistakes": [
-        "页面缺逐商店购买表，不应标为完整。",
-        "URL slug 与正文 seed 不一致，复制种子时必须核对 8Q47WV6K。"
+        "不要把 URL slug 8476 当作 seed；复制时必须用正文 8Q47WV6K。",
+        "不要把 BalatroSeeds 节点和 Reddit 经验帖升级成完整逐店购买表。",
+        "Triboulet/Sock and Buskin 主线与 Baron/Mime 钢K评论分支要分开复盘。",
+        "Showman、Invisible Joker、负片 Joker 位和手牌上限是后续失败风险。"
       ]
     },
     "IRW4G69D": {
@@ -3536,6 +3596,12 @@
     "balatroseeds-8q47wv6k-ghost": {
       "label": "BalatroSeeds: 8476 page / 8Q47WV6K Ghost Deck",
       "url": "https://balatroseeds.com/seeds/8476/ghost-deck"
+    },
+    "reddit-8q47wv6k-insane-seed": {
+      "label": "Reddit r/balatro: Stumbled across an INSANE seed - 8Q47WV6K",
+      "url": "https://www.reddit.com/r/balatro/comments/1clvbv1/stumbled_across_an_insane_seed/",
+      "type": "Reddit self post / old.reddit readable mirror",
+      "note": "Reddit canonical/Jina returned 403 during 2026-06-16 harvest; old.reddit HTML was readable for正文与评论。"
     },
     "weibo-irw4g69d-steel-k": {
       "label": "Weibo: IRW4G69D 1-1 Blueprint steel K candidate",
