@@ -767,7 +767,7 @@
       "difficulty": "Reddit full-guide candidate",
       "version": "Reddit 2025-07-21 / 待实机复盘",
       "image": "assets/images/steel-king-route.webp",
-      "summary": "Reddit r/balatro 全攻略帖给出 1JA54YD6 的 Plasma Deck 路线：Ante 1 Foil DNA、Ante 2 red seal King、Ante 3 Foil Stuntman，Ante 8-14 逐步转入 Mime、Brainstorm、Baron 和 Blueprint 的 Baron/Mime 高牌体系。",
+      "summary": "Reddit r/balatro full guide 给出 1JA54YD6 的 Plasma Deck 路线：Ante 1 foil skip 落到 DNA、Ante 2 jumbo standard pack 出 red seal King of Hearts、Ante 3 Foil Stuntman，Ante 8-14 逐步转入 Mime、Brainstorm、Baron 和 Blueprint；作者自己的 run 停在约 Ante 20，不宣称稳定 naneinf。",
       "route": [
         "Plasma Deck 开局，Ante 1 foil skip 落到 DNA，先用 DNA 复制关键 K。",
         "Ante 2 jumbo standard pack 给 red seal King of Hearts，作为后续 red seal steel King 核心胚子。",
@@ -780,8 +780,8 @@
         "Ante 14 找 Blueprint；Ante 17 如未拿到 Brainstorm/Blueprint，原帖称约 5 次重掷可见。"
       ],
       "warnings": [
-        "Reddit 作者明确有几处记忆不确定，例如 Soul 内容、Ante 12 Baron/Invisible 的精确重掷次数，因此当前只标为候选全攻略，不标成已验证逐手流程。",
-        "Jina Reader 与 Reddit JSON 在本轮采集被拦，证据来自 old.reddit 可读 HTML；后续要做截图/实机复盘来增强证据链。",
+        "Reddit 作者明确有几处记忆不确定，例如 Soul 内容、Ante 12 Baron/Invisible 的精确重掷次数；around/forgot exact number 不能直接当精确商店表。",
+        "命令行 direct Reddit JSON 与 Jina 在本轮采集被拦，证据来自 Reddit 网页/搜索与 old.reddit 可读 HTML；后续要做截图/实机复盘来增强证据链。",
         "这条路线终局作者停在约 Ante 20，未拿到 Antimatter 或 Perkeo/Observatory，因此不能宣称稳定 naneinf。"
       ],
       "tags": [
@@ -3429,24 +3429,40 @@
     },
     "1JA54YD6": {
       "completeness": "Reddit full guide candidate，关键商店和重掷次数待复盘",
-      "sourceMode": "Reddit 网页/搜索正文可读；命令行 direct Reddit JSON 与 Jina 本轮被安全页拦截，old.reddit HTML 可读；canonical Reddit URL 入源",
+      "sourceMode": "Reddit 网页/搜索正文可读；old.reddit HTML 可读；command-line direct Reddit JSON 返回安全页 HTML，Jina 对 old.reddit 403 blocked；canonical Reddit URL 入源",
       "videoStatus": "无视频；当前为文字攻略路线。",
       "sources": [
         "reddit-1ja54yd6-full-guide"
       ],
       "flow": [
         {
+          "stage": "来源定位 - Reddit Full guide / 作者删除 / 元数据",
+          "actions": [
+            "old.reddit 标题为“(Full guide) Early foil dna, stuntman, red seal, late double legendary, baron mime. Easy baron mime seed.”，canonical URL 指向 reddit.com/r/balatro/comments/1m5a7tq/。",
+            "页面 tagline 显示作者为 [deleted]；侧栏 time 为 2025-07-21T05:10:24+00:00，分数为 5 points (79% upvoted)，shortlink 为 redd.it/1m5a7tq。",
+            "命令行 direct Reddit JSON 本轮返回新 Reddit 安全页 HTML，不是 JSON；Jina 对 old.reddit 返回 403 blocked，但 old.reddit HTML 正文和评论可读。"
+          ]
+        },
+        {
+          "stage": "路线原理 - baron mime red seal steel king",
+          "actions": [
+            "原帖解释 what is this baron mime red seal steel king thing：这是玩家冲高 Ante 或尝试 naneinf 的常见路线。",
+            "核心结构是 Baron、Mime、Blueprint、Brainstorm，常见扩展是 Perkeo 或复制其中一个关键 Joker。",
+            "打法是出 high card，并在手牌中保留大量 red seal steel kings；steel 和 Baron 都给 x1.5 mult，red seal 与 Mime 会重复触发，单张手牌最终可能带来 fourfold to eightfold 的分数增长。"
+          ]
+        },
+        {
           "stage": "Ante 1 - Plasma / Foil DNA 起点",
           "actions": [
             "按 Reddit 原帖要求使用 Plasma Deck。",
-            "Ante 1 foil skip 落到 DNA，尽早开始复制目标牌。",
+            "原帖写“Ante 1 foil skip goes onto dna”，尽早开始复制目标牌。",
             "早期靠 Plasma Deck 的芯片侧优势与 DNA 节奏先过渡，不急着完成 Baron/Mime。"
           ]
         },
         {
           "stage": "Ante 2 - red seal King 胚子",
           "actions": [
-            "Ante 2 jumbo standard pack 里有 red seal King of Hearts。",
+            "原帖写“Red seal king of hearts in ante 2 jumbo standard pack”。",
             "这张红封 K 是后续 red seal steel King 手牌的核心胚子。",
             "优先保护并复制这张 K，不要把改牌资源分散到低价值牌。"
           ]
@@ -3462,7 +3478,7 @@
         {
           "stage": "Ante 4 - Bull、Chariot 与钢K加工",
           "actions": [
-            "Ante 4 standard pack 有 foil gold King of Diamonds，但原帖提醒不要用 DNA 复制太多。",
+            "Ante 4 standard pack 有 foil gold King of Diamonds，但原帖提醒“Don't copy this too much with dna”。",
             "Jumbo Buffoon Pack 里有 Bull，配合后续至少 $100 左右现金过渡。",
             "用 Chariot 把 red seal King 做成 steel King；作者记忆中 Chariot 来自 Ante 3 jumbo arcana，Ante 4 用 Fool 复制。"
           ]
@@ -3479,7 +3495,7 @@
           "stage": "Ante 9 - Foil Mime 与 Soul 风险点",
           "actions": [
             "打完 Ante 8 boss 后卖掉 Mime，再重掷找 Foil Mime。",
-            "原帖称第 3、第 4 个 Arcana pack 可能有 Soul，但作者忘记具体内容。",
+            "原帖称 third and fourth arcana packs should have a Soul，但作者也写“I forgot what they had”，不能把 Soul 内容入库。",
             "拿 Clearance Sale voucher，降低后续找 Baron、Brainstorm、Blueprint 的成本。"
           ]
         },
@@ -3488,23 +3504,25 @@
           "actions": [
             "Ante 10 有 Invisible Joker，Overstock Plus 下 Brainstorm 大约在 3-4 次重掷后出现。",
             "Ante 10 Boss 是 The Plant，需要继续重掷找 Luchador，或依赖 Soul 给 Chicot 等解法。",
-            "Ante 11 又有一个 Invisible Joker；可以在这里或更早卖 DNA 腾出 Baron/Mime 体系位置。"
+            "Ante 11 又有一个 Invisible Joker；可以在这里或更早卖 DNA 腾出 Baron/Mime 体系位置。",
+            "作者补充可以 sell your legendaries：若传奇是 Chicot、Triboulet、Yorick 或 Canio，可按占位需要出售；Perkeo 对最终 deck fixing 有帮助但 not needed。"
           ]
         },
         {
           "stage": "Ante 12 - Baron 和第二个 Invisible Joker",
           "actions": [
             "Reddit 作者强调 Ante 12 是重要节点：Overstock Plus 下可以找到 Baron 和另一个 Invisible Joker。",
-            "原帖记忆为大约 24 次重掷附近可见，且每个商店重掷约 6-7 次、资金约 $170 可以覆盖。",
+            "原帖写 around 24 rerolls in，并立刻标注 forgot exact number；因此这是 approximate，不是精确商店表。",
+            "作者建议 reroll around 6 to 7 times every shop，资金 around $170 应该够覆盖。",
             "这一段是当前最高优先级复盘点，需要确认精确商店、重掷次数和现金阈值。"
           ]
         },
         {
           "stage": "Ante 14-17 - Blueprint / Brainstorm 补齐",
           "actions": [
-            "Ante 14 约 12 次重掷处出现 Blueprint。",
+            "Ante 14 Blueprint around 12 rerolls in。",
             "Ante 16 拿 Blank voucher，Ante 17 拿 Paint Brush voucher。",
-            "如果还没拿到 Brainstorm 或 Blueprint，原帖称 Ante 17 约 5 次重掷可以补齐。"
+            "如果还没拿到 Brainstorm 或 Blueprint，原帖称 Ante 17 5 rerolls in 可以补齐。"
           ]
         },
         {
@@ -3514,12 +3532,21 @@
             "停住原因是没有找到 Antimatter、Perkeo 和 Observatory。",
             "因此站内把它作为 Baron/Mime 教学与 full-guide 候选，不宣称稳定 naneinf。"
           ]
+        },
+        {
+          "stage": "评论边界 - 只有反馈，不补路线",
+          "actions": [
+            "old.reddit 评论可读到 Amazing_Gas29 写“Wait this might be exactly what I need. Thanks!”；作者回复“Glad to be of help!”。",
+            "另一条评论写“Thank you! I want to try the baron mime but never fully understood how it worked until now.”。",
+            "comments 只有感谢和想尝试 Baron/Mime 的反馈，没有新增路线节点、商店顺序或反证；does not add route nodes。"
+          ]
         }
       ],
       "mistakes": [
-        "不要把作者记忆不确定的重掷次数当作精确商店表；Ante 9 Soul 与 Ante 12 Baron/Invisible 需要逐项复盘。",
+        "不要把作者记忆不确定的重掷次数当作精确商店表；Ante 9 Soul、Ante 10 Brainstorm、Ante 12 Baron/Invisible、Ante 14 Blueprint 和 Ante 17 补件都需要逐项复盘。",
         "不要保留太多非红封钢K目标牌，尤其是 Ante 4 的 foil gold King of Diamonds，原帖明确提醒不要复制太多。",
-        "The Plant 和 Crimson Heart 都可能影响路线稳定性，必须在复盘里补 Boss 应对。"
+        "The Plant 和 Crimson Heart 都可能影响路线稳定性，必须在复盘里补 Boss 应对。",
+        "评论区不提供可入库路线节点；不要把感谢反馈包装成二次验证。"
       ]
     },
     "2NJEYMUI": {

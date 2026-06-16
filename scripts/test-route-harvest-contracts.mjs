@@ -240,11 +240,49 @@ assert.match(redditSeed.summary || "", /Foil\s*DNA|Baron|Mime|red seal/i);
 const redditDetail = routeData.seedDetails?.["1JA54YD6"];
 assert.ok(redditDetail, "1JA54YD6 should have a route detail");
 assert.match(redditDetail.completeness || "", /Reddit|candidate|待复盘/i);
-assert.ok((redditDetail.flow || []).length >= 8, "1JA54YD6 should expose the Reddit guide as staged route nodes");
-const redditRouteText = (redditDetail.flow || [])
-  .flatMap((stage) => [stage.stage, ...(stage.actions || [])])
+assert.ok((redditDetail.flow || []).length >= 11, "1JA54YD6 should expose source provenance, staged route nodes, and uncertainty notes");
+assert.match(redditDetail.sourceMode || "", /old\.reddit HTML|网页\/搜索|command-line direct Reddit JSON|Jina|blocked|安全页/i);
+const redditRouteText = [
+  ...(redditDetail.flow || []).flatMap((stage) => [stage.stage, ...(stage.actions || [])]),
+  ...(redditDetail.mistakes || [])
+]
   .join("\n");
 for (const requiredText of ["Plasma", "Foil DNA", "red seal", "Stuntman", "Mime", "Brainstorm", "Baron", "Blueprint"]) {
+  assert.match(redditRouteText, new RegExp(requiredText, "i"), `1JA54YD6 route should include ${requiredText}`);
+}
+for (const requiredText of [
+  "Full guide",
+  "\\[deleted\\]",
+  "2025-07-21T05:10:24\\+00:00",
+  "5 points",
+  "79% upvoted",
+  "comments.*感谢|评论.*感谢",
+  "does not add route nodes|没有新增路线节点",
+  "baron mime red seal steel king",
+  "naneinf",
+  "x1\\.5",
+  "fourfold to eightfold",
+  "foil skip goes onto dna",
+  "red seal king of hearts in ante 2 jumbo standard pack",
+  "red seal bonus king of hearts",
+  "Don't copy this too much",
+  "Crimson Heart",
+  "third and fourth.*arcana packs.*Soul",
+  "forgot what they had",
+  "The Plant",
+  "Luchador",
+  "Chicot",
+  "sell your legendaries",
+  "around 24 rerolls",
+  "forgot exact number",
+  "6 to 7 times every shop",
+  "\\$170",
+  "around 12 rerolls",
+  "5 rerolls",
+  "Antimatter",
+  "Perkeo",
+  "Observatory"
+]) {
   assert.match(redditRouteText, new RegExp(requiredText, "i"), `1JA54YD6 route should include ${requiredText}`);
 }
 
@@ -256,11 +294,15 @@ assert.equal(
 const redditEvidence = (siteData.evidenceSources || []).find((item) => item.id === "reddit-1ja54yd6-full-guide");
 assert.ok(redditEvidence, "1JA54YD6 should have an evidence card");
 assert.ok(redditEvidence.seeds?.includes("1JA54YD6"));
-assert.ok((redditEvidence.facts || []).length >= 6, "1JA54YD6 evidence should preserve source-backed route facts");
+assert.ok((redditEvidence.facts || []).length >= 12, "1JA54YD6 evidence should preserve source metadata, route facts, comment status, and uncertainty boundaries");
+assert.match(redditEvidence.contentType || "", /old\.reddit HTML|command-line direct Reddit JSON|Jina|安全页|blocked/i);
+assert.match((redditEvidence.facts || []).join("\n"), /2025-07-21T05:10:24\+00:00|\[deleted\]|5 points|79% upvoted|foil skip|red seal king of hearts|Crimson Heart|The Plant|around 24 rerolls|forgot exact number|感谢|没有新增路线节点|Antimatter|Perkeo|Observatory/i);
 
 const redditQueueItem = (siteData.reviewQueue || []).find((item) => item.id === "reddit-1ja54yd6-replay");
 assert.ok(redditQueueItem, "1JA54YD6 should stay in the replay queue for exact shop/reroll validation");
 assert.ok(redditQueueItem.targetSeeds?.includes("1JA54YD6"));
+assert.match(redditQueueItem.blocker || "", /command-line direct Reddit JSON|Jina|old\.reddit|comments|评论|approximate|精确商店/i);
+assert.match(redditQueueItem.nextAction || "", /around 24|forgot exact number|6-7|around 12|5 rerolls|评论|not route|实机复盘/i);
 
 const redditNaneinfSeed = seedById.get("2NJEYMUI");
 assert.ok(redditNaneinfSeed, "2NJEYMUI should be promoted from the Reddit naneinf guide into the seed database");

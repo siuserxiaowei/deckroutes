@@ -1888,17 +1888,24 @@
       "title": "1JA54YD6 Early Foil DNA / Baron-Mime full guide",
       "url": "https://www.reddit.com/r/balatro/comments/1m5a7tq/full_guide_early_foil_dna_stuntman_red_seal_late/",
       "retrievedAt": "2026-06-16",
-      "contentType": "Reddit 网页/搜索正文与 old.reddit HTML 可读；命令行 direct Reddit JSON/Jina 本轮被拦",
+      "contentType": "old.reddit HTML 正文和评论可读；Reddit 网页/搜索正文可读；command-line direct Reddit JSON 返回安全页 HTML；Jina 对 old.reddit 403 blocked",
       "seeds": [
         "1JA54YD6"
       ],
       "facts": [
         "old.reddit 页面标题指向 r/balatro 的 full guide 帖，主题为 early foil DNA、Stuntman、red seal、double legendary、Baron/Mime。",
-        "页面显示提交时间为 2025-07-21，短链为 redd.it/1m5a7tq，canonical URL 指向 reddit.com/r/balatro/comments/1m5a7tq/。",
+        "页面显示作者为 [deleted]，提交时间为 2025-07-21T05:10:24+00:00，短链为 redd.it/1m5a7tq，canonical URL 指向 reddit.com/r/balatro/comments/1m5a7tq/。",
+        "old.reddit 侧栏显示 5 points (79% upvoted)。",
         "正文明确给出 seed 1JA54YD6，并要求使用 Plasma Deck。",
-        "正文写到 Ante 1 foil skip 落到 DNA，Ante 2 jumbo standard pack 有 red seal King of Hearts。",
+        "正文解释 baron mime red seal steel king 原理：Baron、Mime、Blueprint、Brainstorm 配合 high card 和大量 red seal steel kings；steel 与 Baron 给 x1.5，red seal 与 Mime 负责重复触发，单张手牌可产生 fourfold to eightfold 增长。",
+        "正文写到 Ante 1 foil skip goes onto dna，Ante 2 jumbo standard pack 有 red seal king of hearts。",
         "正文写到 Ante 3 有 Foil Stuntman，Ante 3 jumbo standard pack 还有 red seal bonus King of Hearts，并建议拿 Overstock。",
-        "正文写到 Ante 8 有 Mime 和 DNA，Ante 10 有 Invisible Joker 和 Brainstorm，Ante 12 找 Baron 与另一个 Invisible Joker，Ante 14 有 Blueprint。",
+        "正文写到 Ante 4 有 foil gold King of Diamonds，但提醒 Don't copy this too much with dna；同阶段用 Bull、Chariot/Fool 处理 red seal King。",
+        "正文写到 Ante 8 有 Mime 和 DNA，Boss 为 Crimson Heart；Ante 9 卖 Mime 后找 Foil Mime，third and fourth arcana packs 可能有 Soul，但作者 forgot what they had。",
+        "正文写到 Ante 10 有 Invisible Joker、Brainstorm 大约 3-4 次 reroll，Boss 是 The Plant，可找 Luchador 或 Chicot；Ante 11 可卖 DNA 或不合适的传奇腾位。",
+        "正文写到 Ante 12 找 Baron 与另一个 Invisible Joker，around 24 rerolls in 但作者 forgot exact number；建议每店 6-7 次 reroll，around $170。",
+        "正文写到 Ante 14 Blueprint around 12 rerolls in，Ante 17 如果缺 Brainstorm/Blueprint 则 5 rerolls in 可补。",
+        "评论只有感谢和想尝试 Baron/Mime 的反馈，没有新增路线节点或反证。",
         "作者说明 run 大约停在 Ante 20，因为没有找到 Antimatter、Perkeo 和 Observatory。"
       ],
       "confidence": "中高",
@@ -2428,7 +2435,7 @@
       "platform": "Reddit",
       "priority": "A",
       "status": "ready-replay",
-      "blocker": "Reddit JSON 与 Jina 读取被拦；当前只有 old.reddit HTML 正文，需要实机确认精确商店和重掷次数。",
+      "blocker": "old.reddit HTML 正文和 comments 可读，但 command-line direct Reddit JSON 返回安全页、Jina 被 403 blocked；评论只提供感谢反馈，around reroll 仍是 approximate，仍缺精确商店表。",
       "evidenceIds": [
         "reddit-1ja54yd6-full-guide"
       ],
@@ -2438,8 +2445,8 @@
       "targetSeeds": [
         "1JA54YD6"
       ],
-      "nextAction": "按 Ante 1-17 复盘：确认 foil DNA、red seal King、Foil Stuntman、Mime、Brainstorm、Baron、Blueprint 的商店/包位置，记录每次重掷、现金阈值和 Boss 应对。",
-      "validation": "复盘完成后应补 queueTables 或逐商店表；若 Ante 12 Baron/Invisible 和 Ante 14 Blueprint 精确位置成立，再把 completeness 从 candidate 升级为可复现流程。",
+      "nextAction": "按 Ante 1-17 实机复盘：确认 foil DNA、red seal King、Foil Stuntman、Mime、Brainstorm、Baron、Blueprint 的商店/包位置；重点核验 Ante 12 around 24 rerolls / forgot exact number、每店 6-7 次 reroll、around $170、Ante 14 around 12 rerolls、Ante 17 5 rerolls，并确认评论没有新增路线节点。",
+      "validation": "复盘完成后应补 queueTables 或逐商店表；若 Ante 12 Baron/Invisible、Ante 14 Blueprint、Ante 17 补件精确位置成立，再把 completeness 从 candidate 升级为可复现流程，并保留评论 not route 的边界。",
       "ownerMode": "Agent Reach old.reddit + browser-use/实机复盘",
       "updatedAt": "2026-06-16"
     },
