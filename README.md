@@ -25,6 +25,7 @@ Run the local data guard before publishing a new evidence or route update:
 
 ```sh
 node scripts/validate-data.mjs
+node scripts/audit-route-coverage.mjs --fail-on-gaps
 node scripts/test-extract-balatroseed-route.mjs
 ```
 
@@ -39,9 +40,11 @@ The extractor reads Jina Reader output or a saved fixture and emits a `detail` o
 
 GitHub Actions runs the same data guard and extractor tests through `.github/workflows/validate.yml` on pushes to `main` and on pull requests.
 
-As of the seventh 2026-06-15 pass, Agent Reach reports 13/15 channels available and `mcporter --config /Users/siuserxiaowei/config/mcporter.json list` reports healthy XiaoHongShu, Douyin, Weibo, and Exa MCP servers. Exa and Weibo are usable; XiaoHongShu still returns EOF on `search_feeds("小丑牌 钢K 种子")`; Douyin video parsing still requires `DASHSCOPE_API_KEY`; Reddit and YouTube require cookie/proxy follow-up for reliable deep reads.
+`scripts/audit-route-coverage.mjs` prints a non-network coverage report for seed details, route quality (`playable/full`, `node-summary`, `candidate`, `blocked-source`, `thin-summary`), queue-table coverage, platform evidence, blocked review work, and high-priority next actions. Use `--json` for machine-readable output, and `--fail-on-gaps` when the run should fail on missing route detail, empty flow, missing source backlink, or a route that claims full/playable coverage but audits as incomplete.
 
-The data was compiled on 2026-06-15 with Agent Reach, Exa search, Bilibili public search, GitHub search, RDAP, and WHOIS checks. Domain status can change and should be rechecked at the registrar before purchase.
+As of the eighth 2026-06-16 pass, Agent Reach's default doctor reports 9/15 channels available, while `mcporter --config /Users/siuserxiaowei/config/mcporter.json list` still reports healthy XiaoHongShu, Douyin, Weibo, and Exa MCP servers. Exa reached the free MCP rate limit during this pass; XiaoHongShu still returns EOF on `search_feeds("小丑牌 钢K 种子")`; Douyin video parsing still requires `DASHSCOPE_API_KEY`; Reddit and YouTube require cookie/proxy follow-up for reliable deep reads.
+
+The data was compiled on 2026-06-15 and updated on 2026-06-16 with Agent Reach, Exa search, Jina Reader, Bilibili public search, GitHub search, RDAP, and WHOIS checks. Domain status can change and should be rechecked at the registrar before purchase.
 
 ## Deploy
 

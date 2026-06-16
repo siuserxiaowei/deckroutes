@@ -25,11 +25,15 @@ jobs:
         run: |
           node --check assets/app.js
           node --check scripts/validate-data.mjs
+          node --check scripts/audit-route-coverage.mjs
           node --check scripts/extract-balatroseed-route.mjs
           node --check scripts/test-extract-balatroseed-route.mjs
 
       - name: Validate site data
         run: node scripts/validate-data.mjs
+
+      - name: Audit route coverage
+        run: node scripts/audit-route-coverage.mjs --fail-on-gaps
 
       - name: Test BalatroSeeds extractor
         run: node scripts/test-extract-balatroseed-route.mjs

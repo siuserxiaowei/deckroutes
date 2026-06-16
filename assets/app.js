@@ -255,6 +255,22 @@ function seedMatches(seed) {
   return queryMatch && archetypeMatch && tagMatch;
 }
 
+function routeStatus(seed) {
+  const detail = seed.detail;
+  if (!detail) return { label: "待补", action: "查看摘要" };
+
+  const completeness = detail.completeness || "待补";
+  const text = [detail.completeness, detail.sourceMode, detail.videoStatus].filter(Boolean).join(" ");
+  const claimsComplete = /完整流程|可照做完整|完整到\s*(?:ante\s*)?8|playable/i.test(completeness);
+  const hasDraftLanguage = /近完整|候选|待|节点型|部分完整|队列样本|决策待验证|复盘|OCR|摘要|描述/.test(text);
+
+  if (claimsComplete && !hasDraftLanguage) return { label: "完整路线", action: "查看完整路线" };
+  if (/队列/.test(text)) return { label: "队列样本", action: "查看队列详情" };
+  if (/候选|待|复盘|OCR|摘要|描述|短节点/.test(text)) return { label: "候选节点", action: "查看节点详情" };
+  if (/近完整|节点/.test(completeness)) return { label: "节点路线", action: "查看节点路线" };
+  return { label: "路线详情", action: "查看路线详情" };
+}
+
 function renderSeeds() {
   const grid = $("#seedGrid");
   const template = $("#seedCardTemplate");
@@ -282,8 +298,9 @@ function renderSeeds() {
       $(".seed-code", node).textContent = seed.seed;
       $("h3", node).textContent = seed.title;
       const badge = $(".flow-badge", node);
-      badge.textContent = seed.detail?.completeness ? `流程：${seed.detail.completeness}` : "流程：待补";
-      badge.dataset.status = seed.detail?.completeness || "待补";
+      const status = routeStatus(seed);
+      badge.textContent = `${status.label}：${seed.detail?.completeness || "待补"}`;
+      badge.dataset.status = status.label;
       $(".seed-summary", node).textContent = seed.summary;
       $('[data-field="deck"]', node).textContent = seed.deck;
       $('[data-field="archetype"]', node).textContent = seed.archetype;
@@ -299,6 +316,7 @@ function renderSeeds() {
       sources.append(sourceLinks(seed.sources));
 
       const detailButton = $(".detail-button", node);
+      detailButton.textContent = status.action;
       detailButton.addEventListener("click", () => showRoute(seed, true));
 
       article.classList.toggle("has-flow", Boolean(seed.detail));

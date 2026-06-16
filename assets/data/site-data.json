@@ -2,15 +2,15 @@
   "meta": {
     "name": "DeckRoutes",
     "title": "DeckRoutes - Balatro Seed Atlas",
-    "asOf": "2026-06-15",
+    "asOf": "2026-06-16",
     "language": "zh-CN",
     "method": "Agent Reach doctor + mcporter 显式配置调用 + Jina Reader + GitHub CLI + BalatroSeeds public pages + web search fallback + Scrapling availability check",
-    "coverageNote": "2026-06-15 七次复核：Agent Reach doctor 显示 13/15 渠道可用；显式 mcporter 配置可列出 xiaohongshu、douyin、weibo、exa 4 个健康 MCP server。Exa 可用，小红书 search_feeds 仍 EOF，抖音 parse/download 仍缺 DASHSCOPE_API_KEY，Reddit 直连被网络安全页拦截，YouTube yt-dlp 搜索触发 bot check；本轮补 GitHub Actions 数据质量门和中文 BalatroSeed 可读来源。"
+    "coverageNote": "2026-06-16 八次复核：Agent Reach doctor 默认配置显示 9/15 渠道可用；显式 mcporter 配置仍可列出 xiaohongshu、douyin、weibo、exa 4 个健康 MCP server。Exa 本轮触发免费 MCP rate limit，小红书 search_feeds 仍 EOF，抖音 parse/download 仍缺 DASHSCOPE_API_KEY；本轮补 GitHub Actions 数据质量门、路线质量审计和 BalatroSeeds 可读节点种。"
   },
   "stats": [
     {
       "label": "已整理种子",
-      "value": "29",
+      "value": "31",
       "note": "含可点击流程、中文来源和待复盘队列"
     },
     {
@@ -20,7 +20,7 @@
     },
     {
       "label": "证据来源",
-      "value": "40",
+      "value": "42",
       "note": "含平台状态、中文社区、英文 seed bank 和 GitHub 工具证据"
     },
     {
@@ -897,19 +897,19 @@
   "platformStatus": [
     {
       "platform": "Agent Reach / 工具总览",
-      "status": "doctor 13/15；显式 mcporter 配置 4 个 MCP 健康",
+      "status": "doctor 默认配置 9/15；显式 mcporter 配置 4 个 MCP 健康",
       "accessMethod": "agent-reach doctor + mcporter --config /Users/siuserxiaowei/config/mcporter.json list",
       "usableNow": true,
-      "limitation": "doctor 显示小红书、抖音、Exa、微博等通道已连接；显式配置可列出 xiaohongshu、douyin、weibo、exa，但小红书 search_feeds 仍 EOF，抖音 parse/download 仍缺 DASHSCOPE_API_KEY；Reddit 直连被网络安全页拦截，YouTube yt-dlp 搜索触发 bot check。",
-      "nextAction": "后续深采统一带显式 mcporter config；小红书先修登录态/服务端 EOF，抖音先补 DASHSCOPE_API_KEY，Reddit/YouTube 等待 cookie/代理后再补正文和字幕。"
+      "limitation": "doctor 默认配置未识别 Exa/微博/小红书/抖音，但显式配置可列出 xiaohongshu、douyin、weibo、exa；小红书 search_feeds 仍 EOF，抖音 parse/download 仍缺 DASHSCOPE_API_KEY，Exa 本轮触发免费 MCP rate limit。",
+      "nextAction": "后续深采统一带显式 mcporter config；小红书先修登录态/服务端 EOF，抖音先补 DASHSCOPE_API_KEY，Exa 如继续扩搜需自有 API key。"
     },
     {
       "platform": "Exa / 全网语义搜索",
-      "status": "可用",
+      "status": "显式配置可见，本轮免费额度触发 429",
       "accessMethod": "mcporter --config /Users/siuserxiaowei/config/mcporter.json call exa.web_search_exa",
-      "usableNow": true,
-      "limitation": "在项目 worktree 里不带 --config 会落到空配置并报 Unknown MCP server；显式指定用户配置后可搜索网页和社区线索。",
-      "nextAction": "用 Exa 做 Reddit/全网 seed bank 深搜，并把只能作为索引摘要的结果留在证据池，不直接写成完整攻略。"
+      "usableNow": false,
+      "limitation": "在项目 worktree 里不带 --config 会落到空配置并报 Unknown MCP server；显式指定用户配置后可搜索，但 2026-06-16 已命中 Exa 免费 MCP rate limit。",
+      "nextAction": "配置自有 Exa API key 后再做 Reddit/全网 seed bank 深搜；只能作为搜索摘要的结果继续保留在证据池，不直接写成完整攻略。"
     },
     {
       "platform": "任意网页 / Jina Reader",
@@ -1676,6 +1676,44 @@
       ],
       "confidence": "高",
       "useInSite": "已补入 4YY5NT94 种子来源和详情页来源模式；仍需实机补完整流程。"
+    },
+    {
+      "id": "balatroseeds-umph5bzh",
+      "platform": "BalatroSeeds",
+      "title": "UMPH5BZH Ghost Deck Baron / Perkeo / Mime 节点",
+      "url": "https://balatroseeds.com/seeds/UMPH5BZH",
+      "retrievedAt": "2026-06-16",
+      "contentType": "Jina Reader 可读 BalatroSeeds 主 seed 页",
+      "seeds": [
+        "UMPH5BZH"
+      ],
+      "facts": [
+        "页面显示 Ghost Deck 记录，摘要包含首 Ante 跳盲后的 Baron、Golden Ticket 与 Buffoon Pack。",
+        "摘要写到第二 Ante 有 Telescope、Observatory 和商店 Blueprint。",
+        "摘要写到第三 Ante 有商店 Cryptid 与 Chariot，Ante 4 有 Deja Vu、Baron、Soul 出 Perkeo、Arcana Pack 和 Mime。",
+        "后续还提到 Invisible Joker、Director's Cut、Crystal Ball、Ante 11 / Ante 17+ 的 Soul 与额外 Blueprint 线索。"
+      ],
+      "confidence": "高",
+      "useInSite": "已入库为 Ghost Deck 节点候选路线；缺子页逐商店表前不标完整。"
+    },
+    {
+      "id": "balatroseeds-dcw6z8vb-ghost",
+      "platform": "BalatroSeeds",
+      "title": "DCW6Z8VB Ghost Deck Ante 3 Perkeo 路线",
+      "url": "https://balatroseeds.com/seeds/DCW6Z8VB/ghost-deck",
+      "retrievedAt": "2026-06-16",
+      "contentType": "Jina Reader 可读 BalatroSeeds 牌组页",
+      "seeds": [
+        "DCW6Z8VB"
+      ],
+      "facts": [
+        "页面版本标注 1.0.1n-FULL，牌组是 Ghost Deck。",
+        "作者步骤写到跳过前两个盲注，并用四条 K 击败 Boss。",
+        "Boss 后两个 Buffoon Pack 拿 Lusty Joker 和 Trading Card；免费重掷给 Foil Stuntman。",
+        "Ante 3 打完 Small Blind 后，商店 Spectral Pack 出 Perkeo；后续通过 Cryptid 复制钢铁 K，Mime 和 Baron 在无尽后接近同时出现。"
+      ],
+      "confidence": "高",
+      "useInSite": "已入库为早期步骤可读路线；后续 Baron/Mime 的精确 Ante 和刷新成本需复盘。"
     }
   ],
   "reviewQueue": [

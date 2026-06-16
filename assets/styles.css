@@ -471,6 +471,19 @@ main {
   color: #ffcec5;
 }
 
+.flow-badge[data-status*="候选"],
+.flow-badge[data-status*="队列"] {
+  border-color: rgba(215, 173, 84, 0.32);
+  background: rgba(215, 173, 84, 0.08);
+  color: #f1c86f;
+}
+
+.flow-badge[data-status*="完整"] {
+  border-color: rgba(112, 190, 134, 0.45);
+  background: rgba(112, 190, 134, 0.12);
+  color: #a8e5b7;
+}
+
 .seed-summary,
 .strategy-card p,
 .signal-card p,

@@ -1,8 +1,8 @@
 {
   "meta": {
-    "asOf": "2026-06-15",
-    "method": "Agent Reach deep pass: Jina Reader for BalatroSeeds/TapTap/indienova/TheGamer, Bilibili public API for video metadata, yt-dlp subtitle attempt",
-    "coverageNote": "Only routes with readable web text are marked full or partial. Bilibili videos without public subtitles are marked as pending replay review."
+    "asOf": "2026-06-16",
+    "method": "Agent Reach deep pass: Jina Reader for BalatroSeeds/TapTap/indienova/TheGamer, Bilibili public API for video metadata, yt-dlp subtitle attempt, route quality audit",
+    "coverageNote": "Only routes with readable web text are marked full or partial. Bilibili videos without public subtitles are marked as pending replay review. 2026-06-16 pass added UMPH5BZH and DCW6Z8VB from readable BalatroSeeds pages and introduced route quality auditing for candidate/thin/blocked details."
   },
   "additionalSeeds": [
     {
@@ -525,6 +525,69 @@
       ],
       "sources": [
         "weibo-irw4g69d-steel-k"
+      ]
+    },
+    {
+      "seed": "UMPH5BZH",
+      "title": "Ghost Deck 早期 Baron / Blueprint / Perkeo 节点种",
+      "deck": "Ghost Deck",
+      "archetype": "Baron-Mime / Perkeo 资源复制",
+      "difficulty": "BalatroSeeds 节点候选",
+      "version": "BalatroSeeds 2026-01-31",
+      "image": "assets/images/steel-king-route.webp",
+      "summary": "BalatroSeeds 主 seed 页给出 Ghost Deck 路线摘要：首 Ante 跳盲后出现 Baron 与 Golden Ticket，第二 Ante 有 Telescope / Observatory / Blueprint，第三 Ante 有 Cryptid 与 Chariot，Ante 4 有 Deja Vu、Baron、Perkeo 与 Mime。",
+      "route": [
+        "Ghost Deck 记录显示首 Ante 跳盲后可接 Baron、Golden Ticket 与 Buffoon Pack。",
+        "第二 Ante 记录 Telescope、Observatory 和商店 Blueprint，是高牌/星球和复制路线的早期信号。",
+        "第三 Ante 记录商店 Cryptid 与 Buffoon Pack Chariot，开始具备复制红封/钢铁 K 的资源。",
+        "Ante 4 记录 Deja Vu、Spectral Pack、Baron、Soul 出 Perkeo、Arcana Pack 与 Mime。",
+        "后续还有 Invisible Joker、Director's Cut、Crystal Ball，以及 Ante 11 / Ante 17+ 的多个 Soul 和 Blueprint 线索。"
+      ],
+      "warnings": [
+        "来源是 BalatroSeeds 卡片摘要，不是逐商店购买表。",
+        "当前只能标节点候选；需要打开 Ghost Deck 子页或实机复盘后补 Boss、金币和刷新次数。"
+      ],
+      "tags": [
+        "Ghost",
+        "Baron",
+        "Mime",
+        "Perkeo",
+        "Blueprint"
+      ],
+      "sources": [
+        "balatroseeds-umph5bzh"
+      ]
+    },
+    {
+      "seed": "DCW6Z8VB",
+      "title": "Ghost Deck Ante 3 Perkeo 钢K练习种",
+      "deck": "Ghost Deck",
+      "archetype": "Perkeo / Trading Card / Baron-Mime",
+      "difficulty": "早期步骤可读",
+      "version": "BalatroSeeds 1.0.1n-FULL",
+      "image": "assets/images/seed-vault.webp",
+      "summary": "BalatroSeeds Ghost Deck 页面给出可读步骤：跳过前两个盲注，Boss 用四条 K 过关，打开两个 Buffoon Pack 拿 Lusty Joker 和 Trading Card，免费重掷给 Foil Stuntman，Ante 3 小盲后商店 Spectral Pack 出 Perkeo，后续找 Cryptid、Mime 和 Baron。",
+      "route": [
+        "跳过前两个盲注。",
+        "Boss Blind 用四条 K 过关。",
+        "Boss 后打开两个 Buffoon Pack，拿 Lusty Joker 和 Trading Card；作者卖掉 Lusty，把 Trading Card 做成 Polychrome。",
+        "免费重掷给 Foil Stuntman；随后拿 Investment Tag，并继续跳过 Ante 2 的第一个盲注。",
+        "Ante 3 打完 Small Blind 后，商店 Spectral Pack 出 Perkeo。",
+        "后续多数商店重掷找 Cryptid，复制尽可能多的钢铁 K；Mime 和 Baron 在进入无尽后接近同时出现。"
+      ],
+      "warnings": [
+        "该路线有早期步骤，但不是完整 Ante 8/无尽商店表。",
+        "后续 Mime/Baron 的精确 Ante 和刷新成本仍需复盘。"
+      ],
+      "tags": [
+        "Ghost",
+        "Perkeo",
+        "Trading Card",
+        "Baron",
+        "Mime"
+      ],
+      "sources": [
+        "balatroseeds-dcw6z8vb-ghost"
       ]
     }
   ],
@@ -2133,6 +2196,82 @@
         "微博文本只有关键节点，不是逐回合攻略。",
         "图片未 OCR 前，不要把它写成完整钢K教程。"
       ]
+    },
+    "UMPH5BZH": {
+      "completeness": "BalatroSeeds 节点候选，待 Ghost Deck 子页复盘",
+      "sourceMode": "BalatroSeeds 主 seed 页卡片摘要可读",
+      "videoStatus": "无视频证据。",
+      "sources": [
+        "balatroseeds-umph5bzh"
+      ],
+      "flow": [
+        {
+          "stage": "Ante 1-2 - Baron / Telescope / Blueprint 信号",
+          "actions": [
+            "Ghost Deck 摘要写明首 Ante 跳盲后出现 Baron、Golden Ticket 和 Buffoon Pack。",
+            "第二 Ante 有 Telescope / Observatory 和商店 Blueprint。",
+            "这些节点说明该 seed 同时具备 Baron-Mime 和星球/复制路线潜力。"
+          ]
+        },
+        {
+          "stage": "Ante 3-4 - Cryptid / Deja Vu / Perkeo / Mime",
+          "actions": [
+            "第三 Ante 摘要记录商店 Cryptid、Buffoon Pack 和 Chariot。",
+            "Ante 4 摘要记录 Deja Vu、Spectral Pack、Baron、Soul 出 Perkeo、Arcana Pack 以及 Mime。",
+            "这组节点具备红封、钢铁、复制消耗牌和 Baron/Mime 触发链。"
+          ]
+        },
+        {
+          "stage": "后续长线线索",
+          "actions": [
+            "摘要还提到 Invisible Joker、Director's Cut、Crystal Ball。",
+            "Ante 11 和 Ante 17+ 有更多 Soul，若配合 Showman 还有额外 Blueprint 线索。",
+            "需要进一步读取 Ghost Deck 子页或实机复盘，确认后续 Boss、手牌上限、刷新成本和最终小丑阵容。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "BalatroSeeds 卡片摘要不等于完整流程。",
+        "没有子页逐商店表前，不应把它标为可照做路线。"
+      ]
+    },
+    "DCW6Z8VB": {
+      "completeness": "早期步骤可读，后续 Baron/Mime 待复盘",
+      "sourceMode": "BalatroSeeds Ghost Deck 页面正文可读",
+      "videoStatus": "无视频证据。",
+      "sources": [
+        "balatroseeds-dcw6z8vb-ghost"
+      ],
+      "flow": [
+        {
+          "stage": "开局到 Boss - 跳盲和四条 K",
+          "actions": [
+            "跳过前两个盲注。",
+            "Boss Blind 用四条 K 过关。",
+            "Boss 后打开两个 Buffoon Pack，拿 Lusty Joker 和 Trading Card；作者卖 Lusty 后把 Trading Card 做成 Polychrome。"
+          ]
+        },
+        {
+          "stage": "Ante 2-3 - Stuntman / Investment / Perkeo",
+          "actions": [
+            "免费重掷给 Foil Stuntman。",
+            "拿 Investment Tag，并跳过 Ante 2 的第一个盲注。",
+            "Ante 3 打完 Small Blind 后，商店 Spectral Pack 出 Perkeo。"
+          ]
+        },
+        {
+          "stage": "无尽前后 - Cryptid / Steel Kings / Mime / Baron",
+          "actions": [
+            "后续多数商店重掷找 Cryptid。",
+            "作者把 Cryptid 用在钢铁 K 复制上，尽量扩大钢K数量。",
+            "Mime 和 Baron 在进入无尽后接近同时出现，路线因此转向 Baron-Mime 钢K。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "Perkeo 之前的步骤较清楚，但后续 Mime/Baron 没有精确 Ante。",
+        "缺 Boss、金币和刷新次数，不能标完整到 Ante 8。"
+      ]
     }
   },
   "sourceAdditions": {
@@ -2215,6 +2354,14 @@
     "weibo-irw4g69d-steel-k": {
       "label": "Weibo: IRW4G69D 1-1 Blueprint steel K candidate",
       "url": "https://m.weibo.cn/status/5247187984581762"
+    },
+    "balatroseeds-umph5bzh": {
+      "label": "BalatroSeeds: UMPH5BZH Ghost Deck",
+      "url": "https://balatroseeds.com/seeds/UMPH5BZH"
+    },
+    "balatroseeds-dcw6z8vb-ghost": {
+      "label": "BalatroSeeds: DCW6Z8VB Ghost Deck",
+      "url": "https://balatroseeds.com/seeds/DCW6Z8VB/ghost-deck"
     },
     "reddit-uewc6zqf-perkeo-route": {
       "label": "Reddit: UEWC6ZQF Perkeo Blueprint Brainstorm Mime walkthrough",
