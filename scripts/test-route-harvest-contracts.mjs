@@ -683,6 +683,7 @@ const fastSteelKDetail = routeData.seedDetails?.["9OUU79"];
 assert.ok(fastSteelKDetail, "9OUU79 should keep a Bilibili route detail");
 assert.match(fastSteelKDetail.sourceMode || "", /评论 API|player\/v2|置顶攻略图|人工复盘/);
 assert.match(fastSteelKDetail.videoStatus || "", /subtitles|view_points|无公开字幕|无章节|yt-dlp.*412/i);
+assert.ok((fastSteelKDetail.flow || []).length >= 8, "9OUU79 should expose pinned-guide round-by-round route stages beyond summary nodes");
 assert.ok((fastSteelKDetail.evidenceImages || []).length >= 1, "9OUU79 should expose the pinned Bilibili route image");
 const fastSteelKText = [
   ...(fastSteelKDetail.flow || []).flatMap((stage) => [stage.stage, ...(stage.actions || [])]),
@@ -702,6 +703,17 @@ for (const requiredText of [
   "5-1.*男爵",
   "≤\\s*54",
   "普通K",
+  "1底注1回合.*同花方块A\\s*Q\\s*J\\s*8\\s*6",
+  "超级秘术包.*幻灵.*负片帕奇欧.*节制",
+  "2底注3回合.*DNA.*海王星",
+  "2底注4回合.*蓝图.*愚者.*节制",
+  "3底注6回合.*头脑风暴",
+  "3底注8回合.*通灵",
+  "4底注10回合.*DNA.*最左",
+  "5底注12回合.*证书.*战车",
+  "5底注13回合.*红色蜡封.*钢铁牌.*男爵",
+  "5底注14回合.*死神.*马戏团长",
+  "6底注16回合.*25张.*幻灵神秘生物.*naneinf",
   "OCR.*低置信|人工视检",
   "无公开字幕",
   "无章节"
@@ -712,9 +724,9 @@ for (const requiredText of [
 const fastSteelKEvidence = (siteData.evidenceSources || []).find((item) => item.id === "bili-9ouu79");
 assert.ok(fastSteelKEvidence, "9OUU79 should have a Bilibili evidence card");
 assert.ok(fastSteelKEvidence.seeds?.includes("9OUU79"));
-assert.ok((fastSteelKEvidence.facts || []).length >= 10, "9OUU79 evidence should preserve API, player/v2, comment, and image facts");
+assert.ok((fastSteelKEvidence.facts || []).length >= 14, "9OUU79 evidence should preserve API, player/v2, comment, image, and pinned-guide round facts");
 assert.match(fastSteelKEvidence.contentType || "", /API|评论|player\/v2|置顶攻略图|人工视检/);
-assert.match((fastSteelKEvidence.facts || []).join("\n"), /258851541904|574\s*x\s*10799|subtitles|view_points|257583350320|≤\s*54|yt-dlp.*412/i);
+assert.match((fastSteelKEvidence.facts || []).join("\n"), /258851541904|574\s*x\s*10799|subtitles|view_points|257583350320|1-1|2-3.*DNA|5-13.*红色蜡封|6-16.*25.*Cryptid|≤\s*54|yt-dlp.*412/i);
 
 const yushenSteelKDetail = routeData.seedDetails?.["90UU79"];
 assert.ok(yushenSteelKDetail, "90UU79 should keep a Bilibili route detail");
