@@ -846,22 +846,26 @@
       "difficulty": "双来源核心组件，逐店待复盘",
       "version": "BalatroSeeds 1.0.1n-FULL / Reddit 2026-02-25",
       "image": "assets/images/seed-vault.webp",
-      "summary": "BalatroSeeds 确认 PWX3AQJ8 是 Ghost Deck，Ante 1 连续可见 Perkeo、Baron、Mime，并列出 Blueprint、Brainstorm、natural negative Reserved Parking、Invisible Joker copy Blueprint 与 Ectoplasm；Reddit 帖进一步给出 Charm Tag -> Perkeo/Temperance、Rare Tag -> Baron、Judgement -> Mime 的早期路线线索。",
+      "summary": "BalatroSeeds 页面 Balatro Seed: PWX3AQJ8 (Ghost Deck) 确认 Version: 1.0.1n-FULL，Ante 1 连续可见 Perkeo、Baron、Mime，并列出 Blueprint、Brainstorm、natural negative Reserved Parking、Invisible Joker copies Blueprint 与 Ectoplasm；old.reddit 帖由 Blueberry-diel 在 2026-02-25T19:08:08+00:00 发布，138 points、99% upvoted，并补充 Charm Tag -> Perkeo/Temperance、Rare Tag -> Baron、Judgement -> Mime 的早期路线线索。",
       "route": [
-        "使用 Ghost Deck；BalatroSeeds 与 Reddit 均指向 PWX3AQJ8 的 Ghost Deck 路线。",
+        "使用 Ghost Deck；BalatroSeeds 与 Reddit 均指向 PWX3AQJ8 的 Ghost Deck 路线，BalatroSeeds 标题为 Balatro Seed: PWX3AQJ8 (Ghost Deck)，Version: 1.0.1n-FULL。",
+        "old.reddit 元信息：作者 Blueberry-diel，发布时间 2026-02-25T19:08:08+00:00，页面显示 138 points 和 99% upvoted。",
         "Reddit 帖元信息给出早期线索：Charm Tag 后拿 Perkeo，并用 Temperance 做经济。",
         "Rare Tag 后，boss 后商店可见 Baron；同一商店开 Arcana，用 Judgement 找 Mime。",
         "BalatroSeeds 明确写 Perkeo、Baron、Mime 在 Ante 1 back to back 出现，是这条 seed 的核心价值。",
-        "中后期组件池包含 natural negative Reserved Parking、Brainstorm、Blueprint、Invisible Joker copy Blueprint 与 Ectoplasm。",
-        "评论区策略建议 Perkeo 前期兼顾经济和 deck fixing，牌组稳定后集中复制 Cryptid。",
-        "评论区提到大约需要 45-50 张 Cryptid 来冲 nan，再用 Cryptid 复制 red seal steel King。",
-        "Showman 分支可见第二 Baron 和第二 Mime，但这是评论分支，不写成主线必拿。"
+        "中后期组件池包含 natural negative Reserved Parking、Brainstorm、Blueprint、Invisible Joker copies Blueprint 与 Ectoplasm。",
+        "评论区策略建议 Perkeo 前期兼顾经济和 deck fixing，牌组稳定后集中复制 Cryptid；作者给出 45-50 Cryptid 量级。",
+        "执行 nan 时，评论写 copy your red seal steel king 50 or so times，并强调 Cryptid 要在 middle of a round 用，using it outside of the round defeats the purpose。",
+        "有玩家回报等太久才 nan，手上已有 200 steel kings，实际 less than 100 就够；还提到 early Showman 导致 3 brainstorms and no blueprints，并 never found that neg reserved parking。",
+        "Showman 分支可在 ante 7 前商店看到 second Baron 和 second Mime，但这是评论分支，不写成主线必拿。",
+        "Blueprint came fairly late、multiple invis、natural negative Reserved Parking 和 Rerolled I think 2x for a negative reserved 都来自 comments 冲突线索，必须实机复盘。"
       ],
       "warnings": [
         "BalatroSeeds 双来源只能确认核心组件池和 Ante 1 三件，并不能证明完整逐店购买路线。",
         "Reddit 评论存在分歧：有人未找到 Blueprint 或 Invisible，也有人反馈 Reserved Parking 不是 natural negative 或出现时间不同。",
         "Charm Tag、Rare Tag、Arcana/Judgement 的精确 blind/shop 位置只有 Reddit 帖线索，需要实机复盘确认。",
-        "Cryptid 起手时间、红封钢 K 制作路径、何时开始只复制 Cryptid，当前只能作为策略提示，不能当稳定节点表。"
+        "Cryptid 起手时间、红封钢 K 制作路径、何时开始只复制 Cryptid，当前只能作为策略提示，不能当稳定节点表。",
+        "Reddit command-line direct JSON 与 Jina old.reddit 读取受阻，当前 Reddit 深读证据来自 old.reddit HTML 正文/评论。"
       ],
       "tags": [
         "Ghost Deck",
@@ -3682,7 +3686,7 @@
     },
     "PWX3AQJ8": {
       "completeness": "双来源核心组件 candidate，逐店路线待复盘",
-      "sourceMode": "BalatroSeeds/Jina 可读详情 + old.reddit 元信息与评论抽取",
+      "sourceMode": "BalatroSeeds/Jina 可读详情 + old.reddit HTML 正文/评论抽取 + command-line direct Reddit JSON blocked by security HTML + Jina old.reddit 403 blocked",
       "videoStatus": "无视频；当前为 seed bank + 社区帖子线索。",
       "sources": [
         "balatroseeds-pwx3aqj8-ghost",
@@ -3690,11 +3694,12 @@
       ],
       "flow": [
         {
-          "stage": "来源确认 - Ghost Deck / 1.0.1n-FULL",
+          "stage": "来源确认 - Balatro Seed: PWX3AQJ8 / Ghost Deck / Version: 1.0.1n-FULL",
           "actions": [
-            "BalatroSeeds 页面标题和 URL 均确认 PWX3AQJ8 是 Ghost Deck。",
-            "BalatroSeeds 描述版本为 1.0.1n-FULL。",
-            "Reddit 帖标题为 easiest nan seed PWX3AQJ8，提交时间为 2026-02-25，页面元描述也从 Ghost Deck 开始。"
+            "BalatroSeeds 页面标题为 Balatro Seed: PWX3AQJ8 (Ghost Deck)，URL 路径也确认 ghost-deck。",
+            "BalatroSeeds 描述 Version: 1.0.1n-FULL。",
+            "old.reddit 帖标题为 easiest nan seed PWX3AQJ8，作者 Blueberry-diel，提交时间 2026-02-25T19:08:08+00:00。",
+            "old.reddit 侧栏显示 138 points 和 99% upvoted；command-line direct Reddit JSON 返回安全 HTML，Jina old.reddit 读取为 403 blocked。"
           ]
         },
         {
@@ -3742,31 +3747,50 @@
           "actions": [
             "Reddit 评论问到是否用 Perkeo 专门复制 Cryptid，作者回复前期先用于经济和 deck fixing。",
             "牌组修好后，作者建议集中复制 Cryptid。",
-            "评论中给出的目标量级是约 45-50 张 Cryptid 才足以 nan。"
+            "评论中给出的目标量级是约 45-50 Cryptid 才足以 nan。"
+          ]
+        },
+        {
+          "stage": "Cryptid 执行窗口 - middle of a round",
+          "actions": [
+            "评论解释 Cryptid copies 不受最大手牌上限影响；nan 前要 copy your red seal steel king 50 or so times。",
+            "评论明确要求在 middle of a round 用 Cryptid 复制，using it outside of the round defeats the purpose。",
+            "这一点决定了详情页不能只写“攒 Cryptid”，还必须提示进入回合后再展开复制链。"
           ]
         },
         {
           "stage": "执行 nan - red seal steel King / High Card",
           "actions": [
-            "评论说明 nan 前用 Cryptid 复制目标 red seal steel King 约 50 次。",
+            "评论说明 nan 前用 Cryptid 复制目标 red seal steel King 约 50 or so times。",
             "进入回合后用所有 Cryptid 复制，再打 High Card 触发 Baron/Mime 手牌倍率链。",
+            "一名玩家说自己等太久才 go for the nan，手里已有 200 steel kings，但 needed less than 100；这说明复制量有冗余区间。",
             "这一段有评论截图线索，但缺少逐步可复现表，当前只作为执行策略摘要。"
           ]
         },
         {
           "stage": "分支与冲突 - Showman / Reserved Parking / Invis",
           "actions": [
-            "评论提到 Showman 分支可在 Ante 7 big blind 前商店看到第二 Baron 和第二 Mime。",
-            "Reserved Parking 有冲突反馈：有人没找到 natural negative，有人说 Ante 3/4 附近可重掷出 negative。",
-            "Blueprint/Invisible 也有评论反馈不稳定，因此复盘队列必须优先验证这些节点。"
+            "评论提到 early Showman 会改变节奏；一名玩家因此出现 3 brainstorms and no blueprints，并 never found that neg reserved parking。",
+            "另一条 Showman 分支说可在 ante 7 前商店看到 second Baron 和 second Mime。",
+            "Reserved Parking 有 comments 冲突反馈：有人没找到 natural negative Reserved Parking，也有人说 Rerolled I think 2x for a negative reserved。",
+            "Blueprint came fairly late，另有评论说看过 multiple invis；Blueprint/Invisible 也有评论反馈不稳定，因此复盘队列必须优先验证这些节点。"
+          ]
+        },
+        {
+          "stage": "实机复盘优先级 - 固定节点与随机分支分离",
+          "actions": [
+            "先验证 Charm Tag、Rare Tag、Arcana/Judgement 是否固定通向 Perkeo、Baron、Mime。",
+            "再验证 natural negative Reserved Parking、Blueprint、Invisible Joker、Ectoplasm 的 shop/pack/重掷位置。",
+            "最后把 Showman、second Baron、second Mime、200 steel kings/less than 100 的评论分支写成可选路线，而不是主线必拿。"
           ]
         }
       ],
       "mistakes": [
         "不要把 BalatroSeeds 的组件描述升级成完整攻略；它没有逐店购买和 reroll 次数。",
         "不要把 Showman 第二 Baron/Mime 写成主线必拿，它只是评论分支。",
-        "Reserved Parking、Blueprint、Invisible Joker 的出现顺序存在评论冲突，必须实机复核。",
-        "Cryptid 复制数量和 red seal steel King 制作路径还缺完整节点表。"
+        "Reserved Parking、Blueprint、Invisible Joker 的出现顺序存在 comments 冲突/comment conflict，必须实机复核。",
+        "Cryptid 复制数量和 red seal steel King 制作路径还缺完整节点表；尤其要区分 45-50 Cryptid、copy your red seal steel king 50 or so times、200 steel kings 和 less than 100 的不同语境。",
+        "不要忽略来源访问边界：command-line direct Reddit JSON 被安全页拦截，Jina old.reddit 是 403 blocked，当前 Reddit 证据以 old.reddit HTML 为准。"
       ]
     },
     "TR6AH4P3": {

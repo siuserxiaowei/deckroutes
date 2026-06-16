@@ -402,9 +402,12 @@ assert.match(dualSourceSeed.summary || "", /Ghost Deck|Perkeo|Baron|Mime|Bluepri
 const dualSourceDetail = routeData.seedDetails?.PWX3AQJ8;
 assert.ok(dualSourceDetail, "PWX3AQJ8 should have a route detail");
 assert.match(dualSourceDetail.completeness || "", /双来源|待复盘|candidate/i);
-assert.ok((dualSourceDetail.flow || []).length >= 7, "PWX3AQJ8 should expose dual-source route nodes and uncertainty notes");
-const dualSourceText = (dualSourceDetail.flow || [])
-  .flatMap((stage) => [stage.stage, ...(stage.actions || [])])
+assert.ok((dualSourceDetail.flow || []).length >= 10, "PWX3AQJ8 should expose dual-source route nodes, source metadata, comment strategy, and uncertainty notes");
+assert.match(dualSourceDetail.sourceMode || "", /BalatroSeeds|Jina|old\.reddit|command-line direct Reddit JSON|Jina.*403|blocked/i);
+const dualSourceText = [
+  ...(dualSourceDetail.flow || []).flatMap((stage) => [stage.stage, ...(stage.actions || [])]),
+  ...(dualSourceDetail.mistakes || [])
+]
   .join("\n");
 for (const requiredText of [
   "Ghost Deck",
@@ -424,6 +427,34 @@ for (const requiredText of [
 ]) {
   assert.match(dualSourceText, new RegExp(requiredText, "i"), `PWX3AQJ8 route should include ${requiredText}`);
 }
+for (const requiredText of [
+  "Balatro Seed: PWX3AQJ8",
+  "Version: 1\\.0\\.1n-FULL",
+  "Blueberry-diel",
+  "2026-02-25T19:08:08\\+00:00",
+  "138 points",
+  "99% upvoted",
+  "200 steel kings",
+  "less than 100",
+  "3 brainstorms and no blueprints",
+  "never found.*neg reserved parking|never found that neg reserved parking",
+  "early showman",
+  "second Baron",
+  "second Mime",
+  "ante 7",
+  "copy your red seal steel king",
+  "50 or so times",
+  "middle of a round",
+  "using it outside of the round defeats the purpose",
+  "45-50 cryptid",
+  "Blueprint came fairly late",
+  "multiple invis",
+  "natural negative Reserved Parking",
+  "Rerolled.*2x|2x.*negative reserved",
+  "comments.*冲突|冲突.*comments|comment conflict"
+]) {
+  assert.match(dualSourceText, new RegExp(requiredText, "i"), `PWX3AQJ8 route should include ${requiredText}`);
+}
 
 assert.equal(
   sourceMap["balatroseeds-pwx3aqj8-ghost"]?.url,
@@ -437,16 +468,20 @@ assert.equal(
 const dualSourceEvidence = (siteData.evidenceSources || []).find((item) => item.id === "balatroseeds-pwx3aqj8-ghost");
 assert.ok(dualSourceEvidence, "PWX3AQJ8 should have a BalatroSeeds evidence card");
 assert.ok(dualSourceEvidence.seeds?.includes("PWX3AQJ8"));
-assert.ok((dualSourceEvidence.facts || []).length >= 6, "PWX3AQJ8 BalatroSeeds evidence should preserve source-backed component facts");
+assert.ok((dualSourceEvidence.facts || []).length >= 7, "PWX3AQJ8 BalatroSeeds evidence should preserve source-backed component facts");
+assert.match((dualSourceEvidence.facts || []).join("\n"), /Balatro Seed: PWX3AQJ8|Ghost Deck|Version: 1\.0\.1n-FULL|Perkeo|Baron|Mime|natural negative Reserved Parking|Invisible Joker copies Blueprint|Ectoplasm/i);
 
 const redditDualSourceEvidence = (siteData.evidenceSources || []).find((item) => item.id === "reddit-pwx3aqj8-easiest-nan");
 assert.ok(redditDualSourceEvidence, "PWX3AQJ8 should have a Reddit evidence card");
 assert.ok(redditDualSourceEvidence.seeds?.includes("PWX3AQJ8"));
-assert.ok((redditDualSourceEvidence.facts || []).length >= 5, "PWX3AQJ8 Reddit evidence should preserve route and comment facts");
+assert.ok((redditDualSourceEvidence.facts || []).length >= 10, "PWX3AQJ8 Reddit evidence should preserve route, metadata, comment strategy, and conflict facts");
+assert.match(redditDualSourceEvidence.contentType || "", /old\.reddit HTML|command-line direct Reddit JSON|Jina|blocked|评论/i);
+assert.match((redditDualSourceEvidence.facts || []).join("\n"), /Blueberry-diel|2026-02-25T19:08:08\+00:00|138 points|99% upvoted|Charm Tag|Rare Tag|Judgement|200 steel kings|45-50|middle of a round|outside of the round defeats the purpose|second Baron|second Mime|Blueprint came fairly late|natural negative Reserved Parking|Rerolled.*2x/i);
 
 const dualSourceQueueItem = (siteData.reviewQueue || []).find((item) => item.id === "pwx3aqj8-dual-source-replay");
 assert.ok(dualSourceQueueItem, "PWX3AQJ8 should stay in the replay queue for exact shop/pack validation");
 assert.ok(dualSourceQueueItem.targetSeeds?.includes("PWX3AQJ8"));
+assert.match(dualSourceQueueItem.nextAction || "", /45-50|middle of a round|200 steel kings|Showman|second Baron|second Mime|Blueprint|Invisible|Reserved Parking|2x|实机复盘/i);
 
 const communityNaneinfSeed = seedById.get("TR6AH4P3");
 assert.ok(communityNaneinfSeed, "TR6AH4P3 should be promoted from Reddit + The Soul evidence into the seed database");
