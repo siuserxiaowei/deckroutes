@@ -10,7 +10,7 @@
   "stats": [
     {
       "label": "已整理种子",
-      "value": "32",
+      "value": "33",
       "note": "含可点击流程、中文来源和待复盘队列"
     },
     {
@@ -20,7 +20,7 @@
     },
     {
       "label": "证据来源",
-      "value": "42",
+      "value": "43",
       "note": "含平台状态、中文社区、英文 seed bank 和 GitHub 工具证据"
     },
     {
@@ -35,7 +35,7 @@
     },
     {
       "label": "复盘队列",
-      "value": "11",
+      "value": "12",
       "note": "按平台列出下一轮采集、OCR 和牌局复盘任务"
     }
   ],
@@ -853,6 +853,10 @@
       "label": "Bilibili: DP4499H3 男爵哑剧钢K流",
       "url": "https://www.bilibili.com/video/av115389262466123"
     },
+    "bili-bumbycx2-steel-k-route": {
+      "label": "Bilibili: BUMBYCX2 等离子钢铁K前期运营",
+      "url": "https://www.bilibili.com/video/BV1LNCGY3ESd/"
+    },
     "taptap-x8wtk1u1": {
       "label": "TapTap: 10回合镭射钢K X8WTK1U1",
       "url": "https://www.taptap.cn/moment/685810471831342883"
@@ -1640,6 +1644,26 @@
       "useInSite": "作为 DP4499H3 候选种子；需要复盘牌组、Boss、商店和卡包顺序后再入正式 seed 卡。"
     },
     {
+      "id": "bili-bumbycx2-steel-k-route",
+      "platform": "B站",
+      "title": "BUMBYCX2 等离子钢铁K前期运营视频",
+      "url": "https://www.bilibili.com/video/BV1LNCGY3ESd/",
+      "retrievedAt": "2026-06-16",
+      "contentType": "Jina Reader 可读 B站页面简介；yt-dlp 元数据读取 412",
+      "seeds": [
+        "BUMBYCX2"
+      ],
+      "facts": [
+        "B站页面标题写明“等离子牌组 种子：BUMBYCX2 钢铁K前期运营视频”，视频时长约 35:03。",
+        "简介给出第一回合跳过拿免费 DNA、开小丑包拿免费刷新商店。",
+        "简介记录第 4-5 回合把梅花 Q 变成红蜡梅花 K，并在第 5-8 底注刷复制标签、头脑风暴、烧焦小丑、哑剧演员。",
+        "简介记录第 8 底注后小丑为烧焦小丑、DNA、头脑风暴 *3；第 11 底注前用 DNA 复制钢铁红印 K，并用烧焦小丑提升高牌等级。",
+        "简介记录进入 20 底注前最好形成蓝卡 *2、头脑风暴 *2、男爵、负片哑剧；终局要求 43 张以上红色封蜡钢铁 K，并说明男爵与哑剧复制比例。"
+      ],
+      "confidence": "高",
+      "useInSite": "作为 BUMBYCX2 阶段路线草案；需要视频/OCR 补 Boss、具体商店顺序和出牌细节。"
+    },
+    {
       "id": "balatroseed-3j6fzfe4-zh",
       "platform": "BalatroSeed",
       "title": "3J6FZFE4 早期万能复制",
@@ -1868,6 +1892,27 @@
       "validation": "DP4499H3 必须能补出至少 Ante 1-8 的关键商店/卡包/Boss 节点才写成正式 seed；教程视频只抽通用打法，不写假 seed。",
       "ownerMode": "B站公开视频 API + 字幕/OCR/人工复盘",
       "updatedAt": "2026-06-15"
+    },
+    {
+      "id": "bili-bumbycx2-video-replay",
+      "title": "BUMBYCX2 B站阶段路线补全",
+      "platform": "B站",
+      "priority": "A",
+      "status": "ready-replay",
+      "blocker": "yt-dlp dump-json 当前返回 B站 412；Jina 能读到简介，但不能替代视频画面复盘。",
+      "evidenceIds": [
+        "bili-bumbycx2-steel-k-route"
+      ],
+      "sourceIds": [
+        "bili-bumbycx2-steel-k-route"
+      ],
+      "targetSeeds": [
+        "BUMBYCX2"
+      ],
+      "nextAction": "按 B站 35 分钟视频复盘 Boss、商店、卡包、跳盲和复制标签使用时机；重点确认免费 DNA、红蜡钢K、8/11/20/21 底注节点是否与简介一致。",
+      "validation": "能补出 Ante 1-8 的关键商店/卡包/Boss 节点，并把 20 底注前 Joker 阵容、43 张以上红蜡钢铁K和男爵/哑剧复制配比拆成可执行路线。",
+      "ownerMode": "B站 Jina 简介 + 视频/OCR/人工复盘",
+      "updatedAt": "2026-06-16"
     },
     {
       "id": "taptap-x8wtk1u1-full-route",

@@ -28,6 +28,7 @@ node scripts/validate-data.mjs
 node scripts/audit-route-coverage.mjs --fail-on-gaps
 node scripts/test-extract-balatroseed-route.mjs
 node scripts/test-route-link-contracts.mjs
+node scripts/test-route-harvest-contracts.mjs
 ```
 
 BalatroSeeds queue pages can be converted into a reviewable draft route with:
