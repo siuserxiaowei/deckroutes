@@ -88,6 +88,49 @@ assert.ok(versionSensitiveQueue, "1DOYU2 should stay in the version-sensitive re
 assert.ok(versionSensitiveQueue.targetSeeds?.includes("1DOYU2"));
 assert.match(versionSensitiveQueue.nextAction || "", /1\.0\.1f|50\s*张\s*K|灵质|负片马戏团长/);
 
+assert.ok(
+  versionSensitiveSeed.sources?.includes("bili-1doyu2-e14219-full-flow"),
+  "1DOYU2 should link the newer e14219 full-flow Bilibili source"
+);
+assert.equal(
+  sourceMap["bili-1doyu2-e14219-full-flow"]?.url,
+  "https://www.bilibili.com/video/BV1xWwTetEfX/"
+);
+assert.ok(
+  (versionSensitiveDetail.sources || []).includes("bili-1doyu2-e14219-full-flow"),
+  "1DOYU2 detail should cite the e14219 source"
+);
+assert.ok((versionSensitiveDetail.flow || []).length >= 10, "1DOYU2 should expose a richer staged flow from the e14219 description");
+const e14219RequiredTerms = [
+  "等离子",
+  "e14219",
+  "961",
+  "红封钢K",
+  "高牌",
+  "217",
+  "5\\s*蓝图",
+  "3\\s*头脑风暴",
+  "帕奇欧",
+  "Perkeo",
+  "男爵",
+  "Baron",
+  "哑剧",
+  "Mime",
+  "1-1",
+  "39-3",
+  "巨蟒",
+  "手机和电脑"
+];
+for (const requiredText of e14219RequiredTerms) {
+  assert.match(versionSensitiveText, new RegExp(requiredText, "i"), `1DOYU2 e14219 route should include ${requiredText}`);
+}
+const e14219Evidence = (siteData.evidenceSources || []).find((item) => item.id === "bili-1doyu2-e14219-full-flow");
+assert.ok(e14219Evidence, "1DOYU2 should have a second Bilibili evidence card for the e14219 full-flow source");
+assert.ok(e14219Evidence.seeds?.includes("1DOYU2"));
+assert.ok((e14219Evidence.facts || []).length >= 10, "1DOYU2 e14219 evidence should preserve API, description, and comment facts");
+assert.match(e14219Evidence.contentType || "", /API|简介|评论|Jina/);
+assert.match(versionSensitiveQueue.nextAction || "", /BV1Ar421E7dv|BV1xWwTetEfX|等离子|Ghost Deck|961|39-3/);
+
 const queueSeed = seedById.get("12QM45YD");
 assert.ok(queueSeed, "12QM45YD should be promoted from BalatroSeeds queue extraction into the seed database");
 assert.ok(queueSeed.sources?.includes("balatroseeds-12qm45yd-plasma"));

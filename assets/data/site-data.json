@@ -20,7 +20,7 @@
     },
     {
       "label": "证据来源",
-      "value": "55",
+      "value": "56",
       "note": "含平台状态、中文社区、英文 seed bank 和 GitHub 工具证据"
     },
     {
@@ -833,6 +833,10 @@
       "label": "Bilibili: 1DOYU2 幽灵牌组 naneinf 教程",
       "url": "https://www.bilibili.com/video/BV1Ar421E7dv/"
     },
+    "bili-1doyu2-e14219-full-flow": {
+      "label": "Bilibili: 1DOYU2 等离子 e14219 红封钢K全流程",
+      "url": "https://www.bilibili.com/video/BV1xWwTetEfX/"
+    },
     "bili-2q5q3xel": {
       "label": "Bilibili: 2Q5Q3XEL 钢K无尽教学第三期",
       "url": "https://www.bilibili.com/video/BV18Co1Y8EhL/"
@@ -1051,6 +1055,33 @@
       ],
       "confidence": "中高",
       "useInSite": "升级 1DOYU2 为版本敏感候选路线详情；仍保留逐店/OCR/实机复盘队列。"
+    },
+    {
+      "id": "bili-1doyu2-e14219-full-flow",
+      "platform": "B站",
+      "title": "1DOYU2 等离子 e14219 红封钢K全流程",
+      "url": "https://www.bilibili.com/video/BV1xWwTetEfX/",
+      "retrievedAt": "2026-06-16",
+      "contentType": "B站 web-interface API + Jina Reader 简介 + 评论 API + 字幕接口检查",
+      "seeds": [
+        "1DOYU2"
+      ],
+      "facts": [
+        "B站视频标题为《个人最高分e14219！种子1DOYU2 快一千张钢K打爆无尽全流程》。",
+        "B站 API 返回 bvid BV1xWwTetEfX、aid 113850305288306、cid 27945405874，UP 为生鱼忧患6，mid 21968663。",
+        "视频为 2025-01-19 投稿，单 P 时长 9580 秒，约 14492 播放、304 收藏、103 投币、63 评论。",
+        "简介开头直接给出种子 1DOYU2，并说明作者打了五六遍后记录这次最好路线。",
+        "简介明确写到等离子牌组效果，终局配置为帕奇欧、男爵、哑剧、5 蓝图、3 头脑风暴。",
+        "简介计分段写明 961 张红封钢K、高牌星球牌等级 217、倍率端约 e7109.7，等离子平衡后总分约 e14219.5。",
+        "简介包含 1-1 到 39-3 的保姆流程节点：1-1 负片帕奇欧、2-1 头脑风暴、3-1 多彩蓝图、5-1 红封钢K、8-1 负片标签、23-2 成型、39-3 巨蟒收尾。",
+        "23-2 节点写成型结构为 DNA、男爵、哑剧、帕奇欧、5 蓝图、2 头脑风暴，全力复制神秘生物。",
+        "28 注后作者说明单 DNA 不足以支撑分数，后续按库存使用神秘生物，生成速度不足时跳过小盲/大盲只打 Boss，并刷巨蟒节省消耗。",
+        "评论中有玩家反馈可到 1004 张手牌但可能结算报错；UP 回复另有手机和电脑种子略有不同的风险提示。",
+        "字幕接口返回 subtitles 为空；yt-dlp 本轮仍返回 HTTP 412，因此未取得字幕或逐帧画面。",
+        "与旧源 BV1Ar421E7dv 的主要差异是牌组和版本：旧源标题为幽灵牌组且强调 1.0.1f，新源简介为等离子牌组且未明确版本。"
+      ],
+      "confidence": "中高",
+      "useInSite": "把 1DOYU2 从旧源版本敏感候选升级为双来源路线详情；新源负责 1-1 到 39-3 节点，旧源保留 Ghost Deck/1.0.1f 约束。"
     },
     {
       "id": "bili-2q5q3xel",
@@ -2136,18 +2167,20 @@
       "platform": "B站",
       "priority": "A",
       "status": "ready-deep-replay",
-      "blocker": "B站 API/简介/评论能确认 1.0.1f、Ante39/naneinf、50张K、Blueprint/Brainstorm/Negative Ringmaster 漏项和灵质风险；但 yt-dlp 仍 HTTP 412，缺少逐帧画面、字幕、逐店购买、roll 次数、Boss 和现金阈值。",
+      "blocker": "旧源 BV1Ar421E7dv 能确认 Ghost Deck/幽灵牌组、1.0.1f、Ante39/naneinf、50张K、Blueprint/Brainstorm/Negative Ringmaster 漏项和灵质风险；新源 BV1xWwTetEfX 能确认等离子牌组、e14219.5、961 红封钢K、高牌 217 和 1-1 到 39-3 简介流程。但两源牌组/版本不同，且 yt-dlp 仍 HTTP 412、字幕接口为空，缺少逐帧画面、完整商店购买、roll 次数、Boss 和现金阈值。",
       "evidenceIds": [
-        "bili-1doyu2"
+        "bili-1doyu2",
+        "bili-1doyu2-e14219-full-flow"
       ],
       "sourceIds": [
-        "bili-1doyu2"
+        "bili-1doyu2",
+        "bili-1doyu2-e14219-full-flow"
       ],
       "targetSeeds": [
         "1DOYU2"
       ],
-      "nextAction": "按 1.0.1f Ghost Deck 实机复盘 1DOYU2：确认 50张K 成型路径、Blueprint/蓝图、Brainstorm/头脑风暴、Negative Ringmaster/负片马戏团长补点、Ectoplasm/灵质手牌上限风险、每个 Ante 的商店/包/Boss/roll 次数和进入 Ante 39+naneinf 的精确触发结构。",
-      "validation": "复盘完成后应补 Ante 1-39 的 queueTables 或逐店表；只有确认版本、商店、复制目标、K 数量、灵质次数和 Boss 应对后，才能把 completeness 从评论/API候选升级。",
+      "nextAction": "双源对照复盘 1DOYU2：先按 BV1Ar421E7dv 的 1.0.1f Ghost Deck 线复核 50张K、Ante39/naneinf、灵质和负片马戏团长；再按 BV1xWwTetEfX 的等离子线复核 1-1 负片帕奇欧、2-2 红蜡K、5-1 红封钢K、8-1 负片标签、23-2 DNA+男爵+哑剧+帕奇欧+5蓝图+2头脑风暴成型、28 注后神秘生物库存、39-3 巨蟒收尾、961 红封钢K、高牌 217 和 e14219.5。",
+      "validation": "复盘完成后应分开补 Ghost Deck/1.0.1f 与 Plasma/e14219 两张 queueTables 或逐店表；只有确认版本、平台、商店、复制目标、K 数量、灵质次数、Boss 应对、手机和电脑差异后，才能把 completeness 从简介/API候选升级。",
       "ownerMode": "Agent Reach B站 API/Jina/comments + browser-use/OCR + 1.0.1f 实机复盘",
       "updatedAt": "2026-06-16"
     },
