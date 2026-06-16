@@ -887,6 +887,55 @@
         "reddit-tr6ah4p3-perfect-naneinf",
         "thesoul-tr6ah4p3-analyzer"
       ]
+    },
+    {
+      "seed": "9ZPU1V32",
+      "title": "中文三来源蜡封钢K naneinf 候选路线",
+      "deck": "Plasma Deck / 等离子牌组（斗鱼来源确认）",
+      "archetype": "Baron / Mime / Blueprint / Brainstorm / Perkeo 红蜡钢铁K",
+      "difficulty": "中文视频全流程目录 + 鱼吧节点，待实机复盘",
+      "version": "B站 2024-03-03 / 斗鱼 2024-03-14 / BalatroSeed 2026-06-02",
+      "image": "assets/images/steel-king-route.webp",
+      "summary": "B站 BV1nz42197qg 简介直接给出 9ZPU1V32，并用 17 个分 P 覆盖 0 注到 39 注，标题包含男爵、红蜡封K、红蜡钢铁K、死神、通灵、神秘生物、灵质、隐形小丑、头脑风暴、哑剧和 39 注；斗鱼鱼吧进一步写明等离子牌组、8 注完成全黑桃红蜡钢铁K、双蓝图 + 男爵 + 哑剧 + 佩尔科欧，最终打到 39 注后溢出；BalatroSeed 详情把它列为超爽蜡封K流。当前按中文三来源候选路线入库，naneinf/39注仍待实机独立复盘。",
+      "route": [
+        "B站简介确认种子 9ZPU1V32，并说明作者打出 naneinf；分 P 标题从 0 注课前预习覆盖到 39 注。",
+        "斗鱼鱼吧正文确认等离子牌组，8 注时完成全黑桃 K 红蜡钢铁牌，并形成双蓝图、男爵、哑剧、佩尔科欧核心。",
+        "1 注目标拿 Baron / 男爵；斗鱼评论给出 1-2 男爵节点。",
+        "2 注拿红蜡封 K，并在 2-3 通过世界开始把牌组染成黑桃，为后续 flush/straight flush 与复制红蜡 K 做准备。",
+        "3 注出现蓝图/绿传奇线索和红蜡 steel K / 钢铁K；斗鱼评论给出 3-6、3-7、3-8 关键节点。",
+        "5-6 注找 Death / 死神与通灵（Seance）；通灵配合黑桃同花顺刷神秘生物（Cryptid）和灵质（Ectoplasm）。",
+        "7-8 注拿神秘生物、灵质与 Invisible Joker / 隐形小丑；8 注通关时斗鱼来源称可形成 2 蓝图 + 男爵 + 哑剧 + 佩尔科欧。",
+        "9-11 注进入 Brainstorm / 头脑风暴与 Mime / 哑剧阶段；斗鱼评论同时存在 7 注审判出哑剧和 11-31 哑剧两条线索，需复盘区分。",
+        "12-18 注 B站分 P 标题写成型后轮到游戏机颤抖；这一段说明已进入爆分推进，但缺少逐手购买表。",
+        "13 注和 20 注斗鱼作者提到负片小丑标签，可用马戏团长 + 无糖可乐补负片蓝图、负片 Invisible Joker / 隐形小丑等高级节点。",
+        "39注 B站分 P 标题写已达到世界最高层；斗鱼正文称后续数据溢出无法再进一步，当前按 naneinf/39 注来源声明记录。"
+      ],
+      "warnings": [
+        "牌组由斗鱼明确为等离子牌组；B站分 P 与 BalatroSeed 详情未独立写 deck，所以站内标注来源范围。",
+        "三传奇具体名单仍需看视频画面复盘；BalatroSeed 写特里布莱、蓝图、男爵、帕奇欧核心，斗鱼写佩尔科欧，不能直接合并成已验证清单。",
+        "哑剧来源存在分歧：斗鱼作者说 7 注大盲秘术包审判可能出哑剧但不保证，另一条路线评论写 11-31 哑剧。",
+        "roll 次数、跳过、负片标签、隐形小丑复制目标和现金阈值可能受操作顺序影响，必须实机复盘后才能升级完整度。",
+        "39 注、naneinf 和溢出目前是来源声明，未用游戏复盘或计分器独立验证。"
+      ],
+      "tags": [
+        "Plasma Deck",
+        "等离子牌组",
+        "钢K",
+        "红蜡K",
+        "naneinf",
+        "Baron",
+        "Mime",
+        "Blueprint",
+        "Brainstorm",
+        "Perkeo",
+        "B站",
+        "斗鱼"
+      ],
+      "sources": [
+        "bili-9zpu1v32-full-flow",
+        "douyu-9zpu1v32-summary",
+        "balatroseed-9zpu1v32-index"
+      ]
     }
   ],
   "seedDetails": {
@@ -3514,6 +3563,131 @@
         "The Soul raw queue 可说明组件位置线索，但不能替代实机购买、重掷、Boss reroll 和现金阈值复盘。",
         "不要在 Ante 4 拿 negative joker skip；作者特别说明这会错过关键商店。"
       ]
+    },
+    "9ZPU1V32": {
+      "completeness": "B站 + 斗鱼 + BalatroSeed candidate，0-39注目录和关键节点可读，逐店流程待复盘",
+      "sourceMode": "B站 Jina/API 元数据 + 斗鱼鱼吧 Jina 正文评论 + BalatroSeed 详情/最新列表",
+      "videoStatus": "B站公开视频可读 17 个分 P、简介、播放量和发布时间；yt-dlp 本轮对 B站返回 412，未取得字幕或逐帧画面。",
+      "sources": [
+        "bili-9zpu1v32-full-flow",
+        "douyu-9zpu1v32-summary",
+        "balatroseed-9zpu1v32-index"
+      ],
+      "flow": [
+        {
+          "stage": "来源确认 - B站全流程目录 / 斗鱼节点 / BalatroSeed 索引",
+          "actions": [
+            "B站视频标题为“手把手教你达到分数上限！！传奇爽种打爆游戏机全流程”，简介直接写种子 9ZPU1V32，并称打出 naneinf。",
+            "B站 API 返回 17 个分 P，覆盖 0 注课前预习到 39注：已达到世界最高层。",
+            "斗鱼来源明确写等离子牌组；站内按 Plasma Deck / 等离子牌组候选路线展示，并提示 B站与 BalatroSeed 未独立写出 deck。",
+            "斗鱼鱼吧正文写 9ZPU1V32 三传奇小丑爽种，等离子牌组，8 注完成全黑桃 K 红蜡钢铁牌，双蓝图男爵哑剧演员佩尔科欧。",
+            "BalatroSeed 详情页标题为超爽蜡封K流，种子代码为 9ZPU1V32，并写特里布莱、蓝图、男爵、帕奇欧核心。"
+          ]
+        },
+        {
+          "stage": "0注 - 课前预习与复现前提",
+          "actions": [
+            "B站第 1 个分 P 是 0注：课前预习，说明作者把复现前提独立成一段。",
+            "当前文本来源没有完整显示版本、解锁状态和注码/Stake；复盘时需要优先固定这些条件。",
+            "站内把这条路线标成 candidate / 待复盘，不把分 P 标题直接等同完整逐手攻略。"
+          ]
+        },
+        {
+          "stage": "1注 - Baron / 男爵开局",
+          "actions": [
+            "B站分 P 标题写 1注：非常人之路拿男爵。",
+            "斗鱼评论给出更细节点 1-2 男爵。",
+            "这说明 Baron / 男爵是路线早期核心，但具体商店、包位和现金阈值仍需视频或实机确认。"
+          ]
+        },
+        {
+          "stage": "2注 - red seal / 红蜡封 K 与世界染色",
+          "actions": [
+            "B站分 P 标题写 2注：拿到红蜡封K。",
+            "斗鱼作者补充打完底注 1 boss 后，底注 2 出门拿左侧小丑包获得乌合之众，并拿世界。",
+            "斗鱼作者还写 2-3 拿世界，让后续 3-6 蓝图帕奇欧复制世界，保证同花甚至同花顺。",
+            "这里的目标是把后续 red seal steel K / 红蜡钢铁K 的花色和复制条件铺好。"
+          ]
+        },
+        {
+          "stage": "3注 - Blueprint / Perkeo 线索与 steel K / 钢铁K",
+          "actions": [
+            "B站分 P 标题写 3注：传奇蓝绿+红蜡钢铁K。",
+            "斗鱼评论给出 3-6 蓝的、3-7 绿的、3-8 红蜡钢铁K。",
+            "斗鱼作者补充底注 3 大盲注右侧巨型秘术包给红戳 K 上钢铁，以后复制。",
+            "BalatroSeed 详情把蓝图、男爵、帕奇欧列为核心，但具体“蓝/绿”对应牌名需要画面复盘。"
+          ]
+        },
+        {
+          "stage": "4-5注 - Death / 死神与黑桃化准备",
+          "actions": [
+            "B站分 P 标题写 4注：寻找死神。",
+            "斗鱼作者写底注 3 和底注 4 多用世界，把手牌尽量多染成全黑桃。",
+            "底注 5 如果牌组还没有大部分黑桃，可先不 roll，继续用世界；等底注 5 大盲注打完再 roll 几次买 Death / 死神。",
+            "斗鱼路线评论也给出 5-12 死神、5-13 跳过。"
+          ]
+        },
+        {
+          "stage": "5-6注 - 通灵（Seance）刷 Cryptid / Ectoplasm",
+          "actions": [
+            "B站分 P 标题写 5、6注：找到死神和通灵。",
+            "斗鱼作者写底注 6 开局、小盲注和大盲注的每个战后商店都 roll 6 次左右，刷出通灵小丑。",
+            "入手通灵后把 Blueprint / 蓝图放在通灵左边，尽量打黑桃同花顺。",
+            "斗鱼作者称大概 4-5 次可以获得神秘生物（Cryptid）+ 灵质（Ectoplasm），但也提示 roll 顺序会影响结果。"
+          ]
+        },
+        {
+          "stage": "7-8注 - Cryptid、Ectoplasm、Invisible Joker 与 8注核心成型",
+          "actions": [
+            "B站分 P 标题写 7、8注：拿到神秘生物、灵质和隐形小丑。",
+            "斗鱼作者写底注 7 开局有 Invisible Joker / 隐形小丑；如果通灵入手早，神秘生物和灵质都有了，可以卖掉通灵直接入手。",
+            "斗鱼作者写底注 8 卖掉两张负片小丑后，隐形小丑可以复制到 Blueprint / 蓝图。",
+            "斗鱼正文主楼称 8 注完成全黑桃K红蜡钢铁牌，并形成双蓝图 + 男爵 + 哑剧 + 佩尔科欧。"
+          ]
+        },
+        {
+          "stage": "9-11注 - Brainstorm / 头脑风暴与 Mime / 哑剧",
+          "actions": [
+            "B站分 P 标题写 9、10、11：头脑风暴和哑剧。",
+            "斗鱼评论给出 11-29 头脑风暴、11-31 哑剧。",
+            "斗鱼作者另说底注 7 大盲注可开秘术包审判出 Mime / 哑剧演员，但不保证，可能受随机数影响。",
+            "因此站内把 Brainstorm / 头脑风暴和 Mime / 哑剧作为强候选节点，但把具体入手位置列入复盘队列。"
+          ]
+        },
+        {
+          "stage": "12-18注 - 成型后爆分推进",
+          "actions": [
+            "B站分 P 标题写 12-18注：轮到游戏机颤抖了。",
+            "这个阶段应围绕 Baron / 男爵、Mime / 哑剧、Blueprint / 蓝图、Brainstorm / 头脑风暴复制 red seal steel K / 红蜡钢铁K 的手牌触发展开。",
+            "当前只能从分 P 标题确认阶段存在，缺少逐商店、逐手牌和金币阈值。"
+          ]
+        },
+        {
+          "stage": "13注与20注 - 负片标签、可乐和隐形小丑补强",
+          "actions": [
+            "斗鱼作者写底注 13 小盲注有负片小丑标签，会玩马戏团长 + 无糖可乐可以做出一张负片蓝图。",
+            "斗鱼作者写底注 20 小盲注也是负片小丑标签，同样可用马戏团长 + 无糖可乐在大盲注商店拿负片 Invisible Joker / 隐形小丑。",
+            "打过 20 注 boss 后，斗鱼作者称商店可拿负片 Blueprint / 蓝图，最终完全成型。",
+            "这属于高级补强路径，必须验证跳盲、商店顺序、负片目标和现金是否稳定。"
+          ]
+        },
+        {
+          "stage": "39注 - naneinf / 溢出来源声明",
+          "actions": [
+            "B站第 15 个分 P 标题写 39注：已达到世界最高层。",
+            "B站简介写作者终于打出 naneinf。",
+            "斗鱼正文写轻松打到 39 注，之后数据溢出无法再进一步。",
+            "这些是来源声明；站内不会把它当作已独立计算验证的成绩。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "不要把分 P 标题当成完整逐店路线；B站/Jina/API 当前没有给出每次购买、重掷、出牌和现金阈值。",
+        "不要忽略哑剧节点分歧：7 注审判出哑剧和 11-31 哑剧可能是不同随机推进或不同操作分支。",
+        "不要开第四张灵质；斗鱼作者提醒灵质最多开三次，第四次可能让手牌上限归零直接暴毙。",
+        "不要把三传奇名单写死；特里布莱、佩尔科欧、帕奇欧等文本需要视频画面核验后再定。",
+        "复现时先固定版本、牌组、注码、解锁池和每次跳盲/roll 次数，否则 seed 路线容易错位。"
+      ]
     }
   },
   "sourceAdditions": {
@@ -3694,6 +3868,24 @@
       "url": "https://spectralpack.github.io/TheSoul/",
       "type": "Immolate/The Soul browser seed analyzer",
       "note": "2026-06-16 用 The Soul 1.0.1f、Plasma Deck、White Stake、TR6AH4P3 本地探针复核早期 raw queue 关键词；不等同完整实战路线。"
+    },
+    "bili-9zpu1v32-full-flow": {
+      "label": "B站 9ZPU1V32 传奇爽种打爆游戏机全流程",
+      "url": "https://www.bilibili.com/video/BV1nz42197qg/",
+      "type": "Bilibili multi-part video metadata via Jina/API",
+      "note": "2024-03-03 B站视频；Jina/API 可读标题、简介、播放数据和 17 个分 P，yt-dlp 本轮返回 HTTP 412。"
+    },
+    "douyu-9zpu1v32-summary": {
+      "label": "斗鱼鱼吧 9ZPU1V32 三传奇小丑爽种节点讨论",
+      "url": "https://yuba.douyu.com/p/184637701710348259",
+      "type": "Douyu Yuba post and comments via Jina Reader",
+      "note": "2024-03-14 鱼吧帖；Jina 可读正文和作者评论，包含等离子牌组、8注核心、39注溢出和多个底注节点。"
+    },
+    "balatroseed-9zpu1v32-index": {
+      "label": "BalatroSeed 超爽蜡封K流 - 9ZPU1V32",
+      "url": "https://balatroseed.net/zh/seeds/18",
+      "type": "BalatroSeed detail/index page via Jina Reader",
+      "note": "2026-06-02 BalatroSeed 详情页；确认种子代码与蜡封K流摘要，但不提供完整逐店流程。"
     }
   }
 }

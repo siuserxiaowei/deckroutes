@@ -357,4 +357,80 @@ const ghostReplayItem = (siteData.reviewQueue || []).find((item) => item.id === 
 assert.ok(ghostReplayItem, "8Q47WV6K should have a dedicated replay queue item");
 assert.ok(ghostReplayItem.targetSeeds?.includes("8Q47WV6K"));
 
+const chineseSteelKSeed = seedById.get("9ZPU1V32");
+assert.ok(chineseSteelKSeed, "9ZPU1V32 should be promoted from Chinese video/community sources into the seed database");
+assert.ok(chineseSteelKSeed.sources?.includes("bili-9zpu1v32-full-flow"));
+assert.ok(chineseSteelKSeed.sources?.includes("douyu-9zpu1v32-summary"));
+assert.ok(chineseSteelKSeed.sources?.includes("balatroseed-9zpu1v32-index"));
+assert.match(chineseSteelKSeed.summary || "", /Plasma|等离子|Baron|男爵|Mime|哑剧|Perkeo|佩尔|naneinf/i);
+
+const chineseSteelKDetail = routeData.seedDetails?.["9ZPU1V32"];
+assert.ok(chineseSteelKDetail, "9ZPU1V32 should have a route detail");
+assert.match(chineseSteelKDetail.completeness || "", /B站|斗鱼|BalatroSeed|candidate|待复盘/i);
+assert.ok((chineseSteelKDetail.flow || []).length >= 11, "9ZPU1V32 should expose Chinese full-flow route stages and uncertainty notes");
+const chineseSteelKText = (chineseSteelKDetail.flow || [])
+  .flatMap((stage) => [stage.stage, ...(stage.actions || [])])
+  .join("\n");
+for (const requiredText of [
+  "Plasma",
+  "等离子",
+  "Baron",
+  "男爵",
+  "red seal",
+  "红蜡",
+  "steel K",
+  "钢铁K",
+  "Perkeo",
+  "佩尔科欧",
+  "Blueprint",
+  "蓝图",
+  "Brainstorm",
+  "头脑风暴",
+  "Mime",
+  "哑剧",
+  "Death",
+  "死神",
+  "Cryptid",
+  "通灵",
+  "Ectoplasm",
+  "灵质",
+  "Invisible Joker",
+  "隐形小丑",
+  "naneinf",
+  "39注"
+]) {
+  assert.match(chineseSteelKText, new RegExp(requiredText, "i"), `9ZPU1V32 route should include ${requiredText}`);
+}
+
+assert.equal(
+  sourceMap["bili-9zpu1v32-full-flow"]?.url,
+  "https://www.bilibili.com/video/BV1nz42197qg/"
+);
+assert.equal(
+  sourceMap["douyu-9zpu1v32-summary"]?.url,
+  "https://yuba.douyu.com/p/184637701710348259"
+);
+assert.equal(
+  sourceMap["balatroseed-9zpu1v32-index"]?.url,
+  "https://balatroseed.net/zh/seeds/18"
+);
+
+const chineseSteelKEvidence = (siteData.evidenceSources || []).find((item) => item.id === "bili-9zpu1v32-full-flow");
+assert.ok(chineseSteelKEvidence, "9ZPU1V32 should have a Bilibili evidence card");
+assert.ok(chineseSteelKEvidence.seeds?.includes("9ZPU1V32"));
+assert.ok((chineseSteelKEvidence.facts || []).length >= 7, "9ZPU1V32 Bilibili evidence should preserve source-backed full-flow facts");
+
+const chineseSteelKCommunityEvidence = (siteData.evidenceSources || []).find((item) => item.id === "douyu-9zpu1v32-summary");
+assert.ok(chineseSteelKCommunityEvidence, "9ZPU1V32 should have a Douyu community evidence card");
+assert.ok(chineseSteelKCommunityEvidence.seeds?.includes("9ZPU1V32"));
+assert.ok((chineseSteelKCommunityEvidence.facts || []).length >= 7, "9ZPU1V32 Douyu evidence should preserve source-backed community route facts");
+
+const chineseSteelKIndexEvidence = (siteData.evidenceSources || []).find((item) => item.id === "balatroseed-9zpu1v32-index");
+assert.ok(chineseSteelKIndexEvidence, "9ZPU1V32 should have a BalatroSeed index evidence card");
+assert.ok(chineseSteelKIndexEvidence.seeds?.includes("9ZPU1V32"));
+
+const chineseSteelKReplayItem = (siteData.reviewQueue || []).find((item) => item.id === "bili-9zpu1v32-replay");
+assert.ok(chineseSteelKReplayItem, "9ZPU1V32 should stay in the replay queue for exact shop/reroll validation");
+assert.ok(chineseSteelKReplayItem.targetSeeds?.includes("9ZPU1V32"));
+
 console.log("Route harvest contracts passed");

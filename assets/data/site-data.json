@@ -10,7 +10,7 @@
   "stats": [
     {
       "label": "已整理种子",
-      "value": "39",
+      "value": "40",
       "note": "含可点击流程、中文来源和待复盘队列"
     },
     {
@@ -20,7 +20,7 @@
     },
     {
       "label": "证据来源",
-      "value": "52",
+      "value": "55",
       "note": "含平台状态、中文社区、英文 seed bank 和 GitHub 工具证据"
     },
     {
@@ -35,7 +35,7 @@
     },
     {
       "label": "复盘队列",
-      "value": "19",
+      "value": "20",
       "note": "按平台列出下一轮采集、OCR 和牌局复盘任务"
     }
   ],
@@ -1939,6 +1939,70 @@
       ],
       "confidence": "中",
       "useInSite": "作为 Reddit 早期节点的分析器复核线索；不单独升级为完整攻略。"
+    },
+    {
+      "id": "bili-9zpu1v32-full-flow",
+      "platform": "B站",
+      "title": "9ZPU1V32 传奇爽种打爆游戏机全流程",
+      "url": "https://www.bilibili.com/video/BV1nz42197qg/",
+      "retrievedAt": "2026-06-16",
+      "contentType": "公开视频 Jina 页面抽取 + B站 web-interface API 元数据",
+      "seeds": [
+        "9ZPU1V32"
+      ],
+      "facts": [
+        "视频标题为《小丑牌balatro：手把手教你达到分数上限！！传奇爽种打爆游戏机全流程》。",
+        "B站简介直接写种子 9ZPU1V32，并称一局能遇 3 个传奇小丑、作者打出 naneinf。",
+        "B站 API 显示发布时间为 2024-03-03，作者为心心又危危，公开视频有约 111696 播放、470 弹幕。",
+        "分 P 共 17 个，覆盖 0注课前预习、1注拿男爵、2注红蜡封K、3注传奇蓝绿 + 红蜡钢铁K。",
+        "分 P 继续覆盖 4注寻找死神、5/6注死神和通灵、7/8注神秘生物/灵质/隐形小丑。",
+        "分 P 标题还包含 9/10/11 注头脑风暴和哑剧、12-18 注爆分推进、39注已达到世界最高层。",
+        "本轮 yt-dlp 对该 B站视频返回 HTTP 412，未取得字幕、弹幕或逐帧画面。"
+      ],
+      "confidence": "中高",
+      "useInSite": "作为 9ZPU1V32 牌局流程目录主证据；逐手购买、roll 次数和具体传奇名单仍需视频复盘。"
+    },
+    {
+      "id": "douyu-9zpu1v32-summary",
+      "platform": "斗鱼鱼吧",
+      "title": "9ZPU1V32 三传奇小丑爽种鱼吧节点",
+      "url": "https://yuba.douyu.com/p/184637701710348259",
+      "retrievedAt": "2026-06-16",
+      "contentType": "斗鱼鱼吧 Jina Reader 正文与评论抽取",
+      "seeds": [
+        "9ZPU1V32"
+      ],
+      "facts": [
+        "鱼吧正文写 9ZPU1V32 三传奇小丑爽种，等离子牌组。",
+        "正文称 8 注完成全黑桃 K 红蜡钢铁牌，双蓝图、男爵、哑剧演员、佩尔科欧。",
+        "正文称可暴打紫罗兰，轻松打到 39 注，之后数据溢出无法再进一步。",
+        "作者评论补充底注 2 拿世界，后续用蓝图帕奇欧复制世界，把牌尽量染成黑桃。",
+        "作者评论补充底注 3 大盲注右侧巨型秘术包给红戳 K 上钢铁，以后复制。",
+        "作者评论补充底注 6 每个战后商店 roll 约 6 次找通灵，通灵配合黑桃同花顺刷神秘生物和灵质。",
+        "作者评论补充底注 7/8 隐形小丑、底注 11 头脑风暴、底注 13/20 负片标签与可乐补强。",
+        "评论区节点总结给出 1-2 男爵、2-4 红蜡封K、3-8 红蜡钢铁K、5-12 死神、6-16 通灵、7-19 隐形小丑、11-29 头脑风暴、11-31 哑剧。"
+      ],
+      "confidence": "中高",
+      "useInSite": "作为 9ZPU1V32 中文社区节点表和风险提示来源；精确随机推进和分支仍需实机复盘。"
+    },
+    {
+      "id": "balatroseed-9zpu1v32-index",
+      "platform": "BalatroSeed",
+      "title": "超爽蜡封K流 9ZPU1V32",
+      "url": "https://balatroseed.net/zh/seeds/18",
+      "retrievedAt": "2026-06-16",
+      "contentType": "BalatroSeed 详情页 + 最新列表 Jina Reader 抽取",
+      "seeds": [
+        "9ZPU1V32"
+      ],
+      "facts": [
+        "BalatroSeed 详情页标题为超爽蜡封K流。",
+        "详情页种子代码为 9ZPU1V32。",
+        "详情页介绍写特里布莱、蓝图、男爵、帕奇欧核心，前期复制蜡封 K，后期全 K 爆发。",
+        "最新种子列表也收录超爽蜡封K流 9ZPU1V32，并链接到 /zh/seeds/18。"
+      ],
+      "confidence": "中",
+      "useInSite": "作为站外 seed index 证据；只确认主题和核心描述，不作为完整流程来源。"
     }
   ],
   "reviewQueue": [
@@ -2379,6 +2443,31 @@
       "nextAction": "实机复盘 Ghost Deck：确认 double tag 与 mega arcana pack 的跳盲顺序、Triboulet/Perkeo/Temperance 开局、Death 改 Kings、Ectoplasm/Aura、Wraith/Blueprint、Deja Vu/Cryptid、Mime、Brainstorm、Baron、Showman，以及 DNA + red seal steel kings 评论分支是否稳定。",
       "validation": "复盘完成后应补 Ante/shop/pack 表，区分 Triboulet/Sock and Buskin 主线与 Baron/Mime 钢K分支，并记录 Showman、Invisible Joker、负片 Joker 位和手牌上限风险。",
       "ownerMode": "Agent Reach BalatroSeeds/Jina + old.reddit + browser-use/实机复盘",
+      "updatedAt": "2026-06-16"
+    },
+    {
+      "id": "bili-9zpu1v32-replay",
+      "title": "9ZPU1V32 中文视频/鱼吧钢K路线实机复盘",
+      "platform": "B站 + 斗鱼鱼吧 + BalatroSeed",
+      "priority": "S",
+      "status": "ready-replay",
+      "blocker": "当前可读来源只有 B站分 P/简介、斗鱼正文评论和 BalatroSeed 摘要；缺少视频逐帧、字幕、逐店购买、roll 次数、现金阈值和实际出牌表。",
+      "evidenceIds": [
+        "bili-9zpu1v32-full-flow",
+        "douyu-9zpu1v32-summary",
+        "balatroseed-9zpu1v32-index"
+      ],
+      "sourceIds": [
+        "bili-9zpu1v32-full-flow",
+        "douyu-9zpu1v32-summary",
+        "balatroseed-9zpu1v32-index"
+      ],
+      "targetSeeds": [
+        "9ZPU1V32"
+      ],
+      "nextAction": "按 0-39 注实机复盘：确认版本、牌组、注码/Stake、1-2 男爵、2注红蜡封K、3注蓝图/帕奇欧/红蜡钢铁K、5-6注死神/通灵/Cryptid/Ectoplasm、7-8注隐形小丑、9-11注头脑风暴/哑剧、13/20注负片标签和 39注 naneinf/溢出路径。",
+      "validation": "复盘完成后应补 queueTables 或逐商店表，记录每次购买、跳盲、roll 次数、Boss、现金阈值、Joker 位、隐形小丑复制目标和失败分支；哑剧节点分歧解决后再升级 completeness。",
+      "ownerMode": "Agent Reach B站/斗鱼/Jina + browser-use/实机复盘",
       "updatedAt": "2026-06-16"
     }
   ]
