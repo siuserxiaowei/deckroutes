@@ -1917,20 +1917,26 @@
       "title": "2NJEYMUI BP/Chad/Trib into Baron-Mime naneinf guide",
       "url": "https://www.reddit.com/r/Balatro_Seeds/comments/1nlghbk/first_naneinf_seed_ive_found_naturally_2njeymui/",
       "retrievedAt": "2026-06-16",
-      "contentType": "old.reddit HTML 正文可读；Reddit JSON/Jina 本轮被拦",
+      "contentType": "old.reddit HTML 正文和评论可读；command-line direct Reddit JSON 返回安全页 HTML；Jina 对 old.reddit 403 blocked",
       "seeds": [
         "2NJEYMUI"
       ],
       "facts": [
         "old.reddit 页面标题指向 r/Balatro_Seeds 帖：2NJEYMUI，Chad + BP + Trib by Ante 3，并接 Baron/Mime。",
-        "页面显示提交时间为 2025-09-19，帖子正文明确给出 seed 2NJEYMUI。",
-        "正文建议 White Stake 与 Plasma Deck，首店 Buffoon Pack 有 Blueprint，第二店有 Hanging Chad。",
+        "页面显示作者 three_the_3rd，提交时间为 2025-09-19T21:47:57+00:00，shortlink 为 redd.it/1nlghbk，分数为 11 points (87% upvoted)。",
+        "帖子正文明确给出 seed 2NJEYMUI。",
+        "正文建议 White Stake 与 Plasma Deck，首店 Buffoon Pack 有 Blueprint，第二店有 Hanging Chad；作者提醒不买 Ante 1 Tarot Merchant，并保持 stay above $25。",
         "正文写到 Ante 2 第一轮后 Arcana Pack 的 Soul 出 Triboulet。",
-        "正文写到 Ante 4 左右 Spectral Pack 有 Deja Vu，可用于 red seal King。",
-        "正文写到 Ante 7/8 附近转 Baron/Mime，Ante 8 round 1 有 Invisible Joker，附近有 Brainstorm。",
-        "正文写到 Ante 12-15 左右有 Ectoplasm，随后找 Showman、Cola、Blank，并衔接 Antimatter。",
-        "正文写到 Ante 22 Antimatter 后重掷找 DNA，作者记录约 35 次重掷。",
-        "正文写到 Ante 27 后可找 Burglar，并通过 Serpent 与 exactly 20 hands 在 Ante 28 执行 naneinf。"
+        "正文写到 Ante 4 左右 Spectral Pack 有 Deja Vu，可用于 red seal King；作者更偏 King of Spades，但 King of Hearts 可能也可行。",
+        "正文写到 Ante 7/8 附近转 Baron/Mime，看到 Mime 的商店后 Baron is one reroll behind it。",
+        "正文写到 Ante 8 round 1 有 Invisible Joker，可处理 Verdant Leaf；作者写 Not sure how Invis rng works，通常复制 Blueprint 但 not always，附近有 Brainstorm。",
+        "正文写到 Ante 9-10 目标为 Baron/Mime、Blueprint、Brainstorm 和一个额外 BP/BS，合计 3 total copying jokers。",
+        "正文写到 Ante 12-15 左右有 Ectoplasm，随后找 Showman；作者不记得 exactly which shop，但 same shop you get the ecto 几次 reroll 后可见 Cola，买卖 Cola 后跳 Big Blind 拿 2 voucher tags。",
+        "正文写到如果 miss Blank here you may need to restart，因为 Antimatter doesn't show up quickly enough。",
+        "正文写到 Ante 22 应有 2-3 Blueprints、1-2 Brainstorms、Baron/Mime、约 $1800 以上现金和大部分 gold/steel kings；Antimatter 后立即找 DNA，作者记录约 ~35 rerolls。",
+        "正文写到 Ante 24 后至少留 ~$800-1000，Ante 27 后可找 Burglar，并通过 Serpent 与 exactly 20 hands 在 Ante 28 执行 naneinf。",
+        "作者说明自己在 Ante 30 左右因钱不够停住，并明确 didn't keep super detailed notes，some exact antes/shops may be off。",
+        "评论区只有作者重复 2NJEYMUI 和一条 spoiler/story 问答，没有新增路线节点或反证。"
       ],
       "confidence": "中高",
       "useInSite": "作为英文 Reddit naneinf 候选详情页；精确商店、重掷次数、Invisible Joker 复制结果仍需实机复盘。"
@@ -2456,7 +2462,7 @@
       "platform": "Reddit",
       "priority": "A",
       "status": "ready-replay",
-      "blocker": "Reddit JSON 与 Jina 读取被拦；当前只有 old.reddit HTML 正文，且作者说明没有保留超详细笔记。",
+      "blocker": "old.reddit HTML 正文和 comments 可读，但 command-line direct Reddit JSON 返回安全页、Jina 被 403 blocked；作者明确 didn't keep super detailed notes，exact antes/shops may be off，评论没有新增路线节点。",
       "evidenceIds": [
         "reddit-2njeymui-naneinf-guide"
       ],
@@ -2466,8 +2472,8 @@
       "targetSeeds": [
         "2NJEYMUI"
       ],
-      "nextAction": "按 Ante 1-28 实机复盘：确认 Blueprint、Hanging Chad、Soul/Triboulet、Deja Vu、Mime/Baron、Invisible/Brainstorm、Ectoplasm/Cola、Blank/Antimatter、DNA、Burglar/Serpent 的商店/包位置与现金阈值。",
-      "validation": "复盘完成后应补逐商店 queueTables、重掷次数、Invisible Joker 复制结果、Boss 应对和失败分支；若关键节点成立，再升级 completeness。",
+      "nextAction": "按 Ante 1-30 实机复盘：确认 Blueprint、Hanging Chad、Soul/Triboulet、Deja Vu、Mime/Baron、Invisible/Brainstorm 的 Invis rng、same shop you get the ecto 后的 Cola、Blank/Antimatter、~35 rerolls 找 DNA、~$1800 和 ~$800-1000 现金阈值、Burglar/Serpent 与 exactly 20 hands；同时确认评论只重复 seed 和 spoiler 问答。",
+      "validation": "复盘完成后应补逐商店 queueTables、重掷次数、Invisible Joker 复制结果、Boss 应对和失败分支；若关键节点成立，再升级 completeness，并保留 super detailed notes 缺失与 comments not route 的边界。",
       "ownerMode": "Agent Reach old.reddit + browser-use/实机复盘",
       "updatedAt": "2026-06-16"
     },

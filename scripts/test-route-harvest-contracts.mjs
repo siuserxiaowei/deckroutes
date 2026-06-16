@@ -312,9 +312,12 @@ assert.match(redditNaneinfSeed.summary || "", /Blueprint|Hanging Chad|Triboulet|
 const redditNaneinfDetail = routeData.seedDetails?.["2NJEYMUI"];
 assert.ok(redditNaneinfDetail, "2NJEYMUI should have a route detail");
 assert.match(redditNaneinfDetail.completeness || "", /Reddit|candidate|待复盘/i);
-assert.ok((redditNaneinfDetail.flow || []).length >= 9, "2NJEYMUI should expose the Reddit naneinf notes as staged route nodes");
-const redditNaneinfText = (redditNaneinfDetail.flow || [])
-  .flatMap((stage) => [stage.stage, ...(stage.actions || [])])
+assert.ok((redditNaneinfDetail.flow || []).length >= 12, "2NJEYMUI should expose source metadata, staged route nodes, and uncertainty boundaries");
+assert.match(redditNaneinfDetail.sourceMode || "", /old\.reddit HTML|command-line direct Reddit JSON|Jina|blocked|canonical/i);
+const redditNaneinfText = [
+  ...(redditNaneinfDetail.flow || []).flatMap((stage) => [stage.stage, ...(stage.actions || [])]),
+  ...(redditNaneinfDetail.mistakes || [])
+]
   .join("\n");
 for (const requiredText of [
   "Plasma",
@@ -331,6 +334,46 @@ for (const requiredText of [
 ]) {
   assert.match(redditNaneinfText, new RegExp(requiredText, "i"), `2NJEYMUI route should include ${requiredText}`);
 }
+for (const requiredText of [
+  "First naneinf seed",
+  "three_the_3rd",
+  "2025-09-19T21:47:57\\+00:00",
+  "11 points",
+  "87% upvoted",
+  "White stake",
+  "Tarot Merchant",
+  "stay above \\$25",
+  "Hieroglyph",
+  "Petroglyph",
+  "King of Spades",
+  "King of Hearts",
+  "Baron is one reroll behind",
+  "Verdant Leaf",
+  "Not sure how Invis rng works",
+  "usually copied blueprint",
+  "not always",
+  "3 total copying jokers",
+  "Ectoplasm",
+  "same shop you get the ecto",
+  "Cola",
+  "2 voucher tags",
+  "miss Blank",
+  "restart",
+  "2-3 Blueprints",
+  "1-2 Brainstorms",
+  "~\\$1800",
+  "~35 rerolls",
+  "~\\$800-1000",
+  "exactly 20 hands",
+  "Ante 30",
+  "didn't keep super detailed notes",
+  "exact antes/shops may be off",
+  "comments.*2NJEYMUI|评论.*2NJEYMUI",
+  "spoiler.*story|剧透.*剧情",
+  "没有新增路线节点|does not add route nodes"
+]) {
+  assert.match(redditNaneinfText, new RegExp(requiredText, "i"), `2NJEYMUI route should include ${requiredText}`);
+}
 
 assert.equal(
   sourceMap["reddit-2njeymui-naneinf-guide"]?.url,
@@ -340,11 +383,15 @@ assert.equal(
 const redditNaneinfEvidence = (siteData.evidenceSources || []).find((item) => item.id === "reddit-2njeymui-naneinf-guide");
 assert.ok(redditNaneinfEvidence, "2NJEYMUI should have an evidence card");
 assert.ok(redditNaneinfEvidence.seeds?.includes("2NJEYMUI"));
-assert.ok((redditNaneinfEvidence.facts || []).length >= 7, "2NJEYMUI evidence should preserve source-backed route facts");
+assert.ok((redditNaneinfEvidence.facts || []).length >= 13, "2NJEYMUI evidence should preserve source metadata, route facts, comment status, and uncertainty boundaries");
+assert.match(redditNaneinfEvidence.contentType || "", /old\.reddit HTML|command-line direct Reddit JSON|Jina|blocked|评论/i);
+assert.match((redditNaneinfEvidence.facts || []).join("\n"), /three_the_3rd|2025-09-19T21:47:57\+00:00|11 points|87% upvoted|Tarot Merchant|stay above \$25|Not sure how Invis rng works|Blank|restart|~\$1800|~35 rerolls|exactly 20 hands|Ante 30|super detailed notes|comments|没有新增路线节点/i);
 
 const redditNaneinfQueueItem = (siteData.reviewQueue || []).find((item) => item.id === "reddit-2njeymui-replay");
 assert.ok(redditNaneinfQueueItem, "2NJEYMUI should stay in the replay queue for exact shop/reroll validation");
 assert.ok(redditNaneinfQueueItem.targetSeeds?.includes("2NJEYMUI"));
+assert.match(redditNaneinfQueueItem.blocker || "", /super detailed notes|exact antes\/shops may be off|comments|old\.reddit|Jina|JSON/i);
+assert.match(redditNaneinfQueueItem.nextAction || "", /Invis rng|same shop.*ecto|Cola|Blank|~35|~\$1800|~\$800-1000|exactly 20 hands|Ante 30|评论/i);
 
 const dualSourceSeed = seedById.get("PWX3AQJ8");
 assert.ok(dualSourceSeed, "PWX3AQJ8 should be promoted from Reddit + BalatroSeeds evidence into the seed database");
