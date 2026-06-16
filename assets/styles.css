@@ -32,6 +32,7 @@ html {
 body {
   margin: 0;
   min-width: 320px;
+  overflow-x: hidden;
   background:
     radial-gradient(circle at 8% 0%, rgba(215, 173, 84, 0.1), transparent 30rem),
     linear-gradient(180deg, #101511 0%, #131914 42%, #0d110e 100%);
@@ -119,6 +120,7 @@ select {
 
 main {
   width: min(1480px, calc(100% - 48px));
+  overflow-x: clip;
   margin: 0 auto;
 }
 

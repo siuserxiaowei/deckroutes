@@ -63,5 +63,8 @@ assert.match(
 );
 assert.match(styleSource, /\.route-evidence-images\b/, "Evidence images must have a dedicated responsive style");
 assert.match(styleSource, /\.route-evidence-card\b/, "Evidence image cards must have a stable style");
+assert.match(styleSource, /body\s*\{[\s\S]*overflow-x:\s*(?:hidden|clip)/, "Mobile pages must not allow wide tables to create body-level horizontal scroll");
+assert.match(styleSource, /main\s*\{[\s\S]*overflow-x:\s*(?:hidden|clip)/, "The main content shell must clip wide child scroll areas on mobile");
+assert.match(styleSource, /\.table-wrap\s*\{[\s\S]*overflow-x:\s*auto/, "Wide source tables must remain scrollable inside their own container");
 
 console.log("Route link contracts passed");

@@ -519,6 +519,82 @@ assert.ok(englishRefreshQueue, "HNITC7EL should stay in the English seed bank re
 assert.ok(englishRefreshQueue.targetSeeds?.includes("HNITC7EL"));
 assert.match(englishRefreshQueue.nextAction || "", /HNITC7EL|negative Baron|red seal|glass King|Blueprint/i);
 
+const fastSteelKDetail = routeData.seedDetails?.["9OUU79"];
+assert.ok(fastSteelKDetail, "9OUU79 should keep a Bilibili route detail");
+assert.match(fastSteelKDetail.sourceMode || "", /评论 API|player\/v2|置顶攻略图|人工复盘/);
+assert.match(fastSteelKDetail.videoStatus || "", /subtitles|view_points|无公开字幕|无章节|yt-dlp.*412/i);
+assert.ok((fastSteelKDetail.evidenceImages || []).length >= 1, "9OUU79 should expose the pinned Bilibili route image");
+const fastSteelKText = [
+  ...(fastSteelKDetail.flow || []).flatMap((stage) => [stage.stage, ...(stage.actions || [])]),
+  ...(fastSteelKDetail.mistakes || []),
+  ...(fastSteelKDetail.evidenceImages || []).flatMap((image) => [image.label, image.note, image.url])
+].join("\n");
+for (const requiredText of [
+  "258851541904",
+  "88c43f38b4a62a04bfb842e7717ecca951544122",
+  "6底注16回合爆机攻略",
+  "257583350320",
+  "草莓香蕉西瓜菠萝",
+  "2-1.*蓝图",
+  "3-2.*通灵",
+  "4-1.*隐形小丑",
+  "5-1.*战车",
+  "5-1.*男爵",
+  "≤\\s*54",
+  "普通K",
+  "OCR.*低置信|人工视检",
+  "无公开字幕",
+  "无章节"
+]) {
+  assert.match(fastSteelKText, new RegExp(requiredText, "i"), `9OUU79 route provenance should include ${requiredText}`);
+}
+
+const fastSteelKEvidence = (siteData.evidenceSources || []).find((item) => item.id === "bili-9ouu79");
+assert.ok(fastSteelKEvidence, "9OUU79 should have a Bilibili evidence card");
+assert.ok(fastSteelKEvidence.seeds?.includes("9OUU79"));
+assert.ok((fastSteelKEvidence.facts || []).length >= 10, "9OUU79 evidence should preserve API, player/v2, comment, and image facts");
+assert.match(fastSteelKEvidence.contentType || "", /API|评论|player\/v2|置顶攻略图|人工视检/);
+assert.match((fastSteelKEvidence.facts || []).join("\n"), /258851541904|574\s*x\s*10799|subtitles|view_points|257583350320|≤\s*54|yt-dlp.*412/i);
+
+const yushenSteelKDetail = routeData.seedDetails?.["90UU79"];
+assert.ok(yushenSteelKDetail, "90UU79 should keep a Bilibili route detail");
+assert.match(yushenSteelKDetail.sourceMode || "", /评论 API|player\/v2|分 P/);
+assert.match(yushenSteelKDetail.videoStatus || "", /113639247843300|subtitles|view_points|无公开字幕|无章节|yt-dlp.*412/i);
+const yushenSteelKText = [
+  ...(yushenSteelKDetail.flow || []).flatMap((stage) => [stage.stage, ...(stage.actions || [])]),
+  ...(yushenSteelKDetail.mistakes || [])
+].join("\n");
+for (const requiredText of [
+  "雨神の右手",
+  "1733998272",
+  "27303020224",
+  "27303347473",
+  "27303741163",
+  "27304132834",
+  "27370129562",
+  "27422361046",
+  "17注的蓝图",
+  "20注负片DNA",
+  "负片信封",
+  "男爵比哑剧多一张",
+  "不是游戏版本号",
+  "无公开字幕",
+  "无章节"
+]) {
+  assert.match(yushenSteelKText, new RegExp(requiredText, "i"), `90UU79 route provenance should include ${requiredText}`);
+}
+
+const yushenSteelKEvidence = (siteData.evidenceSources || []).find((item) => item.id === "bili-90uu79-yushen");
+assert.ok(yushenSteelKEvidence, "90UU79 should have a Bilibili evidence card");
+assert.ok(yushenSteelKEvidence.seeds?.includes("90UU79"));
+assert.ok((yushenSteelKEvidence.facts || []).length >= 10, "90UU79 evidence should preserve API, player/v2, comments, and uncertainty facts");
+assert.match(yushenSteelKEvidence.contentType || "", /API|评论|player\/v2|分 P/);
+assert.match((yushenSteelKEvidence.facts || []).join("\n"), /113639247843300|BV1ysq8YZExk|subtitles|view_points|17注的蓝图|20注负片DNA|男爵比哑剧多一张/i);
+
+const chineseReplayDeepReview = (siteData.reviewQueue || []).find((item) => item.id === "bili-9ouu79-replay");
+assert.ok(chineseReplayDeepReview, "9OUU79/90UU79 should remain in the deep review queue");
+assert.match(chineseReplayDeepReview.nextAction || "", /9OUU79|90UU79|258851541904|17注的蓝图|20注负片DNA|无公开字幕|view_points/);
+
 const chineseSteelKSeed = seedById.get("9ZPU1V32");
 assert.ok(chineseSteelKSeed, "9ZPU1V32 should be promoted from Chinese video/community sources into the seed database");
 assert.ok(chineseSteelKSeed.sources?.includes("bili-9zpu1v32-full-flow"));
