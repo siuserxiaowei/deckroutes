@@ -1448,19 +1448,25 @@
       "id": "balatroseeds-hnitc7el-steel-k",
       "platform": "BalatroSeeds",
       "title": "HNITC7EL Yellow Deck 双 Blueprint / 负片 Baron 候选",
-      "url": "https://balatroseeds.com/seeds/HNITC7EL",
-      "retrievedAt": "2026-06-15",
-      "contentType": "Jina Reader 可读网页正文",
+      "url": "https://balatroseeds.com/seeds/HNITC7EL/yellow-deck",
+      "retrievedAt": "2026-06-16",
+      "contentType": "Jina Reader 可读 deck-specific 页面正文",
       "seeds": [
         "HNITC7EL"
       ],
       "facts": [
-        "页面描述 Yellow Deck 有 double foil Blueprint、negative Baron、DNA。",
-        "可提取节点包括第一家商店 Blueprint、Ante 1 Wheel tarot、Ante 2 Ankh 复制 Blueprint、Ante 4 找 DNA、Ante 5 找 Hanging Chad/Photograph/红封玻璃 King。",
-        "页面未给出完整商店队列，负片 Baron 的具体位置还需复盘。"
+        "页面标题明确为 Balatro Seed: HNITC7EL (Yellow Deck)。",
+        "页面正文标注 Version: 1.0.1n-FULL。",
+        "种子卖点写明 double foil Blueprint、negative Baron、DNA。",
+        "第一家商店节点：买 Blueprint；Buffoon Pack 有 Vagabond；Arcana Pack 有 Temperance；并买 Paint Brush。",
+        "Ante 1 small blind 节点：play two pair，获得 Wheel tarot，并把 Wheel tarot 用在 Blueprint 上。",
+        "Ante 2 节点：Spectral Pack 使用 Ankh on Blueprint。",
+        "Ante 4 节点：shop before big blind，reroll 2 times to get DNA joker。",
+        "Ante 5 节点：shop before big blind 的 Buffoon Pack 找 Hanging Chad，reroll shop 找 Photograph；shop after big blind 买 Spectral Pack 给 glass King 应用 red seal。",
+        "页面没有给出 negative Baron 的具体商店/包位置，也没有完整 Boss、现金阈值或逐店队列表。"
       ],
       "confidence": "中",
-      "useInSite": "已入库为短节点候选；适合后续人工复盘补成钢K/人头牌路线。"
+      "useInSite": "已升级为阶段节点候选；可以给用户看 Ante 1/2/4/5 的操作骨架，但仍需 The Soul 或实机复盘补 negative Baron 与 red seal steel King 转化。"
     },
     {
       "id": "balatroseeds-rcp8bz3f-steel-k",
@@ -2259,7 +2265,7 @@
         "AFBWB2",
         "8Q47WV6K"
       ],
-      "nextAction": "用 Exa/Jina 继续筛选 seed bank 和 Reddit 线索；优先复盘 AFBWB2、8Q47WV6K、6B678B4W 这类可读 BalatroSeeds 页面，遇到 Reddit 403 时先记录索引摘要，再等登录/代理或可读镜像补正文。",
+      "nextAction": "用 Exa/Jina 继续筛选 seed bank 和 Reddit 线索；HNITC7EL 已补 deck-specific 页面节点，下一步用 The Soul 或实机确认 negative Baron、red seal glass King 能否稳定转 red seal steel King、以及 Blueprint/DNA/Hanging Chad/Photograph 后续商店队列。优先复盘 AFBWB2、8Q47WV6K、6B678B4W 这类可读 BalatroSeeds 页面，遇到 Reddit 403 时先记录索引摘要，再等登录/代理或可读镜像补正文。",
       "validation": "新增种子必须有可回链来源；只有列表但无流程的种子标为“候选”。",
       "ownerMode": "Agent Reach Exa + Scrapling",
       "updatedAt": "2026-06-15"

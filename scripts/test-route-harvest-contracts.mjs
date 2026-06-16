@@ -403,6 +403,55 @@ const ghostReplayItem = (siteData.reviewQueue || []).find((item) => item.id === 
 assert.ok(ghostReplayItem, "8Q47WV6K should have a dedicated replay queue item");
 assert.ok(ghostReplayItem.targetSeeds?.includes("8Q47WV6K"));
 
+const yellowDeckSteelCandidate = seedById.get("HNITC7EL");
+assert.ok(yellowDeckSteelCandidate, "HNITC7EL should remain in the seed database");
+assert.ok(yellowDeckSteelCandidate.sources?.includes("balatroseeds-hnitc7el"));
+assert.match(yellowDeckSteelCandidate.summary || "", /Yellow Deck|Blueprint|Ankh|DNA|Hanging Chad|Photograph|red seal|glass King/i);
+
+const yellowDeckDetail = routeData.seedDetails?.HNITC7EL;
+assert.ok(yellowDeckDetail, "HNITC7EL should have an upgraded route detail");
+assert.match(yellowDeckDetail.completeness || "", /BalatroSeeds|Version 1\.0\.1n-FULL|待复盘/i);
+assert.ok((yellowDeckDetail.flow || []).length >= 6, "HNITC7EL should split the BalatroSeeds notes into staged playable nodes");
+const yellowDeckText = [
+  ...(yellowDeckDetail.flow || []).flatMap((stage) => [stage.stage, ...(stage.actions || [])]),
+  ...(yellowDeckDetail.mistakes || [])
+].join("\n");
+for (const requiredText of [
+  "Yellow Deck",
+  "1.0.1n-FULL",
+  "Blueprint",
+  "Vagabond",
+  "Temperance",
+  "Paint Brush",
+  "two pair",
+  "Wheel tarot",
+  "Ankh",
+  "DNA",
+  "Hanging Chad",
+  "Photograph",
+  "red seal",
+  "glass King",
+  "negative Baron"
+]) {
+  assert.match(yellowDeckText, new RegExp(requiredText, "i"), `HNITC7EL route should include ${requiredText}`);
+}
+
+assert.equal(
+  sourceMap["balatroseeds-hnitc7el"]?.url,
+  "https://balatroseeds.com/seeds/HNITC7EL/yellow-deck"
+);
+
+const yellowDeckEvidence = (siteData.evidenceSources || []).find((item) => item.id === "balatroseeds-hnitc7el-steel-k");
+assert.ok(yellowDeckEvidence, "HNITC7EL should have a BalatroSeeds evidence card");
+assert.ok(yellowDeckEvidence.seeds?.includes("HNITC7EL"));
+assert.match(yellowDeckEvidence.url || "", /\/HNITC7EL\/yellow-deck$/);
+assert.ok((yellowDeckEvidence.facts || []).length >= 7, "HNITC7EL evidence should preserve source-backed stage facts and caveats");
+
+const englishRefreshQueue = (siteData.reviewQueue || []).find((item) => item.id === "english-seed-bank-refresh");
+assert.ok(englishRefreshQueue, "HNITC7EL should stay in the English seed bank refresh queue");
+assert.ok(englishRefreshQueue.targetSeeds?.includes("HNITC7EL"));
+assert.match(englishRefreshQueue.nextAction || "", /HNITC7EL|negative Baron|red seal|glass King|Blueprint/i);
+
 const chineseSteelKSeed = seedById.get("9ZPU1V32");
 assert.ok(chineseSteelKSeed, "9ZPU1V32 should be promoted from Chinese video/community sources into the seed database");
 assert.ok(chineseSteelKSeed.sources?.includes("bili-9zpu1v32-full-flow"));

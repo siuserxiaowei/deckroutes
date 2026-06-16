@@ -356,27 +356,32 @@
       "title": "Yellow Deck 双闪箔 Blueprint + 负片 Baron 候选",
       "deck": "Yellow Deck",
       "archetype": "Baron / DNA / Blueprint",
-      "difficulty": "短节点候选",
-      "version": "BalatroSeeds 2025-06-30",
+      "difficulty": "阶段节点候选",
+      "version": "BalatroSeeds 1.0.1n-FULL",
       "image": "assets/images/joker-strategy.webp",
-      "summary": "BalatroSeeds 页面描述 Yellow Deck 可走 double foil Blueprint、negative Baron、DNA，并给出 Ante 1/2/4/5 的关键节点，适合后续复盘成钢K候选路线。",
+      "summary": "BalatroSeeds Yellow Deck 页面标注 Version 1.0.1n-FULL，可走 double foil Blueprint、negative Baron、DNA；正文给出第一店 Blueprint、Vagabond、Temperance、Paint Brush，Ante 1 Wheel tarot，Ante 2 Ankh 复制 Blueprint，Ante 4 DNA，Ante 5 Hanging Chad、Photograph 与 red seal glass King。",
       "route": [
-        "第一家商店买 Blueprint，Buffoon Pack 有 Vagabond，Arcana Pack 有 Temperance，并买 Paint Brush。",
-        "Ante 1 小盲出 two pair，拿 Wheel tarot 并用在 Blueprint 上。",
+        "牌组与版本前提：Yellow Deck，BalatroSeeds 页面标注 Version 1.0.1n-FULL。",
+        "第一家商店买 Blueprint；Buffoon Pack 有 Vagabond，Arcana Pack 有 Temperance，并购买 Paint Brush。",
+        "Ante 1 小盲出 two pair，拿 Wheel tarot 并用在 Blueprint 上，为 double foil Blueprint 铺路。",
         "Ante 2 用 Spectral Pack 的 Ankh 复制 Blueprint，形成双 Blueprint 基础。",
         "Ante 4 大盲前商店重掷两次找 DNA。",
-        "Ante 5 大盲前 Buffoon Pack 找 Hanging Chad，重掷商店找 Photograph；大盲后买 Spectral Pack 给玻璃 K 加红封。"
+        "Ante 5 大盲前 Buffoon Pack 找 Hanging Chad，重掷商店找 Photograph；大盲后买 Spectral Pack 给 glass King 加 red seal。"
       ],
       "warnings": [
-        "页面描述较短，未提供逐商店完整队列。",
-        "需要确认负片 Baron 的具体出现位置和红封玻璃 K 后续是否稳定转钢K。"
+        "BalatroSeeds 原文给出阶段节点，但不是完整商店队列和出牌表，仍需实机复盘。",
+        "negative Baron 被列为种子卖点，但具体出现位置尚未从正文拆出。",
+        "red seal glass King 与钢K终局不是同一件事，后续要确认能否稳定转 red seal steel King。"
       ],
       "tags": [
         "钢K候选",
         "Yellow Deck",
+        "1.0.1n-FULL",
         "Blueprint",
         "Baron",
-        "DNA"
+        "DNA",
+        "Ankh",
+        "Hanging Chad"
       ],
       "sources": [
         "balatroseeds-hnitc7el"
@@ -2441,33 +2446,71 @@
       ]
     },
     "HNITC7EL": {
-      "completeness": "短节点候选，待补完整路线",
-      "sourceMode": "BalatroSeeds Yellow Deck 短描述",
+      "completeness": "BalatroSeeds Version 1.0.1n-FULL 阶段节点候选，待复盘完整商店/出牌路线",
+      "sourceMode": "BalatroSeeds Yellow Deck deck-specific 页面 + Jina Reader 正文",
       "videoStatus": "无视频证据。",
       "sources": [
         "balatroseeds-hnitc7el"
       ],
       "flow": [
         {
-          "stage": "Ante 1-2 - 双 Blueprint 起步",
+          "stage": "来源确认 - Yellow Deck / Version 1.0.1n-FULL",
           "actions": [
-            "第一家商店买 Blueprint，Buffoon Pack 有 Vagabond，Arcana Pack 有 Temperance，并买 Paint Brush。",
-            "Ante 1 小盲打 two pair，拿 Wheel tarot 用在 Blueprint 上。",
-            "Ante 2 Spectral Pack 用 Ankh 复制 Blueprint。"
+            "BalatroSeeds deck-specific 页面标题为 Balatro Seed: HNITC7EL (Yellow Deck)。",
+            "页面正文标注 Version: 1.0.1n-FULL，站内因此把这条路线标为版本敏感候选。"
           ]
         },
         {
-          "stage": "Ante 4-5 - DNA / Photograph / 红封玻璃 K",
+          "stage": "第一店 - Blueprint / Vagabond / Temperance / Paint Brush",
           "actions": [
-            "Ante 4 大盲前商店重掷两次找 DNA。",
-            "Ante 5 大盲前 Buffoon Pack 找 Hanging Chad，重掷找 Photograph。",
-            "Ante 5 大盲后买 Spectral Pack，把红封加到玻璃 King 上。"
+            "原文写明 1° shop 买 Blueprint。",
+            "同一店的 Buffoon Pack 有 Vagabond，Arcana Pack 有 Temperance。",
+            "第一店还要 buy Paint Brush；这是后续手牌容量和 King 改造路线的前提之一。"
+          ]
+        },
+        {
+          "stage": "Ante 1 小盲 - two pair 与 Wheel tarot",
+          "actions": [
+            "Ante 1 small blind 出 two pair。",
+            "获得 Wheel tarot 后用在 Blueprint 上，原文目标是 double foil Blueprint。"
+          ]
+        },
+        {
+          "stage": "Ante 2 - Ankh 复制 Blueprint",
+          "actions": [
+            "Ante 2 的 Spectral Pack 使用 Ankh on Blueprint。",
+            "这一步把 Blueprint 从单件组件变成双复制基础，适合接后续 Baron / DNA / glass King 路线。"
+          ]
+        },
+        {
+          "stage": "Ante 4 - 大盲前找 DNA",
+          "actions": [
+            "Ante 4 shop before big blind，原文要求 reroll 2 times to get DNA joker。",
+            "DNA 是后续复制 King / glass King / red seal 牌面的核心组件，但来源没有给出现金阈值。"
+          ]
+        },
+        {
+          "stage": "Ante 5 - Hanging Chad / Photograph / red seal glass King",
+          "actions": [
+            "Ante 5 shop before big blind，Buffoon Pack 找 Hanging Chad。",
+            "同一阶段重掷商店找 Photograph。",
+            "Ante 5 shop after big blind，购买 Spectral Pack，把 red seal 应用到 glass King 上。"
+          ]
+        },
+        {
+          "stage": "待复盘 - negative Baron 与钢K转化",
+          "actions": [
+            "页面卖点包含 negative Baron，但正文没有拆出它的具体商店、卡包或标签位置。",
+            "当前能确认的是 red seal glass King，不等同于 red seal steel King；需要实机复盘是否能稳定转成钢K终局。",
+            "缺 Boss、现金、roll 次数以外的商店队列和出牌选择，因此仍保留为候选而不是完整攻略。"
           ]
         }
       ],
       "mistakes": [
-        "负片 Baron 的具体位置尚未从页面文本中拆出。",
-        "玻璃 K 和钢K不是同一条最终路线，后续要复盘能否稳定转钢。"
+        "不要把 double foil Blueprint + negative Baron 直接写成已通关钢K流；BalatroSeeds 原文没有完整 Ante 8 或无尽路线。",
+        "negative Baron 的具体位置尚未从页面文本中拆出，必须在实机复盘或 The Soul 队列核验后再补。",
+        "glass King 和 steel King 是两条不同终局材料，后续要确认 red seal glass King 是否能稳定转 red seal steel King。",
+        "原文没有 Boss、现金阈值和每次 reroll 成本，玩家不能只按这页就保证复现。"
       ]
     },
     "RCP8BZ3F": {
@@ -3794,7 +3837,7 @@
     },
     "balatroseeds-hnitc7el": {
       "label": "BalatroSeeds: HNITC7EL Yellow Deck",
-      "url": "https://balatroseeds.com/seeds/HNITC7EL"
+      "url": "https://balatroseeds.com/seeds/HNITC7EL/yellow-deck"
     },
     "balatroseeds-rcp8bz3f": {
       "label": "BalatroSeeds: RCP8BZ3F Blue Deck",
