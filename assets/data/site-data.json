@@ -1270,8 +1270,14 @@
       ],
       "facts": [
         "页面 URL slug 为 8476，但正文 SEED 明确写作 8Q47WV6K。",
+        "页面标题为 Balatro Seed: 8476 (Ghost Deck)，Added by ethEriiic；站内用正文 SEED 纠正 URL slug。",
+        "Version: 1.0.1n-FULL。",
         "正文称该 seed 让作者首次打出 naneinf holographic red seal steel kings。",
-        "节点包括 Ante 1 Hex-Triboulet/Perkeo，Ante 4 Wraith/Blueprint，Ante 5 Deja Vu/Cryptid，Ante 8 Mime，Ante 9 Brainstorm，Ante 11-13 Baron。",
+        "节点包括 Ante 1 skip first small blind and big blind for hex-Triboulet and Perkeo，并建议用 Emperor 找 Death tarot card。",
+        "节点包括 Ante 3 Ectoplasm/Aura，early game spectral pack contains ectoplasm。",
+        "节点包括 Ante 4 Wraith spectral card contains Blueprint，Ante 5 Deja Vu/Cryptid。",
+        "节点包括 Ante 8 Mime，Ante 9 Brainstorm，Ante 11-13 Barron，Ante 13 Showman then skip again and get a second showman that is negative。",
+        "正文还提到 Lucky Cat、Idol、Sock and Buskin、DNA 等可见组件。",
         "该来源缺逐商店表，因此当前标为多 Ante 节点候选。"
       ],
       "confidence": "中高",
@@ -1283,20 +1289,27 @@
       "title": "8Q47WV6K Ghost Deck insane seed discussion",
       "url": "https://www.reddit.com/r/balatro/comments/1clvbv1/stumbled_across_an_insane_seed/",
       "retrievedAt": "2026-06-16",
-      "contentType": "old.reddit HTML 正文与评论可读；Reddit canonical/Jina 本轮被 403 拦截",
+      "contentType": "old.reddit HTML 正文与评论可读；command-line direct Reddit JSON 返回 network security blocked；评论抽取",
       "seeds": [
         "8Q47WV6K"
       ],
       "facts": [
-        "old.reddit 页面标题为 Stumbled across an INSANE seed，正文直接给出 seed 8Q47WV6K。",
+        "old.reddit 页面标题为 Stumbled across an INSANE seed，正文直接给出 seed 8Q47WV6K；作者 LEMO2000，发布时间 2024-05-06T21:55:43+00:00。",
+        "old.reddit 侧栏显示 820 points 和 99% upvoted。",
         "正文写 first blind gives a double tag，second gives a mega arcana pack，并建议两盲都跳过。",
         "正文写两个奖励包都给 legendary joker：第一张是 Triboulet，第二张是 Perkeo。",
         "第二包还包含 Temperance，作者说明可把当时 Joker 售价转成约 20 美元现金。",
         "作者使用 Ghost Deck，把 Polychrome 放到 Triboulet 上，作为早期主要倍率来源。",
         "正文写第一包还可生成两张随机塔罗，其中一张是 Death；作者用 Perkeo 复制 Death，把低牌改成 Kings。",
         "作者终局列出 Triboulet、Perkeo、Sock and Buskin、Blueprint、Brainstorm、Dusk，并说明 Blueprint 复制 Sock and Buskin、Brainstorm 复制 Triboulet。",
+        "作者写普通回合 Triboulet 触发约 2^15，final round 约 2^20，若约半数 Kings 有 red seals 可到 2^25；实战分数在 10^14 range，约 3000 chips，卡在 10^17。",
         "评论区有玩家反馈用 DNA、Cryptid 和 Perkeo 制作 red seal steel King of Hearts，并接 Mime、Baron、Triboulet、Sock and Buskin、Brainstorm。",
-        "评论区也有玩家反馈负片 Joker 位、Showman 或 Invisible Joker 不足导致停住，因此该路线仍需实机复盘。"
+        "vududude 评论称首次用该 seed 到 e21，后续用 High Card、Mime/Baron 和每回合 4-6 more steel kings 到 e23；builderspaint 评论称 Red Steel + Mime + Blueprint + Brainstorm 可打 e24。",
+        "Taka_Finance 评论称若目标是 Ante 32，Red Seal/Steel King path 需要 ~22 cryptids per round，并建议用 Cola bottles 与 double voucher skip 找 Antimatter。",
+        "评论区也有玩家反馈负片 Joker 位、Showman 或 Invisible Joker 不足导致停住；baldmark_ 写 e115 但 hand capped 6，并 lost to Cerulean Bell。",
+        "Observatory/Eris 分支存在冲突：有人建议 Perkeo stacking negative Plutos，另有评论估算需要 600 Plutos 或 1700+ planets。",
+        "Switch/console/white stack 评论出现 Canio/Caino first then Triboulet，提示平台/版本队列可能不同。",
+        "高分评论样本包括 e86、e213、copying 4 Cryptids per round、464 cards，但这些不是同一条逐商店路线。"
       ],
       "confidence": "中高",
       "useInSite": "作为 8Q47WV6K 的 Reddit 社区实战路线与风险反馈；配合 BalatroSeeds 节点，不单独标完整逐店攻略。"
@@ -2537,7 +2550,7 @@
       "platform": "BalatroSeeds + Reddit",
       "priority": "A",
       "status": "ready-replay",
-      "blocker": "BalatroSeeds 是节点描述，Reddit 是社区经验帖；当前仍缺逐商店购买、现金阈值、Boss 与失败分支表。",
+      "blocker": "BalatroSeeds 是节点描述，Reddit 是社区经验帖；command-line direct Reddit JSON network security blocked；当前仍缺逐商店购买、现金阈值、Boss 与失败分支表，且评论分支覆盖 PC/Ghost、Switch/console、Plasma/Serpent、Observatory/Eris 等不同条件。",
       "evidenceIds": [
         "balatroseeds-8q47wv6k-ghost",
         "reddit-8q47wv6k-insane-seed"
@@ -2549,8 +2562,8 @@
       "targetSeeds": [
         "8Q47WV6K"
       ],
-      "nextAction": "实机复盘 Ghost Deck：确认 double tag 与 mega arcana pack 的跳盲顺序、Triboulet/Perkeo/Temperance 开局、Death 改 Kings、Ectoplasm/Aura、Wraith/Blueprint、Deja Vu/Cryptid、Mime、Brainstorm、Baron、Showman，以及 DNA + red seal steel kings 评论分支是否稳定。",
-      "validation": "复盘完成后应补 Ante/shop/pack 表，区分 Triboulet/Sock and Buskin 主线与 Baron/Mime 钢K分支，并记录 Showman、Invisible Joker、负片 Joker 位和手牌上限风险。",
+      "nextAction": "实机复盘 LEMO2000 Ghost Deck 主线：确认 double tag、mega arcana pack、Triboulet/Perkeo/Temperance、Death 改 Kings，并复核 2^15、2^20、2^25 触发公式；分支复盘 ~22 cryptids per round、Antimatter/Cola、Cerulean Bell、Observatory/Eris、Switch/Canio-Caino 与 464 cards 评论样本。",
+      "validation": "复盘完成后应补 Ante/shop/pack 表，区分 Triboulet/Sock and Buskin 主线与 Baron/Mime 钢K分支，并记录 Showman、Invisible Joker、负片 Joker 位、手牌上限、Boss、平台版本和 comment conflict；若能稳定 naneinf，再把评论样本拆成独立路线。",
       "ownerMode": "Agent Reach BalatroSeeds/Jina + old.reddit + browser-use/实机复盘",
       "updatedAt": "2026-06-16"
     },

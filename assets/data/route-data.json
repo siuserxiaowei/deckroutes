@@ -565,22 +565,26 @@
       "difficulty": "多 Ante 节点候选",
       "version": "BalatroSeeds 1.0.1n-FULL",
       "image": "assets/images/steel-king-route.webp",
-      "summary": "BalatroSeeds 与 old.reddit 均指向 8Q47WV6K 的 Ghost Deck 高潜力路线：开局跳双盲拿 Triboulet 与 Perkeo，Temperance 起经济，Death 把低牌改成 Kings；后续有 Ectoplasm、Deja Vu/Cryptid、Mime、Brainstorm、Baron、Showman，以及评论里的 DNA + red seal steel kings 分支。",
+      "summary": "BalatroSeeds 与 old.reddit 均指向 8Q47WV6K 的 Ghost Deck 高潜力路线：BalatroSeeds 由 ethEriiic 收录，old.reddit 主帖由 LEMO2000 在 2024-05-06T21:55:43+00:00 发布，页面显示 820 points、99% upvoted。开局跳双盲拿 Triboulet 与 Perkeo，Temperance 起经济，Death 把低牌改成 Kings；后续有 Ectoplasm、Deja Vu/Cryptid、Mime、Brainstorm、Baron、Showman，以及评论里的 DNA + red seal steel kings、Observatory/Eris、Antimatter/Cola 分支。",
       "route": [
-        "页面正文 seed 明确为 8Q47WV6K，录入时不能误用 URL slug 8476。",
+        "页面正文 seed 明确为 8Q47WV6K，录入时不能误用 URL slug 8476；Reddit 作者为 LEMO2000，发布时间 2024-05-06T21:55:43+00:00，820 points、99% upvoted。",
         "old.reddit 主帖写明 first blind 给 double tag、second blind 给 mega arcana pack；跳过两盲后两个包都能出传奇。",
         "第一张传奇是 Triboulet，第二张是 Perkeo；第二包还带 Temperance，可把早期 Joker 售价转成现金。",
         "Ghost Deck 能把 Hex/Polychrome 放到 Triboulet 上，作为早期爆倍率核心。",
         "早期 Emperor/Death 资源可把低牌逐步改成 Kings，作者主线偏 flush five Kings。",
         "BalatroSeeds 节点补充 Ante 3 Ectoplasm/Aura，Ante 4 Wraith 里有 Blueprint，Ante 5 有 Deja Vu/Cryptid。",
         "后续节点包含 Ante 8 Mime、Ante 9 Brainstorm、Ante 11-13 Baron、Ante 13 Showman 与第二个 negative Showman。",
-        "评论区有玩家用 DNA、Cryptid、Perkeo 把 King of Hearts 扩成 red seal steel kings，并接 Mime / Baron / Triboulet / Sock and Buskin / Brainstorm。"
+        "主帖作者解释 Triboulet 触发数学：普通回合 flush five Kings 是 2^15，final round 加 Dusk 是 2^20，约半数 red seals 时理想触发可到 2^25；实际分数约 10^14，卡在 10^17。",
+        "评论区有玩家用 DNA、Cryptid、Perkeo 把 King of Hearts 扩成 red seal steel kings，并接 Mime / Baron / Triboulet / Sock and Buskin / Brainstorm；反馈分数从 e21、e23、e24 到 e86 都有。",
+        "后续评论给出更极端分支：Ante 32 目标约需 ~22 cryptids；有人 copying 4 Cryptids per round，最终 464 cards；也有人 e115 因 hand capped 6 和 Cerulean Bell 卡住，另有人借 Serpent 做到 e213。"
       ],
       "warnings": [
         "BalatroSeeds 页面是节点描述，Reddit 是社区经验帖，二者都不是完整逐商店购买表。",
         "URL slug 与正文 seed 不一致，后续复盘必须优先核对正文 seed 8Q47WV6K。",
         "Reddit 主帖原作者没打到分数上限，评论里也有人因为负片 Joker 位、Showman/Invisible Joker 不足而停住。",
-        "Baron/Mime 钢K分支来自评论反馈，不应覆盖 Triboulet / Sock and Buskin 主线。"
+        "Baron/Mime 钢K分支来自评论反馈，不应覆盖 Triboulet / Sock and Buskin 主线。",
+        "Switch / console / white stack 评论出现 Canio/Caino first then Triboulet，可能是版本/平台队列差异，不能直接套 PC 1.0.1n-FULL。",
+        "Observatory/Eris/Pluto 是评论分支；评论同时认为需要 600 Plutos 或 1700+ planets 量级，当前只作思路，不作主线。"
       ],
       "tags": [
         "Ghost",
@@ -2892,7 +2896,7 @@
     },
     "8Q47WV6K": {
       "completeness": "BalatroSeeds + Reddit 双来源 candidate，待补完整逐店路线",
-      "sourceMode": "BalatroSeeds 8476/ghost-deck 页面正文 seed 复核 + old.reddit 正文/评论抽取",
+      "sourceMode": "BalatroSeeds 8476/ghost-deck Jina Reader 页面正文 seed 复核 + old.reddit HTML 正文/评论抽取 + command-line direct Reddit JSON network security blocked",
       "videoStatus": "无视频证据；当前为 seed bank 节点与 Reddit 社区帖。",
       "sources": [
         "balatroseeds-8q47wv6k-ghost",
@@ -2903,7 +2907,9 @@
           "stage": "Seed 纠错与来源边界",
           "actions": [
             "来源 URL slug 是 8476，但页面正文 SEED 明确写作 8Q47WV6K。",
-            "站内以正文 seed 8Q47WV6K 为准，保留 URL/正文不一致警告。"
+            "BalatroSeeds 页面标题仍显示 Balatro Seed: 8476 (Ghost Deck)，但正文代码块给出 8Q47WV6K；站内以正文 seed 为准。",
+            "old.reddit HTML 可读，主帖作者 LEMO2000，提交时间 2024-05-06T21:55:43+00:00，侧栏显示 820 points 和 99% upvoted。",
+            "command-line direct Reddit JSON 返回 network security blocked 页面，当前 Reddit 深读证据以 old.reddit HTML 为准。"
           ]
         },
         {
@@ -2960,15 +2966,60 @@
           "actions": [
             "主帖作者列出关键终局 Joker：Triboulet、Perkeo、Sock and Buskin、Blueprint、Brainstorm、Dusk。",
             "Blueprint 复制 Sock and Buskin，Brainstorm 复制最左侧 Triboulet。",
-            "Dusk 用于 final round 额外 retrigger，配合大量 Kings 和部分 red seals 放大倍率。"
+            "Dusk 用于 final round 额外 retrigger，配合大量 Kings 和部分 red seals 放大倍率。",
+            "作者写普通回合每张 face card 约触发 3 次，flush five Kings 仅 Triboulet 贡献可写为 2^15=32,768。",
+            "final round 每张牌约触发 4 次，Triboulet 贡献变成 2^20=1,048,576；若约半数 Kings 有 red seals，理想触发写作 2^25=33,554,432。",
+            "作者实战多在 10^14 range，约 3000 chips，最终 couldn't get past 10^17，因此主帖本身不是 naneinf 完成证明。"
           ]
         },
         {
           "stage": "评论分支 - DNA / Cryptid / red seal steel kings",
           "actions": [
-            "评论区有玩家反馈用 DNA、Cryptid 和 Perkeo 制作大量 King of Hearts。",
-            "该玩家把目标 K 转成 red seal steel kings，并接 Mime、Baron、Triboulet、Sock and Buskin、Brainstorm。",
-            "这条分支更接近站内钢K读者需求，但它来自评论经验，需要独立复盘。"
+            "vududude 评论反馈第一次用该 seed 打到 e21，并说如果错误更少还能更高。",
+            "同一玩家用 DNA、Cryptid 和 Perkeo 制作大量 King of Hearts，把目标 K 转成 red seal steel kings，并接 Mime、Baron、Triboulet、Sock and Buskin、Brainstorm。",
+            "该玩家后续说明 endgame 里 Blueprint 和 Brainstorm 复制 Mime，同时有 Baron；每回合开头用 Perkeo / Blueprint / Brainstorm 复制 Cryptid，add 4-6 more steel kings，并通过 High Card 得到约 10-12 retriggers，最终到 e23。"
+          ]
+        },
+        {
+          "stage": "评论钢K优化 - Baron/Mime 持牌触发",
+          "actions": [
+            "bigggsteppper 评论指出 glass king 是 x2 mult，但 steel king with Baron 是 1.5x1.5=x2.25，因此 Baron/Mime 分支更偏 held-in-hand 而不是打出所有牌。",
+            "ToranX1 评论给出优化估算：单张 red seal steel king 配 2 Barons 和 2 Mimes 可到 1.5^12，约 x130；7 Cryptids 两轮复制后可到 1.5^(12*15)，理论上远超 e23。",
+            "builderspaint 评论说 Red Steel + Mime + Blueprint + Brainstorm 让 steel 每张触发约 8 次；Perkeo + Blueprint + Brainstorm + Cryptid 每手保证新增 6 additional red steel kings，能把手牌从 8 增到 14，攒着可一次 drop like 30 red steel kings。"
+          ]
+        },
+        {
+          "stage": "评论分支 - Observatory / Eris / Pluto",
+          "actions": [
+            "moneysam 评论提出 Observatory voucher + Perkeo stacking negative Plutos 作为不依赖 joker 位和 hand size 的乘区。",
+            "后续评论反驳 Observatory 很难单独到 naneinf；一条估算称需要 log_1.5(10^308) 约 1749 planets。",
+            "另一条讨论写若叠加 Baron/Mime/red seal steel kings，仍大约需要 600 Plutos；因此 Observatory/Eris 是 comment branch/comment conflict，不是主线。",
+            "BlackCaesarNT、Unique_Legend 等评论提到用 Observatory 与 Eris：有人约 10 Eris，有人 51 Eris；这些属于可复盘的高分变体。"
+          ]
+        },
+        {
+          "stage": "评论失败风险 - hand size / Cerulean Bell / Joker 位",
+          "actions": [
+            "vududude 后续说自己 ran out of room，没找到 needed negative jokers，也没有 Showman or Invisible Joker duplicates，最多 one Blueprint and one Brainstorm，估计本可到 e27。",
+            "baldmark_ 评论写 e115 by round 71，但 hand was capped to 6，因为拿了 negative -hand size spectral；同时 lost to Cerulean Bell，说明 Boss 与手牌上限必须进入复盘表。",
+            "Taka_Finance 回复说如果目标只是 hit Naneinf once，手牌小影响较低；若要 Ante 32，Red Seal/Steel King path 大约需要 ~22 cryptids per round，并建议找 Antimatter。",
+            "同一回复建议为了 Antimatter 更快，早期遇到 Cola bottles 就 buy/sell，之后 double voucher skip；这应作为 Antimatter/Cola 支线验证。"
+          ]
+        },
+        {
+          "stage": "平台/版本风险 - Switch / Canio-Caino 顺序",
+          "actions": [
+            "annebd 与 SoTurnMeIntoATree 评论说在 Switch / console / white stack Ghost Deck 上 first legendary 不是 Triboulet，而是 Canio/Caino first then Triboulet。",
+            "该分歧可能来自主机版本尚未同步 PC 更新，因此站内 PC 1.0.1n-FULL 路线不能直接保证 Switch/console。",
+            "这一点是 comment conflict，复盘时要记录平台、版本、stake 和 deck，避免用户复制 seed 后看到不同传奇顺序。"
+          ]
+        },
+        {
+          "stage": "高分评论样本 - e86 / e213 / 464 cards",
+          "actions": [
+            "Creative-Actuator192 评论说多次尝试后做到 1.564e86 at ante 25 round 71，Joker 为 Triboulet、Perkeo、Blueprint x2、Brainstorm x3、Sock and Buskin，并靠 negative Showman 找齐。",
+            "匿名评论说 Plasma Deck 跑到 e92，并借 Serpent blind 多个 Ante 做到 e213，说明 deck/盲注分支会显著改变上限。",
+            "KnowledgeBomb 评论到 ante 26 round 65，best hand 7.613e87，原文写 copying 4 Cryptids per round，最终 464 cards，但认为过早复制 polychrome glass red seal kings 可能影响资源平衡。"
           ]
         },
         {
@@ -2976,6 +3027,7 @@
           "actions": [
             "BalatroSeeds 作者称该 seed 让其首次打出 naneinf holographic red seal steel kings。",
             "Reddit 主帖作者则停在约 10^17，并询问如何打到分数上限。",
+            "评论中有人称 Naneinf on mobile、有人用 Mime/Baron/Blueprint/Brainstorm/Perkeo stacking Cryptids 打到 naninf，也有人停在 e24/e25/e26/e29/e48/e86/e87/e115/e213；这证明高潜力，但不是同一条逐商店路线。",
             "另一条评论提到因负片 Joker 位、Showman 或 Invisible Joker 不足而停住，说明终局稳定性仍要实测。"
           ]
         }
@@ -2984,7 +3036,9 @@
         "不要把 URL slug 8476 当作 seed；复制时必须用正文 8Q47WV6K。",
         "不要把 BalatroSeeds 节点和 Reddit 经验帖升级成完整逐店购买表。",
         "Triboulet/Sock and Buskin 主线与 Baron/Mime 钢K评论分支要分开复盘。",
-        "Showman、Invisible Joker、负片 Joker 位和手牌上限是后续失败风险。"
+        "Showman、Invisible Joker、负片 Joker 位和手牌上限是后续失败风险。",
+        "不要忽略 Switch / console 版本差异；Canio/Caino first then Triboulet 的评论说明平台队列可能不同。",
+        "Observatory/Eris/Pluto、Antimatter/Cola、Serpent、Plasma Deck 都是评论分支，必须标 comment branch/comment conflict。"
       ]
     },
     "IRW4G69D": {

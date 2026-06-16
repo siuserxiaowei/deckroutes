@@ -555,9 +555,11 @@ const ghostNaneinfDetail = routeData.seedDetails?.["8Q47WV6K"];
 assert.ok(ghostNaneinfDetail, "8Q47WV6K should have an upgraded route detail");
 assert.match(ghostNaneinfDetail.completeness || "", /双来源|BalatroSeeds|Reddit|candidate|待复盘/i);
 assert.ok((ghostNaneinfDetail.flow || []).length >= 8, "8Q47WV6K should expose dual-source route stages and risk notes");
-const ghostNaneinfText = (ghostNaneinfDetail.flow || [])
-  .flatMap((stage) => [stage.stage, ...(stage.actions || [])])
-  .join("\n");
+assert.match(ghostNaneinfDetail.sourceMode || "", /old\.reddit HTML|command-line direct Reddit JSON|network security|BalatroSeeds|Jina/i);
+const ghostNaneinfText = [
+  ...(ghostNaneinfDetail.flow || []).flatMap((stage) => [stage.stage, ...(stage.actions || [])]),
+  ...(ghostNaneinfDetail.mistakes || [])
+].join("\n");
 for (const requiredText of [
   "Ghost Deck",
   "double tag",
@@ -579,6 +581,37 @@ for (const requiredText of [
 ]) {
   assert.match(ghostNaneinfText, new RegExp(requiredText, "i"), `8Q47WV6K route should include ${requiredText}`);
 }
+for (const requiredText of [
+  "LEMO2000",
+  "2024-05-06T21:55:43\\+00:00",
+  "820 points",
+  "99% upvoted",
+  "2\\^15",
+  "2\\^20",
+  "2\\^25",
+  "10\\^14",
+  "10\\^17",
+  "e21",
+  "e23",
+  "e24",
+  "e86",
+  "e115",
+  "e213",
+  "~22 cryptids|22 cryptids",
+  "copying 4 Cryptids per round",
+  "464 cards",
+  "hand.*capped.*6|capped.*6",
+  "Cerulean Bell",
+  "Antimatter",
+  "Cola",
+  "Observatory",
+  "Eris",
+  "600 Plutos|1700",
+  "console|Switch|white stack|Canio|Caino",
+  "comment.*branch|评论.*分支|comment conflict"
+]) {
+  assert.match(ghostNaneinfText, new RegExp(requiredText, "i"), `8Q47WV6K route should include ${requiredText}`);
+}
 
 assert.equal(
   sourceMap["reddit-8q47wv6k-insane-seed"]?.url,
@@ -588,11 +621,14 @@ assert.equal(
 const ghostRedditEvidence = (siteData.evidenceSources || []).find((item) => item.id === "reddit-8q47wv6k-insane-seed");
 assert.ok(ghostRedditEvidence, "8Q47WV6K should have a Reddit evidence card");
 assert.ok(ghostRedditEvidence.seeds?.includes("8Q47WV6K"));
-assert.ok((ghostRedditEvidence.facts || []).length >= 7, "8Q47WV6K Reddit evidence should preserve source-backed route and comment facts");
+assert.ok((ghostRedditEvidence.facts || []).length >= 14, "8Q47WV6K Reddit evidence should preserve source-backed route, metadata, score math, comment branches, and risk facts");
+assert.match(ghostRedditEvidence.contentType || "", /old\.reddit HTML|command-line direct Reddit JSON|network security|评论/i);
+assert.match((ghostRedditEvidence.facts || []).join("\n"), /LEMO2000|2024-05-06T21:55:43\+00:00|820 points|99% upvoted|double tag|mega arcana pack|2\^15|2\^20|2\^25|10\^14|10\^17|e21|e23|e86|~22 cryptids|Cerulean Bell|Antimatter|Observatory|Eris|Switch|Canio|464 cards/i);
 
 const ghostReplayItem = (siteData.reviewQueue || []).find((item) => item.id === "reddit-8q47wv6k-replay");
 assert.ok(ghostReplayItem, "8Q47WV6K should have a dedicated replay queue item");
 assert.ok(ghostReplayItem.targetSeeds?.includes("8Q47WV6K"));
+assert.match(ghostReplayItem.nextAction || "", /LEMO2000|2\^15|2\^20|2\^25|~22 cryptids|Antimatter|Cola|Cerulean Bell|Observatory|Eris|Switch|Canio|464 cards|实机复盘/i);
 
 const yellowDeckSteelCandidate = seedById.get("HNITC7EL");
 assert.ok(yellowDeckSteelCandidate, "HNITC7EL should remain in the seed database");
