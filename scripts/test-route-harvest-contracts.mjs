@@ -89,4 +89,34 @@ const queueReplayItem = (siteData.reviewQueue || []).find((item) => item.id === 
 assert.ok(queueReplayItem, "12QM45YD should stay in the replay queue for decision validation");
 assert.ok(queueReplayItem.targetSeeds?.includes("12QM45YD"));
 
+const longRunSeed = seedById.get("2K9H9HN");
+assert.ok(longRunSeed, "2K9H9HN should be promoted from Bilibili full-flow evidence into the seed database");
+assert.ok(longRunSeed.sources?.includes("bili-2k9h9hn-full-flow"));
+assert.match(longRunSeed.summary || "", /84\s*分\s*P|同花五条|黄金牌|可乐/);
+
+const longRunDetail = routeData.seedDetails?.["2K9H9HN"];
+assert.ok(longRunDetail, "2K9H9HN should have a route detail");
+assert.match(longRunDetail.completeness || "", /84\s*分\s*P|全流程/);
+assert.ok((longRunDetail.flow || []).length >= 8, "2K9H9HN should expose grouped route stages from the Bilibili part list");
+const longRunText = (longRunDetail.flow || [])
+  .flatMap((stage) => [stage.stage, ...(stage.actions || [])])
+  .join("\n");
+for (const requiredText of ["开2张传奇负片", "隐形小丑", "可乐", "蓝图", "黄金牌", "负片", "大结局"]) {
+  assert.match(longRunText, new RegExp(requiredText), `2K9H9HN route should include ${requiredText}`);
+}
+
+assert.equal(
+  sourceMap["bili-2k9h9hn-full-flow"]?.url,
+  "https://www.bilibili.com/video/BV1rhL3zREFe/"
+);
+
+const longRunEvidence = (siteData.evidenceSources || []).find((item) => item.id === "bili-2k9h9hn-full-flow");
+assert.ok(longRunEvidence, "2K9H9HN should have an evidence card");
+assert.ok(longRunEvidence.seeds?.includes("2K9H9HN"));
+assert.ok((longRunEvidence.facts || []).length >= 5, "2K9H9HN evidence should preserve source-backed full-flow facts");
+
+const longRunQueueItem = (siteData.reviewQueue || []).find((item) => item.id === "bili-2k9h9hn-timeline-replay");
+assert.ok(longRunQueueItem, "2K9H9HN should stay in the replay queue for timeline validation");
+assert.ok(longRunQueueItem.targetSeeds?.includes("2K9H9HN"));
+
 console.log("Route harvest contracts passed");
