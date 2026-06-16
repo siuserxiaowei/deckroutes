@@ -36,7 +36,7 @@ node scripts/extract-balatroseed-route.mjs --url https://balatroseeds.com/seeds/
 node scripts/test-extract-balatroseed-route.mjs
 ```
 
-The extractor reads Jina Reader output or a saved fixture and emits a `detail` object shaped for `assets/data/route-data.json`, including `flow`, `queueTables`, source IDs, and seed-mismatch warnings. Treat the output as source-backed draft material until a human or replay pass validates purchase decisions.
+The extractor reads Jina Reader output or a saved fixture and emits a `detail` object shaped for `assets/data/route-data.json`, including `flow`, `queueTables`, source IDs, and seed-mismatch warnings. If Jina is unavailable, BalatroSeeds URL reads fall back to the page HTML meta description; the parser also handles non-Ante prose sections such as `Blind`, `Shop`, `Continuation`, and `Steps`. Treat the output as source-backed draft material until a human or replay pass validates purchase decisions.
 
 GitHub Actions runs the same data guard and extractor tests through `.github/workflows/validate.yml` on pushes to `main` and on pull requests.
 

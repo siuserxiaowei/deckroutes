@@ -12,6 +12,49 @@ function cleanText(value) {
     .trim();
 }
 
+function decodeHtmlEntities(value) {
+  const named = {
+    amp: "&",
+    apos: "'",
+    gt: ">",
+    lt: "<",
+    nbsp: " ",
+    quot: "\""
+  };
+
+  return String(value || "").replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (entity, body) => {
+    const key = body.toLowerCase();
+    if (key.startsWith("#x")) return String.fromCodePoint(Number.parseInt(key.slice(2), 16));
+    if (key.startsWith("#")) return String.fromCodePoint(Number.parseInt(key.slice(1), 10));
+    return named[key] ?? entity;
+  });
+}
+
+function extractHtmlAttribute(html, pattern) {
+  const match = html.match(pattern);
+  return match ? decodeHtmlEntities(match[1]) : "";
+}
+
+export function htmlToMarkdownSnapshot(html, sourceUrl = "") {
+  const title = cleanText(extractHtmlAttribute(html, /<title[^>]*>([\s\S]*?)<\/title>/i));
+  const description = cleanText(
+    extractHtmlAttribute(html, /<meta\s+[^>]*name=["']description["'][^>]*content=["']([^"']*)["'][^>]*>/i)
+      || extractHtmlAttribute(html, /<meta\s+[^>]*content=["']([^"']*)["'][^>]*name=["']description["'][^>]*>/i)
+  );
+
+  if (!title && !description) return "";
+
+  return [
+    title ? `Title: ${title}` : "",
+    sourceUrl ? `URL Source: ${sourceUrl}` : "",
+    "Markdown Content:",
+    title ? `# ${title}` : "",
+    description
+  ]
+    .filter(Boolean)
+    .join("\n\n");
+}
+
 function titleCaseSlug(value) {
   return value
     .split("-")
@@ -305,6 +348,32 @@ function extractProseFlow(markdown) {
   });
 }
 
+function extractSectionFlow(markdown) {
+  const body = removeCodeBlocks(markdown);
+  const marker = /(?:^|\n)\s*(?:#{2,6}\s*)?(?:\*\*)?(Blind|Shop|Continuation|Steps?|Route|Opening|Early Game|Mid Game|Late Game)(?:\*\*)?\s*[:：-]?\s*/gi;
+  const matches = [...body.matchAll(marker)];
+  if (!matches.length) return [];
+
+  return matches.map((match, index) => {
+    const start = match.index + match[0].length;
+    const end = matches[index + 1]?.index ?? body.length;
+    const heading = cleanText(match[1]);
+    const actions = body
+      .slice(start, end)
+      .split(/\n+/)
+      .flatMap((line) => line.split(/(?<=\.)\s+(?=[A-Z])/))
+      .map(cleanProseLine)
+      .filter((line) => line && !/^Title:|^URL Source:|^Markdown Content:/i.test(line))
+      .slice(0, 8)
+      .map((line) => (line.length > 180 ? `${line.slice(0, 177)}...` : line));
+
+    return {
+      stage: heading,
+      actions: actions.length ? actions : ["Section heading detected; action details need manual replay review."]
+    };
+  });
+}
+
 function buildWarnings(seedCandidates, selectedSeed) {
   const warnings = [];
   const distinct = uniqueValues(seedCandidates.map((candidate) => candidate.value));
@@ -328,19 +397,20 @@ export function parseBalatroSeedMarkdown(markdown, options = {}) {
   const warnings = buildWarnings(seedCandidates, selectedSeed);
   const queueTables = extractQueueTables(markdown, options.sourceId);
   const flow = queueTables.length ? buildFlowFromQueue(queueTables) : extractProseFlow(markdown);
+  const sectionFlow = flow.length ? flow : extractSectionFlow(markdown);
   const lastAnte = queueTables.at(-1)?.ante;
 
   const detail = {
     completeness: queueTables.length
       ? `Ante 1-${lastAnte} queue draft, replay decisions pending`
-      : flow.length
+      : sectionFlow.length
         ? "Prose route draft, replay decisions pending"
         : "Raw page captured, route not parsed",
     sourceMode: "BalatroSeeds/Jina Reader extracted draft",
     videoStatus: "No video evidence in this extraction.",
     sources: options.sourceId ? [options.sourceId] : [],
-    flow: flow.length
-      ? flow
+    flow: sectionFlow.length
+      ? sectionFlow
       : [
           {
             stage: "Route extraction pending",
@@ -417,6 +487,7 @@ async function readMarkdown(args) {
 
   if (args.url) {
     const readerUrl = toJinaReaderUrl(args.url);
+    let readerError = null;
     let response;
     try {
       response = await fetch(readerUrl, {
@@ -425,14 +496,43 @@ async function readMarkdown(args) {
       });
     } catch (error) {
       const cause = error.cause?.code || error.cause?.message || error.message;
-      throw new Error(`Jina Reader fetch failed for ${readerUrl}: ${cause}`);
+      readerError = `Jina Reader fetch failed for ${readerUrl}: ${cause}`;
     }
-    if (!response.ok) throw new Error(`Jina Reader fetch failed for ${readerUrl}: ${response.status} ${response.statusText}`);
-    return {
-      markdown: await response.text(),
-      sourceUrl: args.url,
-      readerUrl
-    };
+    if (response && !response.ok) {
+      readerError = `Jina Reader fetch failed for ${readerUrl}: ${response.status} ${response.statusText}`;
+    }
+    if (response?.ok) {
+      return {
+        markdown: await response.text(),
+        sourceUrl: args.url,
+        readerUrl
+      };
+    }
+
+    try {
+      const directResponse = await fetch(args.url, {
+        headers: { accept: "text/html,text/plain;q=0.9,*/*;q=0.8" },
+        signal: AbortSignal.timeout(args.timeoutMs)
+      });
+      if (directResponse.ok) {
+        const html = await directResponse.text();
+        const markdown = htmlToMarkdownSnapshot(html, args.url);
+        if (markdown) {
+          return {
+            markdown,
+            sourceUrl: args.url,
+            readerUrl,
+            fallback: "html-meta"
+          };
+        }
+      }
+      readerError = `${readerError}; direct fetch failed for ${args.url}: ${directResponse.status} ${directResponse.statusText}`;
+    } catch (error) {
+      const cause = error.cause?.code || error.cause?.message || error.message;
+      readerError = `${readerError}; direct fetch failed for ${args.url}: ${cause}`;
+    }
+
+    throw new Error(readerError);
   }
 
   if (process.stdin.isTTY) {
@@ -461,6 +561,7 @@ async function main() {
     sourceId: args.sourceId
   });
   if (input.readerUrl) parsed.readerUrl = input.readerUrl;
+  if (input.fallback) parsed.readerFallback = input.fallback;
   console.log(JSON.stringify(parsed, null, args.compact ? 0 : 2));
 }
 
