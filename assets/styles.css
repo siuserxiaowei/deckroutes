@@ -298,10 +298,15 @@ main {
   background: linear-gradient(135deg, rgba(29, 71, 55, 0.94), rgba(18, 31, 25, 0.92));
 }
 
+.control-strip > * {
+  min-width: 0;
+}
+
 .search-box {
   display: flex;
   gap: 10px;
   align-items: center;
+  width: 100%;
   min-height: 44px;
   padding: 0 14px;
   border: 1px solid rgba(244, 240, 230, 0.2);
@@ -325,6 +330,7 @@ main {
 }
 
 .control-strip select {
+  width: 100%;
   min-height: 44px;
   padding: 0 12px;
   border: 1px solid rgba(244, 240, 230, 0.2);
@@ -933,7 +939,9 @@ main {
 }
 
 .table-wrap {
+  max-width: 100%;
   overflow-x: auto;
+  overscroll-behavior-x: contain;
   border: 1px solid var(--line);
   border-radius: var(--radius);
 }
@@ -1012,9 +1020,11 @@ tbody tr:hover {
 .queue-meta,
 .queue-evidence-links {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   align-items: center;
   justify-content: space-between;
+  min-width: 0;
 }
 
 .platform-card h3,
@@ -1030,10 +1040,13 @@ tbody tr:hover {
 .status-pill,
 .confidence-pill {
   flex: 0 0 auto;
+  max-width: 100%;
   padding: 5px 8px;
   border-radius: 999px;
   font-size: 0.76rem;
   font-weight: 800;
+  overflow-wrap: anywhere;
+  text-align: center;
 }
 
 .status-pill[data-usable="true"],

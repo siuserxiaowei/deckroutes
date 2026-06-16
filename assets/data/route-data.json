@@ -837,6 +837,52 @@
         "balatroseeds-pwx3aqj8-ghost",
         "reddit-pwx3aqj8-easiest-nan"
       ]
+    },
+    {
+      "seed": "TR6AH4P3",
+      "title": "Plasma Deck 社区 naneinf 候选路线",
+      "deck": "Plasma Deck / 等离子牌组",
+      "archetype": "Blueprint / Mime / Baron / DNA / Burglar naneinf",
+      "difficulty": "Reddit 社区攻略 candidate",
+      "version": "Reddit 2025-10-26 / The Soul 1.0.1f 探针",
+      "image": "assets/images/steel-king-route.webp",
+      "summary": "Reddit r/Balatro_Seeds 帖称 TR6AH4P3 是适合首次 naneinf 的 Plasma Deck 种子：早期用 Judgement 做 To-Do List 经济，Ante 3 找 Midas Mask，Ante 4 找 Blueprint 和 Mime，Ante 5 有 Negative DNA；中后期通过 Sixth Sense/Ectoplasm、Baron/Mime、Burglar、Reserved Parking 和 The Serpent 冲 naneinf。",
+      "route": [
+        "Plasma Deck 必选；作者只把主线写到 Ante 5，后段明确要求玩家自己复盘。",
+        "Ante 1 首店拿 Judgement 生成 To-Do List，小丑包可选 To the Moon 或 Egg。",
+        "Ante 1 Big Blind 目标是前三手触发 To-Do List；胜利手牌是 10-high straight flush，注意不要弃掉 6 of Hearts。",
+        "Ante 2 用 King/Jack full house 过渡，结束前可卖 Riff-Raff 补利息，再换 Foil Popcorn。",
+        "Ante 3 第一店重掷约 2-3 次找 Midas Mask，把多数 face cards 转成 gold cards；后续找 Ice Cream，跳 voucher 走 Director's Cut + Overstock Plus。",
+        "Ante 4 不拿负片跳盲，进店找 Blueprint，再找 Mime；赢牌后让 Blueprint 复制 Mime 刷 gold card 钱。",
+        "Ante 4 深层队列有 Baron 和 Brainstorm 线索，但现金压力大，当前不写成必拿主线。",
+        "Ante 5 第一店重掷一次可见 Natural Negative DNA；拿到后停止额外深刷，优先稳住经济和牌库。",
+        "中期用 Sixth Sense 加 DNA/复制小丑打印 spectral cards，至少找一个 Ectoplasm；控制牌库在约 40 张或更少。",
+        "目标终局是单 Mime + 单 Baron + 4 个复制小丑，形成约 3x Mime 与 3x Baron 的触发结构。",
+        "Ante 19 左右找 Natural Negative Burglar；终局复制 Reserved Parking 先印钱，避免提前打死 Boss。",
+        "naneinf 尝试需要 The Serpent；作者要求早到的 The Serpent 先 reroll，终局至少准备 44 red steel kings in hand。"
+      ],
+      "warnings": [
+        "Reddit 评论显示 To-Do List 目标可能变成 4oak 或 Straight，不同玩家经济会分叉。",
+        "作者写明 Ante 5 后需要玩家自己操作，站内先标为 candidate / 待复盘。",
+        "The Soul 本地探针可复现早期关键队列，但 raw queue 不等同于完整实战购买路线。",
+        "Baron、Brainstorm、Reserved Parking、Serpent 的精确重掷和 Boss reroll 路线必须实机复盘后才能升级。"
+      ],
+      "tags": [
+        "Plasma Deck",
+        "钢K",
+        "naneinf",
+        "Blueprint",
+        "Mime",
+        "Baron",
+        "DNA",
+        "Burglar",
+        "Reddit",
+        "The Soul"
+      ],
+      "sources": [
+        "reddit-tr6ah4p3-perfect-naneinf",
+        "thesoul-tr6ah4p3-analyzer"
+      ]
     }
   ],
   "seedDetails": {
@@ -3220,6 +3266,194 @@
         "Reserved Parking、Blueprint、Invisible Joker 的出现顺序存在评论冲突，必须实机复核。",
         "Cryptid 复制数量和 red seal steel King 制作路径还缺完整节点表。"
       ]
+    },
+    "TR6AH4P3": {
+      "completeness": "Reddit + The Soul candidate，Ante 1-5 线索较强，后段待复盘",
+      "sourceMode": "old.reddit 正文与评论抽取 + The Soul 1.0.1f 本地 raw queue 探针",
+      "videoStatus": "无视频；当前为社区文字攻略与分析器线索。",
+      "sources": [
+        "reddit-tr6ah4p3-perfect-naneinf",
+        "thesoul-tr6ah4p3-analyzer"
+      ],
+      "queueTables": [
+        {
+          "ante": 3,
+          "title": "The Soul raw queue probe - Ante 3",
+          "boss": "The House",
+          "voucher": "Paint Brush",
+          "tags": [
+            "Investment Tag",
+            "Voucher Tag"
+          ],
+          "routeUse": "The Soul 1.0.1f / Plasma Deck / White Stake 探针显示 Midas Mask 在 shop queue 第 8 项；这与 Reddit Ante 3 找 Midas Mask 的路线吻合。",
+          "shopQueue": [
+            "2: Popcorn",
+            "8: Midas Mask",
+            "15: Ice Cream",
+            "41: Egg",
+            "49: To the Moon",
+            "57: Scary Face",
+            "93: Reserved Parking",
+            "100: Sixth Sense"
+          ],
+          "packs": [],
+          "sourceIds": [
+            "thesoul-tr6ah4p3-analyzer"
+          ]
+        },
+        {
+          "ante": 4,
+          "title": "The Soul raw queue probe - Ante 4",
+          "boss": "The Tooth",
+          "voucher": "Director's Cut",
+          "tags": [
+            "Negative Tag",
+            "D6 Tag"
+          ],
+          "routeUse": "探针显示 Blueprint 第 16 项、Mime 第 23 项；深层还有 Baron 第 99 项、Brainstorm 第 101 项。Reddit 评论也提到 Ante 4 Baron 太深、经济压力大。",
+          "shopQueue": [
+            "16: Blueprint",
+            "23: Mime",
+            "99: Baron",
+            "101: Brainstorm"
+          ],
+          "packs": [],
+          "sourceIds": [
+            "thesoul-tr6ah4p3-analyzer"
+          ]
+        },
+        {
+          "ante": 5,
+          "title": "The Soul raw queue probe - Ante 5",
+          "boss": "The Hook",
+          "voucher": "Tarot Merchant",
+          "tags": [
+            "Holographic Tag",
+            "Investment Tag"
+          ],
+          "routeUse": "探针显示 Negative DNA 第 6 项，与 Reddit 正文的 Ante 5 natural negative DNA 线索一致。",
+          "shopQueue": [
+            "6: Negative DNA",
+            "139: Brainstorm"
+          ],
+          "packs": [],
+          "sourceIds": [
+            "thesoul-tr6ah4p3-analyzer"
+          ]
+        }
+      ],
+      "flow": [
+        {
+          "stage": "来源与前提 - Plasma Deck / 社区 naneinf 候选",
+          "actions": [
+            "Reddit 帖标题称作者找到 perfect naneinf seed，评论区给出种子 TR6AH4P3。",
+            "正文明确写 Plasma deck is required。",
+            "作者只提供到 Ante 5 的确定路线，并写明 past ante 5 you're on your own，所以站内标为 candidate / 待复盘。"
+          ]
+        },
+        {
+          "stage": "Ante 1 首店 - Judgement / To-Do List",
+          "actions": [
+            "第一家商店拿 Judgement tarot，用它生成 To-Do List。",
+            "小丑包买 To the Moon 或 Egg，作者个人偏好 Egg，因为评论里也提到 Egg 可提高容错。",
+            "To-Do List 目标存在随机分叉；评论中有人遇到 4oak 或 Straight，而不是作者路线里的目标。"
+          ]
+        },
+        {
+          "stage": "Ante 1 Big Blind - 10-high straight flush",
+          "actions": [
+            "Big Blind 尽量在前三手触发 To-Do List 三次，积累早期经济。",
+            "胜利手牌是 10-high straight flush。",
+            "不要弃掉 6 of Hearts；这是作者特别提醒的早期失败点。"
+          ]
+        },
+        {
+          "stage": "Ante 2 - Foil Popcorn 与利息线",
+          "actions": [
+            "Small Blind 的胜利手牌是 King Jack full house。",
+            "如果利息不够，回合结束前卖 Riff-Raff 达到利息阈值。",
+            "之后用 Foil Popcorn 过渡；第二店不要深刷，留钱给 Ante 3 Midas Mask。"
+          ]
+        },
+        {
+          "stage": "Ante 3 - Midas Mask / face cards 变 gold cards",
+          "actions": [
+            "第一店重掷约 2-3 次找 Midas Mask；The Soul 探针显示 Midas Mask 在 Ante 3 shop queue 第 8 项。",
+            "把多数或全部 face cards 变成 gold cards，提高经济和后续 Reserved Parking 价值。",
+            "第二店可拿 The Sun 之类有用塔罗；继续找 Ice Cream 过渡，但不要把钱刷空。"
+          ]
+        },
+        {
+          "stage": "Ante 3 voucher skip - Director's Cut / Overstock Plus",
+          "actions": [
+            "作者强调要拿 voucher skip，因为后续会给 Director's Cut 和 Overstock Plus 线索。",
+            "这一段影响 Ante 4 后的商店可见项和 Boss reroll 能力。",
+            "如果没按这个节奏走，后续 Blueprint/Mime/Baron 深度可能变化，必须单独复盘。"
+          ]
+        },
+        {
+          "stage": "Ante 4 - Blueprint 与 Mime 主线",
+          "actions": [
+            "Ante 4 应正常打 Small Blind，不要拿看起来诱人的 negative joker skip，因为需要下一家商店。",
+            "The Soul 探针显示 Ante 4 shop queue 第 16 项是 Blueprint，第 23 项是 Mime；Reddit 正文也要求找 Blueprint 后继续找 Mime。",
+            "拿 Mime 后替换 Midas Mask；赢牌后把 Blueprint 移去复制 Mime，以便用 gold cards 刷钱。"
+          ]
+        },
+        {
+          "stage": "Ante 4 深刷分支 - Baron / Brainstorm",
+          "actions": [
+            "Reddit 正文说第二店如果钱够可以深刷 Brainstorm，但也可以跳过，因为后面还有机会。",
+            "The Soul 探针显示 Ante 4 深层有 Baron 第 99 项和 Brainstorm 第 101 项。",
+            "评论里也有人讨论 Ante 4 Baron 第 99 项或 Ante 11 第 120 项；另一条评论认为 Ante 4 Baron 太深、经济上很难。"
+          ]
+        },
+        {
+          "stage": "Ante 5 - Natural Negative DNA",
+          "actions": [
+            "Ante 5 第一家店前作者要求重掷一次找 natural Negative DNA。",
+            "The Soul 探针显示 Ante 5 shop queue 第 6 项是 Negative DNA。",
+            "拿到 Negative DNA 后不要继续无意义深刷，优先保护经济和 Joker 位。"
+          ]
+        },
+        {
+          "stage": "中期 - Sixth Sense / Ectoplasm / 控牌库",
+          "actions": [
+            "保留 6 张牌时，用 Sixth Sense 配合 DNA 与复制小丑打印 spectral cards，直到找到 Ectoplasm。",
+            "至少需要一个 Ectoplasm；如果第一个 Ectoplasm 打到 Mime、Baron 或复制小丑，可以卖 Sixth Sense。",
+            "如果 Ectoplasm 打到 Showman，可能需要第二个 Ectoplasm，但 Showman 仍要保留到复制组件足够。"
+          ]
+        },
+        {
+          "stage": "Baron-Mime 终局结构",
+          "actions": [
+            "理想终局是单 Mime + 单 Baron + 4 个复制小丑，由 Blueprint/Brainstorm 等复制牌形成约 3x Mime 与 3x Baron。",
+            "牌库控制在约 40 张或更少，用 Hanged Man 删牌，不要过度滥用 DNA。",
+            "King 先保持 red seal gold，约 Ante 18 后再转成 red seal steel。"
+          ]
+        },
+        {
+          "stage": "Ante 19+ - Burglar / Reserved Parking / 印钱",
+          "actions": [
+            "Reddit 正文说 Ante 19 有 natural negative Burglar，需要重掷找它。",
+            "终局准备 Serpent 前，把复制小丑放到 Reserved Parking 上印约 2000+ 美元，同时避免太早打死 Boss。",
+            "评论有人提到 Ante 16 和 Showman 分支下的 second natural negative Reserved Parking，但具体位置仍需实机复盘。"
+          ]
+        },
+        {
+          "stage": "naneinf 执行 - The Serpent / 44 red steel kings",
+          "actions": [
+            "作者要求真正尝试 naneinf 时 Boss 必须是 The Serpent；更早出现的 The Serpent 应该 reroll。",
+            "Ante 26+ 以后跳过所有 blinds，集中准备最终手牌和 Boss。",
+            "最终至少需要 44 red steel kings in hand，并用 3x Mime 与 3x Baron 的结构冲 naneinf。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "不要把 Ante 5 后的 Reddit 策略当成完整逐商店表；作者明确没有继续保姆式路线。",
+        "To-Do List 目标会变，评论中已出现 4oak/Straight 分叉，早期经济不足时要调整。",
+        "The Soul raw queue 可说明组件位置线索，但不能替代实机购买、重掷、Boss reroll 和现金阈值复盘。",
+        "不要在 Ante 4 拿 negative joker skip；作者特别说明这会错过关键商店。"
+      ]
     }
   },
   "sourceAdditions": {
@@ -3382,6 +3616,18 @@
       "url": "https://www.reddit.com/r/Balatro_Seeds/comments/1remlsq/easiest_nan_seed_pwx3aqj8/",
       "type": "Reddit link post / old.reddit readable mirror",
       "note": "2026-02-25 Reddit post; old.reddit readable for metadata and comments, Reddit JSON/Jina were blocked in command-line harvest."
+    },
+    "reddit-tr6ah4p3-perfect-naneinf": {
+      "label": "Reddit r/Balatro_Seeds perfect naneinf seed - TR6AH4P3",
+      "url": "https://www.reddit.com/r/Balatro_Seeds/comments/1ogm33m/i_think_ive_found_the_perfect_naneinf_seed_this/",
+      "type": "Reddit self post / old.reddit readable mirror",
+      "note": "2025-10-26 Reddit Balatro_Seeds post; old.reddit HTML readable for 正文与评论，Reddit JSON/Jina 命令读取被拦。"
+    },
+    "thesoul-tr6ah4p3-analyzer": {
+      "label": "The Soul Balatro seed analyzer - TR6AH4P3 probe",
+      "url": "https://spectralpack.github.io/TheSoul/",
+      "type": "Immolate/The Soul browser seed analyzer",
+      "note": "2026-06-16 用 The Soul 1.0.1f、Plasma Deck、White Stake、TR6AH4P3 本地探针复核早期 raw queue 关键词；不等同完整实战路线。"
     }
   }
 }

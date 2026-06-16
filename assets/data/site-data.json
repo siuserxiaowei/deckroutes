@@ -10,7 +10,7 @@
   "stats": [
     {
       "label": "已整理种子",
-      "value": "38",
+      "value": "39",
       "note": "含可点击流程、中文来源和待复盘队列"
     },
     {
@@ -20,7 +20,7 @@
     },
     {
       "label": "证据来源",
-      "value": "49",
+      "value": "51",
       "note": "含平台状态、中文社区、英文 seed bank 和 GitHub 工具证据"
     },
     {
@@ -35,7 +35,7 @@
     },
     {
       "label": "复盘队列",
-      "value": "17",
+      "value": "18",
       "note": "按平台列出下一轮采集、OCR 和牌局复盘任务"
     }
   ],
@@ -1868,6 +1868,53 @@
       ],
       "confidence": "中",
       "useInSite": "作为 Reddit 社区路线线索和冲突反馈；精确 shop/pack 顺序需实机复盘。"
+    },
+    {
+      "id": "reddit-tr6ah4p3-perfect-naneinf",
+      "platform": "Reddit",
+      "title": "TR6AH4P3 perfect naneinf seed community guide",
+      "url": "https://www.reddit.com/r/Balatro_Seeds/comments/1ogm33m/i_think_ive_found_the_perfect_naneinf_seed_this/",
+      "retrievedAt": "2026-06-16",
+      "contentType": "old.reddit HTML 正文与评论可读；Reddit JSON/Jina 命令读取被拦",
+      "seeds": [
+        "TR6AH4P3"
+      ],
+      "facts": [
+        "old.reddit 页面标题为 I think I've found the perfect naneinf seed，提交时间为 2025-10-26，评论区给出 seed TR6AH4P3。",
+        "正文明确写 Plasma deck is required，并说明当前 guide 主要写到 Ante 5，之后玩家需要自己操作。",
+        "Ante 1 首店拿 Judgement tarot 生成 To-Do List，小丑包可买 To the Moon 或 Egg。",
+        "Ante 1 Big Blind 目标是在前三手触发 To-Do List；胜利手牌为 10-high straight flush，作者提醒不要弃 6 of Hearts。",
+        "Ante 2 用 King/Jack full house 过渡，必要时卖 Riff-Raff 达利息，再换 Foil Popcorn。",
+        "Ante 3 第一店重掷约 2-3 次找 Midas Mask，把 face cards 转成 gold cards；后续找 Ice Cream 并走 Director's Cut / Overstock Plus 线索。",
+        "Ante 4 正常打 Small Blind，不拿 negative joker skip；商店目标是 Blueprint 与 Mime，赢牌后让 Blueprint 复制 Mime 刷钱。",
+        "Ante 5 第一家店重掷一次可见 natural Negative DNA。",
+        "中后期策略包含 Sixth Sense 打印 spectral cards、Ectoplasm、Baron/Mime/复制小丑结构、Ante 19 natural negative Burglar、Reserved Parking 印钱和 The Serpent 终局。",
+        "评论显示 To-Do List 目标可能出现 4oak/Straight 分叉，也讨论 Ante 4 Baron 太深、Ante 11 Baron、Reserved Parking 等不确定节点。"
+      ],
+      "confidence": "中高",
+      "useInSite": "作为 TR6AH4P3 社区 naneinf 候选路线的主证据；Ante 5 后必须保持待复盘状态。"
+    },
+    {
+      "id": "thesoul-tr6ah4p3-analyzer",
+      "platform": "The Soul",
+      "title": "TR6AH4P3 The Soul raw queue probe",
+      "url": "https://spectralpack.github.io/TheSoul/",
+      "retrievedAt": "2026-06-16",
+      "contentType": "The Soul/Immolate seed analyzer HTML + wasm 本地探针",
+      "seeds": [
+        "TR6AH4P3"
+      ],
+      "facts": [
+        "The Soul 页面支持 seed、deck、stake、version 输入，并用 Immolate 输出 boss、voucher、tag、shop queue 与 packs。",
+        "本地探针参数为 TR6AH4P3、Plasma Deck、White Stake、version 1.0.1f。",
+        "探针显示 Ante 3 raw shop queue 第 8 项为 Midas Mask，与 Reddit Ante 3 路线吻合。",
+        "探针显示 Ante 4 raw shop queue 第 16 项为 Blueprint，第 23 项为 Mime。",
+        "探针显示 Ante 4 深层还有 Baron 第 99 项与 Brainstorm 第 101 项，吻合评论中“Ante 4 Baron 太深”的分歧。",
+        "探针显示 Ante 5 raw shop queue 第 6 项为 Negative DNA。",
+        "该探针是 raw queue 证据，不包含玩家购买、跳盲、Boss reroll、现金阈值或完整实战流程。"
+      ],
+      "confidence": "中",
+      "useInSite": "作为 Reddit 早期节点的分析器复核线索；不单独升级为完整攻略。"
     }
   ],
   "reviewQueue": [
@@ -2262,6 +2309,29 @@
       "nextAction": "实机复盘 Ghost Deck：确认 Charm Tag/Perkeo/Temperance、Rare Tag/Baron、Arcana/Judgement/Mime、negative Reserved Parking、Brainstorm、Blueprint、Invisible Joker、Ectoplasm、Cryptid 复制量和 red seal steel King 制作路径。",
       "validation": "复盘完成后应补 Ante/shop/pack 表，明确哪些节点是固定、哪些依赖 reroll，并解决评论区对 Reserved Parking、Blueprint、Invisible 的冲突反馈。",
       "ownerMode": "Agent Reach BalatroSeeds/Jina + old.reddit + browser-use/实机复盘",
+      "updatedAt": "2026-06-16"
+    },
+    {
+      "id": "reddit-tr6ah4p3-replay",
+      "title": "TR6AH4P3 Reddit/The Soul naneinf 路线复盘",
+      "platform": "Reddit + The Soul",
+      "priority": "A",
+      "status": "ready-replay",
+      "blocker": "Reddit 正文只保姆到 Ante 5；The Soul raw queue 不包含购买、现金阈值、Boss reroll 和实战分支。",
+      "evidenceIds": [
+        "reddit-tr6ah4p3-perfect-naneinf",
+        "thesoul-tr6ah4p3-analyzer"
+      ],
+      "sourceIds": [
+        "reddit-tr6ah4p3-perfect-naneinf",
+        "thesoul-tr6ah4p3-analyzer"
+      ],
+      "targetSeeds": [
+        "TR6AH4P3"
+      ],
+      "nextAction": "实机复盘 Plasma Deck TR6AH4P3：确认 Ante 1 Judgement/To-Do List 目标分叉、Ante 3 Midas Mask、Ante 4 Blueprint/Mime、Ante 4 深层 Baron/Brainstorm、Ante 5 Negative DNA、Sixth Sense/Ectoplasm、Ante 19 Burglar、Reserved Parking 印钱与 The Serpent reroll 路线。",
+      "validation": "复盘完成后应补逐商店/包/Boss 表，记录每个关键节点的重掷次数、金币阈值、Joker 位取舍、To-Do List 目标变化，以及 44 red steel kings 终局是否能稳定达成。",
+      "ownerMode": "Agent Reach old.reddit + The Soul analyzer + browser-use/实机复盘",
       "updatedAt": "2026-06-16"
     }
   ]

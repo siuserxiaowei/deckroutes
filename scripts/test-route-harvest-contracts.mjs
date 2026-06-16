@@ -246,4 +246,66 @@ const dualSourceQueueItem = (siteData.reviewQueue || []).find((item) => item.id 
 assert.ok(dualSourceQueueItem, "PWX3AQJ8 should stay in the replay queue for exact shop/pack validation");
 assert.ok(dualSourceQueueItem.targetSeeds?.includes("PWX3AQJ8"));
 
+const communityNaneinfSeed = seedById.get("TR6AH4P3");
+assert.ok(communityNaneinfSeed, "TR6AH4P3 should be promoted from Reddit + The Soul evidence into the seed database");
+assert.ok(communityNaneinfSeed.sources?.includes("reddit-tr6ah4p3-perfect-naneinf"));
+assert.ok(communityNaneinfSeed.sources?.includes("thesoul-tr6ah4p3-analyzer"));
+assert.match(communityNaneinfSeed.summary || "", /Plasma|Blueprint|Mime|DNA|Burglar|Serpent|naneinf/i);
+
+const communityNaneinfDetail = routeData.seedDetails?.TR6AH4P3;
+assert.ok(communityNaneinfDetail, "TR6AH4P3 should have a route detail");
+assert.match(communityNaneinfDetail.completeness || "", /Reddit|The Soul|candidate|待复盘/i);
+assert.ok((communityNaneinfDetail.flow || []).length >= 11, "TR6AH4P3 should expose Reddit guide stages and analyzer caveats");
+const communityNaneinfText = [
+  ...(communityNaneinfDetail.flow || []).flatMap((stage) => [stage.stage, ...(stage.actions || [])]),
+  ...(communityNaneinfDetail.queueTables || []).flatMap((table) => [
+    table.boss,
+    table.voucher,
+    ...(table.tags || []),
+    ...(table.shopQueue || []),
+    ...(table.packs || [])
+  ])
+].join("\n");
+for (const requiredText of [
+  "Plasma",
+  "Judgement",
+  "To-Do List",
+  "Midas Mask",
+  "Blueprint",
+  "Mime",
+  "Brainstorm",
+  "Negative DNA",
+  "Sixth Sense",
+  "Ectoplasm",
+  "Burglar",
+  "Reserved Parking",
+  "Serpent",
+  "44 red steel kings"
+]) {
+  assert.match(communityNaneinfText, new RegExp(requiredText, "i"), `TR6AH4P3 route should include ${requiredText}`);
+}
+
+assert.equal(
+  sourceMap["reddit-tr6ah4p3-perfect-naneinf"]?.url,
+  "https://www.reddit.com/r/Balatro_Seeds/comments/1ogm33m/i_think_ive_found_the_perfect_naneinf_seed_this/"
+);
+assert.equal(
+  sourceMap["thesoul-tr6ah4p3-analyzer"]?.url,
+  "https://spectralpack.github.io/TheSoul/"
+);
+
+const communityNaneinfEvidence = (siteData.evidenceSources || []).find((item) => item.id === "reddit-tr6ah4p3-perfect-naneinf");
+assert.ok(communityNaneinfEvidence, "TR6AH4P3 should have a Reddit evidence card");
+assert.ok(communityNaneinfEvidence.seeds?.includes("TR6AH4P3"));
+assert.ok((communityNaneinfEvidence.facts || []).length >= 8, "TR6AH4P3 Reddit evidence should preserve the source-backed guide facts");
+
+const communityNaneinfAnalyzerEvidence = (siteData.evidenceSources || []).find((item) => item.id === "thesoul-tr6ah4p3-analyzer");
+assert.ok(communityNaneinfAnalyzerEvidence, "TR6AH4P3 should have a The Soul analyzer evidence card");
+assert.ok(communityNaneinfAnalyzerEvidence.seeds?.includes("TR6AH4P3"));
+assert.ok((communityNaneinfAnalyzerEvidence.facts || []).length >= 5, "TR6AH4P3 analyzer evidence should preserve reproducible queue facts");
+
+const communityNaneinfQueueItem = (siteData.reviewQueue || []).find((item) => item.id === "reddit-tr6ah4p3-replay");
+assert.ok(communityNaneinfQueueItem, "TR6AH4P3 should stay in the replay queue for exact reroll and boss validation");
+assert.ok(communityNaneinfQueueItem.targetSeeds?.includes("TR6AH4P3"));
+
 console.log("Route harvest contracts passed");
