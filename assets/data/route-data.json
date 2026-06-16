@@ -718,6 +718,42 @@
       "sources": [
         "bili-2k9h9hn-full-flow"
       ]
+    },
+    {
+      "seed": "1JA54YD6",
+      "title": "Foil DNA 转 Baron-Mime 教学种",
+      "deck": "Plasma Deck",
+      "archetype": "Foil DNA / red seal steel King / Baron-Mime",
+      "difficulty": "Reddit full-guide candidate",
+      "version": "Reddit 2025-07-21 / 待实机复盘",
+      "image": "assets/images/steel-king-route.webp",
+      "summary": "Reddit r/balatro 全攻略帖给出 1JA54YD6 的 Plasma Deck 路线：Ante 1 Foil DNA、Ante 2 red seal King、Ante 3 Foil Stuntman，Ante 8-14 逐步转入 Mime、Brainstorm、Baron 和 Blueprint 的 Baron/Mime 高牌体系。",
+      "route": [
+        "Plasma Deck 开局，Ante 1 foil skip 落到 DNA，先用 DNA 复制关键 K。",
+        "Ante 2 jumbo standard pack 给 red seal King of Hearts，作为后续 red seal steel King 核心胚子。",
+        "Ante 3 拿 Foil Stuntman，并在 jumbo standard pack 看到 red seal bonus King of Hearts；同时拿 Overstock voucher。",
+        "Ante 4 以 Bull、gold King 和 Chariot/steel 改牌稳住经济与芯片；后续保持约 $100 给 Bull。",
+        "Ante 5-8 连续拿 Grabber、Overstock Plus、Crystal Ball、Omen Globe；Ante 8 出 Mime 和 DNA，开始准备转高牌钢K手牌。",
+        "Ante 9 打完 Ante 8 boss 后卖 Mime，重掷找 Foil Mime，并注意 Arcana packs 里的 Soul。",
+        "Ante 10 找 Invisible Joker 与 Brainstorm；Boss 是 The Plant，需要用 Luchador 或 Chicot 等方式规避风险。",
+        "Ante 12 在 Overstock Plus 下找 Baron 和另一个 Invisible Joker；原帖称大约 24 次重掷附近可见，但精确次数需复盘。",
+        "Ante 14 找 Blueprint；Ante 17 如未拿到 Brainstorm/Blueprint，原帖称约 5 次重掷可见。"
+      ],
+      "warnings": [
+        "Reddit 作者明确有几处记忆不确定，例如 Soul 内容、Ante 12 Baron/Invisible 的精确重掷次数，因此当前只标为候选全攻略，不标成已验证逐手流程。",
+        "Jina Reader 与 Reddit JSON 在本轮采集被拦，证据来自 old.reddit 可读 HTML；后续要做截图/实机复盘来增强证据链。",
+        "这条路线终局作者停在约 Ante 20，未拿到 Antimatter 或 Perkeo/Observatory，因此不能宣称稳定 naneinf。"
+      ],
+      "tags": [
+        "Plasma Deck",
+        "Foil DNA",
+        "Baron/Mime",
+        "red seal steel King",
+        "Reddit"
+      ],
+      "sources": [
+        "reddit-1ja54yd6-full-guide"
+      ]
     }
   ],
   "seedDetails": {
@@ -2805,6 +2841,101 @@
         "当前详情来自分 P 标题和简介，缺少逐商店购买、Boss、金币阈值和每手出牌选择。",
         "该路线使用动画加速、显示分数和金钱、快速选牌/存档等 MOD；复现时要区分便利 MOD 与 seed 本身。"
       ]
+    },
+    "1JA54YD6": {
+      "completeness": "Reddit full guide candidate，关键商店和重掷次数待复盘",
+      "sourceMode": "old.reddit HTML 正文抽取；canonical Reddit URL 入源",
+      "videoStatus": "无视频；当前为文字攻略路线。",
+      "sources": [
+        "reddit-1ja54yd6-full-guide"
+      ],
+      "flow": [
+        {
+          "stage": "Ante 1 - Plasma / Foil DNA 起点",
+          "actions": [
+            "按 Reddit 原帖要求使用 Plasma Deck。",
+            "Ante 1 foil skip 落到 DNA，尽早开始复制目标牌。",
+            "早期靠 Plasma Deck 的芯片侧优势与 DNA 节奏先过渡，不急着完成 Baron/Mime。"
+          ]
+        },
+        {
+          "stage": "Ante 2 - red seal King 胚子",
+          "actions": [
+            "Ante 2 jumbo standard pack 里有 red seal King of Hearts。",
+            "这张红封 K 是后续 red seal steel King 手牌的核心胚子。",
+            "优先保护并复制这张 K，不要把改牌资源分散到低价值牌。"
+          ]
+        },
+        {
+          "stage": "Ante 3 - Foil Stuntman 和 Overstock",
+          "actions": [
+            "Ante 3 可以拿到 Foil Stuntman，为 1-8 底注提供 +350 chips 级别的过渡能力。",
+            "Ante 3 jumbo standard pack 还有 red seal bonus King of Hearts，原帖认为通常只需要其中一张 K。",
+            "拿 Overstock voucher，后续提高商店可见项，服务于 Baron/Mime 组件搜索。"
+          ]
+        },
+        {
+          "stage": "Ante 4 - Bull、Chariot 与钢K加工",
+          "actions": [
+            "Ante 4 standard pack 有 foil gold King of Diamonds，但原帖提醒不要用 DNA 复制太多。",
+            "Jumbo Buffoon Pack 里有 Bull，配合后续至少 $100 左右现金过渡。",
+            "用 Chariot 把 red seal King 做成 steel King；作者记忆中 Chariot 来自 Ante 3 jumbo arcana，Ante 4 用 Fool 复制。"
+          ]
+        },
+        {
+          "stage": "Ante 5-8 - Voucher 链和 deck fixing",
+          "actions": [
+            "Ante 5 拿 Grabber，Ante 6 拿 Overstock Plus，Ante 7 拿 Crystal Ball，Ante 8 拿 Omen Globe。",
+            "早期有 Stuntman/Bull 支撑，可以把重点放在 money management、复制 red seal King 和 deck fixing。",
+            "Ante 8 出 Mime 和 DNA；最终 Boss 是 Crimson Heart，过后准备切换成 high card steel King 路线。"
+          ]
+        },
+        {
+          "stage": "Ante 9 - Foil Mime 与 Soul 风险点",
+          "actions": [
+            "打完 Ante 8 boss 后卖掉 Mime，再重掷找 Foil Mime。",
+            "原帖称第 3、第 4 个 Arcana pack 可能有 Soul，但作者忘记具体内容。",
+            "拿 Clearance Sale voucher，降低后续找 Baron、Brainstorm、Blueprint 的成本。"
+          ]
+        },
+        {
+          "stage": "Ante 10-11 - Invisible Joker / Brainstorm / 腾位",
+          "actions": [
+            "Ante 10 有 Invisible Joker，Overstock Plus 下 Brainstorm 大约在 3-4 次重掷后出现。",
+            "Ante 10 Boss 是 The Plant，需要继续重掷找 Luchador，或依赖 Soul 给 Chicot 等解法。",
+            "Ante 11 又有一个 Invisible Joker；可以在这里或更早卖 DNA 腾出 Baron/Mime 体系位置。"
+          ]
+        },
+        {
+          "stage": "Ante 12 - Baron 和第二个 Invisible Joker",
+          "actions": [
+            "Reddit 作者强调 Ante 12 是重要节点：Overstock Plus 下可以找到 Baron 和另一个 Invisible Joker。",
+            "原帖记忆为大约 24 次重掷附近可见，且每个商店重掷约 6-7 次、资金约 $170 可以覆盖。",
+            "这一段是当前最高优先级复盘点，需要确认精确商店、重掷次数和现金阈值。"
+          ]
+        },
+        {
+          "stage": "Ante 14-17 - Blueprint / Brainstorm 补齐",
+          "actions": [
+            "Ante 14 约 12 次重掷处出现 Blueprint。",
+            "Ante 16 拿 Blank voucher，Ante 17 拿 Paint Brush voucher。",
+            "如果还没拿到 Brainstorm 或 Blueprint，原帖称 Ante 17 约 5 次重掷可以补齐。"
+          ]
+        },
+        {
+          "stage": "Ante 20 左右 - 终局边界",
+          "actions": [
+            "作者自己的 run 大约停在 Ante 20。",
+            "停住原因是没有找到 Antimatter、Perkeo 和 Observatory。",
+            "因此站内把它作为 Baron/Mime 教学与 full-guide 候选，不宣称稳定 naneinf。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "不要把作者记忆不确定的重掷次数当作精确商店表；Ante 9 Soul 与 Ante 12 Baron/Invisible 需要逐项复盘。",
+        "不要保留太多非红封钢K目标牌，尤其是 Ante 4 的 foil gold King of Diamonds，原帖明确提醒不要复制太多。",
+        "The Plant 和 Crimson Heart 都可能影响路线稳定性，必须在复盘里补 Boss 应对。"
+      ]
     }
   },
   "sourceAdditions": {
@@ -2943,6 +3074,12 @@
     "bili-2k9h9hn-full-flow": {
       "label": "Bilibili: 2K9H9HN 同花五条黄金牌全流程",
       "url": "https://www.bilibili.com/video/BV1rhL3zREFe/"
+    },
+    "reddit-1ja54yd6-full-guide": {
+      "label": "Reddit r/balatro full guide - 1JA54YD6",
+      "url": "https://www.reddit.com/r/balatro/comments/1m5a7tq/full_guide_early_foil_dna_stuntman_red_seal_late/",
+      "type": "Reddit self post / old.reddit readable mirror",
+      "note": "2025-07-21 Reddit full guide; direct Reddit JSON and Jina were blocked during 2026-06-16 harvest, old.reddit HTML was readable."
     }
   }
 }

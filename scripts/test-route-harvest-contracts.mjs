@@ -119,4 +119,34 @@ const longRunQueueItem = (siteData.reviewQueue || []).find((item) => item.id ===
 assert.ok(longRunQueueItem, "2K9H9HN should stay in the replay queue for timeline validation");
 assert.ok(longRunQueueItem.targetSeeds?.includes("2K9H9HN"));
 
+const redditSeed = seedById.get("1JA54YD6");
+assert.ok(redditSeed, "1JA54YD6 should be promoted from the Reddit full guide into the seed database");
+assert.ok(redditSeed.sources?.includes("reddit-1ja54yd6-full-guide"));
+assert.match(redditSeed.summary || "", /Foil\s*DNA|Baron|Mime|red seal/i);
+
+const redditDetail = routeData.seedDetails?.["1JA54YD6"];
+assert.ok(redditDetail, "1JA54YD6 should have a route detail");
+assert.match(redditDetail.completeness || "", /Reddit|candidate|待复盘/i);
+assert.ok((redditDetail.flow || []).length >= 8, "1JA54YD6 should expose the Reddit guide as staged route nodes");
+const redditRouteText = (redditDetail.flow || [])
+  .flatMap((stage) => [stage.stage, ...(stage.actions || [])])
+  .join("\n");
+for (const requiredText of ["Plasma", "Foil DNA", "red seal", "Stuntman", "Mime", "Brainstorm", "Baron", "Blueprint"]) {
+  assert.match(redditRouteText, new RegExp(requiredText, "i"), `1JA54YD6 route should include ${requiredText}`);
+}
+
+assert.equal(
+  sourceMap["reddit-1ja54yd6-full-guide"]?.url,
+  "https://www.reddit.com/r/balatro/comments/1m5a7tq/full_guide_early_foil_dna_stuntman_red_seal_late/"
+);
+
+const redditEvidence = (siteData.evidenceSources || []).find((item) => item.id === "reddit-1ja54yd6-full-guide");
+assert.ok(redditEvidence, "1JA54YD6 should have an evidence card");
+assert.ok(redditEvidence.seeds?.includes("1JA54YD6"));
+assert.ok((redditEvidence.facts || []).length >= 6, "1JA54YD6 evidence should preserve source-backed route facts");
+
+const redditQueueItem = (siteData.reviewQueue || []).find((item) => item.id === "reddit-1ja54yd6-replay");
+assert.ok(redditQueueItem, "1JA54YD6 should stay in the replay queue for exact shop/reroll validation");
+assert.ok(redditQueueItem.targetSeeds?.includes("1JA54YD6"));
+
 console.log("Route harvest contracts passed");
