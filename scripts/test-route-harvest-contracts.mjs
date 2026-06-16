@@ -23,9 +23,29 @@ assert.match(harvestedDetail.completeness || "", /阶段路线|待复盘/);
 assert.ok((harvestedDetail.flow || []).length >= 6, "BUMBYCX2 should capture the Bilibili description as staged route nodes");
 const routeText = (harvestedDetail.flow || [])
   .flatMap((stage) => [stage.stage, ...(stage.actions || [])])
+  .concat(harvestedDetail.mistakes || [])
   .join("\n");
 for (const requiredText of ["免费\\s*DNA", "红蜡", "复制标签", "男爵", "哑剧", "43\\s*张以上", "红色封蜡钢铁\\s*K"]) {
   assert.match(routeText, new RegExp(requiredText), `BUMBYCX2 route should include ${requiredText}`);
+}
+assert.ok((harvestedDetail.flow || []).length >= 9, "BUMBYCX2 should expose API/comment-refined flow stages beyond the initial six-node outline");
+assert.match(harvestedDetail.sourceMode || "", /API|Jina|评论|字幕/i);
+for (const requiredText of [
+  "zqz老赵",
+  "2103",
+  "第十七",
+  "负片哑剧",
+  "第十二",
+  "第七张",
+  "第二十一",
+  "窃贼",
+  "黑龟豆",
+  "跳过小盲注",
+  "大盲",
+  "字幕接口为空",
+  "HTTP 412"
+]) {
+  assert.match(routeText, new RegExp(requiredText, "i"), `BUMBYCX2 refined route should include ${requiredText}`);
 }
 
 assert.equal(
@@ -37,10 +57,14 @@ const evidence = (siteData.evidenceSources || []).find((item) => item.id === "bi
 assert.ok(evidence, "BUMBYCX2 should have an evidence card");
 assert.ok(evidence.seeds?.includes("BUMBYCX2"));
 assert.ok((evidence.facts || []).length >= 5, "BUMBYCX2 evidence should preserve source-backed route facts");
+assert.ok((evidence.facts || []).length >= 10, "BUMBYCX2 evidence should preserve API, description, subtitle, and comment facts");
+assert.match(evidence.contentType || "", /API|Jina|评论|字幕/);
+assert.match(evidence.useInSite || "", /第十七|第二十一|跳过小盲注|负片哑剧/);
 
 const queueItem = (siteData.reviewQueue || []).find((item) => item.id === "bili-bumbycx2-video-replay");
 assert.ok(queueItem, "BUMBYCX2 should stay in the replay queue for video/OCR completion");
 assert.ok(queueItem.targetSeeds?.includes("BUMBYCX2"));
+assert.match(queueItem.nextAction || "", /第十二|第十七|第二十一|跳过小盲注|黑龟豆|巨蟒/);
 
 const versionSensitiveSeed = seedById.get("1DOYU2");
 assert.ok(versionSensitiveSeed, "1DOYU2 should remain in the seed database");
