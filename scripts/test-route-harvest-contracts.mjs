@@ -530,8 +530,10 @@ const chineseSteelKDetail = routeData.seedDetails?.["9ZPU1V32"];
 assert.ok(chineseSteelKDetail, "9ZPU1V32 should have a route detail");
 assert.match(chineseSteelKDetail.completeness || "", /B站|斗鱼|BalatroSeed|candidate|待复盘/i);
 assert.ok((chineseSteelKDetail.flow || []).length >= 11, "9ZPU1V32 should expose Chinese full-flow route stages and uncertainty notes");
-const chineseSteelKText = (chineseSteelKDetail.flow || [])
-  .flatMap((stage) => [stage.stage, ...(stage.actions || [])])
+const chineseSteelKText = [
+  ...(chineseSteelKDetail.flow || []).flatMap((stage) => [stage.stage, ...(stage.actions || [])]),
+  ...(chineseSteelKDetail.mistakes || [])
+]
   .join("\n");
 for (const requiredText of [
   "Plasma",
@@ -563,6 +565,30 @@ for (const requiredText of [
 ]) {
   assert.match(chineseSteelKText, new RegExp(requiredText, "i"), `9ZPU1V32 route should include ${requiredText}`);
 }
+for (const requiredText of [
+  "17\\s*个分\\s*P",
+  "subtitles",
+  "view_points",
+  "无公开字幕",
+  "无章节",
+  "feed_id",
+  "2493715042218933363",
+  "Seronda",
+  "灵质最多开三次",
+  "第四张灵质",
+  "38\\s*注",
+  "e300",
+  "nan",
+  "-3\\s*手牌",
+  "吟游诗人",
+  "\\+2\\s*手牌",
+  "11-31",
+  "7\\s*注.*审判",
+  "复制数量",
+  "BalatroSeed.*摘要"
+]) {
+  assert.match(chineseSteelKText, new RegExp(requiredText, "i"), `9ZPU1V32 provenance/conflict route should include ${requiredText}`);
+}
 
 assert.equal(
   sourceMap["bili-9zpu1v32-full-flow"]?.url,
@@ -581,19 +607,26 @@ const chineseSteelKEvidence = (siteData.evidenceSources || []).find((item) => it
 assert.ok(chineseSteelKEvidence, "9ZPU1V32 should have a Bilibili evidence card");
 assert.ok(chineseSteelKEvidence.seeds?.includes("9ZPU1V32"));
 assert.ok((chineseSteelKEvidence.facts || []).length >= 7, "9ZPU1V32 Bilibili evidence should preserve source-backed full-flow facts");
+assert.ok((chineseSteelKEvidence.facts || []).length >= 10, "9ZPU1V32 Bilibili evidence should preserve 17P, subtitle, chapter, and comment facts");
+assert.match(chineseSteelKEvidence.contentType || "", /API|Jina|评论|字幕|章节/);
+assert.match((chineseSteelKEvidence.facts || []).join("\n"), /17\s*个分\s*P|subtitles|view_points|1-2\s*男爵|11-31\s*哑剧|38\s*注|nan/i);
 
 const chineseSteelKCommunityEvidence = (siteData.evidenceSources || []).find((item) => item.id === "douyu-9zpu1v32-summary");
 assert.ok(chineseSteelKCommunityEvidence, "9ZPU1V32 should have a Douyu community evidence card");
 assert.ok(chineseSteelKCommunityEvidence.seeds?.includes("9ZPU1V32"));
 assert.ok((chineseSteelKCommunityEvidence.facts || []).length >= 7, "9ZPU1V32 Douyu evidence should preserve source-backed community route facts");
+assert.ok((chineseSteelKCommunityEvidence.facts || []).length >= 10, "9ZPU1V32 Douyu evidence should preserve feed mapping, Seance, Ectoplasm, and negative-tag facts");
+assert.match((chineseSteelKCommunityEvidence.facts || []).join("\n"), /feed_id|2493715042218933363|Seronda|灵质最多开三次|第四张灵质|底注13|底注20|吟游诗人|\+2\s*手牌/);
 
 const chineseSteelKIndexEvidence = (siteData.evidenceSources || []).find((item) => item.id === "balatroseed-9zpu1v32-index");
 assert.ok(chineseSteelKIndexEvidence, "9ZPU1V32 should have a BalatroSeed index evidence card");
 assert.ok(chineseSteelKIndexEvidence.seeds?.includes("9ZPU1V32"));
+assert.match((chineseSteelKIndexEvidence.facts || []).join("\n"), /只提供摘要|不提供.*流程|不提供.*牌组|不提供.*版本/);
 
 const chineseSteelKReplayItem = (siteData.reviewQueue || []).find((item) => item.id === "bili-9zpu1v32-replay");
 assert.ok(chineseSteelKReplayItem, "9ZPU1V32 should stay in the replay queue for exact shop/reroll validation");
 assert.ok(chineseSteelKReplayItem.targetSeeds?.includes("9ZPU1V32"));
+assert.match(chineseSteelKReplayItem.nextAction || "", /17P|无公开字幕|view_points|feed_id|哑剧时点|复制数量|灵质三次/);
 
 const weiboImageSeed = seedById.get("IRW4G69D");
 assert.ok(weiboImageSeed, "IRW4G69D should remain in the seed database");
