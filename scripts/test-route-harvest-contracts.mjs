@@ -42,6 +42,52 @@ const queueItem = (siteData.reviewQueue || []).find((item) => item.id === "bili-
 assert.ok(queueItem, "BUMBYCX2 should stay in the replay queue for video/OCR completion");
 assert.ok(queueItem.targetSeeds?.includes("BUMBYCX2"));
 
+const versionSensitiveSeed = seedById.get("1DOYU2");
+assert.ok(versionSensitiveSeed, "1DOYU2 should remain in the seed database");
+assert.ok(versionSensitiveSeed.sources?.includes("bili-1doyu2"));
+assert.match(versionSensitiveSeed.summary || "", /1\.0\.1f|Ante\s*39|naneinf|50\s*张\s*K/i);
+
+const versionSensitiveDetail = routeData.seedDetails?.["1DOYU2"];
+assert.ok(versionSensitiveDetail, "1DOYU2 should have an upgraded route detail");
+assert.match(versionSensitiveDetail.completeness || "", /B站|API|评论|版本敏感|待复盘/i);
+assert.ok((versionSensitiveDetail.flow || []).length >= 6, "1DOYU2 should expose staged Bilibili/API/comment facts instead of a two-node placeholder");
+const versionSensitiveText = [
+  ...(versionSensitiveDetail.flow || []).flatMap((stage) => [stage.stage, ...(stage.actions || [])]),
+  ...(versionSensitiveDetail.mistakes || [])
+].join("\n");
+for (const requiredText of [
+  "Ghost Deck",
+  "幽灵牌组",
+  "1.0.1f",
+  "Ante 39",
+  "naneinf",
+  "50张K",
+  "Blueprint",
+  "蓝图",
+  "Brainstorm",
+  "头脑风暴",
+  "Negative Ringmaster",
+  "负片马戏团长",
+  "220多张牛头人",
+  "Ectoplasm",
+  "灵质",
+  "两张手牌",
+  "HTTP 412"
+]) {
+  assert.match(versionSensitiveText, new RegExp(requiredText, "i"), `1DOYU2 route should include ${requiredText}`);
+}
+
+const versionSensitiveEvidence = (siteData.evidenceSources || []).find((item) => item.id === "bili-1doyu2");
+assert.ok(versionSensitiveEvidence, "1DOYU2 should have a Bilibili evidence card");
+assert.ok(versionSensitiveEvidence.seeds?.includes("1DOYU2"));
+assert.ok((versionSensitiveEvidence.facts || []).length >= 8, "1DOYU2 evidence should preserve API, description, and comment facts");
+assert.match(versionSensitiveEvidence.contentType || "", /API|评论|简介/);
+
+const versionSensitiveQueue = (siteData.reviewQueue || []).find((item) => item.id === "bili-1doyu2-version-review");
+assert.ok(versionSensitiveQueue, "1DOYU2 should stay in the version-sensitive replay queue");
+assert.ok(versionSensitiveQueue.targetSeeds?.includes("1DOYU2"));
+assert.match(versionSensitiveQueue.nextAction || "", /1\.0\.1f|50\s*张\s*K|灵质|负片马戏团长/);
+
 const queueSeed = seedById.get("12QM45YD");
 assert.ok(queueSeed, "12QM45YD should be promoted from BalatroSeeds queue extraction into the seed database");
 assert.ok(queueSeed.sources?.includes("balatroseeds-12qm45yd-plasma"));

@@ -132,28 +132,38 @@
     },
     {
       "seed": "1DOYU2",
-      "title": "幽灵牌组 Ante 39 红印钢K种",
+      "title": "幽灵牌组 1.0.1f Ante 39 红印钢K候选",
       "deck": "Ghost Deck / 幽灵牌组",
-      "archetype": "红封钢K长线",
-      "difficulty": "版本敏感",
-      "version": "B站简介要求 1.0.1f",
+      "archetype": "red seal steel K / Blueprint / Brainstorm / naneinf candidate",
+      "difficulty": "版本敏感 + B站评论复核，待逐帧复盘",
+      "version": "B站 2024-05-15 / 必须 1.0.1f",
       "image": "assets/images/gold-stake-roadmap.webp",
-      "summary": "B站简介称该种子来自 Discord 玩家社区，按攻略可推进到 Ante 39 并进入 naneinf；但当前只有公开视频简介，缺逐商店文本。",
+      "summary": "B站视频 BV1Ar421E7dv 简介直接给出种子 1DOYU2，称来自 Discord 玩家社区，Ghost Deck / 幽灵牌组红印钢K路线按攻略可推进到 Ante 39 并进入 naneinf；简介和置顶评论反复强调必须使用 1.0.1f。UP 在评论补充再次测试确定包过 39 底注，打完还剩 220 多张牛头人；简介还说明视频演示漏了一个 Blueprint / 蓝图、一个 Brainstorm / 头脑风暴和 Negative Ringmaster / 负片马戏团长，但约 50张K 已经 naneinf。当前仍缺逐店购买表，因此按版本敏感候选路线展示。",
       "route": [
-        "视频简介给出种子 1DOYU2，并强调必须使用 1.0.1f。",
-        "目标路线是幽灵牌组红印钢K，按攻略可推进到 Ante 39。",
-        "当前只收录为待复盘长线种，后续需要字幕/OCR 或人工看视频补齐每个 Ante。"
+        "使用 Ghost Deck / 幽灵牌组；B站标题和简介定位为红印钢K流、naneinf 底注 39 附教程。",
+        "种子为 1DOYU2，简介写来自 Discord 玩家社区；必须使用 1.0.1f，否则路线可能错位。",
+        "目标是按攻略推进到 Ante 39 并进入 naneinf；UP 评论再次测试称包过 39 底注。",
+        "简介说明视频实操漏了一个 Blueprint / 蓝图、一个 Brainstorm / 头脑风暴和 Negative Ringmaster / 负片马戏团长，所以视频不是最优完整演示。",
+        "简介记录约 50张K 已经 naneinf；UP 评论称打完还剩 220 多张牛头人，说明后段资源溢出明显。",
+        "评论风险提示：只有两张手牌时使用 Ectoplasm / 灵质会直接游戏结束，手牌上限管理是长线复盘重点。"
       ],
       "warnings": [
-        "版本要求强，非 1.0.1f 可能无法复现。",
-        "当前证据来自视频标题/简介，不标完整流程。"
+        "版本要求极强：公开视频、简介和置顶评论都强调必须是 1.0.1f。",
+        "视频作者自述演示漏了一个蓝图、一个头脑风暴和负片马戏团长，不能把视频操作当成最优逐手路线。",
+        "yt-dlp 本轮对 B站返回 HTTP 412；当前证据来自 B站 API、Jina 页面和评论 API，没有字幕或逐帧 OCR。",
+        "缺少 Ante 1-39 的商店购买、roll 次数、Boss、现金阈值、Joker 位和每次复制目标，仍需实机复盘。",
+        "Ectoplasm / 灵质会降低手牌上限；UP 评论提到两张手牌时开灵质会直接游戏结束。"
       ],
       "tags": [
         "钢K",
-        "Ghost",
+        "Ghost Deck",
+        "1.0.1f",
         "naneinf",
         "Ante39",
-        "待复盘"
+        "Blueprint",
+        "Brainstorm",
+        "Ectoplasm",
+        "B站待复盘"
       ],
       "sources": [
         "bili-1doyu2"
@@ -1542,31 +1552,76 @@
       ]
     },
     "1DOYU2": {
-      "completeness": "B站描述级待复盘",
-      "sourceMode": "B站标题/简介；无结构化字幕",
-      "videoStatus": "公开视频简介可读，完整流程需人工看视频或 OCR。",
+      "completeness": "B站 API/简介/评论级版本敏感路线，Ante 39/naneinf 目标明确，逐店流程待复盘",
+      "sourceMode": "B站 web-interface API + Jina Reader 页面抽取 + B站评论 API；yt-dlp 返回 HTTP 412",
+      "videoStatus": "公开视频时长 20:20，竖屏；API 可读标题、简介、播放/收藏/投币和评论，未取得字幕或逐帧画面。",
       "sources": [
         "bili-1doyu2"
       ],
       "flow": [
         {
-          "stage": "定位",
+          "stage": "来源确认 - B站 BV1Ar421E7dv / 1DOYU2",
           "actions": [
-            "幽灵牌组红印钢K长线种，简介称按攻略可到 Ante 39。",
-            "明确版本要求：1.0.1f。"
+            "B站标题为 naneinf底注39 附教程 幽灵牌组神仙种子 红印钢K流。",
+            "B站 API 返回 aid 1404530529、cid 1546091797、时长 1220 秒，公开视频约 4077 播放、74 收藏、120 投币。",
+            "简介直接写种子 1DOYU2，并说明来自 Discord 玩家社区。"
           ]
         },
         {
-          "stage": "后续待补",
+          "stage": "硬前提 - Ghost Deck / 幽灵牌组 + 1.0.1f",
           "actions": [
-            "需要抽取每个 Ante 的关键 Joker、Spectral/Tarot 选择、复制时机和 Boss reroll。",
-            "站内暂不把它标为完整流程。"
+            "标题和站内 seed 卡定位为 Ghost Deck / 幽灵牌组红印钢K流。",
+            "简介连续强调一定要是 1.0.1f；UP 置顶评论也重复 1.0.1f。",
+            "非 1.0.1f 版本不能直接复现，后续复盘必须先锁版本。"
+          ]
+        },
+        {
+          "stage": "目标 - Ante 39 / naneinf",
+          "actions": [
+            "简介称如果按照攻略走，能一路打到 Ante 39 并进入 naneinf 世界。",
+            "UP 评论写 ANTE39+naneinf 攻略可三连后自取，但站内不使用私域资料，只记录公开可见事实。",
+            "UP 后续评论称又试了一下，确定包过 39 底注。"
+          ]
+        },
+        {
+          "stage": "演示误差 - Blueprint / Brainstorm / Negative Ringmaster",
+          "actions": [
+            "简介说明视频中作者搞错了几步。",
+            "漏了一个 Blueprint / 蓝图、一个 Brainstorm / 头脑风暴，还有 Negative Ringmaster / 负片马戏团长。",
+            "作者当时担心不够打到 39 底注，所以借巨蟒打了一波大的；这说明公开视频不是最优路线复盘。"
+          ]
+        },
+        {
+          "stage": "终局量级 - 50张K 与 220多张牛头人",
+          "actions": [
+            "简介写事实证明约 50张K 已经 naneinf。",
+            "UP 评论补充再次测试后打完还剩 220多张牛头人。",
+            "这些是来源声明，不能替代计分器或实机独立验证，但能说明这条路线的上限信号很强。"
+          ]
+        },
+        {
+          "stage": "长线风险 - Ectoplasm / 灵质与手牌上限",
+          "actions": [
+            "UP 评论提到测试只有两张手牌时使用 Ectoplasm / 灵质会发生什么。",
+            "结论是会直接游戏结束。",
+            "复盘 1DOYU2 时必须记录每次开灵质后的手牌上限和 Joker 位收益，不能只追负片。"
+          ]
+        },
+        {
+          "stage": "待补逐店表 - 当前不能宣称完整路线",
+          "actions": [
+            "当前缺少 Ante 1-39 的每个商店、包、Boss、roll 次数、现金阈值和复制目标。",
+            "yt-dlp 本轮返回 HTTP 412，未取得字幕或画面帧；下一步要用浏览器/OCR 或实机复盘。",
+            "复盘目标是把 1.0.1f Ghost Deck 下的 Blueprint、Brainstorm、Negative Ringmaster、K 复制与灵质风险串成可照做流程。"
           ]
         }
       ],
       "mistakes": [
-        "版本不一致可能导致路线失效。",
-        "只有视频简介时不能写成逐回合攻略。"
+        "不要用其它版本测试；1.0.1f 是这条路线的硬前提。",
+        "不要把公开视频演示当成最优流程；作者自己说明漏了 Blueprint、Brainstorm 和 Negative Ringmaster。",
+        "不要在手牌上限过低时开 Ectoplasm / 灵质；评论证据显示两张手牌时会直接结束。",
+        "不要把 50张K、220多张牛头人当成独立验证成绩；它们是 UP 公开描述，仍需实机或计分器复核。",
+        "没有逐店表前，不要把 1DOYU2 升级为完整攻略。"
       ]
     },
     "DP4499H3": {
@@ -3709,7 +3764,9 @@
     },
     "bili-1doyu2": {
       "label": "Bilibili: 1DOYU2 幽灵牌组 naneinf 教程",
-      "url": "https://www.bilibili.com/video/BV1Ar421E7dv/"
+      "url": "https://www.bilibili.com/video/BV1Ar421E7dv/",
+      "type": "Bilibili video metadata, description, and comments",
+      "note": "2026-06-16 复核 B站 API、Jina 页面和评论 API；视频要求 1.0.1f，yt-dlp 仍返回 HTTP 412。"
     },
     "bili-dp4499h3-baron-mime": {
       "label": "Bilibili: DP4499H3 男爵哑剧钢K流",

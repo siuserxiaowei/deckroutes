@@ -1032,17 +1032,25 @@
       "platform": "B站",
       "title": "1DOYU2 幽灵牌组神仙种子红印钢K流",
       "url": "https://www.bilibili.com/video/BV1Ar421E7dv/",
-      "retrievedAt": "2026-06-15",
-      "contentType": "公开视频简介",
+      "retrievedAt": "2026-06-16",
+      "contentType": "公开视频 API 元数据 + 简介 + 评论 API",
       "seeds": [
         "1DOYU2"
       ],
       "facts": [
-        "简介给出种子 1DOYU2，称按攻略可到 Ante 39。",
-        "简介强调版本必须是 1.0.1f。"
+        "B站视频标题为《naneinf底注39 附教程 幽灵牌组神仙种子 红印钢K流》。",
+        "B站 API 返回 bvid BV1Ar421E7dv、aid 1404530529、cid 1546091797，单 P 时长 1220 秒。",
+        "公开视频 API 显示约 4077 播放、74 收藏、120 投币、18 评论。",
+        "简介给出种子 1DOYU2，并称来自 Discord 玩家社区。",
+        "简介称如果按照攻略走，能一路打到 Ante 39 并进入 naneinf 世界。",
+        "简介和 UP 置顶评论均强调必须是 1.0.1f。",
+        "简介写视频演示漏了一个蓝图、一个头脑风暴和负片马戏团长，但作者认为 50张K 已经 naneinf。",
+        "UP 评论补充再次测试确定包过 39 底注，打完还剩 220 多张牛头人。",
+        "UP 评论还提示只有两张手牌时使用灵质会直接游戏结束。",
+        "yt-dlp 本轮对该 B站视频返回 HTTP 412，未取得字幕或逐帧画面。"
       ],
-      "confidence": "中",
-      "useInSite": "作为版本敏感的长线钢K待复盘种。"
+      "confidence": "中高",
+      "useInSite": "升级 1DOYU2 为版本敏感候选路线详情；仍保留逐店/OCR/实机复盘队列。"
     },
     {
       "id": "bili-2q5q3xel",
@@ -2117,8 +2125,8 @@
       "title": "1DOYU2 版本敏感路线复盘",
       "platform": "B站",
       "priority": "A",
-      "status": "ready-replay",
-      "blocker": "公开视频说明版本为 1.0.1f；需要确认当前版本是否还能复现。",
+      "status": "ready-deep-replay",
+      "blocker": "B站 API/简介/评论能确认 1.0.1f、Ante39/naneinf、50张K、Blueprint/Brainstorm/Negative Ringmaster 漏项和灵质风险；但 yt-dlp 仍 HTTP 412，缺少逐帧画面、字幕、逐店购买、roll 次数、Boss 和现金阈值。",
       "evidenceIds": [
         "bili-1doyu2"
       ],
@@ -2128,10 +2136,10 @@
       "targetSeeds": [
         "1DOYU2"
       ],
-      "nextAction": "抽取视频里幽灵牌组、红印钢K、naneinf 节点和 Ante 39 长线关键节点；补版本警告。",
-      "validation": "详情页明确版本依赖，至少记录 Ante 1-8 核心节点；不能复现时降级为历史版本资料。",
-      "ownerMode": "B站公开视频 + 手动复盘",
-      "updatedAt": "2026-06-15"
+      "nextAction": "按 1.0.1f Ghost Deck 实机复盘 1DOYU2：确认 50张K 成型路径、Blueprint/蓝图、Brainstorm/头脑风暴、Negative Ringmaster/负片马戏团长补点、Ectoplasm/灵质手牌上限风险、每个 Ante 的商店/包/Boss/roll 次数和进入 Ante 39+naneinf 的精确触发结构。",
+      "validation": "复盘完成后应补 Ante 1-39 的 queueTables 或逐店表；只有确认版本、商店、复制目标、K 数量、灵质次数和 Boss 应对后，才能把 completeness 从评论/API候选升级。",
+      "ownerMode": "Agent Reach B站 API/Jina/comments + browser-use/OCR + 1.0.1f 实机复盘",
+      "updatedAt": "2026-06-16"
     },
     {
       "id": "bili-dp4499h3-steel-k-review",
