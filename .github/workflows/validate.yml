@@ -28,6 +28,7 @@ jobs:
           node --check scripts/audit-route-coverage.mjs
           node --check scripts/extract-balatroseed-route.mjs
           node --check scripts/test-extract-balatroseed-route.mjs
+          node --check scripts/test-route-link-contracts.mjs
 
       - name: Validate site data
         run: node scripts/validate-data.mjs
@@ -37,3 +38,6 @@ jobs:
 
       - name: Test BalatroSeeds extractor
         run: node scripts/test-extract-balatroseed-route.mjs
+
+      - name: Test route link contracts
+        run: node scripts/test-route-link-contracts.mjs

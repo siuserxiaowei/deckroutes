@@ -361,6 +361,28 @@ main {
   cursor: pointer;
 }
 
+.seed-tag-button {
+  appearance: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+.seed-tag-button:hover,
+.seed-tag-button:focus-visible {
+  border-color: rgba(215, 173, 84, 0.72);
+  background: rgba(215, 173, 84, 0.16);
+  color: var(--ink);
+}
+
+.seed-tag-button:focus-visible {
+  outline: 2px solid rgba(215, 173, 84, 0.72);
+  outline-offset: 2px;
+}
+
+.seed-tag-muted {
+  opacity: 0.62;
+}
+
 .tag-chip.active {
   border-color: var(--gold);
   background: rgba(215, 173, 84, 0.18);

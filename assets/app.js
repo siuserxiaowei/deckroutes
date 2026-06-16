@@ -27,6 +27,29 @@ function getEvidence(id) {
   return (state.data.evidenceSources || []).find((item) => item.id === id) || null;
 }
 
+function findSeed(seedCode) {
+  return state.data.seeds.find((seed) => seed.seed.toLowerCase() === String(seedCode).toLowerCase()) || null;
+}
+
+function renderSeedLink(seedCode) {
+  const seed = findSeed(seedCode);
+  if (!seed) {
+    const tag = el("span", "seed-tag seed-tag-muted", seedCode);
+    tag.title = "站内路线待补";
+    return tag;
+  }
+
+  const button = el("button", "seed-tag seed-tag-button", seed.seed);
+  button.type = "button";
+  button.title = `打开 ${seed.seed} 的牌局流程`;
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    showRoute(seed, true);
+  });
+  return button;
+}
+
 function sourceLinks(sourceIds) {
   const fragment = document.createDocumentFragment();
   (sourceIds || []).forEach((id, index) => {
@@ -562,7 +585,7 @@ function renderEvidenceSources() {
       const seeds = item.seeds || [];
       if (seeds.length) {
         const seedRow = el("div", "evidence-seeds");
-        seeds.forEach((seed) => seedRow.append(el("span", "seed-tag", seed)));
+        seeds.forEach((seed) => seedRow.append(renderSeedLink(seed)));
         card.append(seedRow);
       }
 
@@ -628,7 +651,7 @@ function renderReviewQueue() {
 
       if ((item.targetSeeds || []).length) {
         const seeds = el("div", "queue-seeds");
-        item.targetSeeds.forEach((seed) => seeds.append(el("span", "seed-tag", seed)));
+        item.targetSeeds.forEach((seed) => seeds.append(renderSeedLink(seed)));
         card.append(seeds);
       }
 

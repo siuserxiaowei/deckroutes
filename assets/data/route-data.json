@@ -160,6 +160,36 @@
       ]
     },
     {
+      "seed": "DP4499H3",
+      "title": "男爵哑剧钢K流第一次爆机记录",
+      "deck": "未限定 / 视频待复盘",
+      "archetype": "Baron-Mime / 钢K",
+      "difficulty": "B站简介候选",
+      "version": "B站 2025-05-02",
+      "image": "assets/images/steel-king-route.webp",
+      "summary": "B站公开搜索证据显示标题为“男爵哑剧钢K流，第一次爆机记录”，简介直接给出 seed DP4499H3，并写明 4 男爵、2 哑剧的 Baron/Mime/Steel King 结构；当前缺字幕和逐回合复盘。",
+      "route": [
+        "B站公开视频简介直接给出种子 DP4499H3。",
+        "标题定位为男爵哑剧钢K流，并写明是第一次爆机记录。",
+        "简介组件为 4 男爵、2 哑剧，说明终局依赖 Baron/Mime 反复触发手牌中的钢 K。",
+        "当前还没有结构化出牌、商店、Boss 和卡包顺序，只能作为候选种进入复盘队列。"
+      ],
+      "warnings": [
+        "视频简介不是完整攻略，不能直接标为可照做流程。",
+        "需要人工复盘确认牌组、版本、关键 Joker 出现 Ante、钢K改造方式和最终触发结构。"
+      ],
+      "tags": [
+        "钢K",
+        "Baron",
+        "Mime",
+        "B站待复盘",
+        "爆机记录"
+      ],
+      "sources": [
+        "bili-dp4499h3-baron-mime"
+      ]
+    },
+    {
       "seed": "2Q5Q3XEL",
       "title": "6 蓝图 + Perkeo 钢K无尽教学种",
       "deck": "未限定 / 视频待复盘",
@@ -1220,6 +1250,41 @@
       "mistakes": [
         "版本不一致可能导致路线失效。",
         "只有视频简介时不能写成逐回合攻略。"
+      ]
+    },
+    "DP4499H3": {
+      "completeness": "B站简介级待复盘",
+      "sourceMode": "B站公开搜索 API 元数据 + 简介",
+      "videoStatus": "公开视频简介可读，完整流程需人工看视频、OCR 或字幕补全。",
+      "sources": [
+        "bili-dp4499h3-baron-mime"
+      ],
+      "flow": [
+        {
+          "stage": "定位",
+          "actions": [
+            "种子 DP4499H3 来自 B站标题“男爵哑剧钢K流，第一次爆机记录”。",
+            "简介写明配置为 4 男爵、2 哑剧，属于 Baron/Mime/Steel King 终局结构。"
+          ]
+        },
+        {
+          "stage": "已知终局结构",
+          "actions": [
+            "男爵负责让手牌中的 K 计分，哑剧重复触发手牌效果，核心目标是让更多钢 K 留在手中。",
+            "4 Baron / 2 Mime 的比例说明该局已经进入多触发层，但具体 Blueprint、Brainstorm、DNA、红封/钢铁改造节点仍待确认。"
+          ]
+        },
+        {
+          "stage": "后续待补",
+          "actions": [
+            "复盘视频，记录牌组、版本、Ante 1-8 的 Boss、商店购买、卡包选择和跳盲策略。",
+            "确认第一张 K 如何变成钢铁/红封，以及 Baron、Mime、复制小丑分别在哪个 Ante 进入队伍。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "不要把“第一次爆机记录”当作逐回合路线证明。",
+        "没有商店表前，不要写成玩家可照抄的完整攻略。"
       ]
     },
     "2Q5Q3XEL": {
@@ -2294,6 +2359,10 @@
     "bili-1doyu2": {
       "label": "Bilibili: 1DOYU2 幽灵牌组 naneinf 教程",
       "url": "https://www.bilibili.com/video/BV1Ar421E7dv/"
+    },
+    "bili-dp4499h3-baron-mime": {
+      "label": "Bilibili: DP4499H3 男爵哑剧钢K流",
+      "url": "https://www.bilibili.com/video/av115389262466123"
     },
     "bili-2q5q3xel": {
       "label": "Bilibili: 2Q5Q3XEL 钢K无尽教学第三期",

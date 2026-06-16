@@ -27,6 +27,7 @@ Run the local data guard before publishing a new evidence or route update:
 node scripts/validate-data.mjs
 node scripts/audit-route-coverage.mjs --fail-on-gaps
 node scripts/test-extract-balatroseed-route.mjs
+node scripts/test-route-link-contracts.mjs
 ```
 
 BalatroSeeds queue pages can be converted into a reviewable draft route with:

@@ -1,0 +1,56 @@
+#!/usr/bin/env node
+import assert from "node:assert/strict";
+import fs from "node:fs";
+
+const siteData = JSON.parse(fs.readFileSync("assets/data/site-data.json", "utf8"));
+const routeData = JSON.parse(fs.readFileSync("assets/data/route-data.json", "utf8"));
+const appSource = fs.readFileSync("assets/app.js", "utf8");
+const styleSource = fs.readFileSync("assets/styles.css", "utf8");
+
+const seedIds = new Set([
+  ...(siteData.seeds || []).map((seed) => seed.seed),
+  ...(routeData.additionalSeeds || []).map((seed) => seed.seed)
+]);
+const detailIds = new Set(Object.keys(routeData.seedDetails || {}));
+
+const routeReferences = [
+  ...(siteData.evidenceSources || []).flatMap((item) =>
+    (item.seeds || []).map((seed) => ({ scope: "evidenceSources", id: item.id, seed }))
+  ),
+  ...(siteData.reviewQueue || []).flatMap((item) =>
+    (item.targetSeeds || []).map((seed) => ({ scope: "reviewQueue", id: item.id, seed }))
+  )
+];
+
+const missingSeeds = routeReferences.filter((ref) => !seedIds.has(ref.seed));
+assert.deepEqual(
+  missingSeeds,
+  [],
+  `Every evidence/review seed reference must resolve to a seed card: ${missingSeeds
+    .map((ref) => `${ref.scope}.${ref.id}:${ref.seed}`)
+    .join(", ")}`
+);
+
+const missingDetails = routeReferences.filter((ref) => !detailIds.has(ref.seed));
+assert.deepEqual(
+  missingDetails,
+  [],
+  `Every evidence/review seed reference must open a route detail: ${missingDetails
+    .map((ref) => `${ref.scope}.${ref.id}:${ref.seed}`)
+    .join(", ")}`
+);
+
+assert.match(appSource, /function renderSeedLink\(/, "assets/app.js must expose a reusable route-link seed chip");
+assert.match(
+  appSource,
+  /seedRow\.append\(renderSeedLink\(seed\)\)/,
+  "Evidence seed chips must open the matching route detail"
+);
+assert.match(
+  appSource,
+  /seeds\.append\(renderSeedLink\(seed\)\)/,
+  "Review queue target seed chips must open the matching route detail"
+);
+assert.match(styleSource, /\.seed-tag-button\b/, "Clickable seed chips must have a dedicated button style");
+
+console.log("Route link contracts passed");
