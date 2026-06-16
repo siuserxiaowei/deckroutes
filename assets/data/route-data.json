@@ -797,6 +797,46 @@
       "sources": [
         "reddit-2njeymui-naneinf-guide"
       ]
+    },
+    {
+      "seed": "PWX3AQJ8",
+      "title": "Ghost Deck Perkeo-Baron-Mime 高潜力 nan 种",
+      "deck": "Ghost Deck",
+      "archetype": "Perkeo / Cryptid / Baron-Mime naneinf candidate",
+      "difficulty": "双来源核心组件，逐店待复盘",
+      "version": "BalatroSeeds 1.0.1n-FULL / Reddit 2026-02-25",
+      "image": "assets/images/seed-vault.webp",
+      "summary": "BalatroSeeds 确认 PWX3AQJ8 是 Ghost Deck，Ante 1 连续可见 Perkeo、Baron、Mime，并列出 Blueprint、Brainstorm、natural negative Reserved Parking、Invisible Joker copy Blueprint 与 Ectoplasm；Reddit 帖进一步给出 Charm Tag -> Perkeo/Temperance、Rare Tag -> Baron、Judgement -> Mime 的早期路线线索。",
+      "route": [
+        "使用 Ghost Deck；BalatroSeeds 与 Reddit 均指向 PWX3AQJ8 的 Ghost Deck 路线。",
+        "Reddit 帖元信息给出早期线索：Charm Tag 后拿 Perkeo，并用 Temperance 做经济。",
+        "Rare Tag 后，boss 后商店可见 Baron；同一商店开 Arcana，用 Judgement 找 Mime。",
+        "BalatroSeeds 明确写 Perkeo、Baron、Mime 在 Ante 1 back to back 出现，是这条 seed 的核心价值。",
+        "中后期组件池包含 natural negative Reserved Parking、Brainstorm、Blueprint、Invisible Joker copy Blueprint 与 Ectoplasm。",
+        "评论区策略建议 Perkeo 前期兼顾经济和 deck fixing，牌组稳定后集中复制 Cryptid。",
+        "评论区提到大约需要 45-50 张 Cryptid 来冲 nan，再用 Cryptid 复制 red seal steel King。",
+        "Showman 分支可见第二 Baron 和第二 Mime，但这是评论分支，不写成主线必拿。"
+      ],
+      "warnings": [
+        "BalatroSeeds 双来源只能确认核心组件池和 Ante 1 三件，并不能证明完整逐店购买路线。",
+        "Reddit 评论存在分歧：有人未找到 Blueprint 或 Invisible，也有人反馈 Reserved Parking 不是 natural negative 或出现时间不同。",
+        "Charm Tag、Rare Tag、Arcana/Judgement 的精确 blind/shop 位置只有 Reddit 帖线索，需要实机复盘确认。",
+        "Cryptid 起手时间、红封钢 K 制作路径、何时开始只复制 Cryptid，当前只能作为策略提示，不能当稳定节点表。"
+      ],
+      "tags": [
+        "Ghost Deck",
+        "Perkeo",
+        "Baron/Mime",
+        "Cryptid",
+        "Blueprint",
+        "Brainstorm",
+        "BalatroSeeds",
+        "Reddit"
+      ],
+      "sources": [
+        "balatroseeds-pwx3aqj8-ghost",
+        "reddit-pwx3aqj8-easiest-nan"
+      ]
     }
   ],
   "seedDetails": {
@@ -3091,6 +3131,95 @@
         "不要在 Ante 1 买 Tarot Merchant；原帖认为它可能挤出必要小丑且并非必需。",
         "Invisible Joker 复制对象不稳定，复盘时必须记录复制结果和失败分支。"
       ]
+    },
+    "PWX3AQJ8": {
+      "completeness": "双来源核心组件 candidate，逐店路线待复盘",
+      "sourceMode": "BalatroSeeds/Jina 可读详情 + old.reddit 元信息与评论抽取",
+      "videoStatus": "无视频；当前为 seed bank + 社区帖子线索。",
+      "sources": [
+        "balatroseeds-pwx3aqj8-ghost",
+        "reddit-pwx3aqj8-easiest-nan"
+      ],
+      "flow": [
+        {
+          "stage": "来源确认 - Ghost Deck / 1.0.1n-FULL",
+          "actions": [
+            "BalatroSeeds 页面标题和 URL 均确认 PWX3AQJ8 是 Ghost Deck。",
+            "BalatroSeeds 描述版本为 1.0.1n-FULL。",
+            "Reddit 帖标题为 easiest nan seed PWX3AQJ8，提交时间为 2026-02-25，页面元描述也从 Ghost Deck 开始。"
+          ]
+        },
+        {
+          "stage": "Ante 1 - Perkeo / Baron / Mime 连续核心",
+          "actions": [
+            "BalatroSeeds 明确记录 Perkeo、Baron、Mime all back to back in ante 1。",
+            "Joker highlights 同时列出 Perkeo、Baron、Mime、Blueprint、Brainstorm。",
+            "这是站内收录它的强证据，但仍不等同于完整购买顺序。"
+          ]
+        },
+        {
+          "stage": "Reddit 早期线索 - Charm Tag / Perkeo / Temperance",
+          "actions": [
+            "Reddit 页面元描述列出第 2 步：use Charm Tag，get Perkeo，use Temperance。",
+            "这说明 Perkeo 早期不仅是终局复制器，也用于经济和 deck fixing。",
+            "精确 blind、包位和是否必须这样操作，需要后续实机复盘。"
+          ]
+        },
+        {
+          "stage": "Reddit 早期线索 - Rare Tag / Baron / Judgement / Mime",
+          "actions": [
+            "Reddit 页面元描述列出第 3 步：use Rare Tag，boss 后商店拿 Baron。",
+            "同一商店开 Arcana，再用 Judgement 找 Mime。",
+            "BalatroSeeds 同步确认 Baron/Mime 在 Ante 1 可见，但不提供具体 tag/pack 操作表。"
+          ]
+        },
+        {
+          "stage": "后续组件池 - Reserved Parking / Brainstorm / Blueprint",
+          "actions": [
+            "BalatroSeeds 描述后续有 natural negative Reserved Parking。",
+            "BalatroSeeds 同时列出 Brainstorm 与 Blueprint。",
+            "评论区有人反馈 Blueprint 较晚，也有人说没找到 Blueprint 或 Invisible，因此这里必须标为待复盘节点。"
+          ]
+        },
+        {
+          "stage": "复制链 - Invisible Joker / Ectoplasm",
+          "actions": [
+            "BalatroSeeds 描述 Invisible Joker copies Blueprint。",
+            "BalatroSeeds 还列出 Ectoplasm，适合把 Brainstorm 等组件变成 negative。",
+            "这些只证明组件存在，不证明固定 shop 顺序。"
+          ]
+        },
+        {
+          "stage": "Perkeo-Cryptid 策略",
+          "actions": [
+            "Reddit 评论问到是否用 Perkeo 专门复制 Cryptid，作者回复前期先用于经济和 deck fixing。",
+            "牌组修好后，作者建议集中复制 Cryptid。",
+            "评论中给出的目标量级是约 45-50 张 Cryptid 才足以 nan。"
+          ]
+        },
+        {
+          "stage": "执行 nan - red seal steel King / High Card",
+          "actions": [
+            "评论说明 nan 前用 Cryptid 复制目标 red seal steel King 约 50 次。",
+            "进入回合后用所有 Cryptid 复制，再打 High Card 触发 Baron/Mime 手牌倍率链。",
+            "这一段有评论截图线索，但缺少逐步可复现表，当前只作为执行策略摘要。"
+          ]
+        },
+        {
+          "stage": "分支与冲突 - Showman / Reserved Parking / Invis",
+          "actions": [
+            "评论提到 Showman 分支可在 Ante 7 big blind 前商店看到第二 Baron 和第二 Mime。",
+            "Reserved Parking 有冲突反馈：有人没找到 natural negative，有人说 Ante 3/4 附近可重掷出 negative。",
+            "Blueprint/Invisible 也有评论反馈不稳定，因此复盘队列必须优先验证这些节点。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "不要把 BalatroSeeds 的组件描述升级成完整攻略；它没有逐店购买和 reroll 次数。",
+        "不要把 Showman 第二 Baron/Mime 写成主线必拿，它只是评论分支。",
+        "Reserved Parking、Blueprint、Invisible Joker 的出现顺序存在评论冲突，必须实机复核。",
+        "Cryptid 复制数量和 red seal steel King 制作路径还缺完整节点表。"
+      ]
     }
   },
   "sourceAdditions": {
@@ -3241,6 +3370,18 @@
       "url": "https://www.reddit.com/r/Balatro_Seeds/comments/1nlghbk/first_naneinf_seed_ive_found_naturally_2njeymui/",
       "type": "Reddit self post / old.reddit readable mirror",
       "note": "2025-09-19 Reddit Balatro_Seeds post; direct Reddit JSON and Jina were blocked during 2026-06-16 harvest, old.reddit HTML was readable."
+    },
+    "balatroseeds-pwx3aqj8-ghost": {
+      "label": "BalatroSeeds PWX3AQJ8 Ghost Deck",
+      "url": "https://balatroseeds.com/seeds/PWX3AQJ8/ghost-deck",
+      "type": "BalatroSeeds seed detail / Jina readable",
+      "note": "Confirms seed, Ghost Deck, version 1.0.1n-FULL, Joker highlights and component description."
+    },
+    "reddit-pwx3aqj8-easiest-nan": {
+      "label": "Reddit r/Balatro_Seeds easiest nan seed - PWX3AQJ8",
+      "url": "https://www.reddit.com/r/Balatro_Seeds/comments/1remlsq/easiest_nan_seed_pwx3aqj8/",
+      "type": "Reddit link post / old.reddit readable mirror",
+      "note": "2026-02-25 Reddit post; old.reddit readable for metadata and comments, Reddit JSON/Jina were blocked in command-line harvest."
     }
   }
 }

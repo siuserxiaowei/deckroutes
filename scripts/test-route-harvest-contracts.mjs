@@ -191,4 +191,59 @@ const redditNaneinfQueueItem = (siteData.reviewQueue || []).find((item) => item.
 assert.ok(redditNaneinfQueueItem, "2NJEYMUI should stay in the replay queue for exact shop/reroll validation");
 assert.ok(redditNaneinfQueueItem.targetSeeds?.includes("2NJEYMUI"));
 
+const dualSourceSeed = seedById.get("PWX3AQJ8");
+assert.ok(dualSourceSeed, "PWX3AQJ8 should be promoted from Reddit + BalatroSeeds evidence into the seed database");
+assert.ok(dualSourceSeed.sources?.includes("balatroseeds-pwx3aqj8-ghost"));
+assert.ok(dualSourceSeed.sources?.includes("reddit-pwx3aqj8-easiest-nan"));
+assert.match(dualSourceSeed.summary || "", /Ghost Deck|Perkeo|Baron|Mime|Blueprint|Brainstorm/i);
+
+const dualSourceDetail = routeData.seedDetails?.PWX3AQJ8;
+assert.ok(dualSourceDetail, "PWX3AQJ8 should have a route detail");
+assert.match(dualSourceDetail.completeness || "", /双来源|待复盘|candidate/i);
+assert.ok((dualSourceDetail.flow || []).length >= 7, "PWX3AQJ8 should expose dual-source route nodes and uncertainty notes");
+const dualSourceText = (dualSourceDetail.flow || [])
+  .flatMap((stage) => [stage.stage, ...(stage.actions || [])])
+  .join("\n");
+for (const requiredText of [
+  "Ghost Deck",
+  "Charm Tag",
+  "Perkeo",
+  "Temperance",
+  "Rare Tag",
+  "Baron",
+  "Judgement",
+  "Mime",
+  "Reserved Parking",
+  "Brainstorm",
+  "Blueprint",
+  "Invisible Joker",
+  "Ectoplasm",
+  "Cryptid"
+]) {
+  assert.match(dualSourceText, new RegExp(requiredText, "i"), `PWX3AQJ8 route should include ${requiredText}`);
+}
+
+assert.equal(
+  sourceMap["balatroseeds-pwx3aqj8-ghost"]?.url,
+  "https://balatroseeds.com/seeds/PWX3AQJ8/ghost-deck"
+);
+assert.equal(
+  sourceMap["reddit-pwx3aqj8-easiest-nan"]?.url,
+  "https://www.reddit.com/r/Balatro_Seeds/comments/1remlsq/easiest_nan_seed_pwx3aqj8/"
+);
+
+const dualSourceEvidence = (siteData.evidenceSources || []).find((item) => item.id === "balatroseeds-pwx3aqj8-ghost");
+assert.ok(dualSourceEvidence, "PWX3AQJ8 should have a BalatroSeeds evidence card");
+assert.ok(dualSourceEvidence.seeds?.includes("PWX3AQJ8"));
+assert.ok((dualSourceEvidence.facts || []).length >= 6, "PWX3AQJ8 BalatroSeeds evidence should preserve source-backed component facts");
+
+const redditDualSourceEvidence = (siteData.evidenceSources || []).find((item) => item.id === "reddit-pwx3aqj8-easiest-nan");
+assert.ok(redditDualSourceEvidence, "PWX3AQJ8 should have a Reddit evidence card");
+assert.ok(redditDualSourceEvidence.seeds?.includes("PWX3AQJ8"));
+assert.ok((redditDualSourceEvidence.facts || []).length >= 5, "PWX3AQJ8 Reddit evidence should preserve route and comment facts");
+
+const dualSourceQueueItem = (siteData.reviewQueue || []).find((item) => item.id === "pwx3aqj8-dual-source-replay");
+assert.ok(dualSourceQueueItem, "PWX3AQJ8 should stay in the replay queue for exact shop/pack validation");
+assert.ok(dualSourceQueueItem.targetSeeds?.includes("PWX3AQJ8"));
+
 console.log("Route harvest contracts passed");

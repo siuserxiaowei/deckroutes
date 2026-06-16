@@ -10,7 +10,7 @@
   "stats": [
     {
       "label": "已整理种子",
-      "value": "37",
+      "value": "38",
       "note": "含可点击流程、中文来源和待复盘队列"
     },
     {
@@ -20,7 +20,7 @@
     },
     {
       "label": "证据来源",
-      "value": "47",
+      "value": "49",
       "note": "含平台状态、中文社区、英文 seed bank 和 GitHub 工具证据"
     },
     {
@@ -35,7 +35,7 @@
     },
     {
       "label": "复盘队列",
-      "value": "16",
+      "value": "17",
       "note": "按平台列出下一轮采集、OCR 和牌局复盘任务"
     }
   ],
@@ -1826,6 +1826,48 @@
       ],
       "confidence": "中高",
       "useInSite": "作为英文 Reddit naneinf 候选详情页；精确商店、重掷次数、Invisible Joker 复制结果仍需实机复盘。"
+    },
+    {
+      "id": "balatroseeds-pwx3aqj8-ghost",
+      "platform": "BalatroSeeds",
+      "title": "PWX3AQJ8 Ghost Deck component listing",
+      "url": "https://balatroseeds.com/seeds/PWX3AQJ8/ghost-deck",
+      "retrievedAt": "2026-06-16",
+      "contentType": "BalatroSeeds 页面 + Jina Reader 可读 Markdown",
+      "seeds": [
+        "PWX3AQJ8"
+      ],
+      "facts": [
+        "页面标题为 Balatro Seed: PWX3AQJ8 (Ghost Deck)。",
+        "页面确认 using Ghost Deck。",
+        "页面标注 version 1.0.1n-FULL。",
+        "Joker highlights 包含 Perkeo、Baron、Mime、Blueprint、Brainstorm。",
+        "Seed description 写到 Perkeo、Baron、Mime 在 Ante 1 back to back。",
+        "Seed description 写到后续有 natural negative Reserved Parking、Brainstorm、Blueprint、Invisible Joker copies Blueprint 和 Ectoplasm。"
+      ],
+      "confidence": "高",
+      "useInSite": "作为 PWX3AQJ8 的核心组件和版本强证据；不单独证明完整逐店路线。"
+    },
+    {
+      "id": "reddit-pwx3aqj8-easiest-nan",
+      "platform": "Reddit",
+      "title": "PWX3AQJ8 easiest nan seed discussion",
+      "url": "https://www.reddit.com/r/Balatro_Seeds/comments/1remlsq/easiest_nan_seed_pwx3aqj8/",
+      "retrievedAt": "2026-06-16",
+      "contentType": "old.reddit HTML 元信息与评论可读；Reddit JSON/Jina 命令读取被拦",
+      "seeds": [
+        "PWX3AQJ8"
+      ],
+      "facts": [
+        "old.reddit 页面标题为 easiest nan seed PWX3AQJ8，提交时间为 2026-02-25。",
+        "页面元描述列出 Ghost Deck、Charm Tag -> Perkeo -> Temperance、Rare Tag -> Baron、Arcana/Judgement -> Mime 的早期路线线索。",
+        "评论区讨论 Perkeo 是否专门复制 Cryptid，作者说明前期先经济和 deck fixing，后期集中 Cryptid。",
+        "评论区给出约 45-50 张 Cryptid 才足以 nan 的策略量级。",
+        "评论区存在 Blueprint/Invisible/Reserved Parking 找不到或出现时间不同的反馈，因此这些节点必须标为待复盘。",
+        "评论区提到 Showman 分支可找第二 Baron 和第二 Mime，但这不是主线强证据。"
+      ],
+      "confidence": "中",
+      "useInSite": "作为 Reddit 社区路线线索和冲突反馈；精确 shop/pack 顺序需实机复盘。"
     }
   ],
   "reviewQueue": [
@@ -2197,6 +2239,29 @@
       "nextAction": "按 Ante 1-28 实机复盘：确认 Blueprint、Hanging Chad、Soul/Triboulet、Deja Vu、Mime/Baron、Invisible/Brainstorm、Ectoplasm/Cola、Blank/Antimatter、DNA、Burglar/Serpent 的商店/包位置与现金阈值。",
       "validation": "复盘完成后应补逐商店 queueTables、重掷次数、Invisible Joker 复制结果、Boss 应对和失败分支；若关键节点成立，再升级 completeness。",
       "ownerMode": "Agent Reach old.reddit + browser-use/实机复盘",
+      "updatedAt": "2026-06-16"
+    },
+    {
+      "id": "pwx3aqj8-dual-source-replay",
+      "title": "PWX3AQJ8 Ghost Deck nan 双来源复盘",
+      "platform": "BalatroSeeds + Reddit",
+      "priority": "A",
+      "status": "ready-replay",
+      "blocker": "BalatroSeeds 只给组件池，Reddit 命令侧 JSON/Jina 被拦；old.reddit 有元描述和评论，但完整逐店表仍缺失。",
+      "evidenceIds": [
+        "balatroseeds-pwx3aqj8-ghost",
+        "reddit-pwx3aqj8-easiest-nan"
+      ],
+      "sourceIds": [
+        "balatroseeds-pwx3aqj8-ghost",
+        "reddit-pwx3aqj8-easiest-nan"
+      ],
+      "targetSeeds": [
+        "PWX3AQJ8"
+      ],
+      "nextAction": "实机复盘 Ghost Deck：确认 Charm Tag/Perkeo/Temperance、Rare Tag/Baron、Arcana/Judgement/Mime、negative Reserved Parking、Brainstorm、Blueprint、Invisible Joker、Ectoplasm、Cryptid 复制量和 red seal steel King 制作路径。",
+      "validation": "复盘完成后应补 Ante/shop/pack 表，明确哪些节点是固定、哪些依赖 reroll，并解决评论区对 Reserved Parking、Blueprint、Invisible 的冲突反馈。",
+      "ownerMode": "Agent Reach BalatroSeeds/Jina + old.reddit + browser-use/实机复盘",
       "updatedAt": "2026-06-16"
     }
   ]
