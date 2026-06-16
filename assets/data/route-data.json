@@ -754,6 +754,49 @@
       "sources": [
         "reddit-1ja54yd6-full-guide"
       ]
+    },
+    {
+      "seed": "2NJEYMUI",
+      "title": "BP/Chad/Trib 转 Baron-Mime naneinf 候选",
+      "deck": "Plasma Deck / White Stake recommended",
+      "archetype": "Blueprint / Hanging Chad / Triboulet -> Baron-Mime naneinf",
+      "difficulty": "Reddit naneinf candidate",
+      "version": "Reddit 2025-09-19 / 待实机复盘",
+      "image": "assets/images/steel-king-route.webp",
+      "summary": "Reddit r/Balatro_Seeds 帖给出 2NJEYMUI 的 Plasma Deck 路线：首店 Buffoon Pack 出 Blueprint，第二店 Hanging Chad，Ante 2 后 Arcana/Soul 出 Triboulet；约 Ante 7/8 转 Baron/Mime，Ante 22 取 Antimatter 后用 DNA 扩牌，Ante 27/28 通过 Burglar 与 Serpent 冲 naneinf。",
+      "route": [
+        "White Stake / Plasma Deck 推荐开局，首店 Buffoon Pack 找 Blueprint，第二店拿 Hanging Chad。",
+        "Ante 2 第一轮后 Arcana Pack 的 Soul 出 Triboulet，BP/Chad/Trib 负责早期过渡。",
+        "Ante 4 左右 Spectral Pack 有 Deja Vu，给目标 King 上红封；持续修成 gold/steel kings。",
+        "Ante 7 使用 Hieroglyph 后继续用 BP/Trib/Chad，看到 Mime 的商店后 Baron 在后一轮重掷附近。",
+        "Ante 8 第一轮出现 Invisible Joker；同阶段附近有 Brainstorm，需要根据现金决定是否当场追。",
+        "Ante 9-10 应转成 Baron/Mime、Blueprint、Brainstorm，并拥有一个额外 BP/BS 复制体。",
+        "Ante 12-15 左右 Spectral Pack 有 Ectoplasm；拿到后找 Showman，再继续重掷找额外 Blueprint。",
+        "同一段商店几次重掷后可见 Cola；买卖 Cola 后跳过 Big Blind 拿 voucher tags，目标是 Blank -> Antimatter。",
+        "Ante 22 之前目标是 2-3 Blueprints、1-2 Brainstorms、Baron/Mime、约 $1800 以上现金和大部分 gold/steel kings。",
+        "拿 Antimatter 后立刻重掷找 DNA；原帖实测约 35 次重掷，之后靠 DNA 扩大牌组。",
+        "Ante 27 后几次重掷能拿 Burglar；继续找 Serpent，复制 Burglar 到 20 hands 后在 Ante 28 执行 naneinf。"
+      ],
+      "warnings": [
+        "Reddit 作者明确说没有保留超详细笔记，部分精确 ante/shop 可能有偏差，当前不能标成已验证逐商店表。",
+        "Jina Reader 与 Reddit JSON 本轮均被拦，证据来自 old.reddit 可读 HTML；后续需要截图或实机复盘加强证据链。",
+        "Invisible Joker 复制目标存在随机性，作者提到通常复制 Blueprint 但并非每次稳定。",
+        "作者建议不要跳盲，直到为了 naneinf 必须跳；例外包括早中期一个 voucher tag 和后续 Big Blind voucher tags。"
+      ],
+      "tags": [
+        "Plasma Deck",
+        "naneinf",
+        "Blueprint",
+        "Hanging Chad",
+        "Triboulet",
+        "Baron/Mime",
+        "Antimatter",
+        "DNA",
+        "Reddit"
+      ],
+      "sources": [
+        "reddit-2njeymui-naneinf-guide"
+      ]
     }
   ],
   "seedDetails": {
@@ -2936,6 +2979,118 @@
         "不要保留太多非红封钢K目标牌，尤其是 Ante 4 的 foil gold King of Diamonds，原帖明确提醒不要复制太多。",
         "The Plant 和 Crimson Heart 都可能影响路线稳定性，必须在复盘里补 Boss 应对。"
       ]
+    },
+    "2NJEYMUI": {
+      "completeness": "Reddit naneinf candidate，精确商店与重掷次数待复盘",
+      "sourceMode": "old.reddit HTML 正文抽取；canonical Reddit URL 入源",
+      "videoStatus": "无视频；当前为文字路线和作者笔记。",
+      "sources": [
+        "reddit-2njeymui-naneinf-guide"
+      ],
+      "flow": [
+        {
+          "stage": "开局 - Plasma Deck / White Stake",
+          "actions": [
+            "按 Reddit 原帖建议使用 White Stake 与 Plasma Deck。",
+            "首店 Buffoon Pack 应有 Blueprint，第二店应有 Hanging Chad。",
+            "早期不要拿会挤出关键小丑的 Tarot Merchant；作者认为它不是必要条件。"
+          ]
+        },
+        {
+          "stage": "Ante 2 - Soul 出 Triboulet",
+          "actions": [
+            "Ante 2 第一轮之后的 Arcana Pack 里有 Soul。",
+            "该 Soul 给 Triboulet，形成 Blueprint / Hanging Chad / Triboulet 的早期通关核心。",
+            "这一套足够带过早期底注，同时持续升级 High Card。"
+          ]
+        },
+        {
+          "stage": "Ante 4 左右 - Deja Vu 红封 King",
+          "actions": [
+            "Ante 4 左右 Spectral Pack 有 Deja Vu，用于做 red seal King。",
+            "作者提到自己用 King of Spades 更顺，但 King of Hearts 可能也可行。",
+            "这段开始集中 deck fixing，目标是把牌组改成 gold/steel kings。"
+          ]
+        },
+        {
+          "stage": "Ante 7/8 - 从 BP/Chad/Trib 转 Baron/Mime",
+          "actions": [
+            "使用 Hieroglyph 后的第二个 Ante 7 仍可用 BP/Trib/Chad 过渡。",
+            "看到 Mime 的商店后，Baron 在后一轮重掷附近。",
+            "从这里开始准备卖掉 Trib/Chad，把体系切成 Baron/Mime 高牌路线。"
+          ]
+        },
+        {
+          "stage": "Ante 8-9 - Invisible Joker 与 Brainstorm",
+          "actions": [
+            "Ante 8 round 1 出现 Invisible Joker；如果时机合适，可以卖牌来处理 Verdant Leaf。",
+            "Invisible Joker 通常复制 Blueprint，但作者提醒并非总是稳定。",
+            "附近几次重掷还有 Brainstorm；如果现金不足，可以等到 Ante 9 再拿。"
+          ]
+        },
+        {
+          "stage": "Ante 9-10 - Baron/Mime 体系成型",
+          "actions": [
+            "到 Ante 9-10，目标配置是 Baron/Mime、Blueprint、Brainstorm 和一个额外 BP/BS 复制体。",
+            "此时开始以 high card 与 red seal steel/gold kings 为核心继续放大。",
+            "继续保持 $25 以上经济底线，但早期也要频繁重掷找 tarot/deckfixing。"
+          ]
+        },
+        {
+          "stage": "Ante 12-15 - Ectoplasm、Showman、Cola",
+          "actions": [
+            "大约 Ante 12-15 会遇到带 Ectoplasm 的 Spectral Pack。",
+            "拿 Ectoplasm 后寻找 Showman，后续继续重掷找额外 Blueprint。",
+            "同一段商店里，拿 Ectoplasm 的商店几次重掷后可见 Cola；买卖 Cola 后跳过 Big Blind 争取 voucher tags。"
+          ]
+        },
+        {
+          "stage": "Blank -> Antimatter 节点",
+          "actions": [
+            "Big Blind 跳盲得到的两个 voucher tags 中，目标至少拿到 Blank。",
+            "作者认为如果这里错过 Blank，Antimatter 出得不够快，路线可能需要重开。",
+            "Cola 未必是必要条件，但额外 voucher tag 对 Blank/Antimatter 节奏很重要。"
+          ]
+        },
+        {
+          "stage": "Ante 22 - Antimatter 与 DNA",
+          "actions": [
+            "到 Ante 22，理想状态是 2-3 个 Blueprints、1-2 个 Brainstorms、Baron/Mime 和约 $1800 以上现金。",
+            "Antimatter 在分数门槛过高前及时出现。",
+            "拿 Antimatter 后立即重掷找 DNA；作者记录约 35 次重掷后出现。"
+          ]
+        },
+        {
+          "stage": "Ante 24-27 - 留钱找 Serpent / Burglar",
+          "actions": [
+            "打完 Ante 24 后，作者建议至少剩 $800-1000。",
+            "Ante 25 和 Ante 26 不建议硬找 Burglar，优先找 Serpent 省钱。",
+            "继续用 DNA 扩大牌组，为最终 naneinf 做足手牌数量。"
+          ]
+        },
+        {
+          "stage": "Ante 27-28 - Burglar / Serpent 执行 naneinf",
+          "actions": [
+            "打完 Ante 27 并保留 DNA 后，商店几次重掷可见 Burglar。",
+            "如果剩余现金足够，再最后一次找 Serpent。",
+            "复制 Burglar 到 exactly 20 hands 后，在 Ante 28 执行 naneinf。"
+          ]
+        },
+        {
+          "stage": "Ante 30+ - 路线边界",
+          "actions": [
+            "作者本人继续找 Serpent 还能再走一段，但在 Ante 30 左右因为钱不够停住。",
+            "作者同时说明这是自己的第一次 naneinf，笔记不够详细。",
+            "因此站内只把它作为高价值 naneinf 候选，不宣称逐商店稳定复现。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "不要把作者的 approximate ante/shop 当作精确队列表；需要实机确认 Mime->Baron、Ectoplasm/Cola、Antimatter/DNA 和 Burglar/Serpent 位置。",
+        "不要太早跳盲；原帖建议除特定 voucher tag 与 naneinf 需要外，不跳盲。",
+        "不要在 Ante 1 买 Tarot Merchant；原帖认为它可能挤出必要小丑且并非必需。",
+        "Invisible Joker 复制对象不稳定，复盘时必须记录复制结果和失败分支。"
+      ]
     }
   },
   "sourceAdditions": {
@@ -3080,6 +3235,12 @@
       "url": "https://www.reddit.com/r/balatro/comments/1m5a7tq/full_guide_early_foil_dna_stuntman_red_seal_late/",
       "type": "Reddit self post / old.reddit readable mirror",
       "note": "2025-07-21 Reddit full guide; direct Reddit JSON and Jina were blocked during 2026-06-16 harvest, old.reddit HTML was readable."
+    },
+    "reddit-2njeymui-naneinf-guide": {
+      "label": "Reddit r/Balatro_Seeds naneinf guide - 2NJEYMUI",
+      "url": "https://www.reddit.com/r/Balatro_Seeds/comments/1nlghbk/first_naneinf_seed_ive_found_naturally_2njeymui/",
+      "type": "Reddit self post / old.reddit readable mirror",
+      "note": "2025-09-19 Reddit Balatro_Seeds post; direct Reddit JSON and Jina were blocked during 2026-06-16 harvest, old.reddit HTML was readable."
     }
   }
 }

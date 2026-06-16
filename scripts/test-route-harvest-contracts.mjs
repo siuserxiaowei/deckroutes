@@ -149,4 +149,46 @@ const redditQueueItem = (siteData.reviewQueue || []).find((item) => item.id === 
 assert.ok(redditQueueItem, "1JA54YD6 should stay in the replay queue for exact shop/reroll validation");
 assert.ok(redditQueueItem.targetSeeds?.includes("1JA54YD6"));
 
+const redditNaneinfSeed = seedById.get("2NJEYMUI");
+assert.ok(redditNaneinfSeed, "2NJEYMUI should be promoted from the Reddit naneinf guide into the seed database");
+assert.ok(redditNaneinfSeed.sources?.includes("reddit-2njeymui-naneinf-guide"));
+assert.match(redditNaneinfSeed.summary || "", /Blueprint|Hanging Chad|Triboulet|Baron|Mime|naneinf/i);
+
+const redditNaneinfDetail = routeData.seedDetails?.["2NJEYMUI"];
+assert.ok(redditNaneinfDetail, "2NJEYMUI should have a route detail");
+assert.match(redditNaneinfDetail.completeness || "", /Reddit|candidate|待复盘/i);
+assert.ok((redditNaneinfDetail.flow || []).length >= 9, "2NJEYMUI should expose the Reddit naneinf notes as staged route nodes");
+const redditNaneinfText = (redditNaneinfDetail.flow || [])
+  .flatMap((stage) => [stage.stage, ...(stage.actions || [])])
+  .join("\n");
+for (const requiredText of [
+  "Plasma",
+  "Blueprint",
+  "Hanging Chad",
+  "Triboulet",
+  "Deja Vu",
+  "Baron",
+  "Mime",
+  "Antimatter",
+  "DNA",
+  "Burglar",
+  "Serpent"
+]) {
+  assert.match(redditNaneinfText, new RegExp(requiredText, "i"), `2NJEYMUI route should include ${requiredText}`);
+}
+
+assert.equal(
+  sourceMap["reddit-2njeymui-naneinf-guide"]?.url,
+  "https://www.reddit.com/r/Balatro_Seeds/comments/1nlghbk/first_naneinf_seed_ive_found_naturally_2njeymui/"
+);
+
+const redditNaneinfEvidence = (siteData.evidenceSources || []).find((item) => item.id === "reddit-2njeymui-naneinf-guide");
+assert.ok(redditNaneinfEvidence, "2NJEYMUI should have an evidence card");
+assert.ok(redditNaneinfEvidence.seeds?.includes("2NJEYMUI"));
+assert.ok((redditNaneinfEvidence.facts || []).length >= 7, "2NJEYMUI evidence should preserve source-backed route facts");
+
+const redditNaneinfQueueItem = (siteData.reviewQueue || []).find((item) => item.id === "reddit-2njeymui-replay");
+assert.ok(redditNaneinfQueueItem, "2NJEYMUI should stay in the replay queue for exact shop/reroll validation");
+assert.ok(redditNaneinfQueueItem.targetSeeds?.includes("2NJEYMUI"));
+
 console.log("Route harvest contracts passed");
