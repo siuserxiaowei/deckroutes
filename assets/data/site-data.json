@@ -5,7 +5,7 @@
     "asOf": "2026-06-16",
     "language": "zh-CN",
     "method": "Agent Reach doctor + mcporter 显式配置调用 + Jina Reader + GitHub CLI + BalatroSeeds public pages + web search fallback + Scrapling availability check",
-    "coverageNote": "2026-06-16 八次复核：Agent Reach doctor 默认配置显示 9/15 渠道可用；显式 mcporter 配置仍可列出 xiaohongshu、douyin、weibo、exa 4 个健康 MCP server。Exa 本轮触发免费 MCP rate limit，小红书 search_feeds 仍 EOF，抖音 parse/download 仍缺 DASHSCOPE_API_KEY；本轮补 GitHub Actions 数据质量门、路线质量审计和 BalatroSeeds 可读节点种。"
+    "coverageNote": "2026-06-16 九次复核：Agent Reach doctor 显示 13/15 渠道可用；显式 mcporter 配置可列出 xiaohongshu、douyin、weibo、exa 4 个健康 MCP server。微博 MCP 可搜索内容、话题和评论；小红书显式 MCP 已连接但 check_login_status/search_feeds 触发浏览器 profile ProcessSingleton/socket directory 启动错误；抖音 parse/download 仍缺 DASHSCOPE_API_KEY。"
   },
   "stats": [
     {
@@ -905,11 +905,11 @@
   "platformStatus": [
     {
       "platform": "Agent Reach / 工具总览",
-      "status": "doctor 默认配置 9/15；显式 mcporter 配置 4 个 MCP 健康",
+      "status": "doctor 显示 13/15；显式 mcporter 配置 4 个 MCP 健康",
       "accessMethod": "agent-reach doctor + mcporter --config /Users/siuserxiaowei/config/mcporter.json list",
       "usableNow": true,
-      "limitation": "doctor 默认配置未识别 Exa/微博/小红书/抖音，但显式配置可列出 xiaohongshu、douyin、weibo、exa；小红书 search_feeds 仍 EOF，抖音 parse/download 仍缺 DASHSCOPE_API_KEY，Exa 本轮触发免费 MCP rate limit。",
-      "nextAction": "后续深采统一带显式 mcporter config；小红书先修登录态/服务端 EOF，抖音先补 DASHSCOPE_API_KEY，Exa 如继续扩搜需自有 API key。"
+      "limitation": "doctor 显示微博、小红书、抖音等渠道已接入；但本项目 worktree 下仍需显式 --config。小红书 check_login_status/search_feeds 当前触发 Failed to create socket directory / ProcessSingleton / profile directory 启动错误；抖音 parse/download 仍缺 DASHSCOPE_API_KEY。",
+      "nextAction": "后续深采统一带显式 mcporter config；小红书先修浏览器 profile/socket directory 或改隔离 profile，再跑 search_feeds；抖音先补 DASHSCOPE_API_KEY；微博可继续用 search_content/search_topics/get_comments。"
     },
     {
       "platform": "Exa / 全网语义搜索",
@@ -945,11 +945,11 @@
     },
     {
       "platform": "小红书",
-      "status": "MCP 可见，登录态/读取失败",
+      "status": "MCP 可见，浏览器 profile 启动失败",
       "accessMethod": "mcporter --config /Users/siuserxiaowei/config/mcporter.json call xiaohongshu.check_login_status",
       "usableNow": false,
-      "limitation": "Agent Reach doctor 和显式 mcporter 配置都显示 xiaohongshu server 已连接，但 search_feeds(\"小丑牌 钢K 种子\") 仍返回 EOF；当前不能证明可读取真实笔记，也不能把小红书内容当作真实采集结果。",
-      "nextAction": "修复 cookies/login 后运行 search_feeds(\"小丑牌 钢K\")、search_feeds(\"Balatro 钢K 种子\") 和 get_feed_detail，并保留笔记图片/正文来源。"
+      "limitation": "Agent Reach doctor 和显式 mcporter 配置都显示 xiaohongshu server 已连接到 localhost:18060/mcp；但 check_login_status 与 search_feeds(\"小丑牌 钢K\") 当前返回 Failed to create socket directory、ProcessSingleton、profile directory 启动错误，不能证明可读取真实笔记。",
+      "nextAction": "先修小红书 MCP 浏览器 profile/socket directory，避免 ProcessSingleton；随后运行 search_feeds(\"小丑牌 钢K\")、search_feeds(\"Balatro 钢K 种子\") 和 get_feed_detail，要求返回 feed id、xsec token、标题、作者、正文和图片。"
     },
     {
       "platform": "抖音",
@@ -1325,13 +1325,16 @@
         "IRW4G69D"
       ],
       "facts": [
-        "weibo.search_content(\"小丑牌 种子 钢K\") 返回 2025-12-24 用户 Strong_JIA 公开帖。",
+        "weibo.search_content(\"小丑牌 种子 钢K\") 返回 2025-12-24 用户 Strong_JIA 公开帖，发布时间 Wed Dec 24 01:22:46 +0800 2025。",
+        "该帖来源为 iPhone客户端，发布于 陕西。",
+        "Weibo MCP 返回 1 条评论、1 赞、0 转发。",
         "正文直接分享种子 IRW4G69D，并写明 1-1 出 Blueprint、4-2 出 Chicot、8 底注出 Baron。",
         "作者还说明复制 Blueprint 在 Chicot 之前出现，DNA 在 Baron 之前出现。",
         "该帖附两张公开配图，详情页已保留 wx1/wx4 sinaimg.cn 原图链接作为图片证据。",
         "配图可见牌组标签为“灵媒”，左侧 UI 显示底注 18/8、回合 54、现金 $119、牌库 175/198。",
         "配图持牌区可见多张红封K，手牌容量分别显示 13/10 与 12/10，小丑栏显示 9/9。",
         "Tesseract chi_sim+eng 只识别到零散“高牌、比赛、选项、底注、回合”等碎片，不能可靠确认商店顺序、Boss 或完整 Joker 名称。",
+        "weibo.get_comments(5247187984581762) 只返回评论罗伯特的一条 AI罗伯特聪明版鼓励评论，没有新增路线节点。",
         "两张配图是高底注/结果状态截图，不是商店流程长图，因此不能标完整路线。"
       ],
       "confidence": "中高",
@@ -1347,8 +1350,9 @@
       "seeds": [],
       "facts": [
         "xiaohongshu-mcp 已接入 mcporter，Docker 容器可达，但缺 cookies.json 登录态。",
-        "2026-06-15 复测：check_login_status 与 search_feeds(\"小丑牌 钢K\") 均返回 EOF；当前仍不能读取真实笔记。",
-        "通过 Exa 索引搜索 site:xiaohongshu.com 小丑牌 钢K Balatro 种子，命中多为无关用户主页或其他卡牌/桌游账号；MCP 登录/EOF 修复后需要重新采集站内笔记。"
+        "2026-06-16 显式配置复测：localhost:18060/mcp 可见，但 check_login_status 与 search_feeds(\"小丑牌 钢K\") 返回 Failed to create socket directory / ProcessSingleton / profile directory。",
+        "search_feeds(\"Balatro 钢K 种子\") 与 search_feeds(\"小丑牌 红封钢K\") 同样未返回 feed id 或 xsec token；当前仍不能读取真实笔记。",
+        "通过 Exa 索引搜索 site:xiaohongshu.com 小丑牌 钢K Balatro 种子，命中多为无关用户主页或其他卡牌/桌游账号；MCP profile/ProcessSingleton 修复后需要重新采集站内笔记。"
       ],
       "confidence": "高",
       "useInSite": "作为平台缺口说明，不作为攻略来源。"
@@ -1468,7 +1472,9 @@
       "seeds": [],
       "facts": [
         "mcporter 显式配置能看到 xiaohongshu server，说明服务已接入当前工具链。",
-        "check_login_status 与 search_feeds(\"小丑牌 钢K\") 仍返回 EOF；当前不能证明已登录，也不能真实读取笔记正文。",
+        "本轮显式配置指向 localhost:18060/mcp；check_login_status 与 search_feeds(\"小丑牌 钢K\") 触发 Failed to create socket directory。",
+        "错误同时包含 ProcessSingleton / profile directory，说明当前阻塞在浏览器 profile 启动层，不是小红书搜索无结果。",
+        "search_feeds(\"Balatro 钢K 种子\") 与 search_feeds(\"小丑牌 红封钢K\") 同样未返回 feed id 或 xsec token。",
         "当前不能把小红书标为已采集内容。"
       ],
       "confidence": "高",
@@ -2132,16 +2138,16 @@
       "platform": "小红书",
       "priority": "S",
       "status": "blocked-login",
-      "blocker": "xiaohongshu server 已接入 mcporter，但 check_login_status 与 search_feeds(\"小丑牌 钢K\") 返回 EOF；当前不能证明登录态可用。",
+      "blocker": "xiaohongshu server 已接入 mcporter localhost:18060/mcp，但 check_login_status 与 search_feeds(\"小丑牌 钢K\") 返回 Failed to create socket directory / ProcessSingleton / profile directory 启动错误；当前不能证明登录态或真实笔记读取可用。",
       "evidenceIds": [
         "xhs-mcp-login-status",
         "xhs-probe-balatro-steel-k"
       ],
       "targetSeeds": [],
-      "nextAction": "补小红书登录 cookie 后，用 Agent Reach/xiaohongshu-mcp 搜索“小丑牌 钢K”“Balatro 钢K 种子”“小丑牌 红封钢K”，抓取笔记标题、作者、图片和正文摘要。",
+      "nextAction": "先修小红书 MCP 浏览器 profile/socket directory 与 ProcessSingleton；修复后用 Agent Reach/xiaohongshu-mcp 搜索“小丑牌 钢K”“Balatro 钢K 种子”“小丑牌 红封钢K”，抓取笔记标题、作者、图片和正文摘要。",
       "validation": "search_feeds 返回 feed id/xsec token；每条入库笔记至少保留原始 URL、标题、发布时间、正文摘要和截图/OCR 状态。",
       "ownerMode": "Agent Reach MCP + 浏览器人工登录",
-      "updatedAt": "2026-06-15"
+      "updatedAt": "2026-06-16"
     },
     {
       "id": "douyin-dashscope-steel-k",
@@ -2182,7 +2188,7 @@
       "targetSeeds": [
         "IRW4G69D"
       ],
-      "nextAction": "配图已下载并确认是灵媒底注 18/8、回合 54、红封K状态截图；下一步实机复盘 IRW4G69D，确认 1-1 Blueprint、4-2 Chicot、8 底注 Baron、DNA、红封K成型路径、Boss 和商店顺序。",
+      "nextAction": "配图已下载并确认是 Strong_JIA 微博公开帖的灵媒底注 18/8、回合 54、红封K状态截图；评论区只有评论罗伯特鼓励评论，无新增路线节点。下一步实机复盘 IRW4G69D，确认 1-1 Blueprint、4-2 Chicot、8 底注 Baron、DNA、红封K成型路径、Boss 和商店顺序。",
       "validation": "截图事实必须回链微博原帖和原图；完整路线只有在实机复盘确认商店顺序、Boss、现金/roll 成本和红封K制作路径后才能升级。",
       "ownerMode": "Weibo MCP + OCR + manual image review + replay",
       "updatedAt": "2026-06-16"

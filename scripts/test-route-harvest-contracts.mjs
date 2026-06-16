@@ -935,6 +935,16 @@ const weiboImageText = [
   ...(weiboImageDetail.evidenceImages || []).flatMap((image) => [image.label, image.note, image.url])
 ].join("\n");
 for (const requiredText of [
+  "Strong_JIA",
+  "Wed Dec 24 01:22:46 \\+0800 2025",
+  "iPhone客户端",
+  "发布于 陕西",
+  "comments_count 1|1 条评论|评论 1",
+  "attitudes_count 1|1 赞|点赞 1",
+  "reposts_count 0|0 转发",
+  "评论罗伯特",
+  "AI罗伯特聪明版",
+  "没有新增路线节点|不提供路线节点",
   "灵媒",
   "红封K",
   "底注 18/8",
@@ -952,13 +962,26 @@ for (const requiredText of [
 const weiboImageEvidence = (siteData.evidenceSources || []).find((item) => item.id === "weibo-irw4g69d-steel-k");
 assert.ok(weiboImageEvidence, "IRW4G69D should have a Weibo evidence card");
 assert.ok(weiboImageEvidence.seeds?.includes("IRW4G69D"));
-assert.ok((weiboImageEvidence.facts || []).length >= 7, "IRW4G69D evidence should preserve text facts and image verification facts");
-assert.match((weiboImageEvidence.facts || []).join("\n"), /配图|灵媒|红封K|底注\s*18\/8|回合\s*54|OCR|商店顺序/i);
+assert.ok((weiboImageEvidence.facts || []).length >= 11, "IRW4G69D evidence should preserve text facts, Weibo metadata, comments boundary, and image verification facts");
+assert.match((weiboImageEvidence.facts || []).join("\n"), /Strong_JIA|Wed Dec 24 01:22:46 \+0800 2025|iPhone客户端|发布于 陕西|1 条评论|1 赞|0 转发|评论罗伯特|AI罗伯特聪明版|没有新增路线节点|配图|灵媒|红封K|底注\s*18\/8|回合\s*54|OCR|商店顺序/i);
 
 const weiboImageQueue = (siteData.reviewQueue || []).find((item) => item.id === "weibo-ocr-seed-post");
 assert.ok(weiboImageQueue, "IRW4G69D should stay in the Weibo OCR/replay queue");
 assert.ok(weiboImageQueue.targetSeeds?.includes("IRW4G69D"));
 assert.match(weiboImageQueue.status || "", /ready-replay|ready-ocr/);
-assert.match(weiboImageQueue.nextAction || "", /截图|红封K|底注 18\/8|商店顺序|实机复盘/);
+assert.match(weiboImageQueue.nextAction || "", /Strong_JIA|评论罗伯特|截图|红封K|底注 18\/8|商店顺序|实机复盘/);
+
+const xhsStatus = (siteData.platformStatus || []).find((item) => item.platform === "小红书");
+assert.ok(xhsStatus, "Xiaohongshu platform status should be tracked");
+assert.equal(xhsStatus.usableNow, false);
+assert.match([xhsStatus.status, xhsStatus.limitation, xhsStatus.nextAction].join("\n"), /localhost:18060|Failed to create socket directory|ProcessSingleton|profile directory|search_feeds|check_login_status/i);
+
+const xhsRuntimeEvidence = (siteData.evidenceSources || []).find((item) => item.id === "xhs-mcp-login-status");
+assert.ok(xhsRuntimeEvidence, "Xiaohongshu runtime status should have an evidence card");
+assert.match((xhsRuntimeEvidence.facts || []).join("\n"), /localhost:18060|Failed to create socket directory|ProcessSingleton|profile directory|check_login_status|search_feeds/i);
+
+const xhsQueue = (siteData.reviewQueue || []).find((item) => item.id === "xhs-login-balatro-steel-k");
+assert.ok(xhsQueue, "Xiaohongshu replay queue item should remain tracked");
+assert.match([xhsQueue.blocker, xhsQueue.nextAction, xhsQueue.validation].join("\n"), /Failed to create socket directory|ProcessSingleton|profile directory|search_feeds|feed id|xsec token/i);
 
 console.log("Route harvest contracts passed");
