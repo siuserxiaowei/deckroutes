@@ -75,7 +75,7 @@
       "difficulty": "中文早期流程",
       "version": "TapTap 2025-06-22",
       "image": "assets/images/steel-king-route.webp",
-      "summary": "TapTap 帖子给出 1-7 回合的早期路线：通灵、保留同花、黑桃 K 上钢铁、红戳、复制，最终形成三张红戳钢K和额外钢铁 K。",
+      "summary": "TapTap《10回合镭射钢K》帖子给出 1-7 回合的早期路线：通灵、保留同花、黑桃 K 上钢铁、红戳、复制，最终形成三张红戳钢K和额外钢铁 K；回合 8-10 暂无正文步骤，标题待补。",
       "route": [
         "回合 1 过关后包里拿通灵。",
         "回合 2-3 通过弃牌保留红桃 8/9/10/J/Q 同花；回合 3 结束买包，把黑桃 K 做成钢铁。",
@@ -85,7 +85,7 @@
         "回合 7 卡包还有一张钢铁 K，早期钢K质量继续提高。"
       ],
       "warnings": [
-        "该帖只覆盖早期 7 回合，不代表完整 Ante 8 或无尽流程。",
+        "该帖标题是 10 回合镭射钢K，但正文只覆盖早期 1-7 回合；回合 8-10 不能当作已公开流程。",
         "需要实际复盘确认不同版本/牌组下的商店和包顺序。"
       ],
       "tags": [
@@ -1507,47 +1507,72 @@
       ]
     },
     "X8WTK1U1": {
-      "completeness": "早期 7 回合可验证",
-      "sourceMode": "TapTap 中文文字流程；Jina Reader 2026-06-15 可读正文与评论",
-      "videoStatus": "非视频来源；正文列出回合节点。",
+      "completeness": "TapTap 1-7 回合可验证；10回合标题待补，回合 8-10 未公开",
+      "sourceMode": "TapTap Jina Reader 2026-06-16 正文 + 原始 HTML 元数据 + 图片链接；评论 2 但评论正文未展开",
+      "videoStatus": "非视频来源；标题为 10回合镭射钢K，正文列出回合 1-7，评论 2 但评论正文不可读。",
       "sources": [
         "taptap-x8wtk1u1"
       ],
       "flow": [
         {
-          "stage": "回合 1 - 通灵开局",
+          "stage": "来源定位 - TapTap 10回合镭射钢K / X8WTK1U1",
           "actions": [
-            "正常过第一回合，结束后在包里拿通灵。",
-            "这个节点只记录了关键消耗牌选择，仍需实测确认牌组和金币。"
+            "TapTap Jina Reader 标题为 10回合镭射钢K - 小丑牌-Balatro攻略，作者显示为可爱的羊八鲁，发布时间为 2025-06-22T03:25:58+00:00。",
+            "页面元信息显示修改于 2025/06/22、969 浏览、评论 2；Jina 正文和原始 HTML 可读正文与图片链接，但评论正文没有展开。",
+            "正文开头写“后面啥样子我都不敢想，太害怕了”，并明确列出“种子X8WTK1U1”。"
           ]
         },
         {
-          "stage": "回合 2-3 - 找同花与第一张钢 K",
+          "stage": "回合 1 - 通灵开局",
           "actions": [
-            "回合 2 弃牌，保留红桃 8/9/10/J/Q 同花。",
-            "回合 3 继续保留红桃 8/9/10/J/Q 同花，结束后买包，把黑桃 K 给钢铁效果。"
+            "正文写“回合①过了，包里拿个通灵”。",
+            "这个节点只记录了关键消耗牌选择，仍需实测确认牌组、金币和第一回合出牌方式。"
+          ]
+        },
+        {
+          "stage": "回合 2-3 - 红桃同花、负片与第一张钢 K",
+          "actions": [
+            "回合 2 原文为“弃牌，保留红桃 8910jq同花 给负片”。",
+            "回合 3 原文继续要求“保留红桃8910jq同花”，结束后买包。",
+            "同一段写“黑桃K给钢铁效果”，因此第一张可执行钢 K 节点来自回合 3 后的包。"
           ]
         },
         {
           "stage": "回合 4 - 红戳核心",
           "actions": [
-            "弃牌保留红桃 2/3/4/5/6 同花。",
-            "给红戳并保留，这是后续复制红戳钢K的核心。",
+            "正文写“弃牌，保留红桃23456同花”。",
+            "原文把红戳标为“红戳（核心，需保留）”，这是后续复制红戳钢K的核心。",
             "结束后不买包，避免打乱后续节点。"
           ]
         },
         {
           "stage": "回合 5-7 - 复制成三张红戳钢K",
           "actions": [
-            "回合 5 保留红桃 3/4/5/6/7，拿一张复制并保留。",
-            "回合 6 开局用红戳给黑桃 K，然后复制，形成三张红戳钢K。",
-            "回合 7 卡包还有一张钢铁 K，早期牌库质量继续提升。"
+            "回合 5 原文写“保留红桃34567 给一个复制（保留）”。",
+            "回合 6 原文写“开局用红戳给黑桃K，然后复制”，并说明“至此三张红戳刚K到手”；这里按语义标注为三张红戳钢K，原文“刚K”疑似笔误。",
+            "回合7卡包还有一张钢铁K，作者评价为“华丽开局后期直接爆表”。"
+          ]
+        },
+        {
+          "stage": "回合 8-10 - 标题待补，不写成完整路线",
+          "actions": [
+            "帖子标题写 10回合镭射钢K，但当前可读正文只到回合7卡包还有一张钢铁K，没有公开回合 8-10 的出牌、商店、Boss 或镭射成型操作。",
+            "作者补充“想创造极限就做笔记，错了就重开，试错的机会是无限的”，说明后段更像试错复盘提示，不是逐手路线。",
+            "下一步需要查看 TapTap 图片细节、展开评论 2 或实机复盘回合 8-10，才能升级为完整 10 回合流程。"
           ]
         }
       ],
+      "evidenceImages": [
+        {
+          "label": "TapTap 原帖图片",
+          "url": "https://img2-tc.tapimg.com/moment/etag/Fon5JneJXUcHBe6QcJ0j7GWYihZc.jpg/_tap_ugc_m.jpg",
+          "note": "TapTap 页面暴露的帖子配图链接；当前作为图片证据保留，后续需要 OCR 或人工检查是否包含回合 8-10 的隐藏牌局信息。"
+        }
+      ],
       "mistakes": [
-        "这是早期路线，不是完整 Ante 8/Ante 39 攻略。",
-        "需要实测补齐每个商店金币、刷新次数和 Boss 风险。"
+        "不要把标题里的 10 回合直接写成已验证完整流程；当前正文只能支持回合 1-7。",
+        "评论区显示评论 2，但 Jina 和当前 HTML 没有展开评论正文，不能把评论当作后段证据。",
+        "需要实测补齐回合 8-10 的出牌、商店金币、刷新次数、Boss 风险和镭射成型节点。"
       ]
     },
     "90UU79": {
@@ -3404,7 +3429,7 @@
     },
     "1JA54YD6": {
       "completeness": "Reddit full guide candidate，关键商店和重掷次数待复盘",
-      "sourceMode": "old.reddit HTML 正文抽取；canonical Reddit URL 入源",
+      "sourceMode": "Reddit 网页/搜索正文可读；命令行 direct Reddit JSON 与 Jina 本轮被安全页拦截，old.reddit HTML 可读；canonical Reddit URL 入源",
       "videoStatus": "无视频；当前为文字攻略路线。",
       "sources": [
         "reddit-1ja54yd6-full-guide"
@@ -4183,7 +4208,7 @@
       "label": "Reddit r/balatro full guide - 1JA54YD6",
       "url": "https://www.reddit.com/r/balatro/comments/1m5a7tq/full_guide_early_foil_dna_stuntman_red_seal_late/",
       "type": "Reddit self post / old.reddit readable mirror",
-      "note": "2025-07-21 Reddit full guide; direct Reddit JSON and Jina were blocked during 2026-06-16 harvest, old.reddit HTML was readable."
+      "note": "2025-07-21 Reddit full guide; web/search result and old.reddit HTML were readable during 2026-06-16 harvest, while command-line direct Reddit JSON and Jina were blocked."
     },
     "reddit-2njeymui-naneinf-guide": {
       "label": "Reddit r/Balatro_Seeds naneinf guide - 2NJEYMUI",

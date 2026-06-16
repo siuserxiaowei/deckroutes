@@ -1135,17 +1135,24 @@
       "platform": "TapTap",
       "title": "10回合镭射钢K",
       "url": "https://www.taptap.cn/moment/685810471831342883",
-      "retrievedAt": "2026-06-15",
-      "contentType": "中文社区文字流程",
+      "retrievedAt": "2026-06-16",
+      "contentType": "TapTap Jina Reader + 原始 HTML 元数据 + 图片链接 + 评论状态",
       "seeds": [
         "X8WTK1U1"
       ],
       "facts": [
-        "帖子给出种子 X8WTK1U1。",
-        "正文写明回合 1-7 的通灵、同花保留、黑桃 K 钢铁、红戳、复制和三张红戳钢K节点。"
+        "Jina Reader 标题为“10回合镭射钢K - 小丑牌-Balatro攻略”，作者显示为可爱的羊八鲁，发布时间为 2025-06-22T03:25:58+00:00。",
+        "TapTap 页面元信息显示修改于 2025/06/22、969 浏览、评论 2；当前可读正文没有展开评论正文。",
+        "正文开头写“后面啥样子我都不敢想，太害怕了”，并给出种子 X8WTK1U1。",
+        "回合 1 写过关后包里拿通灵。",
+        "回合 2 写保留红桃 8910jq 同花并给负片；回合 3 继续保留红桃 8910jq 同花，结束买包并给黑桃K钢铁效果。",
+        "回合 4 写保留红桃23456同花，给红戳（核心，需保留），结束不买包。",
+        "回合 5 写保留红桃34567并拿复制；回合 6 用红戳给黑桃K后复制，形成三张红戳钢K；回合7卡包还有一张钢铁K。",
+        "页面图片链接为 https://img2-tc.tapimg.com/moment/etag/Fon5JneJXUcHBe6QcJ0j7GWYihZc.jpg/_tap_ugc_m.jpg。",
+        "虽然标题写 10 回合镭射钢K，但当前正文只公开到回合7；回合 8-10 和评论正文仍需图片/OCR/实机复盘补齐。"
       ],
       "confidence": "高",
-      "useInSite": "可做早期 7 回合可验证路线。"
+      "useInSite": "作为 TapTap 中文早期 1-7 回合路线与 10 回合标题待补样本；不可标为完整 10 回合流程。"
     },
     {
       "id": "taptap-iur4cty3",
@@ -1881,7 +1888,7 @@
       "title": "1JA54YD6 Early Foil DNA / Baron-Mime full guide",
       "url": "https://www.reddit.com/r/balatro/comments/1m5a7tq/full_guide_early_foil_dna_stuntman_red_seal_late/",
       "retrievedAt": "2026-06-16",
-      "contentType": "old.reddit HTML 正文可读；Reddit JSON/Jina 本轮被拦",
+      "contentType": "Reddit 网页/搜索正文与 old.reddit HTML 可读；命令行 direct Reddit JSON/Jina 本轮被拦",
       "seeds": [
         "1JA54YD6"
       ],
@@ -2276,10 +2283,10 @@
       "targetSeeds": [
         "X8WTK1U1"
       ],
-      "nextAction": "把 TapTap 帖子的早期 7 回合线索继续扩展到 Ante 8，补镭射/钢K成型后的操作和可失败点。",
-      "validation": "若能复盘到通关，标为完整流程；否则保留“早期路线完整，后段待补”。",
-      "ownerMode": "TapTap 网页 + Scrapling",
-      "updatedAt": "2026-06-15"
+      "nextAction": "对 TapTap 图片做 OCR/人工检查，尝试展开评论 2，并实机复盘回合 8-10；只有补到镭射/钢K成型后的出牌、商店和 Boss 操作，才能把 10回合标题待补升级为完整流程。",
+      "validation": "详情页必须保留“标题 10 回合但正文只到 1-7”的边界；若图片、评论 2 或实机复盘能补齐回合 8-10，再标为完整 10 回合流程。",
+      "ownerMode": "TapTap 网页 + Jina Reader + Scrapling + 图片 OCR + 实机复盘",
+      "updatedAt": "2026-06-16"
     },
     {
       "id": "english-seed-bank-refresh",

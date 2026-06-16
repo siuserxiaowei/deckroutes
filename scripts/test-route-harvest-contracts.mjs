@@ -704,6 +704,61 @@ assert.ok(chineseSteelKReplayItem, "9ZPU1V32 should stay in the replay queue for
 assert.ok(chineseSteelKReplayItem.targetSeeds?.includes("9ZPU1V32"));
 assert.match(chineseSteelKReplayItem.nextAction || "", /17P|无公开字幕|view_points|feed_id|哑剧时点|复制数量|灵质三次/);
 
+const taptapSteelKSeed = seedById.get("X8WTK1U1");
+assert.ok(taptapSteelKSeed, "X8WTK1U1 should remain in the seed database");
+assert.ok(taptapSteelKSeed.sources?.includes("taptap-x8wtk1u1"));
+assert.match(taptapSteelKSeed.summary || "", /TapTap|10回合镭射钢K|1-7|回合\s*8-10|标题待补/i);
+
+const taptapSteelKDetail = routeData.seedDetails?.X8WTK1U1;
+assert.ok(taptapSteelKDetail, "X8WTK1U1 should have a TapTap route detail");
+assert.match(taptapSteelKDetail.completeness || "", /1-7|10回合标题待补|回合\s*8-10/i);
+assert.match(taptapSteelKDetail.sourceMode || "", /Jina Reader|原始 HTML|图片链接|评论正文未展开/i);
+assert.match(taptapSteelKDetail.videoStatus || "", /非视频|评论\s*2|评论正文不可读|标题.*10回合/i);
+assert.ok((taptapSteelKDetail.flow || []).length >= 6, "X8WTK1U1 should split source metadata, exact early flow, and missing late flow");
+assert.ok((taptapSteelKDetail.evidenceImages || []).length >= 1, "X8WTK1U1 should expose the TapTap image evidence link");
+const taptapSteelKText = [
+  ...(taptapSteelKDetail.flow || []).flatMap((stage) => [stage.stage, ...(stage.actions || [])]),
+  ...(taptapSteelKDetail.mistakes || []),
+  ...(taptapSteelKDetail.evidenceImages || []).flatMap((image) => [image.label, image.note, image.url])
+].join("\n");
+for (const requiredText of [
+  "可爱的羊八鲁",
+  "2025-06-22T03:25:58\\+00:00",
+  "969 浏览",
+  "10回合镭射钢K",
+  "后面啥样子我都不敢想",
+  "红桃 8910jq",
+  "给负片",
+  "黑桃K给钢铁效果",
+  "红戳（核心，需保留）",
+  "三张红戳",
+  "回合7卡包",
+  "想创造极限就做笔记",
+  "错了就重开",
+  "试错的机会是无限的",
+  "回合 8-10",
+  "Fon5JneJXUcHBe6QcJ0j7GWYihZc"
+]) {
+  assert.match(taptapSteelKText, new RegExp(requiredText, "i"), `X8WTK1U1 TapTap route should include ${requiredText}`);
+}
+
+assert.equal(
+  sourceMap["taptap-x8wtk1u1"]?.url,
+  "https://www.taptap.cn/moment/685810471831342883"
+);
+
+const taptapSteelKEvidence = (siteData.evidenceSources || []).find((item) => item.id === "taptap-x8wtk1u1");
+assert.ok(taptapSteelKEvidence, "X8WTK1U1 should have a TapTap evidence card");
+assert.ok(taptapSteelKEvidence.seeds?.includes("X8WTK1U1"));
+assert.ok((taptapSteelKEvidence.facts || []).length >= 8, "X8WTK1U1 evidence should preserve source metadata, image link, exact flow, and missing late-flow boundary");
+assert.match(taptapSteelKEvidence.contentType || "", /Jina Reader|原始 HTML|图片|评论状态/i);
+assert.match((taptapSteelKEvidence.facts || []).join("\n"), /可爱的羊八鲁|2025-06-22T03:25:58\+00:00|969 浏览|评论 2|给负片|回合7卡包|图片|回合 8-10|评论正文/i);
+
+const taptapSteelKQueue = (siteData.reviewQueue || []).find((item) => item.id === "taptap-x8wtk1u1-full-route");
+assert.ok(taptapSteelKQueue, "X8WTK1U1 should stay in the replay queue for late-flow validation");
+assert.ok(taptapSteelKQueue.targetSeeds?.includes("X8WTK1U1"));
+assert.match(taptapSteelKQueue.nextAction || "", /图片|评论\s*2|回合\s*8-10|实机复盘|标题待补/);
+
 const weiboImageSeed = seedById.get("IRW4G69D");
 assert.ok(weiboImageSeed, "IRW4G69D should remain in the seed database");
 assert.ok(weiboImageSeed.sources?.includes("weibo-irw4g69d-steel-k"));
