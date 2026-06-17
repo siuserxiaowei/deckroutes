@@ -68,6 +68,23 @@ assert.equal(ghostProseParsed.detail.queueTables.find((table) => table.ante === 
 assert.match(ghostProseParsed.detail.queueTables[0].shopQueue.join("\n"), /hex-Triboulet and Perkeo/);
 assert.match(ghostProseParsed.detail.queueTables.find((table) => table.ante === 13).shopQueue.join("\n"), /Showman|DNA|sock and buskin/i);
 
+const descriptionRouteSample = await readFixture("balatroseed-description-route-sample.md");
+const descriptionRouteParsed = parseBalatroSeedMarkdown(descriptionRouteSample, {
+  sourceId: "balatroseeds-9xni26kw-plasma"
+});
+assert.equal(descriptionRouteParsed.seed, "9XNI26KW");
+assert.equal(descriptionRouteParsed.deck, "Plasma Deck");
+assert.match(descriptionRouteParsed.detail.completeness, /description-backed/i);
+assert.ok((descriptionRouteParsed.detail.queueTables || []).length >= 5, "Seed Description paragraph should become route nodes");
+assert.match(descriptionRouteParsed.detail.sourceMode, /description-backed/i);
+const descriptionRouteText = descriptionRouteParsed.detail.queueTables
+  .flatMap((table) => [table.ante, table.title, table.routeUse, ...(table.shopQueue || []), ...(table.packs || []), ...(table.tags || [])])
+  .join("\n");
+for (const requiredText of ["Brainstorm", "Baron", "Perkeo", "Crytid|Cryptid", "Sixth Sense", "Mime", "Showman", "Ante 19", "Riff-Raff", "Stuntman", "Investment tag"]) {
+  assert.match(descriptionRouteText, new RegExp(requiredText, "i"), `description-backed route should include ${requiredText}`);
+}
+assert.ok(descriptionRouteParsed.detail.mistakes.some((line) => /description-backed|not a raw Shop Queue|不是原始 Shop Queue/i.test(line)));
+
 const htmlMetaSample = await readFixture("balatroseed-html-meta-sample.html");
 const htmlMetaMarkdown = htmlToMarkdownSnapshot(htmlMetaSample, "https://balatroseeds.com/seeds/Y3QRZZ5I/yellow-deck");
 assert.match(htmlMetaMarkdown, /Don't treat this as a verified route/);

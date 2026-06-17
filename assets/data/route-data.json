@@ -989,6 +989,39 @@
         "douyu-9zpu1v32-summary",
         "balatroseed-9zpu1v32-index"
       ]
+    },
+    {
+      "seed": "9XNI26KW",
+      "title": "Plasma Deck 早期 Perkeo / Baron-Mime 候选",
+      "deck": "Plasma Deck",
+      "archetype": "Perkeo / Baron-Mime / Cryptid naneinf 候选",
+      "difficulty": "BalatroSeeds description-backed candidate",
+      "version": "BalatroSeeds 1.0.1n-FULL",
+      "image": "assets/images/steel-king-route.webp",
+      "summary": "BalatroSeeds 公开描述称 9XNI26KW 在早期可见 Brainstorm、Baron、Perkeo；Sixth Sense 的第一张 spectral 给 Crytid/Cryptid；Showman 线有自然负片 Mime；作者声称正确配置可在 Ante 19 或更早冲 naneinf。当前站内只按 description-backed 节点展示，未验证逐店表。",
+      "route": [
+        "开局先买前两个 Buffoon Pack，用 Riff-Raff 和 Stuntman 过早期底注。",
+        "随后跳 Investment tag 拿钱，作为后续找关键组件的经济来源。",
+        "早期组件包括 Brainstorm、Baron、Perkeo。",
+        "Sixth Sense 的第一张 spectral card 来源描述写为 Crytid/Cryptid。",
+        "Showman 线可见自然负片 Mime；目标是正确配置下 Ante 19 或更早冲分。"
+      ],
+      "warnings": [
+        "来源是 BalatroSeeds Seed Description 整段说明，不是原始 Shop Queue dump。",
+        "作者写 naneinf / Ante 19 是来源声明，站内未用实机或逐店表独立验证。",
+        "Crytid 是来源拼写，站内按 Cryptid 机制理解但保留原始拼写边界。"
+      ],
+      "tags": [
+        "Perkeo",
+        "Baron",
+        "Mime",
+        "Brainstorm",
+        "Cryptid",
+        "Plasma"
+      ],
+      "sources": [
+        "balatroseeds-9xni26kw-plasma"
+      ]
     }
   ],
   "seedDetails": {
@@ -5627,6 +5660,153 @@
         "不要把三传奇名单写死；特里布莱、佩尔科欧、帕奇欧等文本需要视频画面核验后再定。",
         "复现时先固定版本、牌组、注码、解锁池和每次跳盲/roll 次数，否则 seed 路线容易错位。"
       ]
+    },
+    "9XNI26KW": {
+      "completeness": "BalatroSeeds description-backed 5 个节点，待实机复盘",
+      "sourceMode": "BalatroSeeds /plasma-deck 页面 + Jina Reader/HTML Seed Description + extract-balatroseed-route description-backed queueTables；不是原始 Shop Queue dump",
+      "videoStatus": "无视频证据；当前为公开网页描述节点。",
+      "sources": [
+        "balatroseeds-9xni26kw-plasma"
+      ],
+      "queueTables": [
+        {
+          "ante": "Opening",
+          "title": "Opening - Buffoon packs / Investment Tag",
+          "boss": "",
+          "voucher": "",
+          "tags": [
+            "Investment tag"
+          ],
+          "routeUse": "BalatroSeeds description-backed 节点；不是原始 Shop Queue dump。用作开局经济与过渡提示，仍需实机复盘 shop order、Boss、cash、reroll。",
+          "shopQueue": [
+            "You should start by buying first two buffoon pack for Riff-Raff and Stuntman to get through early ante.",
+            "Then skip for the Investment tag to get money."
+          ],
+          "packs": [
+            "first two buffoon pack for Riff-Raff and Stuntman"
+          ],
+          "sourceIds": [
+            "balatroseeds-9xni26kw-plasma"
+          ]
+        },
+        {
+          "ante": "Early ante",
+          "title": "Early ante - Brainstorm / Baron / Perkeo",
+          "boss": "",
+          "voucher": "",
+          "tags": [],
+          "routeUse": "BalatroSeeds description-backed 节点；只证明作者描述早期可见这些组件，不等于固定购买顺序。",
+          "shopQueue": [
+            "You will get Brainstorm, Baron and Perkeo on early ante."
+          ],
+          "packs": [],
+          "sourceIds": [
+            "balatroseeds-9xni26kw-plasma"
+          ]
+        },
+        {
+          "ante": "Sixth Sense",
+          "title": "Sixth Sense - Crytid / Cryptid spectral",
+          "boss": "",
+          "voucher": "",
+          "tags": [],
+          "routeUse": "BalatroSeeds description-backed 节点；来源写 Crytid，站内按 Cryptid 机制理解并保留拼写边界。",
+          "shopQueue": [
+            "You will also guranteed to get Crytid on the first spectral card from Sixth Sense."
+          ],
+          "packs": [
+            "first spectral card from Sixth Sense gives Crytid / Cryptid"
+          ],
+          "sourceIds": [
+            "balatroseeds-9xni26kw-plasma"
+          ]
+        },
+        {
+          "ante": "Showman",
+          "title": "Showman - natural negative Mime",
+          "boss": "",
+          "voucher": "",
+          "tags": [],
+          "routeUse": "BalatroSeeds description-backed 节点；negative Mime with Showman 是组件线索，仍需确认实际商店/包/Boss。",
+          "shopQueue": [
+            "You will also get a nat negative Mime with Showman."
+          ],
+          "packs": [],
+          "sourceIds": [
+            "balatroseeds-9xni26kw-plasma"
+          ]
+        },
+        {
+          "ante": "Ante 19",
+          "title": "Ante 19 - source target",
+          "boss": "",
+          "voucher": "",
+          "tags": [],
+          "routeUse": "BalatroSeeds description-backed 目标节点；naneinf / Ante 19 是来源声明，站内待实机复盘 Boss、现金阈值、roll 和最终出牌。",
+          "shopQueue": [
+            "You will get naneinf with the correct set up by Ante 19 or earlier."
+          ],
+          "packs": [],
+          "sourceIds": [
+            "balatroseeds-9xni26kw-plasma"
+          ]
+        }
+      ],
+      "flow": [
+        {
+          "stage": "来源边界 - BalatroSeeds description-backed",
+          "actions": [
+            "页面为 Balatro Seed: 9XNI26KW (Plasma Deck)，版本 1.0.1n-FULL。",
+            "Jina Reader/HTML 可读 Seed Description，但没有原始 Shop Queue dump。",
+            "站内将整段描述拆成 5 个 description-backed 节点，全部保留 sourceIds 回链。"
+          ]
+        },
+        {
+          "stage": "开局经济 - Buffoon Pack / Investment tag",
+          "actions": [
+            "来源建议先买前两个 Buffoon Pack，用 Riff-Raff 和 Stuntman 过早期底注。",
+            "随后跳 Investment tag 拿钱。",
+            "这只是作者描述节点，仍缺具体底注、商店序号和现金阈值。"
+          ]
+        },
+        {
+          "stage": "早期组件 - Brainstorm / Baron / Perkeo",
+          "actions": [
+            "来源称 early ante 可见 Brainstorm、Baron、Perkeo。",
+            "这些组件构成 Baron/Mime/Perkeo 高分路线的核心骨架。",
+            "站内不把它写成固定购买顺序。"
+          ]
+        },
+        {
+          "stage": "Spectral 节点 - Sixth Sense / Crytid",
+          "actions": [
+            "来源称 Sixth Sense 的 first spectral card 保证 Crytid。",
+            "Crytid 应理解为 Cryptid，但站内保留来源拼写边界。",
+            "需要实机确认 Sixth Sense 触发条件和实际 spectral 内容。"
+          ]
+        },
+        {
+          "stage": "负片组件 - Showman / negative Mime",
+          "actions": [
+            "来源称 Showman 线可见 natural negative Mime。",
+            "后续应确认 negative Mime 出现方式、Joker 位和复制目标。",
+            "这条与 Baron/Perkeo/Brainstorm 组合后有高上限，但仍缺逐店复盘。"
+          ]
+        },
+        {
+          "stage": "目标边界 - Ante 19 source claim",
+          "actions": [
+            "来源声称 correct setup by Ante 19 or earlier 可到 naneinf。",
+            "站内目前只记录为来源声明，不作为独立验证结论。",
+            "下一步要复盘 Boss、cash、reroll、最终手牌和是否稳定达成分数上限。"
+          ]
+        }
+      ],
+      "mistakes": [
+        "不要把 description-backed 节点写成原始 Shop Queue dump。",
+        "不要把作者的 Ante 19 / naneinf 描述写成站内已验证结论。",
+        "Crytid 是来源拼写，站内说明为 Cryptid 机制时必须保留边界。"
+      ]
     }
   },
   "sourceAdditions": {
@@ -5833,6 +6013,12 @@
       "url": "https://balatroseed.net/zh/seeds/18",
       "type": "BalatroSeed detail/index page via Jina Reader",
       "note": "2026-06-02 BalatroSeed 详情页；确认种子代码与蜡封K流摘要，但不提供完整逐店流程。"
+    },
+    "balatroseeds-9xni26kw-plasma": {
+      "label": "BalatroSeeds: 9XNI26KW Plasma Deck description-backed route",
+      "url": "https://balatroseeds.com/seeds/9XNI26KW/plasma-deck",
+      "type": "BalatroSeeds seed detail / Jina readable",
+      "note": "2026-06-17 Jina/HTML 可读 Seed Description；extract-balatroseed-route.mjs 将整段描述拆成 description-backed route nodes。"
     }
   }
 }

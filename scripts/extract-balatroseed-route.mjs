@@ -117,7 +117,7 @@ function addSeedCandidate(candidates, kind, value) {
 function extractSeedCandidates(markdown, title, sourceUrl) {
   const candidates = [];
 
-  for (const match of markdown.matchAll(/(?:^|\n)\s*(?:#{1,6}\s*)?SEED\s*(?:\n|\s)+(?:[`*_>\s-]*)([A-Z0-9]{4,12})(?=\b|[`*_])/gi)) {
+  for (const match of markdown.matchAll(/(?:^|\n)\s*(?:#{1,6}\s*)?SEED\s*(?:[:：]|\n)+(?:[`*_>\s-]*)([A-Z0-9]{4,12})(?=\b|[`*_])/gi)) {
     addSeedCandidate(candidates, "body-seed-label", match[1]);
   }
 
@@ -401,6 +401,125 @@ function extractProseQueueTables(markdown, sourceId) {
   return tables.sort((a, b) => Number.parseInt(a.ante, 10) - Number.parseInt(b.ante, 10));
 }
 
+function cleanDescriptionLine(value) {
+  return cleanProseLine(value)
+    .replace(/!\[[^\]]*]\([^)]+\)/g, " ")
+    .replace(/\[([^\]]+)]\([^)]+\)/g, "$1")
+    .replace(/\*\*/g, "")
+    .trim();
+}
+
+function extractSeedDescriptionText(markdown) {
+  const body = removeCodeBlocks(markdown);
+  const thinkMatch = body.match(/##\s*Think you can do better\?\s*Copy this seed for yourself\s*([\s\S]*)$/i);
+  const descriptionMatch = body.match(/##\s*Seed Description\s*([\s\S]*)$/i);
+  const candidate = thinkMatch?.[1] || descriptionMatch?.[1] || body;
+
+  const lines = candidate
+    .split(/\n+/)
+    .map(cleanDescriptionLine)
+    .filter((line) => line
+      && !/^Title:|^URL Source:|^Markdown Content:/i.test(line)
+      && !/^Balatro Seed:/i.test(line)
+      && !/^#{1,6}\s*/.test(line)
+      && !/^Added by|^Using$|^Joker Highlights|^Version:/i.test(line)
+      && !/^Think you can do better|^Seed Description/i.test(line)
+      && !/^Image \d+:/i.test(line));
+
+  return cleanText(lines.join(" "));
+}
+
+function splitDescriptionSentences(text) {
+  const normalized = cleanText(text)
+    .replace(/\bP\.S\./gi, "PS.")
+    .replace(/\s+/g, " ");
+  return normalized
+    .split(/(?<=[.!?])\s+/)
+    .map((line) => cleanText(line).replace(/^PS\.\s*/i, ""))
+    .filter((line) => line.length > 8);
+}
+
+function extractDescriptionQueueTables(markdown, sourceId) {
+  const description = extractSeedDescriptionText(markdown);
+  if (!/(ante|baron|mime|brainstorm|perkeo|cryptid|crytid|investment tag|buffoon pack|naneinf|showman|sixth sense)/i.test(description)) {
+    return [];
+  }
+
+  const sentences = splitDescriptionSentences(description);
+  if (!sentences.length) return [];
+
+  const buckets = [
+    {
+      ante: "Opening",
+      title: "Opening - Buffoon packs / Investment Tag",
+      pattern: /start|buffoon pack|riff-raff|stuntman|investment tag|money/i
+    },
+    {
+      ante: "Early ante",
+      title: "Early ante - Brainstorm / Baron / Perkeo",
+      pattern: /early ante|brainstorm|baron|perkeo/i
+    },
+    {
+      ante: "Sixth Sense",
+      title: "Sixth Sense - Cryptid spectral",
+      pattern: /sixth sense|cryptid|crytid|spectral/i
+    },
+    {
+      ante: "Showman",
+      title: "Showman - negative Mime",
+      pattern: /showman|negative.*mime|mime.*showman/i
+    },
+    {
+      ante: "Ante 19",
+      title: "Ante 19 - source target",
+      pattern: /ante\s*19|naneinf/i
+    }
+  ];
+
+  const tables = [];
+  const used = new Set();
+  for (const bucket of buckets) {
+    const actions = sentences.filter((sentence) => bucket.pattern.test(sentence));
+    if (!actions.length) continue;
+    actions.forEach((action) => used.add(action));
+    const table = {
+      ante: bucket.ante,
+      title: bucket.title,
+      boss: "",
+      voucher: "",
+      tags: extractKnownTerms(actions, [
+        "Investment tag",
+        "Double Tag",
+        "Voucher Tag",
+        "Rare Tag",
+        "Negative Tag"
+      ]),
+      routeUse: "BalatroSeeds description-backed node; not a raw Shop Queue dump. Treat as author-provided route hints until replay verifies shop order, Boss, cash and rerolls.",
+      shopQueue: uniqueValues(actions),
+      packs: uniqueValues(actions.filter((line) => /pack|spectral|buffoon|arcana|celestial|standard|wraith/i.test(line)))
+    };
+    if (sourceId) table.sourceIds = [sourceId];
+    tables.push(table);
+  }
+
+  if (!tables.length && sentences.length) {
+    const table = {
+      ante: "Description",
+      title: "Seed Description route hints",
+      boss: "",
+      voucher: "",
+      tags: [],
+      routeUse: "BalatroSeeds description-backed node; not a raw Shop Queue dump. Treat as author-provided route hints until replay verifies shop order, Boss, cash and rerolls.",
+      shopQueue: uniqueValues(sentences),
+      packs: uniqueValues(sentences.filter((line) => /pack|spectral|buffoon|arcana|celestial|standard|wraith/i.test(line)))
+    };
+    if (sourceId) table.sourceIds = [sourceId];
+    tables.push(table);
+  }
+
+  return tables;
+}
+
 function actionPreview(prefix, values, limit) {
   const selected = values.slice(0, limit);
   if (!selected.length) return "";
@@ -519,22 +638,31 @@ export function parseBalatroSeedMarkdown(markdown, options = {}) {
   const warnings = buildWarnings(seedCandidates, selectedSeed);
   const queueTables = extractQueueTables(markdown, options.sourceId);
   const proseQueueTables = queueTables.length ? [] : extractProseQueueTables(markdown, options.sourceId);
-  const structuredTables = queueTables.length ? queueTables : proseQueueTables;
-  const flow = structuredTables.length ? buildFlowFromQueue(structuredTables) : extractProseFlow(markdown);
-  const sectionFlow = flow.length ? flow : extractSectionFlow(markdown);
+  const proseFlow = extractProseFlow(markdown);
+  const sectionFlow = proseFlow.length ? proseFlow : extractSectionFlow(markdown);
+  const descriptionQueueTables = queueTables.length || proseQueueTables.length || sectionFlow.length
+    ? []
+    : extractDescriptionQueueTables(markdown, options.sourceId);
+  const structuredTables = queueTables.length ? queueTables : proseQueueTables.length ? proseQueueTables : descriptionQueueTables;
+  const structuredMode = queueTables.length ? "queue" : proseQueueTables.length ? "prose" : descriptionQueueTables.length ? "description" : "";
+  const flow = structuredTables.length ? buildFlowFromQueue(structuredTables) : sectionFlow;
   const lastAnte = structuredTables.at(-1)?.ante;
 
   const detail = {
     completeness: structuredTables.length
-      ? `Ante 1-${lastAnte} queue draft, replay decisions pending`
+      ? structuredMode === "description"
+        ? "description-backed route draft, replay decisions pending"
+        : `Ante 1-${lastAnte} queue draft, replay decisions pending`
       : sectionFlow.length
         ? "Prose route draft, replay decisions pending"
         : "Raw page captured, route not parsed",
-    sourceMode: "BalatroSeeds/Jina Reader extracted draft",
+    sourceMode: structuredMode === "description"
+      ? "BalatroSeeds/Jina Reader description-backed extracted draft"
+      : "BalatroSeeds/Jina Reader extracted draft",
     videoStatus: "No video evidence in this extraction.",
     sources: options.sourceId ? [options.sourceId] : [],
-    flow: sectionFlow.length
-      ? sectionFlow
+    flow: flow.length
+      ? flow
       : [
           {
             stage: "Route extraction pending",
@@ -543,6 +671,7 @@ export function parseBalatroSeedMarkdown(markdown, options = {}) {
         ],
     mistakes: [
       "Treat this as extracted source material, not a proven optimal route.",
+      ...(structuredMode === "description" ? ["description-backed route nodes are not a raw Shop Queue dump; replay must verify exact shop order, Boss, cash and rerolls."] : []),
       ...warnings
     ]
   };

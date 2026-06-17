@@ -787,6 +787,64 @@ assert.ok(ghostReplayItem, "8Q47WV6K should have a dedicated replay queue item")
 assert.ok(ghostReplayItem.targetSeeds?.includes("8Q47WV6K"));
 assert.match(ghostReplayItem.nextAction || "", /LEMO2000|2\^15|2\^20|2\^25|~22 cryptids|Antimatter|Cola|Cerulean Bell|Observatory|Eris|Switch|Canio|464 cards|实机复盘/i);
 
+const plasmaDescriptionCandidate = seedById.get("9XNI26KW");
+assert.ok(plasmaDescriptionCandidate, "9XNI26KW should be added from the BalatroSeeds description-backed harvest");
+assert.ok(plasmaDescriptionCandidate.sources?.includes("balatroseeds-9xni26kw-plasma"));
+assert.match(plasmaDescriptionCandidate.summary || "", /Brainstorm|Baron|Perkeo|Sixth Sense|Crytid|Cryptid|negative Mime|Showman|Ante 19|Investment tag/i);
+
+const plasmaDescriptionDetail = routeData.seedDetails?.["9XNI26KW"];
+assert.ok(plasmaDescriptionDetail, "9XNI26KW should have a route detail");
+assert.match(plasmaDescriptionDetail.completeness || "", /description-backed|5 个节点|待实机复盘/i);
+assert.match(plasmaDescriptionDetail.sourceMode || "", /BalatroSeeds|Jina Reader|description-backed/i);
+assert.ok((plasmaDescriptionDetail.queueTables || []).length >= 5, "9XNI26KW should expose description-backed route nodes");
+const plasmaDescriptionText = [
+  ...(plasmaDescriptionDetail.queueTables || []).flatMap((table) => [
+    table.ante,
+    table.title,
+    table.routeUse,
+    ...(table.tags || []),
+    ...(table.shopQueue || []),
+    ...(table.packs || [])
+  ]),
+  ...(plasmaDescriptionDetail.flow || []).flatMap((stage) => [stage.stage, ...(stage.actions || [])]),
+  ...(plasmaDescriptionDetail.mistakes || [])
+].join("\n");
+for (const requiredText of [
+  "Brainstorm",
+  "Baron",
+  "Perkeo",
+  "Sixth Sense",
+  "Crytid|Cryptid",
+  "negative Mime",
+  "Showman",
+  "Ante 19",
+  "Riff-Raff",
+  "Stuntman",
+  "Investment tag",
+  "not a raw Shop Queue|不是原始 Shop Queue",
+  "replay.*Boss|实机复盘.*Boss"
+]) {
+  assert.match(plasmaDescriptionText, new RegExp(requiredText, "i"), `9XNI26KW route should include ${requiredText}`);
+}
+for (const forbiddenText of ["已验证逐店", "完整逐店", "完整商店", "稳定 naneinf", "完整 Ante 19"]) {
+  assert.doesNotMatch(plasmaDescriptionText, new RegExp(forbiddenText, "i"), `9XNI26KW should not overclaim ${forbiddenText}`);
+}
+for (const table of plasmaDescriptionDetail.queueTables || []) {
+  assert.ok((table.sourceIds || []).includes("balatroseeds-9xni26kw-plasma"), "9XNI26KW tables should keep sourceIds");
+}
+assert.equal(sourceMap["balatroseeds-9xni26kw-plasma"]?.url, "https://balatroseeds.com/seeds/9XNI26KW/plasma-deck");
+
+const plasmaDescriptionEvidence = (siteData.evidenceSources || []).find((item) => item.id === "balatroseeds-9xni26kw-plasma");
+assert.ok(plasmaDescriptionEvidence, "9XNI26KW should have a BalatroSeeds evidence card");
+assert.ok(plasmaDescriptionEvidence.seeds?.includes("9XNI26KW"));
+assert.match((plasmaDescriptionEvidence.facts || []).join("\n"), /Brainstorm|Baron|Perkeo|Sixth Sense|Crytid|Cryptid|negative Mime|Showman|Ante 19|Investment tag/i);
+assert.match(plasmaDescriptionEvidence.useInSite || "", /description-backed|route nodes|待复盘/i);
+
+const plasmaDescriptionQueueItem = (siteData.reviewQueue || []).find((item) => item.id === "balatroseeds-9xni26kw-replay");
+assert.ok(plasmaDescriptionQueueItem, "9XNI26KW should stay in replay queue for exact shop validation");
+assert.ok(plasmaDescriptionQueueItem.targetSeeds?.includes("9XNI26KW"));
+assert.match(plasmaDescriptionQueueItem.validation || "", /description-backed|Shop Queue|Boss|cash|reroll|逐店/i);
+
 const yellowDeckSteelCandidate = seedById.get("HNITC7EL");
 assert.ok(yellowDeckSteelCandidate, "HNITC7EL should remain in the seed database");
 assert.ok(yellowDeckSteelCandidate.sources?.includes("balatroseeds-hnitc7el"));

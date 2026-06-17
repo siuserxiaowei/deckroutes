@@ -10,7 +10,7 @@
   "stats": [
     {
       "label": "已整理种子",
-      "value": "40",
+      "value": "41",
       "note": "含可点击流程、中文来源和待复盘队列"
     },
     {
@@ -20,7 +20,7 @@
     },
     {
       "label": "证据来源",
-      "value": "56",
+      "value": "57",
       "note": "含平台状态、中文社区、英文 seed bank 和 GitHub 工具证据"
     },
     {
@@ -35,7 +35,7 @@
     },
     {
       "label": "复盘队列",
-      "value": "20",
+      "value": "21",
       "note": "按平台列出下一轮采集、OCR 和牌局复盘任务"
     }
   ],
@@ -2149,6 +2149,29 @@
       ],
       "confidence": "中",
       "useInSite": "作为站外 seed index 证据；只确认主题和核心描述，不作为完整流程来源。"
+    },
+    {
+      "id": "balatroseeds-9xni26kw-plasma",
+      "platform": "BalatroSeeds",
+      "title": "9XNI26KW Plasma Deck description-backed naneinf candidate",
+      "url": "https://balatroseeds.com/seeds/9XNI26KW/plasma-deck",
+      "retrievedAt": "2026-06-17",
+      "contentType": "Jina Reader 可读网页正文 + HTML meta + extract-balatroseed-route description-backed queueTables",
+      "seeds": [
+        "9XNI26KW"
+      ],
+      "facts": [
+        "页面标题为 Balatro Seed: 9XNI26KW (Plasma Deck)，版本 1.0.1n-FULL。",
+        "Joker highlights 包括 Perkeo、Cryptid、Sixth Sense、Baron、Mime。",
+        "Seed Description 称 early ante 可见 Brainstorm、Baron、Perkeo。",
+        "Seed Description 称 Sixth Sense 的 first spectral card 保证 Crytid/Cryptid。",
+        "Seed Description 称可通过 Showman 得到 natural negative Mime。",
+        "Seed Description 称 correct setup 下可在 Ante 19 或更早达到 naneinf；这是来源声明，不是站内独立验证。",
+        "开局建议买前两个 Buffoon Pack，用 Riff-Raff 与 Stuntman 过早期底注。",
+        "随后 skip Investment tag 取钱；缺少逐店购买、roll 次数、Boss 和现金阈值。"
+      ],
+      "confidence": "中",
+      "useInSite": "作为 9XNI26KW 的 BalatroSeeds description-backed route nodes；当前待复盘，不标完整逐店或已验证 naneinf。"
     }
   ],
   "reviewQueue": [
@@ -2622,6 +2645,27 @@
       "nextAction": "按 17P 目录和斗鱼 feed_id 2493715042218933363 对照实机复盘：确认无公开字幕/view_points 下的实际画面节点，锁定牌组/版本/Stake，复核 1-2 男爵、2-4 红蜡封K、3-6/3-7 传奇、3-8 红蜡钢铁K、5-12 死神、5-13 跳过、6-16 通灵/Cryptid/Ectoplasm、7-19 隐形小丑、11-29 头脑风暴、11-31 哑剧、7注审判哑剧冲突、灵质三次限制、最终复制数量分歧、13/20 负片标签、38 注 e300/naneinf 和 39 注 nan/溢出路径。",
       "validation": "已补来源级 queueTables，把 B站目录/评论、斗鱼正文评论和 BalatroSeed 摘要拆成可点击节点；后续仍需视频逐帧或实机逐店表，记录每次购买、跳盲、roll 次数、Boss、现金阈值、Joker 位、隐形小丑复制目标、灵质三次边界、哑剧时点冲突和最终复制数量；解决后再升级 completeness。",
       "ownerMode": "Agent Reach B站/斗鱼/Jina + browser-use/实机复盘",
+      "updatedAt": "2026-06-17"
+    },
+    {
+      "id": "balatroseeds-9xni26kw-replay",
+      "title": "9XNI26KW Plasma Deck description-backed 路线复盘",
+      "platform": "BalatroSeeds",
+      "priority": "A",
+      "status": "ready-replay",
+      "blocker": "当前来源是 BalatroSeeds Seed Description，不是原始 Shop Queue dump；仍缺逐店购买、Boss、cash、reroll、Sixth Sense 触发和 Ante 19 终局验证。",
+      "evidenceIds": [
+        "balatroseeds-9xni26kw-plasma"
+      ],
+      "sourceIds": [
+        "balatroseeds-9xni26kw-plasma"
+      ],
+      "targetSeeds": [
+        "9XNI26KW"
+      ],
+      "nextAction": "实机复盘 Plasma Deck 9XNI26KW：确认开局两个 Buffoon Pack 的 Riff-Raff/Stuntman、Investment tag 金钱线、early ante Brainstorm/Baron/Perkeo、Sixth Sense 第一张 spectral 的 Crytid/Cryptid、Showman negative Mime、Ante 19 前后 Boss 与最终出牌。",
+      "validation": "复盘完成后应把 description-backed 节点升级为 Shop Queue / Pack / Boss / cash / reroll 表；若无法证明，只保留为描述来源节点。",
+      "ownerMode": "Agent Reach BalatroSeeds/Jina + browser-use/实机复盘",
       "updatedAt": "2026-06-17"
     }
   ]
