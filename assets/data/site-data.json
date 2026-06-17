@@ -1333,8 +1333,8 @@
       "platform": "微博",
       "title": "IRW4G69D 微博钢K解锁种子线索",
       "url": "https://m.weibo.cn/status/5247187984581762",
-      "retrievedAt": "2026-06-16",
-      "contentType": "Weibo MCP search_content 公开动态 + 微博公开配图人工核验 + Tesseract OCR 低置信尝试",
+      "retrievedAt": "2026-06-17",
+      "contentType": "Weibo MCP search_content/get_comments 公开动态 + 微博公开配图人工核验 + Tesseract OCR 低置信尝试 + 结构化线索节点表",
       "seeds": [
         "IRW4G69D"
       ],
@@ -1349,10 +1349,11 @@
         "配图持牌区可见多张红封K，手牌容量分别显示 13/10 与 12/10，小丑栏显示 9/9。",
         "Tesseract chi_sim+eng 只识别到零散“高牌、比赛、选项、底注、回合”等碎片，不能可靠确认商店顺序、Boss 或完整 Joker 名称。",
         "weibo.get_comments(5247187984581762) 只返回评论罗伯特的一条 AI罗伯特聪明版鼓励评论，没有新增路线节点。",
-        "两张配图是高底注/结果状态截图，不是商店流程长图，因此不能标完整路线。"
+        "两张配图是高底注/结果状态截图，不是商店流程长图，因此不能标完整路线。",
+        "站内已把微博正文和截图事实拆成来源边界、1-1 Blueprint、复制 Blueprint 在 Chicot 前、4-2 Chicot、DNA 在 Baron 前、8 底注 Baron、结果截图、OCR/待复盘的结构化线索节点表；仍不可标为完整路线。"
       ],
       "confidence": "中高",
-      "useInSite": "升级为中文微博钢K截图候选；详情页展示原图证据，但仍需实机复盘商店顺序和钢K成型路径。"
+      "useInSite": "升级为中文微博钢K截图候选和结构化线索节点表；详情页展示原图证据，但不可标为完整路线，仍需实机复盘商店顺序和钢K成型路径。"
     },
     {
       "id": "xhs-probe-balatro-steel-k",
@@ -2204,10 +2205,10 @@
       "targetSeeds": [
         "IRW4G69D"
       ],
-      "nextAction": "配图已下载并确认是 Strong_JIA 微博公开帖的灵媒底注 18/8、回合 54、红封K状态截图；评论区只有评论罗伯特鼓励评论，无新增路线节点。下一步实机复盘 IRW4G69D，确认 1-1 Blueprint、4-2 Chicot、8 底注 Baron、DNA、红封K成型路径、Boss 和商店顺序。",
-      "validation": "截图事实必须回链微博原帖和原图；完整路线只有在实机复盘确认商店顺序、Boss、现金/roll 成本和红封K制作路径后才能升级。",
+      "nextAction": "已把 Strong_JIA 微博公开帖拆成结构化线索节点表：1-1 Blueprint、复制 Blueprint 在 Chicot 前、4-2 Chicot、DNA 在 Baron 前、8 底注 Baron、灵媒底注 18/8 结果截图；评论区只有评论罗伯特鼓励评论，无新增路线节点。下一步实机复盘 IRW4G69D，确认红封K成型路径、Boss、逐店商店顺序、现金和 roll 成本。",
+      "validation": "截图事实必须回链微博原帖和原图；queueTables 只能标线索节点表。完整路线只有在实机复盘确认逐店商店顺序、Boss、现金/roll 成本和红封K制作路径后才能升级。",
       "ownerMode": "Weibo MCP + OCR + manual image review + replay",
-      "updatedAt": "2026-06-16"
+      "updatedAt": "2026-06-17"
     },
     {
       "id": "weibo-steel-k-video-review",

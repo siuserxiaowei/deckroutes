@@ -3613,9 +3613,9 @@
       ]
     },
     "IRW4G69D": {
-      "completeness": "微博公开文本 + 配图人工核验候选，OCR 低置信，待实机复盘",
-      "sourceMode": "Weibo MCP search_content 公开动态 + 微博公开配图下载 + Tesseract OCR 尝试",
-      "videoStatus": "微博图文证据；无视频字幕；配图不是商店流程长图。",
+      "completeness": "微博公开文本 + 配图人工核验候选，已拆成结构化线索节点表；OCR 低置信，待实机复盘",
+      "sourceMode": "Weibo MCP search_content/get_comments 公开动态 + 微博公开配图下载 + Tesseract OCR 尝试 + 结构化 queueTables",
+      "videoStatus": "微博图文证据；无视频字幕；配图不是商店流程长图，不能作为完整逐店攻略。",
       "sources": [
         "weibo-irw4g69d-steel-k"
       ],
@@ -3653,6 +3653,193 @@
             "Tesseract chi_sim+eng 对左侧面板能读到少量“高牌、比赛、选项、底注、回合”等碎片，但识别不完整。",
             "OCR 没有可靠读出完整 Joker 名称、商店顺序或 Boss；站内只把图片事实写成截图核验，不把 OCR 当作路线来源。",
             "下一步要通过实机复盘确认 1-1 Blueprint、4-2 Chicot、8 底注 Baron、DNA 和红封K成型路径。"
+          ]
+        }
+      ],
+      "queueTables": [
+        {
+          "ante": "来源边界",
+          "title": "Strong_JIA 微博公开帖 / 图文线索",
+          "boss": "未公开 Boss、现金阈值、roll 次数和逐店购买顺序",
+          "voucher": "评论区只有 1 条评论罗伯特鼓励评论，无路线增量",
+          "tags": [
+            "微博",
+            "Strong_JIA",
+            "IRW4G69D",
+            "线索节点表",
+            "screenshot evidence"
+          ],
+          "routeUse": "只把微博正文和肉眼可核验截图拆成线索节点；当前不能写成完整逐店或可复现完整攻略。",
+          "shopQueue": [
+            "发布时间：Wed Dec 24 01:22:46 +0800 2025",
+            "来源：iPhone客户端；发布于 陕西",
+            "互动：评论 1 / 点赞 1 / 转发 0",
+            "评论：评论罗伯特的 AI罗伯特聪明版鼓励评论，没有新增路线节点"
+          ],
+          "packs": [
+            "正文直接分享种子 IRW4G69D",
+            "两张公开配图已作为原图证据保留，但不是商店流程长图"
+          ],
+          "sourceIds": [
+            "weibo-irw4g69d-steel-k"
+          ]
+        },
+        {
+          "ante": "1-1",
+          "title": "Blueprint / 蓝图早出",
+          "boss": "正文未公开 Boss",
+          "voucher": "未公开优惠券",
+          "tags": [
+            "Blueprint",
+            "蓝图",
+            "早期复制组件"
+          ],
+          "routeUse": "微博正文明确写 1-1 出 Blueprint，这是该 seed 最早可复核的复制组件线索。",
+          "shopQueue": [
+            "作者称第一次解锁钢K",
+            "正文写明 1-1 出 Blueprint / 蓝图"
+          ],
+          "packs": [
+            "没有公开具体商店价格、购买顺序或替代项"
+          ],
+          "sourceIds": [
+            "weibo-irw4g69d-steel-k"
+          ]
+        },
+        {
+          "ante": "希科前",
+          "title": "复制 Blueprint 在 Chicot 前出现",
+          "boss": "正文未公开 Boss",
+          "voucher": "未公开优惠券",
+          "tags": [
+            "复制蓝图",
+            "Blueprint copy",
+            "Chicot before/after"
+          ],
+          "routeUse": "正文只说明复制 Blueprint 的出现顺序早于 Chicot；不能反推具体 Ante、商店位置或复制目标。",
+          "shopQueue": [
+            "复制 Blueprint 在 Chicot 之前出"
+          ],
+          "packs": [
+            "需实机复盘确认复制 Blueprint 是 Joker、Spectral 还是其它来源触发"
+          ],
+          "sourceIds": [
+            "weibo-irw4g69d-steel-k"
+          ]
+        },
+        {
+          "ante": "4-2",
+          "title": "Chicot / 希科节点",
+          "boss": "正文未公开 Boss",
+          "voucher": "未公开优惠券",
+          "tags": [
+            "Chicot",
+            "希科",
+            "传奇小丑"
+          ],
+          "routeUse": "正文明确写 4-2 出 Chicot；这只能证明传奇小丑时点，不包含买包路线。",
+          "shopQueue": [
+            "4-2 出 Chicot / 希科"
+          ],
+          "packs": [
+            "未公开 The Soul、灵魂包或具体卡包来源"
+          ],
+          "sourceIds": [
+            "weibo-irw4g69d-steel-k"
+          ]
+        },
+        {
+          "ante": "男爵前",
+          "title": "DNA 在 Baron 前出现",
+          "boss": "正文未公开 Boss",
+          "voucher": "未公开优惠券",
+          "tags": [
+            "DNA",
+            "Baron before/after",
+            "红封K制作路径待复盘"
+          ],
+          "routeUse": "正文只给出 DNA 在 Baron 前出现的相对顺序；红封K制作路径仍缺具体目标牌、增强牌和复制次数。",
+          "shopQueue": [
+            "DNA 在 Baron 之前出"
+          ],
+          "packs": [
+            "需要实机复盘 DNA 何时购买、复制哪张 K、是否配合红封/钢铁/死神"
+          ],
+          "sourceIds": [
+            "weibo-irw4g69d-steel-k"
+          ]
+        },
+        {
+          "ante": "8 底注",
+          "title": "Baron / 男爵节点",
+          "boss": "正文未公开 Boss",
+          "voucher": "未公开优惠券",
+          "tags": [
+            "Baron",
+            "男爵",
+            "钢K流核心"
+          ],
+          "routeUse": "正文明确写 8 底注出 Baron；这是进入红封钢K长线的关键 Joker 线索。",
+          "shopQueue": [
+            "8 底注出 Baron / 男爵"
+          ],
+          "packs": [
+            "没有公开男爵出现商店、价格、roll 次数或 Boss 应对"
+          ],
+          "sourceIds": [
+            "weibo-irw4g69d-steel-k"
+          ]
+        },
+        {
+          "ante": "结果截图",
+          "title": "灵媒底注 18/8 红封K状态",
+          "boss": "截图不是 Boss/商店流程图",
+          "voucher": "未公开优惠券",
+          "tags": [
+            "灵媒",
+            "底注 18/8",
+            "回合 54",
+            "红封K",
+            "175/198"
+          ],
+          "routeUse": "两张原图证明同一 seed 有高底注红封K结果状态，但不能反推 Ante 1-8 的完整路线。",
+          "shopQueue": [
+            "原图 1 可见灵媒、底注 18/8、回合 54、现金 $119、牌库 175/198",
+            "原图 1 可见多张红封K、9/9 小丑栏、13/10 手牌",
+            "原图 2 可见同局底注 18/8、回合 54、175/198 牌库、12/10 手牌和红封K持牌"
+          ],
+          "packs": [
+            "两张截图是结果状态截图，不是逐商店流程图"
+          ],
+          "sourceIds": [
+            "weibo-irw4g69d-steel-k"
+          ]
+        },
+        {
+          "ante": "OCR / 待复盘",
+          "title": "OCR 低置信，逐店路线待补",
+          "boss": "Boss 未公开",
+          "voucher": "优惠券未公开",
+          "tags": [
+            "OCR",
+            "逐店待补",
+            "Boss待补",
+            "roll待补",
+            "现金待补"
+          ],
+          "routeUse": "OCR 只能作为低置信辅助；完整路线必须等实机复盘确认商店顺序、Boss、现金/roll 成本和红封K制作路径。",
+          "shopQueue": [
+            "当前不写完整商店顺序",
+            "当前不写 Boss 规避",
+            "当前不写现金阈值或 roll 次数",
+            "当前不把截图结果倒推成 Ante 1-8 可照做路线"
+          ],
+          "packs": [
+            "Tesseract 只识别到“高牌、比赛、选项、底注、回合”等碎片",
+            "后续需要实机复盘 1-1 Blueprint、4-2 Chicot、8 底注 Baron、DNA 和红封K成型路径"
+          ],
+          "sourceIds": [
+            "weibo-irw4g69d-steel-k"
           ]
         }
       ],

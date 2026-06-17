@@ -1096,8 +1096,22 @@ assert.ok(weiboImageDetail, "IRW4G69D should have a route detail");
 assert.match(weiboImageDetail.completeness || "", /微博|图片|截图|OCR|待复盘/i);
 assert.ok((weiboImageDetail.flow || []).length >= 4, "IRW4G69D should split text and image evidence into staged nodes");
 assert.ok((weiboImageDetail.evidenceImages || []).length >= 2, "IRW4G69D should expose original Weibo images as evidence links");
+assert.ok(
+  (weiboImageDetail.queueTables || []).length >= 7,
+  "IRW4G69D should expose Weibo text and screenshot facts as structured clue tables, not only prose"
+);
 const weiboImageText = [
   ...(weiboImageDetail.flow || []).flatMap((stage) => [stage.stage, ...(stage.actions || [])]),
+  ...(weiboImageDetail.queueTables || []).flatMap((table) => [
+    table.ante,
+    table.title,
+    table.boss,
+    table.voucher,
+    table.routeUse,
+    ...(table.tags || []),
+    ...(table.shopQueue || []),
+    ...(table.packs || [])
+  ]),
   ...(weiboImageDetail.mistakes || []),
   ...(weiboImageDetail.evidenceImages || []).flatMap((image) => [image.label, image.note, image.url])
 ].join("\n");
@@ -1121,22 +1135,40 @@ for (const requiredText of [
   "12/10",
   "13/10",
   "OCR",
-  "商店顺序"
+  "商店顺序",
+  "来源边界",
+  "1-1",
+  "Blueprint|蓝图",
+  "4-2",
+  "Chicot|希科",
+  "8 底注|底注 8",
+  "Baron|男爵",
+  "DNA",
+  "结果截图",
+  "逐店|逐商店",
+  "不能.*完整|不可标为完整"
 ]) {
   assert.match(weiboImageText, new RegExp(requiredText, "i"), `IRW4G69D image evidence should include ${requiredText}`);
 }
+assert.doesNotMatch(
+  [weiboImageDetail.completeness, weiboImageDetail.sourceMode, weiboImageDetail.videoStatus].join("\n"),
+  /已验证完整逐店|可复现完整攻略|已验证完整流程|完整\s*Ante\s*1-8|可照抄路线|Boss 已确认|roll 次数已确认|Mime 已确认|红封K制作路径已确认/i,
+  "IRW4G69D should remain a Weibo clue/screenshot candidate until shop order and Boss data are replayed"
+);
 
 const weiboImageEvidence = (siteData.evidenceSources || []).find((item) => item.id === "weibo-irw4g69d-steel-k");
 assert.ok(weiboImageEvidence, "IRW4G69D should have a Weibo evidence card");
 assert.ok(weiboImageEvidence.seeds?.includes("IRW4G69D"));
 assert.ok((weiboImageEvidence.facts || []).length >= 11, "IRW4G69D evidence should preserve text facts, Weibo metadata, comments boundary, and image verification facts");
 assert.match((weiboImageEvidence.facts || []).join("\n"), /Strong_JIA|Wed Dec 24 01:22:46 \+0800 2025|iPhone客户端|发布于 陕西|1 条评论|1 赞|0 转发|评论罗伯特|AI罗伯特聪明版|没有新增路线节点|配图|灵媒|红封K|底注\s*18\/8|回合\s*54|OCR|商店顺序/i);
+assert.match(weiboImageEvidence.useInSite || "", /结构化|线索节点表|不可标为完整|待实机复盘/i);
 
 const weiboImageQueue = (siteData.reviewQueue || []).find((item) => item.id === "weibo-ocr-seed-post");
 assert.ok(weiboImageQueue, "IRW4G69D should stay in the Weibo OCR/replay queue");
 assert.ok(weiboImageQueue.targetSeeds?.includes("IRW4G69D"));
 assert.match(weiboImageQueue.status || "", /ready-replay|ready-ocr/);
 assert.match(weiboImageQueue.nextAction || "", /Strong_JIA|评论罗伯特|截图|红封K|底注 18\/8|商店顺序|实机复盘/);
+assert.match(weiboImageQueue.validation || "", /queueTables|线索节点表|逐店|Boss|现金|roll|红封K制作路径/i);
 
 const xhsStatus = (siteData.platformStatus || []).find((item) => item.platform === "小红书");
 assert.ok(xhsStatus, "Xiaohongshu platform status should be tracked");
