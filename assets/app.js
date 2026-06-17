@@ -159,11 +159,12 @@ function renderRouteQueueTables(queueTables = []) {
   tables.forEach((table, index) => {
     const details = el("details", "route-queue-stage");
     if (index === 0) details.open = true;
+    const anteLabel = formatRouteQueueAnte(table.ante, index);
 
     const summary = el("summary", "route-queue-summary");
     const title = el("span", "route-queue-summary-main");
-    title.append(el("span", "route-queue-ante", `Ante ${table.ante || index + 1}`));
-    title.append(el("strong", "", table.title || `Ante ${table.ante || index + 1}`));
+    title.append(el("span", "route-queue-ante", anteLabel));
+    title.append(el("strong", "", table.title || anteLabel));
     summary.append(title);
     summary.append(el("span", "route-queue-summary-meta", [table.boss, table.voucher].filter(Boolean).join(" · ")));
     details.append(summary);
@@ -180,6 +181,12 @@ function renderRouteQueueTables(queueTables = []) {
   });
 
   box.append(list);
+}
+
+function formatRouteQueueAnte(ante, index) {
+  const raw = String(ante || index + 1).trim();
+  if (/^(?:Ante\s*)?\d+(?:-\d+)?$/i.test(raw)) return `Ante ${raw.replace(/^Ante\s*/i, "")}`;
+  return raw;
 }
 
 function renderRouteEvidenceImages(images = []) {

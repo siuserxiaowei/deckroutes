@@ -1014,8 +1014,22 @@ assert.match(taptapSteelKDetail.sourceMode || "", /Jina Reader|原始 HTML|图�
 assert.match(taptapSteelKDetail.videoStatus || "", /非视频|评论\s*2|评论正文不可读|标题.*10回合/i);
 assert.ok((taptapSteelKDetail.flow || []).length >= 6, "X8WTK1U1 should split source metadata, exact early flow, and missing late flow");
 assert.ok((taptapSteelKDetail.evidenceImages || []).length >= 1, "X8WTK1U1 should expose the TapTap image evidence link");
+assert.ok(
+  (taptapSteelKDetail.queueTables || []).length >= 7,
+  "X8WTK1U1 should expose TapTap 1-7 route nodes as structured queue tables, not only prose"
+);
 const taptapSteelKText = [
   ...(taptapSteelKDetail.flow || []).flatMap((stage) => [stage.stage, ...(stage.actions || [])]),
+  ...(taptapSteelKDetail.queueTables || []).flatMap((table) => [
+    table.ante,
+    table.title,
+    table.boss,
+    table.voucher,
+    table.routeUse,
+    ...(table.tags || []),
+    ...(table.shopQueue || []),
+    ...(table.packs || [])
+  ]),
   ...(taptapSteelKDetail.mistakes || []),
   ...(taptapSteelKDetail.evidenceImages || []).flatMap((image) => [image.label, image.note, image.url])
 ].join("\n");
@@ -1035,10 +1049,25 @@ for (const requiredText of [
   "错了就重开",
   "试错的机会是无限的",
   "回合 8-10",
+  "来源边界",
+  "正文只到回合7",
+  "通灵",
+  "负片",
+  "红戳",
+  "复制",
+  "三张红戳钢K",
+  "还有一张钢铁K",
+  "标题待补",
+  "不能.*完整|不可标为完整",
   "Fon5JneJXUcHBe6QcJ0j7GWYihZc"
 ]) {
   assert.match(taptapSteelKText, new RegExp(requiredText, "i"), `X8WTK1U1 TapTap route should include ${requiredText}`);
 }
+assert.doesNotMatch(
+  [taptapSteelKDetail.completeness, taptapSteelKDetail.sourceMode, taptapSteelKDetail.videoStatus].join("\n"),
+  /已验证完整\s*10\s*回合流程|可复现完整攻略|完整\s*10\s*回合攻略/i,
+  "X8WTK1U1 should not be labeled as a complete 10-round route while round 8-10 is missing"
+);
 
 assert.equal(
   sourceMap["taptap-x8wtk1u1"]?.url,
