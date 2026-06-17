@@ -905,6 +905,64 @@ for (const requiredText of [
 ]) {
   assert.match(chineseSteelKText, new RegExp(requiredText, "i"), `9ZPU1V32 provenance/conflict route should include ${requiredText}`);
 }
+assert.ok(
+  (chineseSteelKDetail.queueTables || []).length >= 10,
+  "9ZPU1V32 should expose structured source-backed route tables, not only prose flow nodes"
+);
+const chineseSteelKQueueText = (chineseSteelKDetail.queueTables || [])
+  .flatMap((table) => [
+    table.ante,
+    table.title,
+    table.boss,
+    table.voucher,
+    table.routeUse,
+    ...(table.tags || []),
+    ...(table.shopQueue || []),
+    ...(table.packs || [])
+  ])
+  .join("\n");
+for (const requiredText of [
+  "前提",
+  "1注",
+  "1-2.*男爵",
+  "2注",
+  "2-4.*红蜡封K",
+  "3注",
+  "3-6.*蓝",
+  "3-7.*绿",
+  "3-8.*红蜡钢铁K",
+  "5-6注",
+  "5-12.*死神",
+  "5-13.*跳过",
+  "6-16.*通灵.*神秘生物.*灵质",
+  "7-8注",
+  "8注.*全黑桃K红蜡钢铁牌",
+  "9-11注",
+  "11-29.*头脑风暴",
+  "11-31.*哑剧",
+  "12.*19次",
+  "负片马戏团长",
+  "13.*20.*负片标签",
+  "38.*e300",
+  "39.*nan",
+  "5男爵3哑剧",
+  "6张复制",
+  "4手牌上限",
+  "roll|重掷",
+  "现金阈值",
+  "Boss",
+  "Joker位",
+  "隐形小丑复制目标",
+  "逐帧.*待复盘|待复盘.*逐帧",
+  "BalatroSeed.*只提供摘要"
+]) {
+  assert.match(chineseSteelKQueueText, new RegExp(requiredText, "i"), `9ZPU1V32 structured route table should include ${requiredText}`);
+}
+assert.doesNotMatch(
+  `${chineseSteelKDetail.completeness}\n${chineseSteelKQueueText}`,
+  /完整逐帧|完整逐店|可复现完整攻略/,
+  "9ZPU1V32 should not be upgraded beyond source-backed candidate tables without video replay"
+);
 
 assert.equal(
   sourceMap["bili-9zpu1v32-full-flow"]?.url,
