@@ -35,6 +35,26 @@ assert.equal(proseParsed.detail.flow[1].stage, "Ante 8-13");
 assert.match(proseParsed.warnings[0], /Seed candidates differ/);
 assert.equal(toJinaReaderUrl("https://balatroseeds.com/seeds/Y3QRZZ5I/yellow-deck"), "https://r.jina.ai/http://balatroseeds.com/seeds/Y3QRZZ5I/yellow-deck");
 
+const proseQueueSample = await readFixture("balatroseed-prose-queue-sample.md");
+const proseQueueParsed = parseBalatroSeedMarkdown(proseQueueSample, {
+  sourceId: "balatroseeds-6b678b4w"
+});
+
+assert.equal(proseQueueParsed.seed, "6B678B4W");
+assert.equal(proseQueueParsed.deck, "Plasma Deck");
+assert.ok((proseQueueParsed.detail.queueTables || []).length >= 4, "prose Ante sections should be promoted into queue tables");
+assert.equal(proseQueueParsed.detail.queueTables[0].ante, 1);
+assert.equal(proseQueueParsed.detail.queueTables[0].sourceIds[0], "balatroseeds-6b678b4w");
+assert.match(proseQueueParsed.detail.queueTables[0].shopQueue.join("\n"), /Small Blind: Skip for Mega Arcana Pack|Rest of Ante: Buy Seed Money Immediately/);
+assert.match(proseQueueParsed.detail.queueTables[0].packs.join("\n"), /Soul for Perkeo|High Priestess for Jupiter and Earth/);
+const proseQueueAnte5 = proseQueueParsed.detail.queueTables.find((table) => table.ante === 5);
+assert.ok(proseQueueAnte5, "Ante 5 prose section should become a queue table");
+assert.match(proseQueueAnte5.shopQueue.join("\n"), /Reroll 3 times to \$111 for Stuntman|After the 7th reroll.*foil DNA|Sell Golden Joker and buy DNA/);
+assert.match(proseQueueAnte5.packs.join("\n"), /Arcana Pack|Mega Arcana Packs|Deja vu|Chariot/);
+const proseQueueAnte7 = proseQueueParsed.detail.queueTables.find((table) => table.ante === 7);
+assert.match(proseQueueAnte7.shopQueue.join("\n"), /Buy Antimatter|Reroll until you hit Baron|Cryptid/);
+assert.match(proseQueueParsed.detail.flow[0].actions.join(" "), /Shop Queue key order/i);
+
 const htmlMetaSample = await readFixture("balatroseed-html-meta-sample.html");
 const htmlMetaMarkdown = htmlToMarkdownSnapshot(htmlMetaSample, "https://balatroseeds.com/seeds/Y3QRZZ5I/yellow-deck");
 assert.match(htmlMetaMarkdown, /Don't treat this as a verified route/);

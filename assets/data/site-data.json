@@ -1238,9 +1238,9 @@
       "id": "balatroseeds-6b678b4w-route",
       "platform": "BalatroSeeds",
       "title": "6B678B4W Plasma Deck Ante 1-8 路线",
-      "url": "https://balatroseeds.com/seeds/6B678B4W",
-      "retrievedAt": "2026-06-15",
-      "contentType": "Jina Reader 可读网页正文",
+      "url": "https://balatroseeds.com/seeds/6B678B4W/plasma-deck",
+      "retrievedAt": "2026-06-17",
+      "contentType": "Jina Reader 可读网页正文 + extract-balatroseed-route prose-backed queueTables",
       "seeds": [
         "6B678B4W"
       ],
@@ -1248,10 +1248,11 @@
         "页面正文说明该 seed 可用于 naneinf 和 Ante 39，路线写到 Ante 8 起点。",
         "Ante 1 跳小盲拿 Mega Arcana Pack，通过 Soul 拿 Perkeo，并用负片 Jupiter 做经济。",
         "Ante 5 转高牌并拿 Foil DNA，随后用 Deja Vu 和 Chariot 做红封钢 K。",
-        "Ante 7 刷到 Baron，Ante 8 买 Telescope 并刷新一次拿 Brainstorm，后续进入 Baron/Mime + Perkeo/Cryptid 长线。"
+        "Ante 7 刷到 Baron，Ante 8 买 Telescope 并刷新一次拿 Brainstorm，后续进入 Baron/Mime + Perkeo/Cryptid 长线。",
+        "2026-06-17 使用 extract-balatroseed-route.mjs 将 BalatroSeeds 逐 Ante prose route 拆成 8 个 queueTables；这些表不是原始 Shop Queue dump，也不能证明 naneinf 或 Ante 39 完整路线。"
       ],
       "confidence": "高",
-      "useInSite": "已用于升级 6B678B4W 详情页的 Ante 1-8 流程；后续可继续补 Ante 9+。"
+      "useInSite": "已用于升级 6B678B4W 详情页的 Ante 1-8 结构化 queueTables；仍需实机复盘 Ante 9+、Boss、roll、现金阈值和完整逐店路线。"
     },
     {
       "id": "balatroseeds-afbwb2-ghost",
@@ -2409,18 +2410,21 @@
       "status": "extractor-added",
       "blocker": "",
       "evidenceIds": [
-        "balatroseeds-y3qrzz5i-parser"
+        "balatroseeds-y3qrzz5i-parser",
+        "balatroseeds-6b678b4w-route"
       ],
       "sourceIds": [
-        "balatroseeds-y3qrzz5i"
+        "balatroseeds-y3qrzz5i",
+        "balatroseeds-6b678b4w"
       ],
       "targetSeeds": [
-        "Y3QRZZ5I"
+        "Y3QRZZ5I",
+        "6B678B4W"
       ],
-      "nextAction": "用 scripts/extract-balatroseed-route.mjs 批量跑 AFBWB2、8Q47WV6K、6B678B4W、Y3QRZZ5I 等页面，把输出和实机复盘对照后再写入正式 routeDetails。",
-      "validation": "抽取器测试通过；真实页面输出必须包含 flow、queueTables、Boss/Voucher/Tags/Shop Queue/Packs，并能回链 BalatroSeeds 原页。",
+      "nextAction": "6B678B4W 已用 scripts/extract-balatroseed-route.mjs 从 prose 文字路线拆出 Ante 1-8 queueTables；下一步批量跑 AFBWB2、8Q47WV6K 等页面，并对 6B678B4W 实机复盘 Ante 9+、Boss、roll、现金阈值、The Plant 规避和完整逐店路线。",
+      "validation": "抽取器测试通过；真实页面输出必须包含 flow、queueTables、Boss/Voucher/Tags/Shop Queue/Packs，并能回链 BalatroSeeds 原页；prose route 必须标明不是原始 Shop Queue dump，不能直接升级为 naneinf/Ante39 完整路线。",
       "ownerMode": "Scrapling/Jina + 前端解析器",
-      "updatedAt": "2026-06-15"
+      "updatedAt": "2026-06-17"
     },
     {
       "id": "site-schema-validation",

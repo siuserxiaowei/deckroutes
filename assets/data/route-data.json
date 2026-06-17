@@ -1141,9 +1141,12 @@
       ]
     },
     "6B678B4W": {
-      "completeness": "完整到 Ante 8",
-      "sourceMode": "BalatroSeeds 逐 Ante 文字路线",
-      "videoStatus": "网页正文可读，无需视频字幕。",
+      "completeness": "Ante 1-8 结构化文字路线，prose-backed queueTables，待实机复盘",
+      "sourceMode": "BalatroSeeds /plasma-deck 页面 + Jina Reader 逐 Ante prose route；由 extract-balatroseed-route.mjs 抽成 queueTables，不是原始 Shop Queue dump",
+      "videoStatus": "网页正文可读，无需视频字幕；无视频逐帧或实机复盘证据。",
+      "sources": [
+        "balatroseeds-6b678b4w"
+      ],
       "flow": [
         {
           "stage": "Ante 1 - 开局拿 Perkeo 和经济",
@@ -1215,10 +1218,273 @@
           ]
         }
       ],
+      "queueTables": [
+        {
+          "ante": 1,
+          "title": "Ante 1 - Perkeo / Seed Money 经济起点",
+          "boss": "",
+          "voucher": "Seed Money",
+          "tags": [
+            "Perkeo",
+            "Jupiter",
+            "Mega Arcana Pack"
+          ],
+          "routeUse": "prose-backed BalatroSeeds 文字路线；把 Ante 1 段落拆成 queueTables，不是原始 Shop Queue dump。",
+          "shopQueue": [
+            "Small Blind: Skip for Mega Arcana Pack",
+            "Small Blind: Take Soul for Perkeo",
+            "Small Blind: Take High Priestess for Jupiter and Earth",
+            "Small Blind: Sell Earth while keeping Jupiter",
+            "Rest of Ante: Buy Seed Money Immediately",
+            "Rest of Ante: Sell the negative Jupiter every round for eco",
+            "Rest of Ante: Eco the rest of the blind"
+          ],
+          "packs": [
+            "Mega Arcana Pack",
+            "Soul -> Perkeo",
+            "High Priestess -> Jupiter / Earth"
+          ],
+          "sourceIds": [
+            "balatroseeds-6b678b4w"
+          ]
+        },
+        {
+          "ante": 2,
+          "title": "Ante 2 - 同花过渡 / Voucher Tag",
+          "boss": "Boss 名称未公开；正文只给弃牌找黑桃打法",
+          "voucher": "Voucher Tag",
+          "tags": [
+            "Crafty Joker",
+            "clubs flush",
+            "spades deduction"
+          ],
+          "routeUse": "按 prose 文本记录经济、同花过渡、Crafty Joker 和 Voucher Tag；缺 Boss 名称与完整手牌。",
+          "shopQueue": [
+            "Before Small Blind: Full eco, sell negative Jupiter",
+            "Before Small Blind: should be $20 before entering",
+            "Small Blind: spend discards looking for clubs",
+            "Small Blind: target a perfect 1600 flush score",
+            "Before Big Blind: reroll once and buy Crafty Joker",
+            "Before Big Blind: should be $25 after selling negative Jupiter",
+            "Very Important: take the Voucher Tag skip, then play the boss",
+            "Very Important: sort by suit, discard the five right cards, then infer spades and discard until five spades"
+          ],
+          "packs": [
+            "No explicit pack opened in this Ante prose section"
+          ],
+          "sourceIds": [
+            "balatroseeds-6b678b4w"
+          ]
+        },
+        {
+          "ante": 3,
+          "title": "Ante 3 - Bull / Golden Joker / Director's Cut",
+          "boss": "The Plant 是 Ante 13 风险提示，不是本 Ante 已公开 Boss",
+          "voucher": "Overstock / Director's Cut",
+          "tags": [
+            "Bull",
+            "Golden Joker",
+            "Director's Cut",
+            "The Plant",
+            "Immolate"
+          ],
+          "routeUse": "建立经济和 Boss 保险；Director's Cut 用于后续 The Plant 风险，当前仍非逐 Boss 表。",
+          "shopQueue": [
+            "Before Small Blind: buy Bull and Golden Joker",
+            "Before Small Blind: buy Overstock and Director's Cut",
+            "Before Small Blind: Director's Cut is essential for the Ante 13 Plant risk",
+            "Before Small Blind: after selling negative Jupiter should be $10",
+            "Before Big Blind: take Spectral Pack for Immolate",
+            "Before Big Blind: should be $42 after selling negative Jupiter",
+            "Before Big Blind: full eco the rest of the blind"
+          ],
+          "packs": [
+            "Spectral Pack -> Immolate"
+          ],
+          "sourceIds": [
+            "balatroseeds-6b678b4w"
+          ]
+        },
+        {
+          "ante": 4,
+          "title": "Ante 4 - Money Tree / Sixth Sense",
+          "boss": "Boss 名称未公开；正文只写 play a flush as normal",
+          "voucher": "Money Tree",
+          "tags": [
+            "Money Tree",
+            "Sixth Sense",
+            "Immolate",
+            "Hermit"
+          ],
+          "routeUse": "用 Money Tree 和利息继续滚经济，Boss 前刷到 Sixth Sense。",
+          "shopQueue": [
+            "Before Small Blind: should have $87 in shop before doing anything",
+            "Before Small Blind: buy Money Tree",
+            "Before Small Blind: full eco",
+            "Before Big Blind: take Spectral Pack for Immolate",
+            "Before Big Blind: take Arcana Pack for Hermit",
+            "Before Big Blind: reroll 5 times and take nothing",
+            "Before Big Blind: should be at $108 before selecting Big Blind",
+            "Before Boss Blind: reroll 4 times down to $113 and pick up Sixth Sense",
+            "Before Boss Blind: should be $111 after selling negative Jupiter",
+            "Boss Blind: play a flush as normal"
+          ],
+          "packs": [
+            "Spectral Pack -> Immolate",
+            "Arcana Pack -> Hermit"
+          ],
+          "sourceIds": [
+            "balatroseeds-6b678b4w"
+          ]
+        },
+        {
+          "ante": 5,
+          "title": "Ante 5 - Stuntman / Foil DNA / 红封钢K",
+          "boss": "Boss 名称未公开；正文说明用红封钢 K 复制过关",
+          "voucher": "Blank Tag",
+          "tags": [
+            "Stuntman",
+            "Sixth Sense",
+            "Deja Vu",
+            "Cryptid",
+            "Foil DNA",
+            "Chariot",
+            "Hanged Man",
+            "Pluto"
+          ],
+          "routeUse": "从同花转高牌，拿 Stuntman、Foil DNA，并用 Deja Vu + Chariot 做第一张红封钢K。",
+          "shopQueue": [
+            "Before Small Blind: buy Blank Tag",
+            "Before Small Blind: Arcana Pack uses Hanged Man on 4 and 5 of hearts",
+            "Before Small Blind: reroll 3 times to $111 for Stuntman",
+            "Before Small Blind: sell Crafty Joker for Stuntman",
+            "Small Blind: discard until 6 of clubs and play it by itself",
+            "Small Blind: Sixth Sense gives Ouija",
+            "Small Blind: keep Immolate, Deja Vu, and Cryptid when found",
+            "Before Big Blind: take Spectral Pack for Immolate",
+            "Before Big Blind: take Mega Standard Pack for mult 6 and purple seal mult 5",
+            "Before Big Blind: reroll a total of 7 times",
+            "Before Big Blind: after 1st reroll buy and use Pluto",
+            "Before Big Blind: after 3rd reroll sell Jupiter and buy Death",
+            "Before Big Blind: DO NOT sell Death for eco",
+            "Before Big Blind: after 7th reroll hit Foil DNA",
+            "Before Big Blind: sell Golden Joker and buy DNA",
+            "Big Blind: discard for a 6 and play it by itself",
+            "Big Blind: keep Deja Vu",
+            "Before Boss Blind: buy both Mega Arcana Packs",
+            "Before Boss Blind: second Mega Arcana uses Deja Vu on the King",
+            "Before Boss Blind: Hanged Man deletes 2 and 3 of clubs",
+            "Before Boss Blind: Chariot upgrades the red seal King to steel",
+            "Boss Blind: play the red seal steel king to dupe it"
+          ],
+          "packs": [
+            "Arcana Pack -> Hanged Man",
+            "Spectral Pack -> Immolate",
+            "Mega Standard Pack -> mult 6 / purple seal mult 5",
+            "Mega Arcana Pack x2 -> Deja Vu / Hanged Man / Chariot"
+          ],
+          "sourceIds": [
+            "balatroseeds-6b678b4w"
+          ]
+        },
+        {
+          "ante": 6,
+          "title": "Ante 6 - Crystal Ball / Fool + Temperance",
+          "boss": "Boss 名称未公开；正文说可能需要两手",
+          "voucher": "Crystal Ball",
+          "tags": [
+            "Hermit",
+            "Fool",
+            "Temperance",
+            "Immolate"
+          ],
+          "routeUse": "继续经济循环，靠 Fool 复制 Temperance，保留 Immolate。",
+          "shopQueue": [
+            "Before Small Blind: buy Crystal Ball",
+            "Before Small Blind: full eco otherwise",
+            "Before Boss Blind: buy Arcana Pack for Hermit",
+            "Before Boss Blind: reroll 4 times and buy Fool, but do not use it",
+            "Before Boss Blind: reroll another 2 times and buy and use Temperance",
+            "Before Boss Blind: use Fool to create a Temperance and use it",
+            "Before Boss Blind: full eco otherwise",
+            "Boss Blind: same thing but may require two hands",
+            "Boss Blind: keep Immolate"
+          ],
+          "packs": [
+            "Arcana Pack -> Hermit",
+            "Fool -> Temperance copy"
+          ],
+          "sourceIds": [
+            "balatroseeds-6b678b4w"
+          ]
+        },
+        {
+          "ante": 7,
+          "title": "Ante 7 - Antimatter / Baron 入队",
+          "boss": "Boss 名称未公开；正文说 Boss 阶段应能碰到 Cryptid",
+          "voucher": "Antimatter",
+          "tags": [
+            "Baron",
+            "Cryptid",
+            "Hermit",
+            "Temperance"
+          ],
+          "routeUse": "用 Antimatter 开 Joker 位，持续刷新直到 Baron，进入 Baron 长线。",
+          "shopQueue": [
+            "Before Small Blind: buy Antimatter",
+            "Before Small Blind: take Arcana Pack for Immolate into Fool to Temperance",
+            "Before Small Blind: reroll until Baron, then buy him with the new joker slot",
+            "Before Small Blind: full eco otherwise",
+            "Before Boss Blind: take Arcana Pack for Hermit",
+            "Before Boss Blind: reroll 4 times for another Hermit",
+            "Before Boss Blind: reroll again for Temperance",
+            "Before Boss Blind: full eco from here",
+            "Boss Blind: should hit Cryptid here"
+          ],
+          "packs": [
+            "Arcana Pack -> Immolate / Fool / Temperance",
+            "Arcana Pack -> Hermit"
+          ],
+          "sourceIds": [
+            "balatroseeds-6b678b4w"
+          ]
+        },
+        {
+          "ante": 8,
+          "title": "Ante 8 - Telescope / Brainstorm / Baron-Mime 长线",
+          "boss": "Ante 8 具体 Boss 未公开；The Plant 是后续 Boss Blind 风险提示",
+          "voucher": "Telescope",
+          "tags": [
+            "Brainstorm",
+            "Pluto",
+            "Perkeo",
+            "Baron/Mime",
+            "Cryptid",
+            "The Plant"
+          ],
+          "routeUse": "买 Telescope、拿 Pluto、一次刷新拿 Brainstorm；后续转 classic Baron/Mime + Perkeo 复制 Cryptids。",
+          "shopQueue": [
+            "Buy Telescope",
+            "Buy Celestial Pack for Pluto",
+            "Reroll once for Brainstorm",
+            "From here go into classic Baron/Mime while using Perkeo to dupe Cryptids",
+            "Move Blueprints and Brainstorms accordingly",
+            "Later source text mentions Mail-In Rebate, Ectoplasm negative joker, and Showman",
+            "Check Boss Blinds for The Plant and reroll the blind when it appears"
+          ],
+          "packs": [
+            "Celestial Pack -> Pluto"
+          ],
+          "sourceIds": [
+            "balatroseeds-6b678b4w"
+          ]
+        }
+      ],
       "mistakes": [
         "前期不要提前卖 Death，它要积累用于牌库改造。",
         "Director's Cut 是为了处理后续 Boss，尤其要防 The Plant。",
-        "该路线默认全 Joker 解锁；档案不完整会导致商店替换。"
+        "该路线默认全 Joker 解锁；档案不完整会导致商店替换。",
+        "queueTables 来自 BalatroSeeds prose-backed 文字路线，不是原始 Shop Queue dump；Ante 9+、Ante 39、naneinf、完整逐店和最终 Boss 仍需实机复盘。"
       ]
     },
     "VH1A55LV": {
@@ -1234,7 +1500,7 @@
           "stage": "Ante 1 - 可读强证据",
           "actions": [
             "BalatroSeeds 的 Ghost Deck 页面当前可读，能确认 Ante 1 有 Yorick、Negative Perkeo 和 Ectoplasm 等关键节点。",
-            "这只能证明早期强开局，不能单独证明完整 Ante 39 路线。"
+            "这只能证明早期强开局，不能单独证明 Ante 39 完整路线。"
           ]
         },
         {
@@ -4164,7 +4430,7 @@
       "mistakes": [
         "这是源页面队列，不是完整购买决策；不要把每个队列项都当成必买。",
         "Ante 2 的 The Soul、Ante 5 的 Deja Vu/Cryptid 和 Ante 6 的 Antimatter 是否能稳定串起来，需要实机复盘。",
-        "页面仅覆盖 Ante 1-6，不能宣称完整 naneinf 或完整钢K流程。"
+        "页面仅覆盖 Ante 1-6，不能宣称 naneinf 完整路线或完整钢K流程。"
       ]
     },
     "2K9H9HN": {

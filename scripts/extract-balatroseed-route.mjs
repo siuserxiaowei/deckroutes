@@ -306,6 +306,99 @@ function extractQueueTables(markdown, sourceId) {
   return tables.sort((a, b) => a.ante - b.ante);
 }
 
+function isProsePhaseHeading(line) {
+  return /^(?:Before\s+)?(?:Small|Big|Boss)\s+Blind$|^Rest of Ante$|^Very Important$/i.test(line);
+}
+
+function withPhase(phase, line) {
+  return phase ? `${phase}: ${line}` : line;
+}
+
+function isPackLikeLine(line) {
+  return /pack|soul|high priestess|spectral|arcana|celestial|standard|buffoon|immolate|deja vu|cryptid|chariot|hanged man|death|pluto|jupiter|earth|hermit|temperance|fool|ouija/i.test(line);
+}
+
+function extractKnownTerms(lines, terms) {
+  const text = lines.join("\n");
+  return uniqueValues(terms.filter((term) => new RegExp(term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i").test(text)));
+}
+
+function extractProseQueueTables(markdown, sourceId) {
+  const body = removeCodeBlocks(markdown);
+  const marker = /(?:^|\n)\s*(?:[-*]\s*)?(?:\*\*)?Ante\s+(\d+(?:\s*[-~]\s*\d+)?)(?:\*\*)?\s*[:：-]?\s*/gi;
+  const matches = [...body.matchAll(marker)];
+  if (!matches.length) return [];
+
+  const tables = [];
+  for (const match of matches) {
+    const start = match.index + match[0].length;
+    const end = matches[matches.indexOf(match) + 1]?.index ?? body.length;
+    const ante = cleanText(match[1]).replace(/\s+/g, "");
+    const rawLines = body
+      .slice(start, end)
+      .split(/\n+/)
+      .map(cleanProseLine)
+      .filter((line) => line && !/^Title:|^URL Source:|^Markdown Content:/i.test(line));
+
+    let phase = "";
+    const shopQueue = [];
+    const packs = [];
+    for (const line of rawLines) {
+      if (isProsePhaseHeading(line)) {
+        phase = line;
+        continue;
+      }
+      const action = withPhase(phase, line);
+      shopQueue.push(action);
+      if (isPackLikeLine(line)) packs.push(action);
+    }
+
+    const hasUsefulContent = shopQueue.length || packs.length;
+    if (!hasUsefulContent) continue;
+
+    const voucherTerms = extractKnownTerms(shopQueue, [
+      "Seed Money",
+      "Voucher Tag",
+      "Blank Tag",
+      "Overstock",
+      "Director's Cut",
+      "Money Tree",
+      "Crystal Ball",
+      "Antimatter",
+      "Telescope"
+    ]);
+    const tags = extractKnownTerms(shopQueue, [
+      "Perkeo",
+      "Sixth Sense",
+      "Stuntman",
+      "DNA",
+      "Deja Vu",
+      "Baron",
+      "Brainstorm",
+      "Cryptid",
+      "Pluto",
+      "Chariot",
+      "Hanged Man",
+      "The Plant"
+    ]);
+
+    const table = {
+      ante: /^\d+$/.test(ante) ? Number(ante) : ante,
+      title: `Ante ${ante}`,
+      boss: "",
+      voucher: voucherTerms.join(" / "),
+      tags,
+      routeUse: `BalatroSeeds prose route extracted from Ante ${ante}; replay decisions still need validation.`,
+      shopQueue: uniqueValues(shopQueue),
+      packs: uniqueValues(packs)
+    };
+    if (sourceId) table.sourceIds = [sourceId];
+    tables.push(table);
+  }
+
+  return tables.sort((a, b) => Number.parseInt(a.ante, 10) - Number.parseInt(b.ante, 10));
+}
+
 function actionPreview(prefix, values, limit) {
   const selected = values.slice(0, limit);
   if (!selected.length) return "";
@@ -343,7 +436,11 @@ function cleanProseLine(value) {
     .replace(/^[-*]\s+/, "")
     .replace(/^#{1,6}\s*/, "")
     .replace(/\*\*/g, "")
-    .replace(/`/g, "");
+    .replace(/_/g, "")
+    .replace(/`/g, "")
+    .replace(/^\*+(.+?)\*+$/g, "$1")
+    .replace(/^[*]+$/g, "")
+    .trim();
 }
 
 function extractProseFlow(markdown) {
@@ -419,12 +516,14 @@ export function parseBalatroSeedMarkdown(markdown, options = {}) {
   const deck = extractDeck(markdown, title, sourceUrl);
   const warnings = buildWarnings(seedCandidates, selectedSeed);
   const queueTables = extractQueueTables(markdown, options.sourceId);
-  const flow = queueTables.length ? buildFlowFromQueue(queueTables) : extractProseFlow(markdown);
+  const proseQueueTables = queueTables.length ? [] : extractProseQueueTables(markdown, options.sourceId);
+  const structuredTables = queueTables.length ? queueTables : proseQueueTables;
+  const flow = structuredTables.length ? buildFlowFromQueue(structuredTables) : extractProseFlow(markdown);
   const sectionFlow = flow.length ? flow : extractSectionFlow(markdown);
-  const lastAnte = queueTables.at(-1)?.ante;
+  const lastAnte = structuredTables.at(-1)?.ante;
 
   const detail = {
-    completeness: queueTables.length
+    completeness: structuredTables.length
       ? `Ante 1-${lastAnte} queue draft, replay decisions pending`
       : sectionFlow.length
         ? "Prose route draft, replay decisions pending"
@@ -445,7 +544,7 @@ export function parseBalatroSeedMarkdown(markdown, options = {}) {
       ...warnings
     ]
   };
-  if (queueTables.length) detail.queueTables = queueTables;
+  if (structuredTables.length) detail.queueTables = structuredTables;
 
   return {
     seed: selectedSeed,

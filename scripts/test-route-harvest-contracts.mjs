@@ -250,6 +250,84 @@ const queueReplayItem = (siteData.reviewQueue || []).find((item) => item.id === 
 assert.ok(queueReplayItem, "12QM45YD should stay in the replay queue for decision validation");
 assert.ok(queueReplayItem.targetSeeds?.includes("12QM45YD"));
 
+const plasmaProseSeed = seedById.get("6B678B4W");
+assert.ok(plasmaProseSeed, "6B678B4W should remain in the seed database");
+assert.ok(plasmaProseSeed.sources?.includes("balatroseeds-6b678b4w"));
+assert.match(plasmaProseSeed.summary || "", /Perkeo|Cryptid|Baron|Brainstorm/i);
+
+const plasmaProseDetail = routeData.seedDetails?.["6B678B4W"];
+assert.ok(plasmaProseDetail, "6B678B4W should have a route detail");
+assert.match(plasmaProseDetail.completeness || "", /Ante 1-8|结构化|待复盘/i);
+assert.match(plasmaProseDetail.sourceMode || "", /BalatroSeeds|prose|Jina Reader|逐 Ante/i);
+assert.ok((plasmaProseDetail.flow || []).length >= 8, "6B678B4W should keep its readable Ante 1-8 prose flow");
+assert.ok(
+  (plasmaProseDetail.queueTables || []).length >= 8,
+  "6B678B4W should expose prose-backed BalatroSeeds Ante 1-8 tables"
+);
+const plasmaProseRouteText = [
+  ...(plasmaProseDetail.flow || []).flatMap((stage) => [stage.stage, ...(stage.actions || [])]),
+  ...(plasmaProseDetail.queueTables || []).flatMap((table) => [
+    table.ante,
+    table.title,
+    table.boss,
+    table.voucher,
+    table.routeUse,
+    ...(table.tags || []),
+    ...(table.shopQueue || []),
+    ...(table.packs || [])
+  ]),
+  ...(plasmaProseDetail.mistakes || [])
+].join("\n");
+for (const requiredText of [
+  "Mega Arcana Pack",
+  "Soul",
+  "Perkeo",
+  "Jupiter",
+  "Seed Money",
+  "Voucher Tag",
+  "Crafty Joker",
+  "Director's Cut",
+  "The Plant",
+  "Money Tree",
+  "Sixth Sense",
+  "Blank Tag",
+  "Stuntman",
+  "Deja Vu",
+  "Cryptid",
+  "Foil DNA|foil DNA",
+  "Chariot",
+  "Crystal Ball",
+  "Fool",
+  "Temperance",
+  "Antimatter",
+  "Baron",
+  "Telescope",
+  "Brainstorm",
+  "Baron/Mime",
+  "prose-backed|文字路线|不是原始 Shop Queue"
+]) {
+  assert.match(plasmaProseRouteText, new RegExp(requiredText, "i"), `6B678B4W structured prose route should include ${requiredText}`);
+}
+assert.doesNotMatch(
+  [plasmaProseDetail.completeness, plasmaProseDetail.sourceMode, plasmaProseDetail.videoStatus].join("\n"),
+  /完整\s*naneinf|完整\s*Ante\s*39|已验证完整逐店|raw Shop Queue dump/i,
+  "6B678B4W prose-backed queue tables should not be promoted to complete naneinf/Ante 39 or raw queue dump"
+);
+
+assert.equal(
+  sourceMap["balatroseeds-6b678b4w"]?.url,
+  "https://balatroseeds.com/seeds/6B678B4W/plasma-deck"
+);
+
+const plasmaProseEvidence = (siteData.evidenceSources || []).find((item) => item.id === "balatroseeds-6b678b4w-route");
+assert.ok(plasmaProseEvidence, "6B678B4W should have a BalatroSeeds evidence card");
+assert.ok(plasmaProseEvidence.seeds?.includes("6B678B4W"));
+assert.match(plasmaProseEvidence.useInSite || "", /结构化|queueTables|Ante 1-8|待复盘/i);
+
+const queueParserItem = (siteData.reviewQueue || []).find((item) => item.id === "balatroseeds-queue-parser");
+assert.ok(queueParserItem, "BalatroSeeds queue parser queue item should remain tracked");
+assert.match([queueParserItem.nextAction, queueParserItem.validation].join("\n"), /6B678B4W|prose|queueTables|Ante 9\+|Boss|roll|现金阈值/i);
+
 const longRunSeed = seedById.get("2K9H9HN");
 assert.ok(longRunSeed, "2K9H9HN should be promoted from Bilibili full-flow evidence into the seed database");
 assert.ok(longRunSeed.sources?.includes("bili-2k9h9hn-full-flow"));
