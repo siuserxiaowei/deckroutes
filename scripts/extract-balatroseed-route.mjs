@@ -358,8 +358,6 @@ function extractProseQueueTables(markdown, sourceId) {
 
     const voucherTerms = extractKnownTerms(shopQueue, [
       "Seed Money",
-      "Voucher Tag",
-      "Blank Tag",
       "Overstock",
       "Director's Cut",
       "Money Tree",
@@ -368,18 +366,22 @@ function extractProseQueueTables(markdown, sourceId) {
       "Telescope"
     ]);
     const tags = extractKnownTerms(shopQueue, [
-      "Perkeo",
-      "Sixth Sense",
-      "Stuntman",
-      "DNA",
-      "Deja Vu",
-      "Baron",
-      "Brainstorm",
-      "Cryptid",
-      "Pluto",
-      "Chariot",
-      "Hanged Man",
-      "The Plant"
+      "Voucher Tag",
+      "Blank Tag",
+      "Rare Tag",
+      "D6 Tag",
+      "Buffoon Tag",
+      "Economy Tag",
+      "Top-up Tag",
+      "Handy Tag",
+      "Polychrome Tag",
+      "Boss Tag",
+      "Meteor Tag",
+      "Charm Tag",
+      "Orbital Tag",
+      "Double Tag",
+      "Juggle Tag",
+      "Speed Tag"
     ]);
 
     const table = {

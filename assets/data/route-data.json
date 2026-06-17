@@ -3732,12 +3732,156 @@
       ]
     },
     "8Q47WV6K": {
-      "completeness": "BalatroSeeds + Reddit 双来源 candidate，待补完整逐店路线",
-      "sourceMode": "BalatroSeeds 8476/ghost-deck Jina Reader 页面正文 seed 复核 + old.reddit HTML 正文/评论抽取 + command-line direct Reddit JSON network security blocked",
-      "videoStatus": "无视频证据；当前为 seed bank 节点与 Reddit 社区帖。",
+      "completeness": "BalatroSeeds + Reddit 双来源 candidate；BalatroSeeds prose-backed queueTables 已拆 8 个 Ante 节点，待补完整逐店路线",
+      "sourceMode": "BalatroSeeds 8476/ghost-deck Jina Reader 页面正文 seed 复核 + extract-balatroseed-route prose-backed queueTables + old.reddit HTML 正文/评论抽取 + command-line direct Reddit JSON network security blocked",
+      "videoStatus": "无视频证据；当前为 seed bank 节点、BalatroSeeds prose-backed 路线表与 Reddit 社区帖。",
       "sources": [
         "balatroseeds-8q47wv6k-ghost",
         "reddit-8q47wv6k-insane-seed"
+      ],
+      "queueTables": [
+        {
+          "ante": 1,
+          "title": "Ante 1 - 双跳盲 / 双传奇开局",
+          "boss": "",
+          "voucher": "",
+          "tags": [],
+          "routeUse": "BalatroSeeds prose-backed 节点：跳 first small blind 和 big blind，拿 hex-Triboulet 与 Perkeo；待实机复盘现金、Boss 和后续逐店路线。",
+          "shopQueue": [
+            "skip first small blind and big blind for hex-Triboulet and Perkeo",
+            "recommend using Emperor to get Death tarot card",
+            "Reddit 主帖同样写 first blind gives double tag、second gives mega arcana pack，并建议两盲都跳过"
+          ],
+          "packs": [
+            "mega arcana pack gives Triboulet",
+            "mega arcana pack gives Perkeo",
+            "Temperance in second pack can convert early joker value into cash"
+          ],
+          "sourceIds": [
+            "balatroseeds-8q47wv6k-ghost",
+            "reddit-8q47wv6k-insane-seed"
+          ]
+        },
+        {
+          "ante": 3,
+          "title": "Ante 3 - Ectoplasm / Aura",
+          "boss": "",
+          "voucher": "",
+          "tags": [],
+          "routeUse": "BalatroSeeds prose-backed 节点：只证明 Ectoplasm/Aura 可见，不能写成固定购买表。",
+          "shopQueue": [
+            "Ectoplasm / Aura",
+            "early spectral resources support negative joker and enhancement route"
+          ],
+          "packs": [
+            "spectral resource branch; exact pack order still needs replay validation"
+          ],
+          "sourceIds": [
+            "balatroseeds-8q47wv6k-ghost"
+          ]
+        },
+        {
+          "ante": 4,
+          "title": "Ante 4 - Wraith / Blueprint",
+          "boss": "",
+          "voucher": "",
+          "tags": [],
+          "routeUse": "BalatroSeeds prose-backed 节点：Wraith spectral card contains Blueprint；不是完整商店队列。",
+          "shopQueue": [
+            "Wraith spectral card contains Blueprint"
+          ],
+          "packs": [
+            "Wraith spectral card contains Blueprint"
+          ],
+          "sourceIds": [
+            "balatroseeds-8q47wv6k-ghost"
+          ]
+        },
+        {
+          "ante": 5,
+          "title": "Ante 5 - Deja Vu / Cryptid",
+          "boss": "",
+          "voucher": "",
+          "tags": [],
+          "routeUse": "BalatroSeeds prose-backed 节点：Deja Vu / Cryptid 是红封钢K分支关键资源；仍缺 roll 次数和购买顺序。",
+          "shopQueue": [
+            "De ja vu / Cryptid",
+            "connects to Reddit comment branch: Perkeo + Cryptid for red seal steel kings"
+          ],
+          "packs": [
+            "De ja vu / Cryptid"
+          ],
+          "sourceIds": [
+            "balatroseeds-8q47wv6k-ghost",
+            "reddit-8q47wv6k-insane-seed"
+          ]
+        },
+        {
+          "ante": 8,
+          "title": "Ante 8 - Mime",
+          "boss": "",
+          "voucher": "",
+          "tags": [],
+          "routeUse": "BalatroSeeds prose-backed 节点：Mime 可见，服务于 Baron/Mime 持牌钢K分支。",
+          "shopQueue": [
+            "Mime"
+          ],
+          "packs": [],
+          "sourceIds": [
+            "balatroseeds-8q47wv6k-ghost"
+          ]
+        },
+        {
+          "ante": 9,
+          "title": "Ante 9 - Brainstorm",
+          "boss": "",
+          "voucher": "",
+          "tags": [],
+          "routeUse": "BalatroSeeds prose-backed 节点：Brainstorm 可见；后续复制目标需区分 Sock and Buskin、Triboulet、Mime 或 Cryptid。",
+          "shopQueue": [
+            "Brainstorm"
+          ],
+          "packs": [],
+          "sourceIds": [
+            "balatroseeds-8q47wv6k-ghost"
+          ]
+        },
+        {
+          "ante": "11-13",
+          "title": "Ante 11-13 - Baron",
+          "boss": "",
+          "voucher": "",
+          "tags": [],
+          "routeUse": "BalatroSeeds prose-backed 节点：原文写 Barron，站内按 Baron/Mime 分支理解并保留拼写边界。",
+          "shopQueue": [
+            "Barron",
+            "Baron/Mime steel King branch must be separated from Triboulet/Sock and Buskin main line"
+          ],
+          "packs": [],
+          "sourceIds": [
+            "balatroseeds-8q47wv6k-ghost",
+            "reddit-8q47wv6k-insane-seed"
+          ]
+        },
+        {
+          "ante": 13,
+          "title": "Ante 13 - Showman / negative Showman / DNA",
+          "boss": "",
+          "voucher": "",
+          "tags": [],
+          "routeUse": "BalatroSeeds prose-backed 节点：Showman 后再跳可见第二个 negative Showman；Lucky Cat、Idol、Sock and Buskin、DNA 属于可见组件，不是完整购买表。",
+          "shopQueue": [
+            "Showman then skip again and get a second showman that is negative",
+            "early game you can find a spectral pack that contains an ectoplasm",
+            "you can also find jokers like Lucky Cat and Idol, Sock and Buskin, DNA"
+          ],
+          "packs": [
+            "early game spectral pack contains an ectoplasm"
+          ],
+          "sourceIds": [
+            "balatroseeds-8q47wv6k-ghost"
+          ]
+        }
       ],
       "flow": [
         {
@@ -3871,7 +4015,7 @@
       ],
       "mistakes": [
         "不要把 URL slug 8476 当作 seed；复制时必须用正文 8Q47WV6K。",
-        "不要把 BalatroSeeds 节点和 Reddit 经验帖升级成完整逐店购买表。",
+        "不要把 BalatroSeeds 节点和 Reddit 经验帖升级成已验证的逐店购买 / roll / Boss 表。",
         "Triboulet/Sock and Buskin 主线与 Baron/Mime 钢K评论分支要分开复盘。",
         "Showman、Invisible Joker、负片 Joker 位和手牌上限是后续失败风险。",
         "不要忽略 Switch / console 版本差异；Canio/Caino first then Triboulet 的评论说明平台队列可能不同。",

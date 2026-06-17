@@ -679,11 +679,42 @@ assert.match(ghostNaneinfSeed.summary || "", /Ghost Deck|Triboulet|Perkeo|Bluepr
 
 const ghostNaneinfDetail = routeData.seedDetails?.["8Q47WV6K"];
 assert.ok(ghostNaneinfDetail, "8Q47WV6K should have an upgraded route detail");
-assert.match(ghostNaneinfDetail.completeness || "", /双来源|BalatroSeeds|Reddit|candidate|待复盘/i);
+assert.match(ghostNaneinfDetail.completeness || "", /双来源|BalatroSeeds|Reddit|candidate|待复盘|queueTables|prose-backed/i);
 assert.ok((ghostNaneinfDetail.flow || []).length >= 8, "8Q47WV6K should expose dual-source route stages and risk notes");
+assert.ok((ghostNaneinfDetail.queueTables || []).length >= 8, "8Q47WV6K should expose BalatroSeeds prose-backed Ante route tables");
 assert.match(ghostNaneinfDetail.sourceMode || "", /old\.reddit HTML|command-line direct Reddit JSON|network security|BalatroSeeds|Jina/i);
+assert.match(ghostNaneinfDetail.sourceMode || "", /prose-backed|queueTables|正文 seed 复核/i);
+const ghostNaneinfQueueText = (ghostNaneinfDetail.queueTables || [])
+  .flatMap((table) => [
+    table.title,
+    table.routeUse,
+    ...(table.shopQueue || []),
+    ...(table.packs || []),
+    ...(table.tags || [])
+  ])
+  .join("\n");
+for (const requiredText of [
+  "hex-Triboulet",
+  "Perkeo",
+  "Ectoplasm",
+  "Wraith spectral card contains Blueprint",
+  "De ja vu",
+  "Cryptid",
+  "Mime",
+  "Brainstorm",
+  "Barron|Baron",
+  "Showman",
+  "negative",
+  "sock and buskin.*DNA"
+]) {
+  assert.match(ghostNaneinfQueueText, new RegExp(requiredText, "i"), `8Q47WV6K route tables should include ${requiredText}`);
+}
+for (const table of ghostNaneinfDetail.queueTables || []) {
+  assert.ok(!(table.tags || []).some((tag) => /Perkeo|Brainstorm|Cryptid|DNA|Baron|Barron|Mime|Showman/i.test(tag)), "8Q47WV6K prose components should not be mislabelled as Tags");
+}
 const ghostNaneinfText = [
   ...(ghostNaneinfDetail.flow || []).flatMap((stage) => [stage.stage, ...(stage.actions || [])]),
+  ghostNaneinfQueueText,
   ...(ghostNaneinfDetail.mistakes || [])
 ].join("\n");
 for (const requiredText of [

@@ -55,6 +55,19 @@ const proseQueueAnte7 = proseQueueParsed.detail.queueTables.find((table) => tabl
 assert.match(proseQueueAnte7.shopQueue.join("\n"), /Buy Antimatter|Reroll until you hit Baron|Cryptid/);
 assert.match(proseQueueParsed.detail.flow[0].actions.join(" "), /Shop Queue key order/i);
 
+const ghostProseSample = await readFixture("balatroseed-8q47wv6k-prose-sample.md");
+const ghostProseParsed = parseBalatroSeedMarkdown(ghostProseSample, {
+  sourceId: "balatroseeds-8q47wv6k-ghost"
+});
+assert.equal(ghostProseParsed.seed, "8Q47WV6K");
+assert.match(ghostProseParsed.warnings[0], /Seed candidates differ/);
+assert.ok((ghostProseParsed.detail.queueTables || []).length >= 8, "8Q47WV6K prose sections should become route tables");
+assert.equal(ghostProseParsed.detail.queueTables[0].sourceIds[0], "balatroseeds-8q47wv6k-ghost");
+assert.equal(ghostProseParsed.detail.queueTables[0].tags.length, 0, "Legendary jokers from prose must not be mislabelled as Tags");
+assert.equal(ghostProseParsed.detail.queueTables.find((table) => table.ante === 9).tags.length, 0);
+assert.match(ghostProseParsed.detail.queueTables[0].shopQueue.join("\n"), /hex-Triboulet and Perkeo/);
+assert.match(ghostProseParsed.detail.queueTables.find((table) => table.ante === 13).shopQueue.join("\n"), /Showman|DNA|sock and buskin/i);
+
 const htmlMetaSample = await readFixture("balatroseed-html-meta-sample.html");
 const htmlMetaMarkdown = htmlToMarkdownSnapshot(htmlMetaSample, "https://balatroseeds.com/seeds/Y3QRZZ5I/yellow-deck");
 assert.match(htmlMetaMarkdown, /Don't treat this as a verified route/);
