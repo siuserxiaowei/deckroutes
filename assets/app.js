@@ -146,12 +146,12 @@ function renderRouteQueueTables(queueTables = []) {
   }
 
   box.hidden = false;
-  box.append(el("h4", "", "Ante 商店队列"));
+  box.append(el("h4", "", "Ante / 路线节点表"));
   box.append(
     el(
       "p",
       "route-queue-note",
-      "这里展示的是可复核的原始队列，不等同于最优购买路线；优先看 Boss、Tags、前排关键小丑和 Packs，再决定是否实机复盘。"
+      "这里展示的是来源可复核的商店队列、牌包或作者流程节点；它们不等同于完整逐帧复盘，优先看 Boss、Tags、关键小丑、Packs 和节点边界。"
     )
   );
 

@@ -154,6 +154,54 @@ assert.ok(e14219Evidence.seeds?.includes("1DOYU2"));
 assert.ok((e14219Evidence.facts || []).length >= 10, "1DOYU2 e14219 evidence should preserve API, description, and comment facts");
 assert.match(e14219Evidence.contentType || "", /API|简介|评论|Jina/);
 assert.match(versionSensitiveQueue.nextAction || "", /BV1Ar421E7dv|BV1xWwTetEfX|等离子|Ghost Deck|961|39-3/);
+assert.ok(
+  (versionSensitiveDetail.queueTables || []).length >= 10,
+  "1DOYU2 e14219 source should expose structured 1-1 to 39-3 route tables, not only prose flow nodes"
+);
+const e14219QueueText = (versionSensitiveDetail.queueTables || [])
+  .flatMap((table) => [
+    table.ante,
+    table.title,
+    table.boss,
+    table.voucher,
+    table.routeUse,
+    ...(table.tags || []),
+    ...(table.shopQueue || []),
+    ...(table.packs || [])
+  ])
+  .join("\n");
+for (const requiredText of [
+  "1-1",
+  "负片帕奇欧",
+  "1-2",
+  "优惠券标签",
+  "2-1",
+  "头脑风暴",
+  "2-2",
+  "红蜡",
+  "5-1",
+  "红封钢K",
+  "8-1",
+  "负片标签",
+  "23-2",
+  "DNA\\+男爵\\+哑剧\\+帕奇欧\\+5蓝图\\+2头脑风暴",
+  "28注",
+  "Boss",
+  "神秘生物",
+  "36-1",
+  "38-3",
+  "39-3",
+  "巨蟒",
+  "出牌次数.*剩1",
+  "手机和电脑"
+]) {
+  assert.match(e14219QueueText, new RegExp(requiredText, "i"), `1DOYU2 structured e14219 table should include ${requiredText}`);
+}
+assert.match(
+  versionSensitiveQueue.validation || "",
+  /结构化|queueTables|1-1.*39-3|逐帧|roll|现金阈值/i,
+  "1DOYU2 replay queue should distinguish structured description tables from still-missing video replay facts"
+);
 
 const queueSeed = seedById.get("12QM45YD");
 assert.ok(queueSeed, "12QM45YD should be promoted from BalatroSeeds queue extraction into the seed database");
