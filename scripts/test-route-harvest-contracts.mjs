@@ -732,9 +732,12 @@ const yushenSteelKDetail = routeData.seedDetails?.["90UU79"];
 assert.ok(yushenSteelKDetail, "90UU79 should keep a Bilibili route detail");
 assert.match(yushenSteelKDetail.sourceMode || "", /评论 API|player\/v2|分 P/);
 assert.match(yushenSteelKDetail.videoStatus || "", /113639247843300|subtitles|view_points|无公开字幕|无章节|yt-dlp.*412/i);
+assert.ok((yushenSteelKDetail.flow || []).length >= 8, "90UU79 should expose long-image route stages beyond part-title summary nodes");
+assert.ok((yushenSteelKDetail.evidenceImages || []).length >= 1, "90UU79 should expose the high-like Bilibili route image");
 const yushenSteelKText = [
   ...(yushenSteelKDetail.flow || []).flatMap((stage) => [stage.stage, ...(stage.actions || [])]),
-  ...(yushenSteelKDetail.mistakes || [])
+  ...(yushenSteelKDetail.mistakes || []),
+  ...(yushenSteelKDetail.evidenceImages || []).flatMap((image) => [image.label, image.note, image.url])
 ].join("\n");
 for (const requiredText of [
   "雨神の右手",
@@ -749,6 +752,23 @@ for (const requiredText of [
   "20注负片DNA",
   "负片信封",
   "男爵比哑剧多一张",
+  "天晴雨_",
+  "252812449120",
+  "841459d0038aa7c591778636582828f1500494216",
+  "1002\\s*x\\s*20987",
+  "超级秘术包.*传奇小丑.*节制",
+  "重置商店两下.*蓝图.*头脑风暴",
+  "冰淇淋.*巨型秘术包.*愚者",
+  "七次商店.*死神",
+  "通灵.*第一位.*A\\s*K\\s*Q\\s*J\\s*10",
+  "蓝色小丑.*葫芦牌型",
+  "证书.*第一位",
+  "红签黑桃K.*死神.*三张",
+  "战车.*钢铁.*黑桃.*红签K",
+  "17.*商店找蓝图",
+  "模糊小丑.*可乐.*复制标签",
+  "负片DNA",
+  "不是很准确|灵活变通",
   "不是游戏版本号",
   "无公开字幕",
   "无章节"
@@ -759,13 +779,13 @@ for (const requiredText of [
 const yushenSteelKEvidence = (siteData.evidenceSources || []).find((item) => item.id === "bili-90uu79-yushen");
 assert.ok(yushenSteelKEvidence, "90UU79 should have a Bilibili evidence card");
 assert.ok(yushenSteelKEvidence.seeds?.includes("90UU79"));
-assert.ok((yushenSteelKEvidence.facts || []).length >= 10, "90UU79 evidence should preserve API, player/v2, comments, and uncertainty facts");
+assert.ok((yushenSteelKEvidence.facts || []).length >= 15, "90UU79 evidence should preserve API, player/v2, comments, route image, and uncertainty facts");
 assert.match(yushenSteelKEvidence.contentType || "", /API|评论|player\/v2|分 P/);
-assert.match((yushenSteelKEvidence.facts || []).join("\n"), /113639247843300|BV1ysq8YZExk|subtitles|view_points|17注的蓝图|20注负片DNA|男爵比哑剧多一张/i);
+assert.match((yushenSteelKEvidence.facts || []).join("\n"), /113639247843300|BV1ysq8YZExk|subtitles|view_points|天晴雨_|252812449120|1002\s*x\s*20987|1.*超级秘术包|13.*红签黑桃K|17.*蓝图|20注负片DNA|男爵比哑剧多一张/i);
 
 const chineseReplayDeepReview = (siteData.reviewQueue || []).find((item) => item.id === "bili-9ouu79-replay");
 assert.ok(chineseReplayDeepReview, "9OUU79/90UU79 should remain in the deep review queue");
-assert.match(chineseReplayDeepReview.nextAction || "", /9OUU79|90UU79|258851541904|17注的蓝图|20注负片DNA|无公开字幕|view_points/);
+assert.match(chineseReplayDeepReview.nextAction || "", /9OUU79|90UU79|258851541904|252812449120|17注的蓝图|20注负片DNA|无公开字幕|view_points/);
 
 const chineseSteelKSeed = seedById.get("9ZPU1V32");
 assert.ok(chineseSteelKSeed, "9ZPU1V32 should be promoted from Chinese video/community sources into the seed database");
