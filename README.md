@@ -8,6 +8,7 @@ DeckRoutes is a static GitHub Pages guide site for Balatro seeds, Steel King rou
 - Steel King / Baron / Mime route modules with attributed sources.
 - Cross-platform platform-status board for Agent Reach, Bilibili, WeChat, XiaoHongShu, Douyin, Weibo, Scrapling, and browser automation availability.
 - Evidence pool that separates source-backed facts, route inference, and pending replay-review items.
+- SEO topic clusters and bounded research-round source pools for Steel King, Baron/Mime, Perkeo/Cryptid, naneinf, deck-specific pages, and multi-game expansion.
 - Review queue for XiaoHongShu login capture, Douyin metadata parsing, Weibo OCR, Bilibili replay review, and seed-bank refresh tasks.
 - Chinese Bilibili video demand board.
 - Competitor/tool site signals and domain shortlist.
@@ -19,7 +20,7 @@ Index content is in `assets/data/site-data.json`.
 
 Seed route details and replay-review notes are in `assets/data/route-data.json`.
 
-`site-data.json` also contains the current `platformStatus`, `evidenceSources`, and `reviewQueue` records. Sources marked as pending replay review should not be treated as complete route guides.
+`site-data.json` also contains the current `platformStatus`, `evidenceSources`, `reviewQueue`, `seoClusters`, and `researchRounds` records. Sources marked as pending replay review should not be treated as complete route guides.
 
 Run the local data guard before publishing a new evidence or route update:
 
@@ -29,6 +30,7 @@ node scripts/audit-route-coverage.mjs --fail-on-gaps
 node scripts/test-extract-balatroseed-route.mjs
 node scripts/test-route-link-contracts.mjs
 node scripts/test-route-harvest-contracts.mjs
+node scripts/test-seo-cluster-contracts.mjs
 ```
 
 BalatroSeeds queue pages can be converted into a reviewable draft route with:
@@ -45,9 +47,9 @@ GitHub Actions runs the same data guard and extractor tests through `.github/wor
 
 `scripts/audit-route-coverage.mjs` prints a non-network coverage report for seed details, route quality (`playable/full`, `node-summary`, `candidate`, `blocked-source`, `thin-summary`), queue-table coverage, platform evidence, blocked review work, and high-priority next actions. Use `--json` for machine-readable output, and `--fail-on-gaps` when the run should fail on missing route detail, empty flow, missing source backlink, or a route that claims full/playable coverage but audits as incomplete.
 
-As of the eighth 2026-06-16 pass, Agent Reach's default doctor reports 9/15 channels available, while `mcporter --config /Users/siuserxiaowei/config/mcporter.json list` still reports healthy XiaoHongShu, Douyin, Weibo, and Exa MCP servers. Exa reached the free MCP rate limit during this pass; XiaoHongShu still returns EOF on `search_feeds("小丑牌 钢K 种子")`; Douyin video parsing still requires `DASHSCOPE_API_KEY`; Reddit and YouTube require cookie/proxy follow-up for reliable deep reads.
+As of the 2026-06-17 SEO-cluster pass, Agent Reach doctor reports 9/15 channels available. GitHub, YouTube, V2EX, RSS, generic web reader, X/Reddit/Bilibili, and WeChat article channels are available; Exa is installed but not registered as an `mcporter` server in this run; XiaoHongShu, Douyin, Weibo, LinkedIn, and Xiaoyuzhou need extra setup, service config, or keys. The site should record those limits instead of using cookies, paid sources, CAPTCHA bypasses, or private content.
 
-The data was compiled on 2026-06-15 and updated on 2026-06-16 with Agent Reach, Exa search, Jina Reader, Bilibili public search, GitHub search, RDAP, and WHOIS checks. Domain status can change and should be rechecked at the registrar before purchase.
+The data was compiled on 2026-06-15 and updated through 2026-06-17 with Agent Reach, public web fallback, Jina Reader, Bilibili public search/metadata, GitHub search, RDAP, and WHOIS checks. Domain status can change and should be rechecked at the registrar before purchase.
 
 ## Deploy
 

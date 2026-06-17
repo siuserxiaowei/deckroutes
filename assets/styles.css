@@ -413,7 +413,8 @@ main {
 .strategy-card,
 .signal-card,
 .domain-card,
-.future-card {
+.future-card,
+.seo-cluster-card {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: rgba(244, 240, 230, 0.055);
@@ -1002,6 +1003,204 @@ main {
   line-height: 1.6;
 }
 
+.seo-cluster-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.seo-cluster-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+  padding: 20px;
+}
+
+.seo-cluster-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.seo-status {
+  padding: 6px 10px;
+  border: 1px solid rgba(244, 240, 230, 0.14);
+  border-radius: 999px;
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.seo-cluster-card h3,
+.research-head h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1.18rem;
+  line-height: 1.35;
+}
+
+.seo-intent,
+.seo-next,
+.research-channel,
+.research-status {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+
+.seo-meta {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+}
+
+.seo-meta div {
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid rgba(244, 240, 230, 0.1);
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.seo-meta dt {
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.seo-meta dd {
+  margin: 5px 0 0;
+  overflow-wrap: anywhere;
+  color: var(--ink);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.seo-route-types,
+.seo-keywords,
+.seo-linked-seeds,
+.seo-evidence-links,
+.seo-guardrails,
+.research-chip-block {
+  display: grid;
+  gap: 8px;
+}
+
+.seo-route-types,
+.seo-keywords {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.route-type-chip,
+.research-chip,
+.research-asset {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  min-height: 28px;
+  padding: 0 9px;
+  border: 1px solid rgba(244, 240, 230, 0.14);
+  border-radius: 999px;
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  overflow-wrap: anywhere;
+}
+
+.route-type-chip {
+  border-color: rgba(47, 107, 79, 0.5);
+  background: rgba(47, 107, 79, 0.14);
+}
+
+.seo-block-label {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.seo-guardrails {
+  padding: 12px;
+  border-left: 3px solid var(--red);
+  background: rgba(184, 72, 56, 0.1);
+}
+
+.seo-guardrails ul {
+  display: grid;
+  gap: 6px;
+  padding: 0 0 0 18px;
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+.seo-next {
+  padding: 11px 12px;
+  border-left: 3px solid rgba(47, 107, 79, 0.8);
+  background: rgba(47, 107, 79, 0.13);
+}
+
+.seo-source-list {
+  margin-top: 0;
+}
+
+.research-round {
+  display: grid;
+  gap: 16px;
+  margin-top: 22px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(244, 240, 230, 0.04);
+}
+
+.research-head {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.7fr) minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.research-status {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.research-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.research-chip {
+  border-color: rgba(215, 173, 84, 0.24);
+  background: rgba(215, 173, 84, 0.06);
+}
+
+.research-table-wrap {
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  border: 1px solid rgba(244, 240, 230, 0.12);
+  border-radius: var(--radius);
+}
+
+.research-table-wrap table {
+  min-width: 1180px;
+}
+
+.research-asset {
+  display: flex;
+  width: fit-content;
+  margin: 0 0 6px;
+  border-color: rgba(47, 107, 79, 0.42);
+  background: rgba(47, 107, 79, 0.12);
+}
+
 .table-wrap {
   max-width: 100%;
   overflow-x: auto;
@@ -1345,7 +1544,8 @@ tbody tr:hover {
 .future-section,
 .platform-section,
 .evidence-section,
-.queue-section {
+.queue-section,
+.seo-section {
   background: linear-gradient(180deg, rgba(244, 240, 230, 0.02), transparent);
 }
 
@@ -1386,6 +1586,7 @@ tbody tr:hover {
   }
 
   .seed-grid,
+  .seo-cluster-grid,
   .signal-grid,
   .domain-grid,
   .future-grid,
@@ -1448,6 +1649,7 @@ tbody tr:hover {
 
   .seed-grid,
   .strategy-grid,
+  .seo-cluster-grid,
   .signal-grid,
   .domain-grid,
   .future-grid,
@@ -1491,6 +1693,10 @@ tbody tr:hover {
   }
 
   .route-queue-body {
+    grid-template-columns: 1fr;
+  }
+
+  .research-head {
     grid-template-columns: 1fr;
   }
 }

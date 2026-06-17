@@ -48,6 +48,10 @@ function assertRefs(refs, validSet, label, itemId, allowEmpty = true) {
   }
 }
 
+function normalizeUrl(value) {
+  return typeof value === "string" ? value.replace(/\/+$/, "") : "";
+}
+
 const site = readJson(sitePath);
 const routeData = readJson(routePath);
 
@@ -67,10 +71,25 @@ const knownOrCandidateSeedIds = new Set([...seedIds, ...evidenceSeedIds]);
 const reviewQueue = site.reviewQueue || [];
 const queuedSeedIds = new Set(reviewQueue.flatMap((item) => item.targetSeeds || []));
 const statsByLabel = new Map((site.stats || []).map((item) => [item.label, item]));
+const seoClusters = site.seoClusters || [];
+const researchRounds = site.researchRounds || [];
+
+const allowedRouteTypes = new Set([
+  "raw Shop Queue",
+  "prose-backed",
+  "description-backed",
+  "video-node",
+  "comment-branch",
+  "OCR/manual-review",
+  "candidate",
+  "blocked-source"
+]);
 
 addDuplicateErrors(seeds, "seed", "seed");
 addDuplicateErrors(evidence, "id", "evidence");
 addDuplicateErrors(reviewQueue, "id", "reviewQueue");
+addDuplicateErrors(seoClusters, "id", "seoClusters");
+addDuplicateErrors(researchRounds, "id", "researchRounds");
 
 for (const [id, source] of Object.entries(sourceMap)) {
   if (!hasValue(source.label)) errors.push(`source ${id} is missing label`);
@@ -114,9 +133,79 @@ for (const item of reviewQueue) {
   assertRefs(item.targetSeeds || [], knownOrCandidateSeedIds, "reviewQueue targetSeeds", id, true);
 }
 
+for (const item of seoClusters) {
+  const id = item.id || "(missing)";
+  for (const field of ["title", "searchIntent", "pageType", "priority", "status", "evidenceStrength", "cta", "nextAction"]) {
+    if (!hasValue(item[field])) errors.push(`seoClusters ${id} is missing ${field}`);
+  }
+  assertRefs(item.supportingSeeds || [], seedIds, "seoClusters supportingSeeds", id, false);
+  assertRefs(item.evidenceIds || [], evidenceIds, "seoClusters evidenceIds", id, false);
+  assertRefs(item.sourceIds || [], sourceIds, "seoClusters sourceIds", id, false);
+  for (const field of ["targetKeywords", "routeTypes", "doNotClaim", "internalLinks"]) {
+    if (!Array.isArray(item[field]) || item[field].length === 0) {
+      errors.push(`seoClusters ${id} must include non-empty ${field}`);
+    }
+  }
+  for (const routeType of item.routeTypes || []) {
+    if (!allowedRouteTypes.has(routeType)) errors.push(`seoClusters ${id} has unknown route type: ${routeType}`);
+  }
+  for (const link of item.internalLinks || []) {
+    if (typeof link !== "string" || !link.startsWith("#")) errors.push(`seoClusters ${id} has invalid internal link: ${link}`);
+  }
+  if ((item.doNotClaim || []).length < 2) errors.push(`seoClusters ${id} should include at least two doNotClaim guardrails`);
+}
+
+for (const round of researchRounds) {
+  const id = round.id || "(missing)";
+  for (const field of ["title", "date", "channelStatus"]) {
+    if (!hasValue(round[field])) errors.push(`researchRounds ${id} is missing ${field}`);
+  }
+  if (!Array.isArray(round.questions) || round.questions.length === 0) {
+    errors.push(`researchRounds ${id} must include questions`);
+  }
+  if (!Array.isArray(round.searchTerms) || round.searchTerms.length === 0) {
+    errors.push(`researchRounds ${id} must include searchTerms`);
+  }
+  if (!Array.isArray(round.candidates)) {
+    errors.push(`researchRounds ${id} candidates must be an array`);
+    continue;
+  }
+  if (round.candidates.length < 15 || round.candidates.length > 25) {
+    errors.push(`researchRounds ${id} should include 15-25 candidates, got ${round.candidates.length}`);
+  }
+  round.candidates.forEach((candidate, index) => {
+    const candidateId = `${id}#${index + 1}`;
+    for (const field of ["title", "url", "platform", "tool", "retrievedAt", "access", "deck", "version", "initialValue", "deepResearch", "evidenceStrength"]) {
+      if (!hasValue(candidate[field])) errors.push(`research candidate ${candidateId} is missing ${field}`);
+    }
+    if (candidate.sourceId && !sourceIds.has(candidate.sourceId)) {
+      errors.push(`research candidate ${candidateId} references missing sourceId: ${candidate.sourceId}`);
+    }
+    if (candidate.evidenceId && !evidenceIds.has(candidate.evidenceId)) {
+      errors.push(`research candidate ${candidateId} references missing evidenceId: ${candidate.evidenceId}`);
+    }
+    if (candidate.sourceId || candidate.evidenceId) {
+      const allowedUrls = [
+        sourceMap[candidate.sourceId]?.url,
+        evidence.find((item) => item.id === candidate.evidenceId)?.url
+      ]
+        .map(normalizeUrl)
+        .filter(Boolean);
+      if (allowedUrls.length && !allowedUrls.includes(normalizeUrl(candidate.url))) {
+        errors.push(`research candidate ${candidateId} URL does not match its source/evidence reference`);
+      }
+    }
+    assertRefs(candidate.seeds || [], knownOrCandidateSeedIds, "research candidate seeds", candidateId, true);
+    if (!Array.isArray(candidate.mappedAssets) || candidate.mappedAssets.length === 0) {
+      errors.push(`research candidate ${candidateId} must include mappedAssets`);
+    }
+  });
+}
+
 const expectedStats = [
   ["已整理种子", seeds.length],
   ["证据来源", evidence.length],
+  ["SEO专题", seoClusters.length],
   ["复盘队列", reviewQueue.length]
 ];
 
@@ -136,6 +225,9 @@ const summary = {
   routeDetails: seedDetailIds.size,
   sources: sourceIds.size,
   evidence: evidence.length,
+  seoClusters: seoClusters.length,
+  researchRounds: researchRounds.length,
+  researchCandidates: researchRounds.reduce((count, round) => count + (round.candidates || []).length, 0),
   reviewQueue: reviewQueue.length,
   warnings: warnings.length,
   errors: errors.length

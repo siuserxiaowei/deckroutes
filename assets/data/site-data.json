@@ -2,10 +2,10 @@
   "meta": {
     "name": "DeckRoutes",
     "title": "DeckRoutes - Balatro Seed Atlas",
-    "asOf": "2026-06-16",
+    "asOf": "2026-06-17",
     "language": "zh-CN",
-    "method": "Agent Reach doctor + mcporter 显式配置调用 + Jina Reader + GitHub CLI + BalatroSeeds public pages + web search fallback + Scrapling availability check",
-    "coverageNote": "2026-06-16 九次复核：Agent Reach doctor 显示 13/15 渠道可用；显式 mcporter 配置可列出 xiaohongshu、douyin、weibo、exa 4 个健康 MCP server。微博 MCP 可搜索内容、话题和评论；小红书显式 MCP 已连接但 check_login_status/search_feeds 触发浏览器 profile ProcessSingleton/socket directory 启动错误；抖音 parse/download 仍缺 DASHSCOPE_API_KEY。"
+    "method": "Agent Reach doctor + public web search fallback + Jina Reader + Bilibili public metadata + BalatroSeeds public pages + route contract audit",
+    "coverageNote": "2026-06-17 复核：Agent Reach doctor 显示 9/15 渠道可用；GitHub、YouTube、V2EX、RSS、网页 reader、X/Reddit/B站、微信公众号可用。Exa 未以 mcporter server 注册，小红书/抖音/微博/LinkedIn 当前未配置或需额外服务，不使用登录 Cookie、付费库、验证码或私域内容。"
   },
   "stats": [
     {
@@ -24,6 +24,11 @@
       "note": "含平台状态、中文社区、英文 seed bank 和 GitHub 工具证据"
     },
     {
+      "label": "SEO专题",
+      "value": "6",
+      "note": "已绑定搜索意图、种子、证据、禁用承诺和下一步 CTA"
+    },
+    {
       "label": "候选域名",
       "value": "6",
       "note": "购买前需注册商复核"
@@ -37,6 +42,760 @@
       "label": "复盘队列",
       "value": "21",
       "note": "按平台列出下一轮采集、OCR 和牌局复盘任务"
+    }
+  ],
+  "seoClusters": [
+    {
+      "id": "steel-king-route-hub",
+      "priority": "S",
+      "title": "中文钢K流种子与路线库",
+      "searchIntent": "玩家搜索“小丑牌 钢K 种子”“红封钢K怎么打”“Balatro steel king seed”时，需要先找到可信 seed，再判断它是不是可复盘路线。",
+      "pageType": "Pillar 专题页 + seed 列表 + Ante 时间线 + 复盘队列",
+      "status": "ready-brief",
+      "evidenceStrength": "强",
+      "routeTypes": [
+        "video-node",
+        "OCR/manual-review",
+        "prose-backed",
+        "candidate"
+      ],
+      "targetKeywords": [
+        "小丑牌 钢K 种子",
+        "小丑牌 红封钢K",
+        "Balatro steel king seed",
+        "Balatro red seal steel king",
+        "小丑牌 爆分种子"
+      ],
+      "supportingSeeds": [
+        "9OUU79",
+        "90UU79",
+        "1DOYU2",
+        "BUMBYCX2",
+        "9ZPU1V32",
+        "X8WTK1U1",
+        "IUR4CTY3"
+      ],
+      "evidenceIds": [
+        "bili-9ouu79",
+        "bili-90uu79-yushen",
+        "bili-1doyu2-e14219-full-flow",
+        "bili-bumbycx2-steel-k-route",
+        "bili-9zpu1v32-full-flow",
+        "taptap-x8wtk1u1",
+        "taptap-iur4cty3"
+      ],
+      "sourceIds": [
+        "bili-9ouu79",
+        "bili-90uu79-yushen",
+        "bili-1doyu2-e14219-full-flow",
+        "bili-bumbycx2-steel-k-route",
+        "bili-9zpu1v32-full-flow",
+        "taptap-x8wtk1u1",
+        "taptap-iur4cty3"
+      ],
+      "internalLinks": [
+        "#seeds",
+        "#queue",
+        "#evidence"
+      ],
+      "cta": "先打开可点击路线节点，再把 B站长图、TapTap 图文和评论补进复盘队列。",
+      "doNotClaim": [
+        "完整逐店表",
+        "保证 6 底注爆机",
+        "稳定 naneinf",
+        "所有平台可复现"
+      ],
+      "nextAction": "拆出 /steel-king/ 专题页草稿，并把 9OUU79、90UU79、BUMBYCX2、9ZPU1V32 设为首屏可复盘入口。"
+    },
+    {
+      "id": "baron-mime-engine",
+      "priority": "S",
+      "title": "Baron / Mime 持牌触发机制与摆位",
+      "searchIntent": "玩家想知道男爵、哑剧、Blueprint、Brainstorm 为什么能把钢K路线放大，以及复制小丑该怎么摆。",
+      "pageType": "常青机制页 + 摆位说明 + 相关 seed 索引",
+      "status": "ready-brief",
+      "evidenceStrength": "强",
+      "routeTypes": [
+        "prose-backed",
+        "description-backed",
+        "video-node",
+        "candidate"
+      ],
+      "targetKeywords": [
+        "Balatro Baron Mime",
+        "小丑牌 男爵 哑剧",
+        "Balatro Blueprint Brainstorm",
+        "小丑牌 钢K 摆位",
+        "Baron Mime steel king"
+      ],
+      "supportingSeeds": [
+        "6B678B4W",
+        "1JA54YD6",
+        "DP4499H3",
+        "9XNI26KW",
+        "PWX3AQJ8",
+        "TR6AH4P3"
+      ],
+      "evidenceIds": [
+        "gamesgg-baron-mime",
+        "balatroseeds-6b678b4w-route",
+        "reddit-1ja54yd6-full-guide",
+        "bili-dp4499h3-baron-mime",
+        "balatroseeds-9xni26kw-plasma",
+        "reddit-tr6ah4p3-perfect-naneinf"
+      ],
+      "sourceIds": [
+        "gamesgg-baron-mime",
+        "balatroseeds-6b678b4w",
+        "reddit-1ja54yd6-full-guide",
+        "bili-dp4499h3-baron-mime",
+        "balatroseeds-9xni26kw-plasma",
+        "reddit-tr6ah4p3-perfect-naneinf"
+      ],
+      "internalLinks": [
+        "#strategies",
+        "#seeds",
+        "#evidence"
+      ],
+      "cta": "把机制解释和 seed 卡片互链，后续可加摆位计算器和触发次数示例。",
+      "doNotClaim": [
+        "拿到 Baron/Mime 就必成型",
+        "固定最优摆位适用于所有局",
+        "复制牌数量越多一定越优"
+      ],
+      "nextAction": "把 Baron/Mime 机制页拆成“触发逻辑、摆位优先级、相关 seed、Boss 风险”四段。"
+    },
+    {
+      "id": "perkeo-cryptid-naneinf",
+      "priority": "A+",
+      "title": "Perkeo / Cryptid / naneinf 候选路线",
+      "searchIntent": "玩家搜索 naneinf、Perkeo 复制 Cryptid、极限分数种子时，需要看到路线来源、候选等级和风险边界。",
+      "pageType": "极限路线 hub + candidate seed 卡片 + 风险说明",
+      "status": "guarded-brief",
+      "evidenceStrength": "中",
+      "routeTypes": [
+        "raw Shop Queue",
+        "prose-backed",
+        "description-backed",
+        "comment-branch",
+        "candidate"
+      ],
+      "targetKeywords": [
+        "Balatro naneinf seed",
+        "小丑牌 naneinf",
+        "Balatro Perkeo Cryptid",
+        "小丑牌 Perkeo 神秘生物",
+        "Balatro infinity score seed"
+      ],
+      "supportingSeeds": [
+        "9OUU79",
+        "6B678B4W",
+        "1DOYU2",
+        "8Q47WV6K",
+        "9XNI26KW",
+        "2NJEYMUI",
+        "TR6AH4P3",
+        "PWX3AQJ8",
+        "12QM45YD"
+      ],
+      "evidenceIds": [
+        "bili-9ouu79",
+        "balatroseeds-6b678b4w-route",
+        "balatroseeds-8q47wv6k-ghost",
+        "balatroseeds-9xni26kw-plasma",
+        "reddit-2njeymui-naneinf-guide",
+        "reddit-tr6ah4p3-perfect-naneinf",
+        "balatroseeds-12qm45yd-plasma"
+      ],
+      "sourceIds": [
+        "bili-9ouu79",
+        "balatroseeds-6b678b4w",
+        "balatroseeds-8q47wv6k-ghost",
+        "balatroseeds-9xni26kw-plasma",
+        "reddit-2njeymui-naneinf-guide",
+        "reddit-tr6ah4p3-perfect-naneinf",
+        "balatroseeds-12qm45yd-plasma",
+        "wiki-naneinf",
+        "naneinf-calc"
+      ],
+      "internalLinks": [
+        "#queue",
+        "#evidence",
+        "#seeds"
+      ],
+      "cta": "把 naneinf 写成候选路线库，优先展示来源等级、缺口和下一次 replay 任务。",
+      "doNotClaim": [
+        "稳定 naneinf",
+        "必出 nan",
+        "所有 Cryptid/K 数量固定",
+        "description-backed 等于 raw Shop Queue"
+      ],
+      "nextAction": "为 8Q47WV6K、9XNI26KW、TR6AH4P3 增加 candidate 风险摘要和复盘评分。"
+    },
+    {
+      "id": "plasma-deck-route-index",
+      "priority": "A",
+      "title": "Plasma Deck 钢K与高分种子索引",
+      "searchIntent": "玩家按牌组搜索等离子牌组时，需要单独理解 Plasma Deck 的计分结构、可用 seed 和路线是否可跨牌组复用。",
+      "pageType": "Deck landing page + 可筛选 seed index",
+      "status": "ready-brief",
+      "evidenceStrength": "中",
+      "routeTypes": [
+        "raw Shop Queue",
+        "prose-backed",
+        "description-backed",
+        "video-node"
+      ],
+      "targetKeywords": [
+        "Balatro Plasma Deck seed",
+        "小丑牌 等离子牌组 种子",
+        "Plasma Deck steel king",
+        "小丑牌 Plasma Deck 钢K",
+        "Balatro plasma naneinf"
+      ],
+      "supportingSeeds": [
+        "9OUU79",
+        "90UU79",
+        "6B678B4W",
+        "12QM45YD",
+        "9XNI26KW",
+        "9ZPU1V32",
+        "TR6AH4P3"
+      ],
+      "evidenceIds": [
+        "bili-9ouu79",
+        "bili-90uu79-yushen",
+        "balatroseeds-6b678b4w-route",
+        "balatroseeds-12qm45yd-plasma",
+        "balatroseeds-9xni26kw-plasma",
+        "bili-9zpu1v32-full-flow",
+        "reddit-tr6ah4p3-perfect-naneinf"
+      ],
+      "sourceIds": [
+        "bili-9ouu79",
+        "bili-90uu79-yushen",
+        "balatroseeds-6b678b4w",
+        "balatroseeds-12qm45yd-plasma",
+        "balatroseeds-9xni26kw-plasma",
+        "bili-9zpu1v32-full-flow",
+        "reddit-tr6ah4p3-perfect-naneinf"
+      ],
+      "internalLinks": [
+        "#seeds",
+        "#strategies"
+      ],
+      "cta": "按 Plasma Deck 单独筛 seed，避免把普通牌组路线直接套用到等离子牌组。",
+      "doNotClaim": [
+        "Plasma 路线可直接跨牌组套用",
+        "所有 Plasma seed 都适合新手",
+        "队列样本已经等于完整路线"
+      ],
+      "nextAction": "给 Plasma Deck 标签加专题入口，首批链接 9OUU79、6B678B4W、12QM45YD、9XNI26KW。"
+    },
+    {
+      "id": "ghost-deck-route-index",
+      "priority": "A-",
+      "title": "Ghost Deck 幽灵牌组 Baron/Mime 与 Perkeo 种子",
+      "searchIntent": "玩家搜索幽灵牌组和 Spectral 资源时，需要看到哪些路线依赖 Hex、Ectoplasm、Spectral 包和早期传奇。",
+      "pageType": "Deck landing page + Spectral 风险说明 + seed list",
+      "status": "candidate-brief",
+      "evidenceStrength": "中",
+      "routeTypes": [
+        "prose-backed",
+        "description-backed",
+        "video-node",
+        "candidate"
+      ],
+      "targetKeywords": [
+        "Balatro Ghost Deck seed",
+        "小丑牌 幽灵牌组 种子",
+        "Ghost Deck Baron Mime",
+        "Ghost Deck Perkeo",
+        "小丑牌 幻灵牌组 钢K"
+      ],
+      "supportingSeeds": [
+        "8Q47WV6K",
+        "PWX3AQJ8",
+        "IUR4CTY3",
+        "1DOYU2",
+        "U8RJYV6N"
+      ],
+      "evidenceIds": [
+        "balatroseeds-8q47wv6k-ghost",
+        "balatroseeds-pwx3aqj8-ghost",
+        "reddit-pwx3aqj8-easiest-nan",
+        "taptap-iur4cty3",
+        "reddit-u8rjyv6n-balatroeagle"
+      ],
+      "sourceIds": [
+        "balatroseeds-8q47wv6k-ghost",
+        "balatroseeds-pwx3aqj8-ghost",
+        "reddit-pwx3aqj8-easiest-nan",
+        "taptap-iur4cty3",
+        "reddit-u8rjyv6n-balatroeagle"
+      ],
+      "internalLinks": [
+        "#seeds",
+        "#queue",
+        "#evidence"
+      ],
+      "cta": "把 Ghost Deck 作为中期专题，优先补 Spectral 节点、版本差异和 Ectoplasm 风险。",
+      "doNotClaim": [
+        "幽灵牌组一定更容易 naneinf",
+        "Spectral 节点不受版本影响",
+        "缺少 replay 的候选可以照抄"
+      ],
+      "nextAction": "把 8Q47WV6K 和 PWX3AQJ8 的候选分支拆出风险对照表。"
+    },
+    {
+      "id": "next-games-guide-hub",
+      "priority": "B+",
+      "title": "适合攻略站的小游戏扩展入口",
+      "searchIntent": "用户想找类似 Balatro 的构筑、肉鸽、路线型小游戏攻略；站点需要先展示筛选标准，而不是直接铺薄内容。",
+      "pageType": "多游戏分类 hub + 扩展评分模板 + 即将扩展清单",
+      "status": "watchlist",
+      "evidenceStrength": "弱",
+      "routeTypes": [
+        "candidate",
+        "blocked-source"
+      ],
+      "targetKeywords": [
+        "类似小丑牌的游戏",
+        "构筑肉鸽攻略",
+        "Slay the Spire 2 攻略",
+        "Monster Train 2 攻略",
+        "小游戏攻略站"
+      ],
+      "supportingSeeds": [
+        "9OUU79",
+        "6B678B4W",
+        "12QM45YD"
+      ],
+      "evidenceIds": [
+        "github-blueprint-seed-tools"
+      ],
+      "sourceIds": [
+        "gamespot-sts2",
+        "rogueliker-deckbuilders",
+        "pcgamer-cursemark",
+        "github-blueprint-seed-tools"
+      ],
+      "internalLinks": [
+        "#future",
+        "#domains",
+        "#sources"
+      ],
+      "cta": "先把 Balatro 的 seed/route 模板做扎实，再用同一套证据契约评估新游戏。",
+      "doNotClaim": [
+        "已有完整多游戏攻略库",
+        "所有热门小游戏都适合做攻略站",
+        "未评分游戏直接扩品类"
+      ],
+      "nextAction": "为 Slay the Spire 2、Monster Train 2、Cobalt Core 建立搜索需求、社区密度、结构化难度、商业化和版权风险评分表。"
+    }
+  ],
+  "researchRounds": [
+    {
+      "id": "2026-06-17-seo-cluster-pass",
+      "title": "钢K / Baron-Mime / naneinf SEO 专题候选来源池",
+      "date": "2026-06-17",
+      "questions": [
+        "中文钢K流应该拆成一个总页，还是按 seed 拆多个长尾页？",
+        "Baron/Mime、Blueprint/Brainstorm 是否足够支撑常青机制页？",
+        "naneinf 高搜索意图能否做页，同时不把候选路线写成稳定攻略？",
+        "Plasma Deck、Ghost Deck 是否应该先做牌组索引页？",
+        "多游戏扩展目前应进入正式页面还是 watchlist？"
+      ],
+      "searchTerms": [
+        "小丑牌 钢K 种子 攻略",
+        "Balatro steel king seed Baron Mime",
+        "Balatro Baron Mime Blueprint Brainstorm",
+        "Balatro naneinf seed Perkeo Cryptid",
+        "Balatro Plasma Deck seed",
+        "小丑牌 幽灵牌组 钢K",
+        "类似 Balatro 的构筑肉鸽游戏"
+      ],
+      "channelStatus": "Agent Reach doctor：9/15 渠道可用；Exa MCP 未注册，小红书/抖音/微博/LinkedIn 未配置或需额外服务。本轮只用公开 web/B站/TapTap/Reddit/BalatroSeeds/GitHub 证据和站内已有来源，不使用 Cookie 或登录。",
+      "candidates": [
+        {
+          "title": "9OUU79 红封钢K流，6底注17回合打爆游戏",
+          "url": "https://www.bilibili.com/video/BV1iRPqevEt9/",
+          "platform": "B站",
+          "tool": "Agent Reach doctor + Bilibili public metadata + local evidence pool",
+          "retrievedAt": "2026-06-17",
+          "access": "public metadata; no public subtitle; pinned long-image manually reviewed",
+          "seeds": [
+            "9OUU79"
+          ],
+          "deck": "Plasma Deck",
+          "version": "1.0.1o-FULL from source description",
+          "initialValue": "中文钢K流主入口，已有节点型近完整路线和图片证据。",
+          "deepResearch": "yes",
+          "evidenceStrength": "强",
+          "evidenceId": "bili-9ouu79",
+          "sourceId": "bili-9ouu79",
+          "mappedAssets": [
+            "seoClusters:steel-king-route-hub",
+            "seed:9OUU79",
+            "reviewQueue:B站长图/OCR"
+          ]
+        },
+        {
+          "title": "90UU79 等离子红封钢K流无尽演示",
+          "url": "https://www.bilibili.com/video/BV1ysq8YZExk/",
+          "platform": "B站",
+          "tool": "Bilibili public metadata + comments + local evidence pool",
+          "retrievedAt": "2026-06-17",
+          "access": "public metadata; long-image/comment route needs replay validation",
+          "seeds": [
+            "90UU79"
+          ],
+          "deck": "Plasma Deck",
+          "version": "B站 2024-12-12; game version not fully verified",
+          "initialValue": "高热钢K无尽样本，适合支持中文钢K页和 Plasma Deck 页。",
+          "deepResearch": "yes",
+          "evidenceStrength": "强",
+          "evidenceId": "bili-90uu79-yushen",
+          "sourceId": "bili-90uu79-yushen",
+          "mappedAssets": [
+            "seoClusters:steel-king-route-hub",
+            "seoClusters:plasma-deck-route-index"
+          ]
+        },
+        {
+          "title": "BUMBYCX2 等离子钢铁K前期运营视频",
+          "url": "https://www.bilibili.com/video/BV1LNCGY3ESd/",
+          "platform": "B站",
+          "tool": "Bilibili public metadata + Jina Reader fallback + local evidence pool",
+          "retrievedAt": "2026-06-17",
+          "access": "public metadata; no full transcript",
+          "seeds": [
+            "BUMBYCX2"
+          ],
+          "deck": "Plasma Deck",
+          "version": "B站 2024-12-23",
+          "initialValue": "前期运营节点清晰，能补钢K页的新手/中期路线段。",
+          "deepResearch": "yes",
+          "evidenceStrength": "强",
+          "evidenceId": "bili-bumbycx2-steel-k-route",
+          "sourceId": "bili-bumbycx2-steel-k-route",
+          "mappedAssets": [
+            "seoClusters:steel-king-route-hub",
+            "reviewQueue:视频逐帧复盘"
+          ]
+        },
+        {
+          "title": "9ZPU1V32 传奇爽种打爆游戏机全流程",
+          "url": "https://www.bilibili.com/video/BV1nz42197qg/",
+          "platform": "B站",
+          "tool": "Bilibili public metadata + Douyu/TapTap cross-source notes",
+          "retrievedAt": "2026-06-17",
+          "access": "public metadata; route table is source-backed but still needs replay",
+          "seeds": [
+            "9ZPU1V32"
+          ],
+          "deck": "Plasma Deck",
+          "version": "B站 2024-05-21 era; version needs replay confirmation",
+          "initialValue": "中文完整流程标题强，适合钢K页和 naneinf 候选风险说明。",
+          "deepResearch": "yes",
+          "evidenceStrength": "中",
+          "evidenceId": "bili-9zpu1v32-full-flow",
+          "sourceId": "bili-9zpu1v32-full-flow",
+          "mappedAssets": [
+            "seoClusters:steel-king-route-hub",
+            "seoClusters:plasma-deck-route-index"
+          ]
+        },
+        {
+          "title": "小丑牌钢K种子推荐 IUR4CTY3",
+          "url": "https://www.taptap.cn/moment/601730332038793122",
+          "platform": "TapTap",
+          "tool": "Jina Reader/public page + local evidence pool",
+          "retrievedAt": "2026-06-17",
+          "access": "public web text; screenshots not fully structured",
+          "seeds": [
+            "IUR4CTY3"
+          ],
+          "deck": "Ghost Deck",
+          "version": "TapTap 2024-11-30",
+          "initialValue": "中文图文种子，适合 Ghost Deck 和钢K页补中文社区入口。",
+          "deepResearch": "yes",
+          "evidenceStrength": "中",
+          "evidenceId": "taptap-iur4cty3",
+          "sourceId": "taptap-iur4cty3",
+          "mappedAssets": [
+            "seoClusters:steel-king-route-hub",
+            "seoClusters:ghost-deck-route-index"
+          ]
+        },
+        {
+          "title": "10回合镭射钢K X8WTK1U1",
+          "url": "https://www.taptap.cn/moment/685810471831342883",
+          "platform": "TapTap",
+          "tool": "Jina Reader/public page + local evidence pool",
+          "retrievedAt": "2026-06-17",
+          "access": "public web text; only round 1-7 route nodes available",
+          "seeds": [
+            "X8WTK1U1"
+          ],
+          "deck": "Unspecified / route-specific",
+          "version": "TapTap 2025-06-22",
+          "initialValue": "标题高意图，但缺 8-10 回合，适合复盘队列而非完整攻略。",
+          "deepResearch": "reviewQueue",
+          "evidenceStrength": "中",
+          "evidenceId": "taptap-x8wtk1u1",
+          "sourceId": "taptap-x8wtk1u1",
+          "mappedAssets": [
+            "seoClusters:steel-king-route-hub",
+            "reviewQueue:taptap-x8wtk1u1-full-route"
+          ]
+        },
+        {
+          "title": "6B678B4W Plasma Deck Ante 1-8 route",
+          "url": "https://balatroseeds.com/seeds/6B678B4W/plasma-deck",
+          "platform": "BalatroSeeds",
+          "tool": "Jina Reader + BalatroSeeds parser contract",
+          "retrievedAt": "2026-06-17",
+          "access": "public page; structured route tables available",
+          "seeds": [
+            "6B678B4W"
+          ],
+          "deck": "Plasma Deck",
+          "version": "BalatroSeeds page version",
+          "initialValue": "Baron/Mime 与 Perkeo/Cryptid 的核心英文路线样本。",
+          "deepResearch": "yes",
+          "evidenceStrength": "强",
+          "evidenceId": "balatroseeds-6b678b4w-route",
+          "sourceId": "balatroseeds-6b678b4w",
+          "mappedAssets": [
+            "seoClusters:baron-mime-engine",
+            "seoClusters:perkeo-cryptid-naneinf",
+            "seoClusters:plasma-deck-route-index"
+          ]
+        },
+        {
+          "title": "8Q47WV6K Ghost Deck naneinf 红封钢K候选",
+          "url": "https://balatroseeds.com/seeds/8476/ghost-deck",
+          "platform": "BalatroSeeds",
+          "tool": "Jina Reader + parser + Reddit cross-source",
+          "retrievedAt": "2026-06-17",
+          "access": "public page; prose-backed route tables and Reddit discussion",
+          "seeds": [
+            "8Q47WV6K"
+          ],
+          "deck": "Ghost Deck",
+          "version": "BalatroSeeds current page",
+          "initialValue": "Ghost Deck / naneinf 候选高价值样本，但要保留风险边界。",
+          "deepResearch": "yes",
+          "evidenceStrength": "中",
+          "evidenceId": "balatroseeds-8q47wv6k-ghost",
+          "sourceId": "balatroseeds-8q47wv6k-ghost",
+          "mappedAssets": [
+            "seoClusters:perkeo-cryptid-naneinf",
+            "seoClusters:ghost-deck-route-index"
+          ]
+        },
+        {
+          "title": "9XNI26KW Plasma Deck description-backed naneinf candidate",
+          "url": "https://balatroseeds.com/seeds/9XNI26KW/plasma-deck",
+          "platform": "BalatroSeeds",
+          "tool": "Jina Reader + parser description mode",
+          "retrievedAt": "2026-06-17",
+          "access": "public page; description-backed nodes only",
+          "seeds": [
+            "9XNI26KW"
+          ],
+          "deck": "Plasma Deck",
+          "version": "BalatroSeeds current page",
+          "initialValue": "naneinf 搜索意图强，但必须明确不是 raw Shop Queue。",
+          "deepResearch": "yes",
+          "evidenceStrength": "中",
+          "evidenceId": "balatroseeds-9xni26kw-plasma",
+          "sourceId": "balatroseeds-9xni26kw-plasma",
+          "mappedAssets": [
+            "seoClusters:perkeo-cryptid-naneinf",
+            "seoClusters:plasma-deck-route-index"
+          ]
+        },
+        {
+          "title": "1JA54YD6 Early Foil DNA / Baron-Mime full guide",
+          "url": "https://www.reddit.com/r/balatro/comments/1m5a7tq/full_guide_early_foil_dna_stuntman_red_seal_late/",
+          "platform": "Reddit",
+          "tool": "Reddit public page via Agent Reach/proxy status + local evidence pool",
+          "retrievedAt": "2026-06-17",
+          "access": "public post exists; direct reads can be rate/403 limited",
+          "seeds": [
+            "1JA54YD6"
+          ],
+          "deck": "Plasma Deck",
+          "version": "Reddit 2026-era post; version not fully guaranteed",
+          "initialValue": "英文 Baron/Mime full guide 结构强，可支撑机制页。",
+          "deepResearch": "yes",
+          "evidenceStrength": "中",
+          "evidenceId": "reddit-1ja54yd6-full-guide",
+          "sourceId": "reddit-1ja54yd6-full-guide",
+          "mappedAssets": [
+            "seoClusters:baron-mime-engine"
+          ]
+        },
+        {
+          "title": "2NJEYMUI BP/Chad/Trib into Baron-Mime naneinf guide",
+          "url": "https://www.reddit.com/r/Balatro_Seeds/comments/1nlghbk/first_naneinf_seed_ive_found_naturally_2njeymui/",
+          "platform": "Reddit",
+          "tool": "Reddit public page via Agent Reach/proxy status + local evidence pool",
+          "retrievedAt": "2026-06-17",
+          "access": "public post exists; comment branches need replay validation",
+          "seeds": [
+            "2NJEYMUI"
+          ],
+          "deck": "Plasma Deck / route-specific",
+          "version": "Reddit community guide",
+          "initialValue": "naneinf 候选页的重要案例，适合展示 comment-branch 风险。",
+          "deepResearch": "yes",
+          "evidenceStrength": "中",
+          "evidenceId": "reddit-2njeymui-naneinf-guide",
+          "sourceId": "reddit-2njeymui-naneinf-guide",
+          "mappedAssets": [
+            "seoClusters:perkeo-cryptid-naneinf"
+          ]
+        },
+        {
+          "title": "TR6AH4P3 perfect naneinf seed community guide",
+          "url": "https://www.reddit.com/r/Balatro_Seeds/comments/1ogm33m/i_think_ive_found_the_perfect_naneinf_seed_this/",
+          "platform": "Reddit",
+          "tool": "Reddit public page + local evidence pool + The Soul queue probe",
+          "retrievedAt": "2026-06-17",
+          "access": "public post exists; 'perfect' is source wording, not site claim",
+          "seeds": [
+            "TR6AH4P3"
+          ],
+          "deck": "Plasma Deck",
+          "version": "Reddit community guide",
+          "initialValue": "高搜索价值，但最容易误写成保证路线，需 guarded copy。",
+          "deepResearch": "yes",
+          "evidenceStrength": "中",
+          "evidenceId": "reddit-tr6ah4p3-perfect-naneinf",
+          "sourceId": "reddit-tr6ah4p3-perfect-naneinf",
+          "mappedAssets": [
+            "seoClusters:baron-mime-engine",
+            "seoClusters:perkeo-cryptid-naneinf",
+            "seoClusters:plasma-deck-route-index"
+          ]
+        },
+        {
+          "title": "Baron Mime Balatro Build Guide",
+          "url": "https://games.gg/balatro/guides/baron-mime-balatro-build/",
+          "platform": "Web guide",
+          "tool": "public web reader + local evidence pool",
+          "retrievedAt": "2026-06-17",
+          "access": "public prose guide",
+          "seeds": [],
+          "deck": "Not seed-specific",
+          "version": "guide page current at last read",
+          "initialValue": "机制页强支撑，不适合作为逐局路线证据。",
+          "deepResearch": "yes",
+          "evidenceStrength": "中",
+          "evidenceId": "gamesgg-baron-mime",
+          "sourceId": "gamesgg-baron-mime",
+          "mappedAssets": [
+            "seoClusters:baron-mime-engine"
+          ]
+        },
+        {
+          "title": "Balatro Wiki naneinf guide",
+          "url": "https://balatrowiki.org/w/Guide:_naneinf",
+          "platform": "Wiki",
+          "tool": "public web reader",
+          "retrievedAt": "2026-06-17",
+          "access": "public wiki; mechanism reference, not seed route",
+          "seeds": [],
+          "deck": "Not seed-specific",
+          "version": "wiki current at last read",
+          "initialValue": "naneinf 机制与术语参考，可作为解释页来源，不证明某 seed 稳定。",
+          "deepResearch": "supporting-reference",
+          "evidenceStrength": "中",
+          "sourceId": "wiki-naneinf",
+          "mappedAssets": [
+            "seoClusters:perkeo-cryptid-naneinf"
+          ]
+        },
+        {
+          "title": "Balatro Infinity Score Seeds / best seeds coverage",
+          "url": "https://www.dualshockers.com/best-balatro-seeds-to-try/",
+          "platform": "Web media",
+          "tool": "public web search fallback",
+          "retrievedAt": "2026-06-17",
+          "access": "public article; media list, not route table",
+          "seeds": [],
+          "deck": "Mixed",
+          "version": "article current at last read",
+          "initialValue": "验证 seed list 搜索需求存在，但来源质量低于原始路线表。",
+          "deepResearch": "no",
+          "evidenceStrength": "弱",
+          "sourceId": "dualshockers-seeds-to-try",
+          "mappedAssets": [
+            "seoClusters:perkeo-cryptid-naneinf"
+          ]
+        },
+        {
+          "title": "Steam Community Awesome Seeds discussion",
+          "url": "https://steamcommunity.com/app/2379780/discussions/0/3879347633298771940/?ctp=2",
+          "platform": "Steam Community",
+          "tool": "public web reader/search fallback",
+          "retrievedAt": "2026-06-17",
+          "access": "public discussion; comments are weak evidence",
+          "seeds": [],
+          "deck": "Mixed",
+          "version": "community discussion",
+          "initialValue": "可做候选池入口，不适合直接写成可复盘路线。",
+          "deepResearch": "candidate",
+          "evidenceStrength": "弱",
+          "sourceId": "steam-awesome-seeds",
+          "mappedAssets": [
+            "reviewQueue:community-seed-mining"
+          ]
+        },
+        {
+          "title": "小丑牌无尽攻略红K路线",
+          "url": "https://www.taptap.cn/moment/625067608894343986",
+          "platform": "TapTap",
+          "tool": "public web reader/search fallback",
+          "retrievedAt": "2026-06-17",
+          "access": "public article; route hints need extraction",
+          "seeds": [],
+          "deck": "Mixed",
+          "version": "TapTap page current at last read",
+          "initialValue": "中文红K攻略词根强，适合下轮抽取成新手/进阶解释页。",
+          "deepResearch": "candidate",
+          "evidenceStrength": "弱",
+          "evidenceId": "taptap-endless-red-k-guide",
+          "sourceId": "taptap-endless-red-k-guide",
+          "mappedAssets": [
+            "seoClusters:steel-king-route-hub",
+            "reviewQueue:TapTap 红K攻略抽取"
+          ]
+        },
+        {
+          "title": "Blueprint Balatro Seed Analyzer",
+          "url": "https://github.com/miaklwalker/Blueprint",
+          "platform": "GitHub / Web App",
+          "tool": "GitHub public search + local evidence pool",
+          "retrievedAt": "2026-06-17",
+          "access": "public code/app signal",
+          "seeds": [],
+          "deck": "Tooling",
+          "version": "repository current at last read",
+          "initialValue": "工具站方向证明：DeckRoutes 可以从内容站扩到计算器/抽取器。",
+          "deepResearch": "supporting-reference",
+          "evidenceStrength": "强",
+          "evidenceId": "github-blueprint-seed-tools",
+          "sourceId": "github-blueprint-seed-tools",
+          "mappedAssets": [
+            "seoClusters:next-games-guide-hub",
+            "extractor-capability:seed analyzer adjacency"
+          ]
+        }
+      ]
     }
   ],
   "seeds": [

@@ -538,6 +538,181 @@ function renderStrategies() {
   );
 }
 
+function renderSeoClusters() {
+  const grid = $("#seoClusterGrid");
+  if (!grid) return;
+  const clusters = state.data.seoClusters || [];
+
+  if (!clusters.length) {
+    const empty = el("div", "signal-card");
+    empty.append(el("h3", "", "SEO 专题待补"));
+    empty.append(el("p", "", "当前数据文件还没有 seoClusters 字段。"));
+    grid.replaceChildren(empty);
+    return;
+  }
+
+  grid.replaceChildren(
+    ...clusters.map((cluster) => {
+      const card = el("article", "seo-cluster-card");
+      card.dataset.priority = cluster.priority || "";
+      card.dataset.status = cluster.status || "";
+
+      const top = el("div", "seo-cluster-top");
+      top.append(el("span", "priority", cluster.priority || "P"));
+      top.append(el("span", "seo-status", cluster.status || "待定"));
+      card.append(top);
+
+      card.append(el("h3", "", cluster.title));
+      card.append(el("p", "seo-intent", cluster.searchIntent));
+
+      const meta = el("dl", "seo-meta");
+      [
+        ["页面类型", cluster.pageType],
+        ["证据等级", cluster.evidenceStrength],
+        ["CTA", cluster.cta]
+      ].forEach(([label, value]) => {
+        const group = el("div", "");
+        group.append(el("dt", "", label));
+        group.append(el("dd", "", value));
+        meta.append(group);
+      });
+      card.append(meta);
+
+      const routeTypes = el("div", "seo-route-types");
+      (cluster.routeTypes || []).forEach((type) => routeTypes.append(el("span", "route-type-chip", type)));
+      card.append(routeTypes);
+
+      const keywords = el("div", "seo-keywords");
+      (cluster.targetKeywords || []).slice(0, 6).forEach((keyword) => keywords.append(el("span", "seed-tag", keyword)));
+      card.append(keywords);
+
+      if ((cluster.supportingSeeds || []).length) {
+        const seeds = el("div", "seo-linked-seeds");
+        seeds.append(el("span", "seo-block-label", "关联 seed"));
+        const seedRow = el("div", "tag-list");
+        cluster.supportingSeeds.forEach((seed) => seedRow.append(renderSeedLink(seed)));
+        seeds.append(seedRow);
+        card.append(seeds);
+      }
+
+      if ((cluster.evidenceIds || []).length) {
+        const evidenceBox = el("div", "seo-evidence-links");
+        evidenceBox.append(el("span", "seo-block-label", "证据"));
+        const links = el("div", "queue-evidence-links");
+        cluster.evidenceIds.slice(0, 6).forEach((id) => {
+          const evidence = getEvidence(id);
+          const link = el("a", "queue-evidence-link", evidence?.title || id);
+          link.href = evidence?.url || "#";
+          link.target = "_blank";
+          link.rel = "noreferrer";
+          link.title = evidence?.platform || id;
+          links.append(link);
+        });
+        evidenceBox.append(links);
+        card.append(evidenceBox);
+      }
+
+      if ((cluster.sourceIds || []).length) {
+        const sources = el("div", "source-list seo-source-list");
+        sources.append(sourceLinks(cluster.sourceIds.slice(0, 6)));
+        card.append(sources);
+      }
+
+      const guardrails = el("div", "seo-guardrails");
+      guardrails.append(el("span", "seo-block-label", "禁止承诺"));
+      const guardList = el("ul", "");
+      (cluster.doNotClaim || []).forEach((line) => guardList.append(el("li", "", line)));
+      guardrails.append(guardList);
+      card.append(guardrails);
+
+      const next = el("p", "seo-next");
+      next.append(el("strong", "", "下一步："));
+      next.append(document.createTextNode(cluster.nextAction || "待补"));
+      card.append(next);
+
+      return card;
+    })
+  );
+}
+
+function renderResearchRound() {
+  const box = $("#researchRound");
+  if (!box) return;
+  const round = (state.data.researchRounds || [])[0];
+
+  if (!round) {
+    box.replaceChildren();
+    return;
+  }
+
+  const head = el("div", "research-head");
+  const titleBox = el("div", "");
+  titleBox.append(el("p", "section-kicker", "Research Round"));
+  titleBox.append(el("h3", "", round.title));
+  titleBox.append(el("p", "research-status", `${round.date} · ${round.candidates?.length || 0} 个候选来源`));
+  head.append(titleBox);
+  head.append(el("p", "research-channel", round.channelStatus));
+
+  const questions = el("div", "research-chip-block");
+  questions.append(el("span", "seo-block-label", "研究问题"));
+  const questionRows = el("div", "research-chip-row");
+  (round.questions || []).forEach((question) => questionRows.append(el("span", "research-chip", question)));
+  questions.append(questionRows);
+
+  const terms = el("div", "research-chip-block");
+  terms.append(el("span", "seo-block-label", "搜索词"));
+  const termRows = el("div", "research-chip-row");
+  (round.searchTerms || []).forEach((term) => termRows.append(el("span", "research-chip", term)));
+  terms.append(termRows);
+
+  const tableWrap = el("div", "research-table-wrap");
+  const table = document.createElement("table");
+  const thead = document.createElement("thead");
+  const headerRow = document.createElement("tr");
+  ["来源", "访问限制", "seed / 牌组", "初步价值", "映射资产"].forEach((label) => headerRow.append(el("th", "", label)));
+  thead.append(headerRow);
+  table.append(thead);
+
+  const tbody = document.createElement("tbody");
+  (round.candidates || []).forEach((candidate) => {
+    const row = document.createElement("tr");
+
+    const sourceCell = el("td", "");
+    const link = el("a", "plain-link", candidate.title);
+    link.href = candidate.url;
+    link.target = "_blank";
+    link.rel = "noreferrer";
+    sourceCell.append(link);
+    sourceCell.append(el("div", "stat-note", `${candidate.platform} · ${candidate.evidenceStrength} · ${candidate.tool}`));
+    row.append(sourceCell);
+
+    row.append(el("td", "", candidate.access));
+
+    const seedCell = el("td", "");
+    if ((candidate.seeds || []).length) {
+      const seedRow = el("div", "tag-list");
+      candidate.seeds.forEach((seed) => seedRow.append(renderSeedLink(seed)));
+      seedCell.append(seedRow);
+    } else {
+      seedCell.append(el("span", "seed-tag seed-tag-muted", "非 seed 来源"));
+    }
+    seedCell.append(el("div", "stat-note", `${candidate.deck} · ${candidate.version}`));
+    row.append(seedCell);
+
+    row.append(el("td", "", candidate.initialValue));
+
+    const mapped = el("td", "");
+    (candidate.mappedAssets || []).forEach((asset) => mapped.append(el("span", "research-asset", asset)));
+    row.append(mapped);
+
+    tbody.append(row);
+  });
+  table.append(tbody);
+  tableWrap.append(table);
+
+  box.replaceChildren(head, questions, terms, tableWrap);
+}
+
 function renderVideos() {
   const rows = $("#videoRows");
   rows.replaceChildren(
@@ -849,6 +1024,8 @@ async function boot() {
   renderFilters();
   renderSeeds();
   renderStrategies();
+  renderSeoClusters();
+  renderResearchRound();
   renderVideos();
   renderPlatformStatus();
   renderEvidenceSources();

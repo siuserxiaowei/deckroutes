@@ -30,6 +30,7 @@ jobs:
           node --check scripts/test-extract-balatroseed-route.mjs
           node --check scripts/test-route-link-contracts.mjs
           node --check scripts/test-route-harvest-contracts.mjs
+          node --check scripts/test-seo-cluster-contracts.mjs
 
       - name: Validate site data
         run: node scripts/validate-data.mjs
@@ -45,3 +46,6 @@ jobs:
 
       - name: Test route harvest contracts
         run: node scripts/test-route-harvest-contracts.mjs
+
+      - name: Test SEO cluster contracts
+        run: node scripts/test-seo-cluster-contracts.mjs
